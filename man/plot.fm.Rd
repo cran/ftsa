@@ -39,7 +39,7 @@ R. J. Hyndman and M. S. Ullah (2007) "Robust forecasting of mortality and fertil
 
 R. J. Hyndman and H. Booth (2008) "Stochastic population forecasts using functional data models for mortality, fertility and migration", \emph{International Journal of Forecasting}, \bold{24}(3), 323-342.
 
-R. J. Hyndman and H. Shang (2009) "Forecasting functional time series (with discussion)", \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.
+R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with discussion)", \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.
 }
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}, \code{\link[ftsa]{plot.fmres}}, \code{\link[ftsa]{plot.ftsf}}}
 \author{Rob J Hyndman}
