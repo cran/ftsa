@@ -1,6 +1,6 @@
 \name{dynupdate}
 \alias{dynupdate}
-\title{Dynamic updates via OLS and PLS methods}
+\title{Dynamic updates via BM, OLS, RR and PLS methods}
 \description{ 
 Four methods, namely block moving (BM), ordinary least squares (OLS) regression, 
 ridge regression (RR), penalized least squares (PLS) regression, were proposed to 
