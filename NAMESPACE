@@ -25,7 +25,9 @@ sd.fts,
 quantile.fts,
 median,
 sd,
-var
+var,
+ftsmweightselect,
+fplsrweightselect
 )
 
 

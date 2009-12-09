@@ -3,3 +3,7 @@ v 1.1
 1. Update the references
 2. Correct the yname of a functional object
 
+v 1.2
+
+1. correct the extract function
+2. add ftsmweightselect and fplsrweightselect functions to determine geometrically decaying weights
