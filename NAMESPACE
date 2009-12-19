@@ -27,7 +27,8 @@ median,
 sd,
 var,
 ftsmweightselect,
-fplsrweightselect
+fplsrweightselect,
+dynupdateweightselect
 )
 
 
