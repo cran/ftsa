@@ -6,12 +6,7 @@
 {
     method <- match.arg(method)
     jumpchoice <- match.arg(jumpchoice)
-    if (missing(pimethod) == TRUE) {
-        pimethod = "parametric"
-    }
-    if (missing(method)) {
-        method = "ets"
-    }
+    pimethod <- match.arg(pimethod)
     if (jumpchoice == "actual") {
         var.col <- apply(object$coeff, 2, var)
         idx <- order(var.col)[1]

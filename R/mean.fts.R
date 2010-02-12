@@ -3,9 +3,6 @@
 {
    if (class(x)[1] == "fts"|class(x)[1] == "fds"|class(x)[1] == "sfts"){
        method = match.arg(method)
-       if(missing(method)){
-          method <- "coordinate"
-       }
        if (method == "coordinate"){
           loc <- colMeans(x$y, na.rm = na.rm)
        }

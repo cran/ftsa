@@ -10,9 +10,10 @@ are observed.
 \usage{
 dynupdate(data, newdata = NULL, holdoutdata, method = c("ts", "block", 
  "ols", "pls", "ridge"), fmethod = c("arima", "ar", "ets", "ets.na", 
-  "rwdrift", "rw"), error = c("mse", "mae", "mape"), order = 6,
-   lambda = 0.01, value = FALSE, interval = FALSE, 
-    level = 80, B = 1000)
+  "rwdrift", "rw"), pcdmethod = c("classical", "M", "rapca"), 
+   ngrid = max(1000, ncol(data$y)), order = 6, lambda = 0.01, 
+    value = FALSE, interval = FALSE, level = 80, 
+     pimethod = c("parametric", "nonparametric"), B = 1000)
 }
 \arguments{
   \item{data}{An object of class \code{sfts}.}
@@ -21,16 +22,24 @@ dynupdate(data, newdata = NULL, holdoutdata, method = c("ts", "block",
   \item{method}{Forecasting methods. The latter four can dynamically update point forecasts.}
   \item{fmethod}{Univariate time series forecasting methods used in \code{method = "ts"} 
                  or \code{method = "block"}.}
-  \item{error}{Forecast error measures.}
+  \item{pcdmethod}{Method to use for principal components decomposition. Possibilities are "M", "rapca" and "classical".}
+  \item{ngrid}{Number of grid points to use in calculations. Set to maximum of 1000 and \code{ncol(data$y)}.}
   \item{order}{Number of principal components to fit.}
   \item{lambda}{Penalty parameter used in \code{method = "pls"}.}
   \item{value}{When \code{value = TRUE}, returns forecasts or when \code{value = FALSE}, returns forecast errors.}
   \item{interval}{When \code{interval = TRUE}, produces distributional forecasts.}
   \item{level}{Nominal coverage probability.}
+  \item{pimethod}{Parametric or nonparametric method to construct prediction intervals.}
   \item{B}{Number of bootstrap samples.}  
 }
 \details{
 This function is designed to dynamically update point and distributional forecasts, when partial data in the most recent curve are observed.
+
+If \code{method = "classical"}, then standard functional principal component decomposition is used, as described by Ramsay and Dalzell (1991). 
+
+If \code{method = "rapca"}, then the robust principal component algorithm of Hubert, Rousseeuw and Verboven (2002) is used. 
+
+If \code{method = "M"}, then the hybrid algorithm of Hyndman and Ullah (2005) is used. 
 }
 \value{
   \item{forecasts}{An object of class \code{fts} containing the dynamic updated point forecasts.}
@@ -39,6 +48,10 @@ This function is designed to dynamically update point and distributional forecas
   \item{up}{An object of class \code{fts} containing the upper bound of prediction intervals.}
 }
 \references{
+J. O. Ramsay and C. J. Dalzell (1991) "Some tools for functional data analysis (with discussion)", \emph{Journal of the Royal Statistical Society: Series B}, \bold{53}(3), 539-572. 
+
+M. Hubert and P. J. Rousseeuw and S. Verboven (2002) "A fast robust method for principal components with applications to chemometrics", \emph{Chemometrics and Intelligent Laboratory Systems}, \bold{60}(1-2), 101-111. 
+
 R. J. Hyndman and M. S. Ullah (2007) "Robust forecasting of mortality and fertility rates: A functional data approach", \emph{Computational Statistics \& Data Analysis}, \bold{51}(10), 4942-4956.
 
 H. Shen and J. Z. Huang (2008) "Interday forecasting and intraday updating of call center arrivals", \emph{Manufacturing \& Service Operations Management}, \bold{10}(3), 391-410.

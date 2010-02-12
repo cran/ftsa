@@ -1,13 +1,20 @@
-v 1.1
+v 1.4
 
-1. Update the references
-2. Correct the yname of a functional object
+1. Update dynupdate function to incorporate three ways of computing functional principal component analysis.
+
+v 1.3
+
+1. Add dynupdatelambdaselect function. 
 
 v 1.2
 
 1. Correct the extract function
 2. Add ftsmweightselect and fplsrweightselect functions to determine geometrically decaying weights
 
-v 1.3
+v 1.1
 
-1. Add dynupdatelambdaselect function. 
+1. Update the references
+2. Correct the yname of a functional object
+
+
+

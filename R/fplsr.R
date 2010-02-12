@@ -3,9 +3,7 @@ fplsr <- function (data, order = 6, type = c("simpls",
     interval = FALSE, method = c("delta", "boota"), alpha = 0.05,
     B = 100, adjust = FALSE, backh = 10) 
 {
-    if (missing(type)){
-        type = "simpls"
-    }
+    type = match.arg(type)
     rawdata = t(data$y)
     n = dim(rawdata)[1]
     Xtrain = rawdata[1:(n-1),]

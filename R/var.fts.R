@@ -4,9 +4,7 @@
        functions = t(x$y) 
        n = dim(functions)[1]
        p = dim(functions)[2]
-       if (missing(method)){
-           method = "coordinate"
-       }
+       method = match.arg(method)
        if (method == "coordinate"){
            loc = (n - 1) * apply(functions, 2, var) / n
        }

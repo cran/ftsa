@@ -2,9 +2,6 @@
 {
     if (class(x)[1] == "fts"|class(x)[1] == "fds"|class(x)[1] == "sfts"){
         method = match.arg(method)
-        if (missing(method)){
-            method <- "hossjercroux"
-        }
         if (method == "hossjercroux"){
             loc <- L1median2(t(x$y), method = "hossjercroux")
         }
