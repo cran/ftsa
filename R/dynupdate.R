@@ -1,18 +1,16 @@
-dynupdate = function (data, newdata = NULL, holdoutdata, method = c("ts", "block", "ols", "pls", 
-    "ridge"), fmethod = c("arima", "ar", "ets", "ets.na", "rwdrift", 
-    "rw"), error = c("mse", "mae", "mape"), order = 6, 
-    lambda = 0.01, value = FALSE, interval = FALSE, level = 80, 
-    B = 1000) 
+dynupdate = function (data, newdata = NULL, holdoutdata, method = c("ts", "block", "ols", 
+    "pls","ridge"), fmethod = c("arima", "ar", "ets", "ets.na", "rwdrift",
+    "rw"), pcdmethod = c("classical", "M", "rapca"), ngrid = max(1000, ncol(data$y)), order = 6,
+    lambda = 0.01, value = FALSE, interval = FALSE, level = 80, pimethod = c("parametric", "nonparametric"),
+    B = 1000)
 {
-    if (missing(error)){
-        error = "mse"
-    }
-    if (missing(fmethod)){
-        fmethod = "arima"
-    }
+    fmethod = match.arg(fmethod)
+    pcdmethod = match.arg(pcdmethod)
+    pimethod = match.arg(pimethod)
     if (interval == FALSE){
-        coef = ftsm(data, order = order)$coeff
-        base = ftsm(data, order = order)$basis
+        ftsmobject = ftsm(data, order = order, ngrid = ngrid, method = pcdmethod)
+        coef = ftsmobject$coeff
+        base = ftsmobject$basis
         p = dim(data$y)[1]
         fore = matrix(NA, (order + 1), 1)
         n2 = length(newdata)
@@ -23,9 +21,11 @@ dynupdate = function (data, newdata = NULL, holdoutdata, method = c("ts", "block
             forecasts = (base %*% fore)[(n2 + 1):p, ]
         }
         if (method == "block") {
-            updata = data$y[(dim(as.matrix(newdata))[1] + 1):length(as.numeric(data$y))]
+            updata = data$y[(dim(as.matrix(newdata))[1] + 
+            1):length(as.numeric(data$y))]
             datamatrix = matrix(c(updata, newdata), p, )
-            dummy = forecast.ftsm(ftsm(fts(1:p, datamatrix), order), h = 1, method = fmethod, level=level)       
+            dummy = forecast.ftsm(ftsm(fts(1:p, datamatrix), order = order, ngrid = ngrid, method = 
+            pcdmethod), h = 1, method = fmethod, level = level)
             forecasts = dummy$mean$y[1:length(holdoutdata)]
         }
         else {
@@ -37,13 +37,13 @@ dynupdate = function (data, newdata = NULL, holdoutdata, method = c("ts", "block
              }
              if (method == "pls") {
                  I = diag(dim(base)[2])
-                 pls = ginv(t(base1) %*% base1 + lambda * I) %*% (t(base1) %*% 
+                 pls = ginv(t(base1) %*% base1 + lambda * I) %*% (t(base1) %*%
                        newdata + lambda * fore)
                  forecasts = base2 %*% pls
              }
              if (method == "ridge") {
                  I = diag(dim(base)[2])
-                 ridg = ginv(t(base1) %*% base1 + lambda * I) %*% 
+                 ridg = ginv(t(base1) %*% base1 + lambda * I) %*%
                         (t(base1) %*% newdata)
                  forecasts = base2 %*% ridg
              }
@@ -52,16 +52,11 @@ dynupdate = function (data, newdata = NULL, holdoutdata, method = c("ts", "block
             return(forecasts)
         }
         else {
-             if (error == "mse") {
-                 err = mse(forecasts, holdoutdata)
-             }
-             if (error == "mae") {
-                 err = mae(forecasts, holdoutdata)
-             }
-             if (error == "mape") {
-                 err = mape(forecasts, holdoutdata)
-             }
-             return(list(error = err))
+             errmse = mse(forecasts, holdoutdata)
+             errmae = mae(forecasts, holdoutdata)
+             errmape = mape(forecasts, holdoutdata)
+             return(list(errormse = errmse, errormae = errmae, errormape = 
+             errmape))
         }
     }
     else {
@@ -69,18 +64,27 @@ dynupdate = function (data, newdata = NULL, holdoutdata, method = c("ts", "block
          p2 = (length(newdata)+1):p
          if (method == "pls"){
              output = plsPI(data, newdata, order, B, (100-level)/100, lambda)
-             return(list(forecasts = fts(p2, as.matrix(output$forecasts), xname = data$xname, yname = data$yname), 
-                    bootsamp = fts(p2, as.matrix(output$bootsamp), xname = data$xname, yname = data$yname), 
-                    low = fts(p2, as.matrix(output$low), xname = data$xname, yname = data$yname), 
-                    up = fts(p2, as.matrix(output$up), xname = data$xname, yname = data$yname)))
+             return(list(forecasts = fts(p2, as.matrix(output$forecasts), xname = 
+             data$xname, yname = data$yname),
+                    bootsamp = fts(p2, as.matrix(output$bootsamp), xname = 
+                    data$xname, yname = data$yname),
+                    low = fts(p2, as.matrix(output$low), xname = data$xname, yname 
+                    = data$yname),
+                    up = fts(p2, as.matrix(output$up), xname = data$xname, yname = 
+                    data$yname)))
          }
          if (method == "block"){
-             updata = data$y[(dim(as.matrix(newdata))[1] + 1):length(as.numeric(data$y))]
+             updata = data$y[(dim(as.matrix(newdata))[1] + 
+             1):length(as.numeric(data$y))]
              datamatrix = matrix(c(updata, newdata), p, )
-             dummy = forecast.ftsm(ftsm(fts(1:p, datamatrix), order), h = 1, method = fmethod, level = level)       
-             lb = fts(p2, as.matrix(dummy$lower$y[1:length(holdoutdata)]), xname = data$xname, yname = data$yname)
-             ub = fts(p2, as.matrix(dummy$upper$y[1:length(holdoutdata)]), xname = data$xname, yname = data$yname)
+             dummy = forecast.ftsm(ftsm(fts(1:p, datamatrix), order = order, ngrid = ngrid,
+             method = pcdmethod), h = 1, method = fmethod, level = level, pimethod = pimethod)
+             lb = fts(p2, as.matrix(dummy$lower$y[1:length(holdoutdata)]), xname = 
+             data$xname, yname = data$yname)
+             ub = fts(p2, as.matrix(dummy$upper$y[1:length(holdoutdata)]), xname = 
+             data$xname, yname = data$yname)
              return(list(low = lb, up = ub))
          }
     }
 }
+
