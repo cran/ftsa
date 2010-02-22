@@ -36,4 +36,3 @@ unitsimpls = function(Xtrain, Ytrain, Xtest = NULL, ncomp = NULL, weight = FALSE
                meanX = pls.out$meanX, meanY = pls.out$meanY)
       } 
 }
-

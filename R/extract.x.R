@@ -17,4 +17,3 @@ extract.x = function (data, xorder)
     rownames(ftsdata$y) = as.character(xorder)
     return(ftsdata)
 }
-

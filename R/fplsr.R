@@ -21,9 +21,10 @@ fplsr <- function (data, order = 6, type = c("simpls",
                           B = output$B, Ypred = fts(1:dim(Ytrain)[2], as.matrix(output$Ypred), xname = data$xname, yname = data$yname), 
                           P = output$P, Q = output$Q, T = output$T, R = output$R,
                           fitted = fts(1:dim(Xtrain)[2], fitted, xname = data$xname, yname = "Fitted values"),
-                          residuals = fts(1:dim(Xtrain)[2], residuals, xname = data$xname,
-                          yname = "Residual"), meanX = fts(1:dim(Xtrain)[2], as.matrix(colMeans(Xtrain)), xname = data$xname, yname = data$yname), 
-                          meanY = fts(1:dim(Ytrain)[2], as.matrix(colMeans(Ytrain)), xname = data$xname, yname = data$yname), call = match.call())
+                          residuals = fts(1:dim(Xtrain)[2], residuals, xname = data$xname, yname = "Residual"), 
+                          meanX = fts(1:dim(Xtrain)[2], as.matrix(colMeans(Xtrain)), xname = data$xname, yname = data$yname), 
+                          meanY = fts(1:dim(Ytrain)[2], as.matrix(colMeans(Ytrain)), xname = data$xname, yname = data$yname), 
+                                      call = match.call())
                 return(structure(out, class = "fm"))
             }
             else {
@@ -32,19 +33,18 @@ fplsr <- function (data, order = 6, type = c("simpls",
                 fitted = t(output$T%*%t(output$Q)) + colMeans(Ytrain)
                 residuals = t(Ytrain) - fitted
                 out = list(x1 = as.numeric(rownames(Xtrain)), y1 = as.numeric(colnames(Xtrain)),
-                          y = fts(1:dim(Ytrain)[2], t(Ytrain), xname = data$xname, yname = data$yname),
-                          B = output$B, Ypred = fts(1:dim(Ytrain)[2], as.matrix(output$Ypred), xname = data$xname, yname = data$yname), 
-                          P = output$P, Q = output$Q, T = output$T, R = output$R,
-                          fitted = fts(1:dim(Xtrain)[2], fitted, xname = data$xname, yname = "Fitted values"),
-                          residuals = fts(1:dim(Xtrain)[2], residuals, xname = data$xname,
-                          yname = "Residual"), meanX = fts(1:dim(Xtrain)[2], as.matrix(colMeans(Xtrain)), xname = data$xname, yname = data$yname), 
-                          meanY = fts(1:dim(Ytrain)[2], as.matrix(colMeans(Ytrain)), xname = data$xname, yname = data$yname), call = match.call())
+                           y = fts(1:dim(Ytrain)[2], t(Ytrain), xname = data$xname, yname = data$yname),
+                           B = output$B, Ypred = fts(1:dim(Ytrain)[2], as.matrix(output$Ypred), xname = data$xname, yname = data$yname), 
+                           P = output$P, Q = output$Q, T = output$T, R = output$R,
+                           fitted = fts(1:dim(Xtrain)[2], fitted, xname = data$xname, yname = "Fitted values"),
+                           residuals = fts(1:dim(Xtrain)[2], residuals, xname = data$xname,
+                           yname = "Residual"), meanX = fts(1:dim(Xtrain)[2], as.matrix(colMeans(Xtrain)), xname = data$xname, yname = data$yname), 
+                           meanY = fts(1:dim(Ytrain)[2], as.matrix(colMeans(Ytrain)), xname = data$xname, yname = data$yname), call = match.call())
                 return(structure(out, class = "fm"))
             }
         }
         else {
-             output = nipals(Xtrain, Ytrain, Xtest, order, weight = weight, 
-                             beta = beta)
+             output = nipals(Xtrain, Ytrain, Xtest, order, weight = weight, beta = beta)
              out = list(x1 = as.numeric(rownames(Xtrain)), y1 = as.numeric(colnames(Xtrain)),
                     y = fts(1:dim(Ytrain)[2], t(Ytrain), xname = data$xname, yname = data$yname),
                     B = output$B, Ypred = fts(1:dim(Ytrain)[2], matrix(output$Ypred, dim(Ytrain)[2],), xname = data$xname, yname = data$yname), 

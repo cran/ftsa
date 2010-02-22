@@ -5,21 +5,24 @@
 Computes the forecast error measure.
 }
 \usage{
-error(forecast, forecastbench, true, method = c("me", "mae", "mse", 
- "sse", "rmse", "mdae", "mdse", "mape", "mdape", "smape", 
+error(forecast, forecastbench, true, method = c("me", "mpe", "mae", 
+ "mse", "sse", "rmse", "mdae", "mdse", "mape", "mdape", "smape", 
   "smdape", "rmspe", "rmdspe", "mrae", "mdrae", "gmrae", 
-   "relmae", "relmse", "mase", "mdase", "rmsse"))
+   "relmae", "relmse", "mase", "mdase", "rmsse"), giveall = FALSE)
 }
 \arguments{
   \item{forecast}{Forecasted values.}
   \item{forecastbench}{Forecasted values using a benchmark method, such as random walk.}
   \item{true}{Observed values.}
   \item{method}{Method of forecast error measure.}
+  \item{giveall}{If \code{giveall = TRUE}, all error measures are provided.}
 }
 \details{
 \emph{\bold{Bias measure}}:
 
 If \code{method = "me"}, the forecast error measure is mean error.
+
+If \code{method = "mpe"}, the forecast error measure is mean percentage error.
 
 \emph{\bold{Forecast accuracy error measure}}:
 

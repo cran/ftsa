@@ -1,7 +1,6 @@
 forecast.ftsm2 = function (object, h = 50, method = c("arima", "ar", "ets", "ets.na", 
-    "struct", "rwdrift", "rw"), level = 80, jumpchoice = c("fit", 
-    "actual"), usedata = nrow(object$coeff), adjust = TRUE, model = NULL, 
-    damped = NULL, stationary = FALSE, ...) 
+    "struct", "rwdrift", "rw"), level = 80, jumpchoice = c("fit", "actual"), usedata = nrow(object$coeff), 
+     adjust = TRUE, model = NULL, damped = NULL, stationary = FALSE, ...) 
 {
     method <- match.arg(method)
     jumpchoice <- match.arg(jumpchoice)

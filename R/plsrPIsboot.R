@@ -81,4 +81,3 @@ plsrPIsboot = function (X, Y, Xnew, ncomp, B, alpha, weight, beta = .1)
     }
     return(list(bootsamp = t(predictvalue + resibb), lb = q1, ub = q2))
 }
-

@@ -2,4 +2,3 @@
 {
     inherits(x, "fts") & length(x$x) > 0
 }
-

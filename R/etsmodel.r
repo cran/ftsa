@@ -82,7 +82,7 @@ etsmodel = function (y, errortype, trendtype, seasontype, damped, alpha = NULL,
         fits <- y - e$e
     else fits <- y/(1 + e$e)
     return(list(loglik = -0.5 * e$lik, aic = aic, bic = bic,
-        aicc = aicc, mse = mse, amse = amse, fit = fred, residuals = ts(e$e,
+           aicc = aicc, mse = mse, amse = amse, fit = fred, residuals = ts(e$e,
             f = m, s = tsp.y[1]), fitted = ts(fits, f = m, s = tsp.y[1]),
-        states = states, par = fit.par))
+             states = states, par = fit.par))
 }

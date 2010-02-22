@@ -117,5 +117,3 @@
                  Xtotvar = Xtotvar)
     }
 }
-
-

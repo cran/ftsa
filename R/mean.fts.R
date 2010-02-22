@@ -1,5 +1,5 @@
 `mean.fts` <- function (x, method = c("coordinate", "FM", "mode", "RP", "RPD"), 
-                        na.rm = TRUE, ...) 
+                         na.rm = TRUE, ...) 
 {
    if (class(x)[1] == "fts"|class(x)[1] == "fds"|class(x)[1] == "sfts"){
        method = match.arg(method)
@@ -27,4 +27,3 @@
         stop("Not a functional object.")
    }
 }
-

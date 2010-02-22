@@ -11,7 +11,7 @@
       z = z/sqrt(modulo)
       valor = functions %*% z
       Fn = ecdf(valor)
-      prof = prof + (Fn(valor) * (1-Fn(valor-xeps)))
+      prof = prof + (Fn(valor) * (1 - Fn(valor - xeps)))
   }
   prof = prof / nproj
   k = which.max(prof)
@@ -34,12 +34,11 @@
       for(i in 1:n){
           lines(x, functions[i,], col = gray(cgray[i]))
       }
-  lines(x, mtrim, lwd=2, col = "yellow")
-  lines(x,med, col="red", lwd = 2) 
+      lines(x, mtrim, lwd=2, col = "yellow")
+      lines(x,med, col="red", lwd = 2) 
   }
   legend("topleft", legend = c(paste("Trim", trim*100, "\u0025", sep = ""), "Median"), lwd = 2, col =
          c("yellow", "red"))
   }  
   return(list("median" = med, "lmed" = k, "mtrim" = mtrim, "ltrim" = lista, "prof" = prof, "proj" = z))
 }
-

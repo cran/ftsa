@@ -1,3 +1,8 @@
+v 1.5
+
+1. Update the ftsa:::me function
+2. Add the ftsa:::mpe function
+
 v 1.4
 
 1. Update dynupdate function to incorporate three ways of computing functional principal component analysis.
@@ -15,6 +20,3 @@ v 1.1
 
 1. Update the references
 2. Correct the yname of a functional object
-
-
-

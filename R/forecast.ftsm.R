@@ -1,8 +1,6 @@
 `forecast.ftsm` <- function (object, h = 10, method = c("ets", "arima", "ar", "ets.na", 
-    "rwdrift", "rw"), level = 80, jumpchoice = c("fit", "actual"), 
-    pimethod = c("parametric", "nonparametric"), B = 100, usedata = nrow(object$coeff), 
-    adjust = TRUE, model = NULL, damped = NULL, 
-    stationary = FALSE, ...) 
+    "rwdrift", "rw"), level = 80, jumpchoice = c("fit", "actual"), pimethod = c("parametric", "nonparametric"), 
+     B = 100, usedata = nrow(object$coeff), adjust = TRUE, model = NULL, damped = NULL, stationary = FALSE, ...) 
 {
     method <- match.arg(method)
     jumpchoice <- match.arg(jumpchoice)

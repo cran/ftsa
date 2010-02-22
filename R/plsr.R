@@ -13,4 +13,3 @@ plsr = function (Xtrain, Ytrain, Xtest, ncomp = NULL, type = c("simpls", "nipals
         return(nipals(Xtrain, Ytrain, Xtest, ncomp, weight = weight, beta = beta))
   }
 }
-

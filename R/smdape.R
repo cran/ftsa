@@ -5,4 +5,3 @@
      err = median(200 * (true - forecast) / (true + forecast))
      return(round(err, 6))
 }
-

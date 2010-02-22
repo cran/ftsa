@@ -1,6 +1,6 @@
 ftsm <- function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classical", 
     "M", "rapca"), mean = TRUE, level = FALSE, lambda = 3, weight = FALSE, 
-    beta = 0.1, ...) 
+     beta = 0.1, ...) 
 {
     method <- match.arg(method)
     if (!mean & !level & order < 1) 

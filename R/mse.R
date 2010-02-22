@@ -5,4 +5,3 @@
     err = mean((true - forecast)^2)
     return(round(err, 6))
 }
-

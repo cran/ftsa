@@ -45,5 +45,3 @@ fbootstrap = function(data, estad = func.mean, alpha = 0.05, nb = 200, suav = 0.
   return(list("estimate" = estmues, "max.dist" = dist, "rep.dist" = distboot, "resamples" = estboot,
          "center" = centro))    
 }
-
-

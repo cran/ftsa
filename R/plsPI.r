@@ -62,5 +62,3 @@ plsPI = function (data, newdata, order, B, alpha, lambda)
     forecasts = apply(bootsamp, 1, mean)
     return(list(forecasts = forecasts, bootsamp = bootsamp, low = w1, up = w2))
 }
-
-
