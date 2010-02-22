@@ -35,4 +35,3 @@ function (x, y = NULL, n = 3 * length(x), method = "fmm", xmin = min(x),
         z$n, z$x, z$y, z$b, z$c, z$d, PACKAGE = "stats")[c("x", 
         "y")]
 }
-

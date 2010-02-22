@@ -6,4 +6,3 @@ function(forecast, true)
      err = mean(200 * (true - forecast) / (true + forecast))
      return(round(err, 6))
 }
-

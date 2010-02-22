@@ -11,4 +11,3 @@ plot.fmres <- function (x, type = c("image", "fts", "contour", "filled.contour",
     )
     box()
 }
-

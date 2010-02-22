@@ -5,4 +5,3 @@
      err = sqrt(mean((100 * (true - forecast) / true)^2))
      return(round(err, 6))
 }
-

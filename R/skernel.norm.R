@@ -1,2 +1,4 @@
-`skernel.norm` <- function(x){sum(dnorm(x))}
-
+`skernel.norm` <- function(x)
+{
+ sum(dnorm(x))
+}

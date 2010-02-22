@@ -1,9 +1,7 @@
-ets = function (y, model = "ZZZ", damped = NULL, alpha = NULL, beta = NULL,
-    gamma = NULL, phi = NULL, additive.only = FALSE, lower = c(rep(0.01,
-        3), 0.8), upper = c(rep(0.99, 3), 0.98), opt.crit = c("lik",
-        "amse", "mse", "sigma"), nmse = 3, bounds = c("both",
-        "usual", "admissible"), ic = c("aic", "aicc", "bic"),
-    restrict = TRUE)
+ets = function (y, model = "ZZZ", damped = NULL, alpha = NULL, beta = NULL, gamma = NULL, phi = NULL, 
+       additive.only = FALSE, lower = c(rep(0.01, 3), 0.8), upper = c(rep(0.99, 3), 0.98), 
+        opt.crit = c("lik", "amse", "mse", "sigma"), nmse = 3, bounds = c("both",
+        "usual", "admissible"), ic = c("aic", "aicc", "bic"), restrict = TRUE)
 {
     opt.crit <- match.arg(opt.crit)
     bounds <- match.arg(bounds)

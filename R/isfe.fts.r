@@ -1,6 +1,6 @@
 `isfe.fts` <- function (data, max.order = N - 3, N = 10, h = 5:10, method = c("classical", 
-              "M", "rapca"), mean = TRUE, level = FALSE, fmethod = c("arima", "ets", 
-			  "ets.na", "struct", "rwdrift", "rw"), lambda = 3, ...) 
+               "M", "rapca"), mean = TRUE, level = FALSE, fmethod = c("arima", "ets", 
+  			   "ets.na", "struct", "rwdrift", "rw"), lambda = 3, ...) 
 {
     method <- match.arg(method)
     fmethod <- match.arg(fmethod)
@@ -14,4 +14,3 @@
     colnames(isfe.vec) <- h
     return(isfe.vec)
 }
-

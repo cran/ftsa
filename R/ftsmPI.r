@@ -24,8 +24,7 @@ ftsmPI <- function (object, B, level, h, fmethod = c("ets", "arima"))
          }
          else {
               for (j in 1:ncomp) {
-                   fore[, j] = forecast(auto.arima(sco[1:k, j]), 
-                                        h = 1)$mean
+                   fore[, j] = forecast(auto.arima(sco[1:k, j]), h = 1)$mean
               }
          }
          forerr[i, ] = sco[k + 1, ] - fore
@@ -64,5 +63,4 @@ ftsmPI <- function (object, B, level, h, fmethod = c("ets", "arima"))
         }
     }
     return(list(bootsamp = pred, lb = k1, ub = k))
-}
-  
+}  

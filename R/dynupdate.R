@@ -55,8 +55,7 @@ dynupdate = function (data, newdata = NULL, holdoutdata, method = c("ts", "block
              errmse = mse(forecasts, holdoutdata)
              errmae = mae(forecasts, holdoutdata)
              errmape = mape(forecasts, holdoutdata)
-             return(list(errormse = errmse, errormae = errmae, errormape = 
-             errmape))
+             return(list(errormse = errmse, errormae = errmae, errormape = errmape))
         }
     }
     else {
@@ -69,9 +68,9 @@ dynupdate = function (data, newdata = NULL, holdoutdata, method = c("ts", "block
                     bootsamp = fts(p2, as.matrix(output$bootsamp), xname = 
                     data$xname, yname = data$yname),
                     low = fts(p2, as.matrix(output$low), xname = data$xname, yname 
-                    = data$yname),
-                    up = fts(p2, as.matrix(output$up), xname = data$xname, yname = 
-                    data$yname)))
+                              = data$yname),
+                    up = fts(p2, as.matrix(output$up), xname = data$xname, yname 
+                              = data$yname)))
          }
          if (method == "block"){
              updata = data$y[(dim(as.matrix(newdata))[1] + 
@@ -80,11 +79,10 @@ dynupdate = function (data, newdata = NULL, holdoutdata, method = c("ts", "block
              dummy = forecast.ftsm(ftsm(fts(1:p, datamatrix), order = order, ngrid = ngrid,
              method = pcdmethod), h = 1, method = fmethod, level = level, pimethod = pimethod)
              lb = fts(p2, as.matrix(dummy$lower$y[1:length(holdoutdata)]), xname = 
-             data$xname, yname = data$yname)
+                      data$xname, yname = data$yname)
              ub = fts(p2, as.matrix(dummy$upper$y[1:length(holdoutdata)]), xname = 
-             data$xname, yname = data$yname)
+                      data$xname, yname = data$yname)
              return(list(low = lb, up = ub))
          }
     }
 }
-

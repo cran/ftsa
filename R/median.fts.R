@@ -29,4 +29,3 @@
          stop("Not a functional object.")
     }
 }
-

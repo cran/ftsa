@@ -2,4 +2,3 @@
 {
   depth.RPD(data, trim = trim, deriv = deriv)$mtrim
 }
-

@@ -86,5 +86,3 @@ simpls = function(Xtrain, Ytrain, Xtest, ncomp = NULL, weight = FALSE, beta = 0.
             list(B = B, P = PP, Q = QQ, T = TT, R = RR)
         }
 }
-
-

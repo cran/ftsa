@@ -4,4 +4,3 @@
   lista = depth.mode(data, trim = trim)$ltrim; 
   func.var(functions[lista,])
 }
-

@@ -4,11 +4,11 @@ extract.time = function (data, timeorder)
     y = data$y
     index=vector(,length(timeorder))
     if (length(timeorder) == 1){
-        index = which(as.numeric(colnames(y))==timeorder)
+        index = which(as.numeric(colnames(y)) == timeorder)
     }
     if (length(timeorder) > 1){
         for(i in 1:length(timeorder)){
-            index[i] = which(as.numeric(colnames(y))==timeorder[i])
+            index[i] = which(as.numeric(colnames(y)) == timeorder[i])
         }    
     }
     newdata = as.matrix(y[, index])

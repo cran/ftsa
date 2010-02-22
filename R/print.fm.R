@@ -15,4 +15,3 @@ print.fm = function (x, ...)
          stop("object is not a functional model.")
     }
 }
-

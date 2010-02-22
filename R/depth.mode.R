@@ -44,4 +44,3 @@
      }
  return(list("median" = med, "lmed" = k, "mtrim" = mtrim, "ltrim" = lista, "prof" = ans, "dist" = mdist))
 }
-
