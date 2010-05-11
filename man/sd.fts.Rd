@@ -43,11 +43,11 @@ M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2008) "Outlier detection in 
 \seealso{\code{\link[ftsa]{mean.fts}}, \code{\link[ftsa]{median.fts}}, \code{\link[ftsa]{var.fts}}, 
 \code{\link[ftsa]{quantile.fts}}}
 \examples{
-sd(x = ausmale, method = "coordinate")
-sd(x = ausmale, method = "FM")
-sd(x = ausmale, method = "mode")
-sd(x = ausmale, method = "RP")
-sd(x = ausmale, method = "RPD")
+sd(x = ElNino, method = "coordinate")
+sd(x = ElNino, method = "FM")
+sd(x = ElNino, method = "mode")
+sd(x = ElNino, method = "RP")
+sd(x = ElNino, method = "RPD")
 }
 \keyword{methods}
 

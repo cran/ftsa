@@ -9,7 +9,7 @@ method allowing missing values (\code{method = "ets.na"}), or a random walk with
 components to obtain a forecast curve.}
 \usage{
 forecast.ftsm(object, h = 10, method = c("ets", "arima", "ar", "ets.na", 
- "rwdrift", "rw"), level = 80, jumpchoice = c("fit", "actual"), 
+ "rwdrift", "rw", "struct", "arfima"), level = 80, jumpchoice = c("fit", "actual"), 
   pimethod = c("parametric", "nonparametric"), B = 100, 
    usedata = nrow(object$coeff), adjust = TRUE, model = NULL,
     damped = NULL, stationary = FALSE, ...)

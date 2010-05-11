@@ -1,8 +1,8 @@
 export(
 is.fts,
-cm.spline,
 extract,
 ftsm,
+plot.ftsm,
 plot.fm,
 plot.fmres,
 forecast.ftsm,

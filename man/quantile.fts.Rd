@@ -20,7 +20,7 @@ Return quantiles for each variable.
 \code{\link[ftsa]{mean.fts}}, \code{\link[ftsa]{median.fts}}, \code{\link[ftsa]{var.fts}}, \code{\link[ftsa]{sd.fts}}
 }
 \examples{
-quantile(x = ausmale)
+quantile(x = ElNino)
 }
 \keyword{methods}
 

@@ -1,6 +1,8 @@
-`forecast.ftsm` <- function (object, h = 10, method = c("ets", "arima", "ar", "ets.na", 
-    "rwdrift", "rw"), level = 80, jumpchoice = c("fit", "actual"), pimethod = c("parametric", "nonparametric"), 
-     B = 100, usedata = nrow(object$coeff), adjust = TRUE, model = NULL, damped = NULL, stationary = FALSE, ...) 
+forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets.na", 
+    "rwdrift", "rw", "struct", "arfima"), level = 80, jumpchoice = c("fit", "actual"), 
+    pimethod = c("parametric", "nonparametric"), B = 100, usedata = nrow(object$coeff), 
+    adjust = TRUE, model = NULL, damped = NULL, stationary = FALSE, 
+    ...) 
 {
     method <- match.arg(method)
     jumpchoice <- match.arg(jumpchoice)
@@ -23,10 +25,12 @@
         stop("Unknown jump choice")
     nb <- ncol(object$basis)
     l <- nrow(object$coeff)
-    if (method == "ar") 
+    
+    if(method=="ar" | method=="arfima")
         stationary <- TRUE
-    if (any(stationary) == TRUE) 
-        method = "arima"
+    if(any(stationary)==TRUE & !(method == "arima" | method == "ar" | method == "arfima"))
+        stop("Choose a stationary method")
+  
     meanfcast <- varfcast <- matrix(NA, nrow = h, ncol = nb)
     obs <- fitted <- matrix(NA, nrow = l, ncol = nb)
     qconf <- qnorm(0.5 + level/200)
@@ -81,39 +85,24 @@
         else if (length(stationary) == nb - 1) 
             stationary <- c(TRUE, stationary)
         else stop("Length of stationary does not match number of coefficients")
-        for (i in 1:nb) {
-            if (var(xx[, i], na.rm = TRUE) < 1e-08) {
-                cc <- mean(xx[, i], na.rm = TRUE)
-                fmodels[[i]] <- list("Constant", cc)
-                meanfcast[, i] <- rep(cc, h)
-                varfcast[, i] <- rep(0, h)
-                fitted[, i] <- rep(cc, length(xx[, i]))
+        for(i in 1:nb)
+        {
+            if(var(xx[,i],na.rm=TRUE) < 1e-8)
+            {
+                cc <- mean(xx[,i],na.rm=TRUE)
+                fmodels[[i]] <- list("Constant",cc)
+                meanfcast[,i] <- rep(cc,h)
+                varfcast[,i] <- rep(0,h)
+                fitted[,i] <- rep(cc,length(xx[,i]))
             }
-            else {
-                if (stationary[i]) {
-                  .xxi <- xx[, i]
-                  old.warn <- options(warn = -1)
-                  my.ar <- function(x, max.p = 5, aic = TRUE, 
-                    ...) {
-                    .xxi <- x
-                    fit <- ar(.xxi, method = "mle", order = max.p, 
-                      aic = aic)
-                    assign(".xxi", .xxi, envir = .GlobalEnv)
-                    return(fit)
-                  }
-                  barima <- my.ar(xx[, i], ...)
-                  options(old.warn)
-                  fitted[, i] <- xx[, i] - barima$resid
-                }
-                else {
-                  barima <- auto.arima(xx[, i], ...)
-                  fitted[, i] <- fitted(barima)
-                }
-                pred <- forecast(barima, h = h, level = level)
+            else
+            {
+                barima <- auto.arima(xx[,i],stationary=stationary[i],...)
+                fitted[,i] <- fitted(barima)
+                pred <- forecast(barima,h=h,level=level)
                 fmodels[[i]] <- pred
-                meanfcast[, i] <- pred$mean
-                varfcast[, i] <- ((pred$upper[, 1] - pred$lower[, 
-                  1])/(2 * qconf[1]))^2
+                meanfcast[,i] <- pred$mean
+                varfcast[,i] <- ((pred$upper[,1]-pred$lower[,1])/(2*qconf[1]))^2
             }
         }
     }
@@ -133,6 +122,49 @@
             meanfcast[, i] <- rep(object$coeff[l, i], h)
             varfcast[, i] <- (1:h) * fmodels[[i]][[2]]
             fitted[, i] <- c(NA, diff(x[, i]))
+        }
+    }
+    else if(method=="struct")
+    {
+         for (i in 1:nb)
+         {
+            if(var(xx[,i],na.rm=TRUE) < 1e-8)
+            {
+                cc <- mean(xx[,i],na.rm=TRUE)
+                meanfcast[,i] <- rep(cc,h)
+                varfcast[,i] <- rep(0,h)
+                fitted[,i] <- rep(cc,length(xx[,i]))
+            }
+            else
+            {
+                    fitStruct <- struct.forecast(xx[,i],h=h,level=level,...)
+                    meanfcast[,i] <- fitStruct$mean
+                    varfcast[,i] <- fitStruct$var
+                    fitted[,i] <- fitStruct$fitted
+            }
+        }
+    }
+    else if(method=="arfima")
+    {
+        for(i in 1:nb)
+        {
+            if(var(xx[,i],na.rm=TRUE) < 1e-8)
+            {
+                cc <- mean(xx[,i],na.rm=TRUE)
+                fmodels[[i]] <- list("Constant",cc)
+                meanfcast[,i] <- rep(cc,h)
+                varfcast[,i] <- rep(0,h)
+                fitted[,i] <- rep(cc,length(xx[,i]))
+            }
+            else
+            {
+                barfima <- arfima(xx[,i])
+                fitted[,i] <- fitted(barfima)
+                pred <- forecast(barfima,h=h,level=level)
+                fmodels[[i]] <- pred
+                meanfcast[,i] <- pred$mean
+                varfcast[,i] <- ((pred$upper[,1]-pred$lower[,1])/(2*qconf[1]))^2
+            }
         }
     }
     else stop("Unknown method")
@@ -176,17 +208,19 @@
         }
         names(coeff) <- paste("Basis", 1:nb)
         return(structure(list(mean = fmean, lower = flower, upper = fupper, 
-               fitted = onestepfcast, error = ferror, coeff = coeff, 
-               coeff.error = error, var = list(model = modelvar, 
-               error = vx, mean = object$mean.se^2, total = totalvar, 
-               coeff = varfcast, adj.factor = adj.factor), model = object), 
-               class = "ftsf"))
+            fitted = onestepfcast, error = ferror, coeff = coeff, 
+            coeff.error = error, var = list(model = modelvar, 
+                error = vx, mean = object$mean.se^2, total = totalvar, 
+                coeff = varfcast, adj.factor = adj.factor), model = object), 
+            class = "ftsf"))
     }
     else {
-         junk = ftsmPI(object, B = B, level = level, h = h, fmethod = "ets")
-         lb = fts(object$y$x, junk$lb, s = ytsp[2] + 1, f = ytsp[3], xname = object$y$xname, yname = "Forecast lower limit")
-         ub = fts(object$y$x, junk$ub, s = ytsp[2] + 1, f = ytsp[3], xname = object$y$xname, yname = "Forecast upper limit")
-         return(structure(list(mean = fmean, bootsamp = junk$bootsamp, 
-                lower = lb, upper = ub, model = object), class = "ftsf"))
+        junk = ftsmPI(object, B = B, level = level, h = h, fmethod = "ets")
+        lb = fts(object$y$x, junk$lb, s = ytsp[2] + 1, f = ytsp[3], 
+            xname = object$y$xname, yname = "Forecast lower limit")
+        ub = fts(object$y$x, junk$ub, s = ytsp[2] + 1, f = ytsp[3], 
+            xname = object$y$xname, yname = "Forecast upper limit")
+        return(structure(list(mean = fmean, bootsamp = junk$bootsamp, 
+            lower = lb, upper = ub, model = object), class = "ftsf"))
     }
 }

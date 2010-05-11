@@ -39,12 +39,12 @@ M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2008) "Outlier detection in 
 \author{Rob J Hyndman, Han Lin Shang}
 \seealso{\code{\link[ftsa]{mean.fts}}, \code{\link[ftsa]{var.fts}}, \code{\link[ftsa]{sd.fts}}, \code{\link[ftsa]{quantile.fts}}}
 \examples{
-median(x = ausmale, method = "hossjercroux")
-median(x = ausmale, method = "coordinate")
-median(x = ausmale, method = "FM")
-median(x = ausmale, method = "mode")
-median(x = ausmale, method = "RP")
-median(x = ausmale, method = "RPD")
+median(x = ElNino, method = "hossjercroux")
+median(x = ElNino, method = "coordinate")
+median(x = ElNino, method = "FM")
+median(x = ElNino, method = "mode")
+median(x = ElNino, method = "RP")
+median(x = ElNino, method = "RPD")
 }
 \keyword{methods}
 
