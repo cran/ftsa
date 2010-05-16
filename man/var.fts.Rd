@@ -38,11 +38,11 @@ M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2008) "Outlier detection in 
 \author{Han Lin Shang}
 \seealso{\code{\link[ftsa]{mean.fts}}, \code{\link[ftsa]{median.fts}}, \code{\link[ftsa]{sd.fts}}, \code{\link[ftsa]{quantile.fts}}}
 \examples{
-var(x = ausmale, method = "coordinate")
-var(x = ausmale, method = "FM")
-var(x = ausmale, method = "mode")
-var(x = ausmale, method = "RP")
-var(x = ausmale, method = "RPD")
+var(x = ElNino, method = "coordinate")
+var(x = ElNino, method = "FM")
+var(x = ElNino, method = "mode")
+var(x = ElNino, method = "RP")
+var(x = ElNino, method = "RPD")
 }
 \keyword{methods}
 

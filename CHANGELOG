@@ -1,3 +1,11 @@
+v 1.7
+
+1. Change the package dependency of fds
+2. Update the forecast.ftsm() function (allowing struct and arfima models, and fixing the way stationary models are used)
+3. Update the isfe.fts() function (adding ar and arfima as possible forecast methods)
+4. Make plot.ftsm visible
+5. Update plot.ftsm to allow plotting specific components
+
 v 1.6
 
 1. Update the JCGS reference
