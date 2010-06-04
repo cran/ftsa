@@ -158,7 +158,7 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
             }
             else
             {
-                barfima <- arfima(xx[,i])
+                barfima <- arfima(xx[,i],...)
                 fitted[,i] <- fitted(barfima)
                 pred <- forecast(barfima,h=h,level=level)
                 fmodels[[i]] <- pred
