@@ -30,6 +30,7 @@ ftsm <- function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classic
         wq = diag(rev(q))
         newy2 = wq %*% newy
         load = svd(newy2)$v[,1:(order)]
+		varprop = svd(t(t(newy2)+my))$d[1:order]/sum(svd(t(t(newy2)+my))$d)
         sco = newy%*%load
     }
     ytsp <- tsp(y$time)
@@ -66,7 +67,7 @@ ftsm <- function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classic
     else {
         out <- list(x1 = as.numeric(colnames(y$y)), y1 = as.numeric(rownames(y$y)),
              y = fts(y$x, y2, xname=y$xname, yname=y$yname), basis = basis, coeff = coeff, 
-             fitted = fits, residuals = res, wt = rev(q), mean.se = mean.se,
+             fitted = fits, residuals = res, varprop = varprop, wt = rev(q), mean.se = mean.se,
 			 call = match.call())
     }
     return(structure(out, class = c("ftsm", "fm")))
