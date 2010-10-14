@@ -28,9 +28,15 @@
             if(i==1)
                 title(interaction.title)
             plot.ts(x$coeff[,m+i],xlab=xlab2,ylab=yl2,col=coeffcol,...)
-            if(!is.null(x$weights))
-                points(time(x$coeff)[x$weights<0.1],x$coeff[x$weights<0.1,i+m],
-                        pch=outlier.pch,col=outlier.col,cex=outlier.cex)
+            if (!is.null(x$wt))
+            {
+                if(sum(x$wt < 0.1)/length(x$wt) < 0.2)
+                { 
+                   points(time(x$coeff)[x$wt < 0.1], x$coeff[x$wt < 
+                       0.1, i + m], pch = outlier.pch, col = outlier.col, 
+                       cex = outlier.cex)
+                } 
+            }
         }
     }
     par(oldpar)
