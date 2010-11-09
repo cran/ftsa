@@ -4,7 +4,7 @@
    if (class(x)[1] == "fts"|class(x)[1] == "fds"|class(x)[1] == "sfts"){
        method = match.arg(method)
        if (method == "coordinate"){
-          loc <- colMeans(x$y, na.rm = na.rm)
+          loc <- rowMeans(x$y, na.rm = na.rm)
        }
        if (method == "FM"){
           loc <- depth.FM(x)$mtrim

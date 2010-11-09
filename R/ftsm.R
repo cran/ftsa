@@ -1,6 +1,6 @@
-ftsm <- function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classical", 
+ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classical", 
     "M", "rapca"), mean = TRUE, level = FALSE, lambda = 3, weight = FALSE, 
-     beta = 0.1, ...) 
+    beta = 0.1, ...) 
 {
     method <- match.arg(method)
     if (!mean & !level & order < 1) 
@@ -13,40 +13,43 @@ ftsm <- function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classic
         y.pca <- fdpca(y$x, y$y, order = order, ngrid = ngrid, 
             method = method, mean = mean, level = level, lambda = lambda, 
             ...)
+		mean.se = y.pca$mean.se
     }
-	mean.se = fdpca(y$x, y$y, order = order, ngrid = ngrid, 
-                    method = method, mean = mean, level = level, lambda = lambda, 
-                    ...)$mean.se
     if (weight == TRUE) {
         newy = scale(t(y$y), scale = FALSE)
         my = apply(y$y, 1, mean)
         x = y$x
         y2 = y$y
         n = dim(y$y)[2]
-        q = matrix(, n, 1)
-        for (i in 1:n) {
-            q[i, ] = beta * (1 - beta)^(i - 1)
-        }
+		q <- beta * (1-beta)^(0:(n-1))
         wq = diag(rev(q))
         newy2 = wq %*% newy
-        load = svd(newy2)$v[,1:(order)]
-		varprop = svd(t(t(newy2)+my))$d[1:order]/sum(svd(t(t(newy2)+my))$d)
-        sco = newy%*%load
-    }
+        dummy = svd(newy2)
+		load = dummy$v[, 1:(order)]
+        sco = newy %*% load
+		varprop = (dummy$d[1:order])^2/(sum((dummy$d[1:order])^2))        
+		yy = matrix(, nrow = ngrid, ncol = n)
+		xx = seq(min(x), max(x), l = ngrid)
+		for(i in 1:n)
+        {
+            miss = is.na(newy2[i,])
+            yy[,i] = spline(x[!miss],newy2[i,!miss],n=ngrid)$y
+        }
+		mean.se = approx(xx,sqrt(apply(yy,1,var)/n),xout=x)$y
+	}
     ytsp <- tsp(y$time)
     if (weight == TRUE) {
-        coeff <- ts(cbind(rep(1, dim(y$y)[2]), sco), 
-                    s = ytsp[1], f = ytsp[3])
+        coeff <- ts(cbind(rep(1, dim(y$y)[2]), sco), s = ytsp[1], 
+            f = ytsp[3])
     }
     else {
         coeff <- ts(y.pca$coeff, s = ytsp[1], f = ytsp[3])
     }
     if (weight == TRUE) {
         basis <- cbind(my, load)
-        colnames(basis) = c("mean", paste("phi", 1:order, sep=""))
-        fits <- fts(y$x, load %*% t(sco) + my, s = ytsp[1], 
-            f = ytsp[3], xname = y$xname, yname = paste("Fitted", 
-                y$yname))
+        colnames(basis) = c("mean", paste("phi", 1:order, sep = ""))
+        fits <- fts(y$x, load %*% t(sco) + my, s = ytsp[1], f = ytsp[3], 
+            xname = y$xname, yname = paste("Fitted", y$yname))
     }
     else {
         basis <- y.pca$basis
@@ -57,18 +60,20 @@ ftsm <- function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classic
     res <- fts(y$x, y$y - fits$y, s = ytsp[1], f = ytsp[3], xname = y$xname, 
         yname = paste("Residuals", y$yname))
     if (weight == FALSE) {
-        out <- list(x1 = as.numeric(colnames(y$y)), y1 = as.numeric(rownames(y$y)),
-                    y = fts(y$x, y$y, xname=y$xname, yname=y$yname), basis = basis, coeff = coeff, 
-		    fitted = fits, residuals = res, varprop = y.pca$varprop, wt = ts(y.pca$weights, 
-                    s = ytsp[1], f = ytsp[3]), v = ts(y.pca$v, s = ytsp[1], 
-                    f = ytsp[3]), basis2 = y.pca$basis2, coeff2 = y.pca$coeff2, 
-                    mean.se = mean.se, call = match.call())
+        out <- list(x1 = as.numeric(colnames(y$y)), y1 = as.numeric(rownames(y$y)), 
+            y = fts(y$x, y$y, xname = y$xname, yname = y$yname), 
+            basis = basis, coeff = coeff, fitted = fits, residuals = res, 
+            varprop = y.pca$varprop, wt = ts(y.pca$weights, s = ytsp[1], 
+                f = ytsp[3]), v = ts(y.pca$v, s = ytsp[1], f = ytsp[3]), 
+            basis2 = y.pca$basis2, coeff2 = y.pca$coeff2, mean.se = mean.se, 
+            call = match.call())
     }
     else {
-        out <- list(x1 = as.numeric(colnames(y$y)), y1 = as.numeric(rownames(y$y)),
-             y = fts(y$x, y2, xname=y$xname, yname=y$yname), basis = basis, coeff = coeff, 
-             fitted = fits, residuals = res, varprop = varprop, wt = rev(q), mean.se = mean.se,
-			 call = match.call())
+        out <- list(x1 = as.numeric(colnames(y$y)), y1 = as.numeric(rownames(y$y)), 
+            y = fts(y$x, y2, xname = y$xname, yname = y$yname), 
+            basis = basis, coeff = coeff, fitted = fits, residuals = res, 
+            varprop = varprop, wt = rev(q), mean.se = mean.se, 
+            call = match.call())
     }
     return(structure(out, class = c("ftsm", "fm")))
 }

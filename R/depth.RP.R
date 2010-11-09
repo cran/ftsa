@@ -22,6 +22,8 @@
       lista = which(prof >= quantile(prof, probs = trim[j], na.rm = TRUE))
       mtrim[j,] = apply(functions[lista,],2,mean)
   }
+  colnames(mtrim) = data$x
+  mtrim = as.data.frame(mtrim, row.names = "")   
   if(graph){cgray = 1 - (prof - min(prof)) / (max(prof) - min(prof))
   if(p == 2){
       plot(range(functions[,1]), range(functions[,2]), type = "n")
@@ -42,3 +44,4 @@
   }  
   return(list("median" = med, "lmed" = k, "mtrim" = mtrim, "ltrim" = lista, "prof" = prof, "proj" = z))
 }
+

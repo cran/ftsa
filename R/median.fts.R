@@ -6,7 +6,7 @@
             loc <- L1median2(t(x$y), method = "hossjercroux")
         }
         if (method == "coordinate"){
-            loc <- apply(x$y,2,median.default)
+            loc <- apply(x$y,1,median.default)
         }
         if (method == "FM"){
             loc <- depth.FM(x)$median
