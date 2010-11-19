@@ -27,14 +27,16 @@ ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classica
         dummy = svd(newy2)
 		load = dummy$v[, 1:(order)]
         sco = newy %*% load
-		varprop = (dummy$d[1:order])^2/(sum((dummy$d[1:order])^2))        
-		yy = matrix(, nrow = ngrid, ncol = n)
-		xx = seq(min(x), max(x), l = ngrid)
-		for(i in 1:n)
-        {
-            miss = is.na(newy2[i,])
-            yy[,i] = spline(x[!miss],newy2[i,!miss],n=ngrid)$y
-        }
+		n = nrow(newy2)
+        yy <- matrix(NA, nrow = ngrid, ncol = n)
+        xx = seq(min(x), max(x), l = ngrid)
+		for (i in 1:n) {
+             miss <- is.na(newy2[i,])
+             yy[, i] <- spline(x[!miss], t(newy2)[!miss,i], n = ngrid)$y
+	    }
+        V <- rep(1, ngrid) * t(yy)
+        dummy <- La.svd(V)
+		varprop = (dummy$d[1:order])^2/(sum((dummy$d)^2))
 		mean.se = approx(xx,sqrt(apply(yy,1,var)/n),xout=x)$y
 	}
     ytsp <- tsp(y$time)
