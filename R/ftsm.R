@@ -16,29 +16,26 @@ ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classica
 		mean.se = y.pca$mean.se
     }
     if (weight == TRUE) {
-        newy = scale(t(y$y), scale = FALSE)
-        my = apply(y$y, 1, mean)
+        q <- beta * (1 - beta)^(0:(n - 1))
+        my <- apply(y$y,1,weighted.mean,w=q)
+        newy <- sweep(t(y$y),2,my)
         x = y$x
         y2 = y$y
         n = dim(y$y)[2]
-		q <- beta * (1-beta)^(0:(n-1))
-        wq = diag(rev(q))
-        newy2 = wq %*% newy
-        dummy = svd(newy2)
-		load = dummy$v[, 1:(order)]
+        dummy = svd(newy)
+  	  load = dummy$v[, 1:(order)]
         sco = newy %*% load
-		n = nrow(newy2)
         yy <- matrix(NA, nrow = ngrid, ncol = n)
         xx = seq(min(x), max(x), l = ngrid)
 		for (i in 1:n) {
-             miss <- is.na(newy2[i,])
-             yy[, i] <- spline(x[!miss], t(newy2)[!miss,i], n = ngrid)$y
+             miss <- is.na(newy[i,])
+             yy[, i] <- spline(x[!miss], t(newy)[!miss,i], n = ngrid)$y
 	    }
         V <- rep(1, ngrid) * t(yy)
         dummy <- La.svd(V)
-		varprop = (dummy$d[1:order])^2/(sum((dummy$d)^2))
-		mean.se = approx(xx,sqrt(apply(yy,1,var)/n),xout=x)$y
-	}
+	  varprop = (dummy$d[1:order])^2/(sum((dummy$d)^2))
+	  mean.se = approx(xx,sqrt(apply(yy,1,var)/n),xout=x)$y
+    }
     ytsp <- tsp(y$time)
     if (weight == TRUE) {
         coeff <- ts(cbind(rep(1, dim(y$y)[2]), sco), s = ytsp[1], 
