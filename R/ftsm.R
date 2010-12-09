@@ -17,7 +17,7 @@ ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classica
     }
     if (weight == TRUE) {
         q <- beta * (1 - beta)^(0:(n - 1))
-        my <- apply(y$y,1,weighted.mean,w=q)
+		my <- apply(y$y, 1, weighted.mean, w = rev(q))
         newy <- sweep(t(y$y),2,my)
         x = y$x
         y2 = y$y
