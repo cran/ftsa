@@ -16,14 +16,14 @@ ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classica
         mean.se = y.pca$mean.se
     }
     if (weight == TRUE) {
-  	  q <- beta * (1 - beta)^(0:(n - 1))
-	  my <- apply(y$y, 1, weighted.mean, w = rev(q))
-	  newy <- sweep(t(y$y), 2, my)
-	  x = y$x
-  	  y2 = y$y
-	  n = dim(y$y)[2]
-	  wq=diag(rev(q))
-	  newy2=wq%*%newy
+        q <- beta * (1 - beta)^(0:(n - 1))
+        my <- apply(y$y, 1, weighted.mean, w = rev(q))
+        newy <- sweep(t(y$y), 2, my)
+        x = y$x
+        y2 = y$y
+        n = dim(y$y)[2]
+        wq = diag(rev(q))
+        newy2 = wq %*% newy
         dummy = svd(newy2)
         load = dummy$v[, 1:(order)]
         sco = newy %*% load
@@ -40,16 +40,20 @@ ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classica
     }
     ytsp <- tsp(y$time)
     if (weight == TRUE) {
-        coeff <- ts(cbind(rep(1, dim(y$y)[2]), sco), s = ytsp[1], 
+	    colmeanrm = matrix(colMeans(sco), dim(sco)[2], 1)
+		scomeanrm = sweep(sco, 2, colmeanrm)
+        coeff <- ts(cbind(rep(1, dim(y$y)[2]), scomeanrm), s = ytsp[1], 
             f = ytsp[3])
     }
     else {
         coeff <- ts(y.pca$coeff, s = ytsp[1], f = ytsp[3])
     }
     if (weight == TRUE) {
+		my = my + load %*% colmeanrm
         basis <- cbind(my, load)
         colnames(basis) = c("mean", paste("phi", 1:order, sep = ""))
-        fits <- fts(y$x, load %*% t(sco) + my, s = ytsp[1], f = ytsp[3], 
+        colnames(coeff) = c("mean", paste("beta", 1:order, sep = ""))
+        fits <- fts(y$x, sweep(load %*% t(scomeanrm), 1, my, "+"), s = ytsp[1], f = ytsp[3], 
             xname = y$xname, yname = paste("Fitted", y$yname))
     }
     else {
@@ -78,6 +82,3 @@ ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classica
     }
     return(structure(out, class = c("ftsm", "fm")))
 }
-
-
-
