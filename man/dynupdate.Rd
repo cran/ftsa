@@ -58,8 +58,7 @@ H. Shen and J. Z. Huang (2008) "Interday forecasting and intraday updating of ca
 
 H. Shen (2009) "On modeling and forecasting time series of curves", \emph{Technometrics}, \bold{51}(3), 227-238.
 
-H. Shang and R. J. Hyndman (2009) "Nonparametric time series forecasting with dynamic updating", In R. S. Anderssen, R. D. Braddock and L.T.H. Newham (eds), 18th World IMACS Congress and MODSIM09 International Congress on Modelling and Simulation. Modelling and Simulation Society of Australia and New Zealand and International Association for Mathematics and Computers in Simulation, July 2009, pp. 1552-1558. ISBN: 978-0-9758400-7-8. 
-\url{http://www.mssanz.org.au/modsim09/D11/shang.pdf}
+H. L. Shang and R. J. Hyndman (2011) "Nonparametric time series forecasting with dynamic updating", Mathematics and Computers in Simulation, \bold{81}(7), 1310-1324.
 }
 \author{Han Lin Shang}
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}}

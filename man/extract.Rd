@@ -22,7 +22,7 @@ as data but with a subset of \code{time} variables.
 }
 \author{Han Lin Shang}
 \examples{
-extract(ElNino, direction = "time", timeorder = 1980:2007) # First 55 curves
+extract(ElNino, direction = "time", timeorder = 1980:2006) # Last 27 curves
 extract(ElNino, direction = "x", xorder = 1:8) # First 8 x variables
 }
 \keyword{models}
