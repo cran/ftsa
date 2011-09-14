@@ -6,10 +6,10 @@ Plot showing the basis functions in the top row of plots and the coefficients in
 }
 \usage{
 plot.ftsm(x, components, xlab1 = x$y$xname, ylab1 = "Basis function", 
-    xlab2 = "Time", ylab2 = "Coefficient", mean.lab = "Mean", 
-    level.lab = "Level", main.title = "Main effects", interaction.title = "Interaction", 
-    basiscol = 1, coeffcol = 1, outlier.col = 2, outlier.pch = 19, 
-    outlier.cex = 0.5, ...)   
+ xlab2 = "Time", ylab2 = "Coefficient", mean.lab = "Mean", 
+  level.lab = "Level", main.title = "Main effects", 
+   interaction.title = "Interaction", basiscol = 1, coeffcol = 1, 
+    outlier.col = 2, outlier.pch = 19, outlier.cex = 0.5, ...)   
 }
 \arguments{
 \item{x}{Output from \code{\link[ftsa]{ftsm}}.}
@@ -34,6 +34,11 @@ plot.ftsm(x, components, xlab1 = x$y$xname, ylab1 = "Basis function",
 None. Function produces a plot.
 }
 
+\references{
+R. J. Hyndman and M. S. Ullah (2007) "Robust forecasting of mortality and fertility rates: A functional data approach", \emph{Computational Statistics and Data Analysis}, \bold{51}(10), 4942-4956.
+
+R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series" (with discussion), \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.
+}
 \author{Rob J Hyndman}
 \seealso{
 \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.ftsf}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}

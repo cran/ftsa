@@ -31,7 +31,7 @@ M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2007) "A functional analysis
 
 M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2008) "Outlier detection in functional data by depth measures, with application to identify abnormal NOx levels", \emph{Environmetrics}, \bold{19}(4), 331-345.
 
-M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2009) "Measures of influence for the functional linear model with scalar response", \emph{Journal of Multivariate Analysis}, \bold{forthcoming}. 
+M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2010) "Measures of influence for the functional linear model with scalar response", \emph{Journal of Multivariate Analysis}, \bold{101}(2), 327-339. 
 }
 \author{Han Lin Shang}
 \examples{

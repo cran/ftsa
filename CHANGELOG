@@ -1,3 +1,8 @@
+v 2.7
+
+1. Update the extract function
+2. Add the ftsmweightselect function to select the optimal weighted used in the weighted ftsm
+
 v 2.6
 
 1. Update ftsm function to produce the orthonormal basis functions

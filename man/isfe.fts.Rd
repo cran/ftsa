@@ -7,8 +7,8 @@ Computes integrated squared forecast error (ISFE) values for functional time ser
 \usage{
 isfe.fts(data, max.order = N - 3, N = 10, h = 5:10, method = 
  c("classical", "M", "rapca"), mean = TRUE, level = FALSE, 
-  fmethod = c("arima", "ar", "ets", "ets.na", "struct", "rwdrift", "rw", "arfima"),
-   lambda = 3, ...)
+  fmethod = c("arima", "ar", "ets", "ets.na", "struct", "rwdrift", 
+   "rw", "arfima"), lambda = 3, ...)
 }
 \arguments{
 \item{data}{An object of class \code{fts}.}

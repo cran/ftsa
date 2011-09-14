@@ -68,7 +68,7 @@ R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with d
 }
 
 \seealso{
-\code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.ftsf}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}
+\code{\link[ftsa]{ftsmweightselect}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.ftsf}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}
 }
 \examples{
 ftsm(y = ElNino)
