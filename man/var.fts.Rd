@@ -5,7 +5,7 @@
 Computes variance functions of functional time series at each variable.
 }
 \usage{
-var.fts(x, method = c("coordinate", "FM", "mode", "RP", "RPD"), 
+\method{var}{fts}(x, method = c("coordinate", "FM", "mode", "RP", "RPD"), 
  trim = 0.25,...)
 }
 \arguments{

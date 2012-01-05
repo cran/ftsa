@@ -52,9 +52,9 @@ J. O. Ramsay and C. J. Dalzell (1991) "Some tools for functional data analysis (
 
 M. Hubert and P. J. Rousseeuw and S. Verboven (2002) "A fast robust method for principal components with applications to chemometrics", \emph{Chemometrics and Intelligent Laboratory Systems}, \bold{60}(1-2), 101-111. 
 
-R. J. Hyndman and M. S. Ullah (2007) "Robust forecasting of mortality and fertility rates: A functional data approach", \emph{Computational Statistics \& Data Analysis}, \bold{51}(10), 4942-4956.
+R. J. Hyndman and M. S. Ullah (2007) "Robust forecasting of mortality and fertility rates: A functional data approach", \emph{Computational Statistics and Data Analysis}, \bold{51}(10), 4942-4956.
 
-H. Shen and J. Z. Huang (2008) "Interday forecasting and intraday updating of call center arrivals", \emph{Manufacturing \& Service Operations Management}, \bold{10}(3), 391-410.
+H. Shen and J. Z. Huang (2008) "Interday forecasting and intraday updating of call center arrivals", \emph{Manufacturing and Service Operations Management}, \bold{10}(3), 391-410.
 
 H. Shen (2009) "On modeling and forecasting time series of curves", \emph{Technometrics}, \bold{51}(3), 227-238.
 

@@ -5,7 +5,7 @@
 Functions to produce a plot of residuals from a fitted functional model.
 }
 \usage{
-plot.fmres(x, type = c("image", "fts", "contour", "filled.contour", 
+\method{plot}{fmres}(x, type = c("image", "fts", "contour", "filled.contour", 
  "persp"), xlab = "Year", ylab = "Age", zlab = "Residual", ...)
 }
 \arguments{

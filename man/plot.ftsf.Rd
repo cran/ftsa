@@ -5,7 +5,7 @@
 Plot fitted model components for a \code{fts} object.
 }
 \usage{
-plot.ftsf(x, plot.type = c("function", "components", "variance"), 
+\method{plot}{ftsf}(x, plot.type = c("function", "components", "variance"), 
  components, xlab1 = fit$y$xname, ylab1 = "Principal component", 
   xlab2 = "Time", ylab2 = "Coefficient", mean.lab = "Mean", 
    level.lab = "Level", main.title = "Main effects", 
@@ -46,7 +46,7 @@ When \code{plot.type = "variance"}, it produces a plot of the variance component
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.fmres}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}}
 \author{Rob J Hyndman}
 \references{
-R. J. Hyndman and M. S. Ullah (2007) "Robust forecasting of mortality and fertility rates: A functional data approach", \emph{Computational Statistics \& Data Analysis}, \bold{51}(10), 4942-4956.
+R. J. Hyndman and M. S. Ullah (2007) "Robust forecasting of mortality and fertility rates: A functional data approach", \emph{Computational Statistics and Data Analysis}, \bold{51}(10), 4942-4956.
 
 R. J. Hyndman and H. Booth (2008) "Stochastic population forecasts using functional data models for mortality, fertility and migration", \emph{International Journal of Forecasting}, \bold{24}(3), 323-342.
 

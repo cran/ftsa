@@ -5,7 +5,7 @@
 Computes mean of functional time series at each variable.
 }
 \usage{
-mean.fts(x, method = c("coordinate", "FM", "mode", "RP", "RPD"), 
+\method{mean}{fts}(x, method = c("coordinate", "FM", "mode", "RP", "RPD"), 
  na.rm = TRUE, ...)
 }
 \arguments{
