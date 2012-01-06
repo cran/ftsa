@@ -7,7 +7,7 @@ When \code{class(x)[1] = ftsm}, plot showing the principal components in the top
 When \code{class(x)[1] = fm}, plot showing the predictor scores in the top row of plots and the response loadings in the bottom row of plots.
 }
 \usage{
-plot.fm(x, order, xlab1 = x$y$xname, ylab1 = "Principal component", 
+\method{plot}{fm}(x, order, xlab1 = x$y$xname, ylab1 = "Principal component", 
  xlab2 = "Time", ylab2 = "Coefficient", mean.lab = "Mean", 
   level.lab = "Level", main.title = "Main effects", interaction.title 
    = "Interaction", basiscol = 1, coeffcol = 1, outlier.col = 2, 

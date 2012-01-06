@@ -78,7 +78,8 @@ A list containing the following components is returned.
   \item{weight}{When \code{weight = TRUE}, a set of geometrically decaying weights is given. When \code{weight = FALSE}, weights are all equal 1.}
   \item{x1}{Time period of a \code{fts} object, which can be obtained from \code{colnames(data$y)}.}
   \item{y1}{Variables of a \code{fts} object, which can be obtained from \code{data$x}.}
-  \item{y}{Returns the original functional data.}
+  \item{ypred}{Returns the original functional predictors.}
+  \item{y}{Returns the original functional responses.}
   \item{bootsamp}{Bootstrapped point forecasts.}
   \item{lb}{Lower bound of prediction intervals.}
   \item{ub}{Upper bound of prediction intervals.}

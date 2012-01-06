@@ -5,7 +5,7 @@
 Computes differences of a \code{fts} object at each variable.
 }
 \usage{
-diff.fts(x, lag = 1, differences = 1, ...)
+\method{diff}{fts}(x, lag = 1, differences = 1, ...)
 }
 \arguments{
 \item{x}{An object of class \code{fts}.}

@@ -6,7 +6,7 @@ This function extracts the relevant information from the fit object and puts it 
 plotting with \code{image}, \code{persp}, \code{contour}, \code{filled.contour}, etc.}
 
 \usage{
-residuals.fm(object, ...)
+\method{residuals}{fm}(object, ...)
 }
 \arguments{
 \item{object}{Output from \code{\link[ftsa]{ftsm}} or \code{\link[ftsa]{fplsr}}.}

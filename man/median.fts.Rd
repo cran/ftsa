@@ -5,7 +5,7 @@
 Computes median of functional time series at each variable.
 }
 \usage{
-median.fts(x, method = c("hossjercroux", "coordinate", "FM", "mode", 
+\method{median}{fts}(x, method = c("hossjercroux", "coordinate", "FM", "mode", 
  "RP", "RPD"), ...)
 }
 \arguments{

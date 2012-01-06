@@ -26,7 +26,12 @@ quantile.fts,
 median,
 sd,
 var,
-ftsmweightselect
+ftsmweightselect,
+forecastfplsr,
+ftsmiterativeforecasts,
+plotfplsr,
+centre,
+pcscorebootstrapdata
 )
 
 

@@ -5,7 +5,7 @@
 Plot showing the basis functions in the top row of plots and the coefficients in the bottom row of plots. 
 }
 \usage{
-plot.ftsm(x, components, xlab1 = x$y$xname, ylab1 = "Basis function", 
+\method{plot}{ftsm}(x, components, h, xlab1 = x$y$xname, ylab1 = "Basis function", 
  xlab2 = "Time", ylab2 = "Coefficient", mean.lab = "Mean", 
   level.lab = "Level", main.title = "Main effects", 
    interaction.title = "Interaction", basiscol = 1, coeffcol = 1, 
@@ -14,6 +14,8 @@ plot.ftsm(x, components, xlab1 = x$y$xname, ylab1 = "Basis function",
 \arguments{
 \item{x}{Output from \code{\link[ftsa]{ftsm}}.}
 \item{components}{Number of principal components to plot.}
+\item{h}{Forecast horizon. If \code{h} is specified, the forecasted pc scores are shown in the bottom panel. If \code{h} is not specified, the forecasted 
+        pc scores are shown.}
 \item{xlab1}{x-axis label for basis functions.}
 \item{xlab2}{x-axis label for coefficient time series.}
 \item{ylab1}{y-axis label for basis functions.}

@@ -5,7 +5,7 @@
 Computes standard deviation of functional time series at each variable.
 }
 \usage{
-sd.fts(x, method = c("coordinate", "FM", "mode", "RP", "RPD"), 
+\method{sd}{fts}(x, method = c("coordinate", "FM", "mode", "RP", "RPD"), 
  trim = 0.25,...)
 }
 \arguments{

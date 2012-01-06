@@ -5,7 +5,7 @@
 Summarizes a basis function model fitted to a functional time series. It returns various measures of goodness-of-fit.
 }
 \usage{
-summary.fm(object, ...)
+\method{summary}{fm}(object, ...)
 }
 \arguments{
 \item{object}{Output from \code{\link[ftsa]{ftsm}} or \code{\link[ftsa]{fplsr}}.}
