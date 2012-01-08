@@ -1,5 +1,5 @@
-18a518834739836b9f1f7404cc50b5af *CHANGELOG
-0ee539883ded7da41482f123ffac4363 *DESCRIPTION
+0beb2f47d83b04db8822bbf15d92e7d0 *CHANGELOG
+2865ff0f8d7fe120bd746d7cfef511d3 *DESCRIPTION
 513b669e734abfb4c04f07436c7cc765 *NAMESPACE
 d99136b6ff171bb74b33b849e8679c4c *R/Jacob.R
 3e96f9c6faba64f3c1331054cdeb2366 *R/KalmanLike.r
@@ -31,12 +31,12 @@ db135315029f7088b4981586121babec *R/extract.time.R
 c1b9ae34ec028226674b40f3673e63bd *R/fdpca.R
 1f5d712ad0c3a96d8f16fb3e63532286 *R/forecast.ftsm.R
 29cba49187f442725b4612acd325c092 *R/forecast.ftsm2.R
-8cb209271d8f548805ec202fe81e7ce0 *R/forecastfplsr.R
+3d505253d3578ddc52c2acea332b71c5 *R/forecastfplsr.R
 3ad3e412993d70be6e72e6f6a9a0dca6 *R/fplsr.R
 9a8a5c51f9aa78942eb2180c85f25e24 *R/fplsrPI.R
 b43993dcb5bf98424fc85e5a95c7db2b *R/ftsm.R
 ffe8917925925d5de4c9d570521ffb75 *R/ftsmPI.r
-1bf885739c12c54999305b2029660ebb *R/ftsmiterativeforecasts.R
+8c459ff44af1c09c0fd9f7e25852fd3e *R/ftsmiterativeforecasts.R
 b5fa02c4b9b685ecb5447ee3381f548e *R/ftsmweightselect.R
 9a7f17397edf32806dd12e4dbbb84355 *R/func.mean.R
 6b1b32c653b141ee96a6a01a04ba336a *R/func.med.RPD.R
@@ -80,8 +80,8 @@ b00b3f9bf2024c9342a0b3af32c35fdd *R/norm.r
 054577fae958ca2311b194860afe5308 *R/plot.fm.R
 314f0e6ef0010b337aee155437c32e09 *R/plot.fmres.R
 3a064fcd382ac0690dd9f49af81fbb33 *R/plot.ftsf.R
-82aeeeacf5e1aef0262f2e9807d16677 *R/plot.ftsm.R
-41056055180a6121ff807b3342320626 *R/plotfplsr.R
+fcbf475d76bff653fb3df1fada18bb91 *R/plot.ftsm.R
+d2c29775e776831b8dc2d23a01b31653 *R/plotfplsr.R
 66573455319ca251930cc10aa8628750 *R/plsPI.r
 80f1fd1158500e6f4dc6525cd6130004 *R/plsr.R
 e35f645f5fac5301d0265848e0b72aa5 *R/plsrPIs.R
@@ -143,7 +143,7 @@ d47aae11309177efccf0e58e865f67bc *man/median.fts.Rd
 4dd639a1cdded846cdd4d54da2a0c28a *man/plot.fm.Rd
 42f6216741e19e405d09fd79898c62ff *man/plot.fmres.Rd
 9bea23458ffda27eb324530097206795 *man/plot.ftsf.Rd
-519becc602ea3c97d93e12f00a835e5c *man/plot.ftsm.Rd
+9bbf298929ae8e97e018e613f9488b7a *man/plot.ftsm.Rd
 767061d1a91a8ead4345786fcc9cfdfd *man/plotfplsr.Rd
 d6672314eed182536a3aed6039052d82 *man/quantile.fts.Rd
 020796228b7a40fb57d3979c1e22162b *man/residuals.fm.Rd

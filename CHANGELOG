@@ -1,9 +1,14 @@
+v 2.9
+
+1. Correct the plot.ftsm function
+
 v 2.8
 
-1. Update plot.ftsm function
-2. Add forecast.fplsr function
-3. Add forecast.ftsmiterative function
-4. Add plot.fplsr function
+1. Update the plot.ftsm function
+2. Add the forecast.fplsr function
+3. Add the forecast.ftsmiterative function
+4. Add the plot.fplsr function
+5. Add the pcscorebootstrapdata function
 
 v 2.7
 
