@@ -1,5 +1,5 @@
 `plot.ftsf` <- function (x, plot.type = c("function", "components", "variance"), 
-    components, xlab1 = fit$y$xname, ylab1 = "Principal component", 
+    components, xlab1 = fit$y$xname, ylab1 = "Basis function", 
     xlab2 = "Time", ylab2 = "Coefficient", mean.lab = "Mean", 
     level.lab = "Level", main.title = "Main effects", interaction.title = "Interaction", 
     vcol = 1:3, shadecols = 7, fcol = 4, basiscol = 1, coeffcol = 1, 

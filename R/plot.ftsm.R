@@ -1,7 +1,7 @@
 `plot.ftsm` <- function(x,components,xlab1=x$y$xname,ylab1="Basis function",xlab2="Time",ylab2="Coefficient",
     mean.lab="Mean",level.lab="Level",main.title="Main effects",interaction.title="Interaction",
     basiscol=1, coeffcol=1, 
-    outlier.col=2, outlier.pch=19, outlier.cex=0.5, h, ...)
+    outlier.col=2, outlier.pch=19, outlier.cex=0.5, ...)
 {
     oldpar <- par(no.readonly=TRUE)
     mean <- is.element("mean",colnames(x$basis))
@@ -27,16 +27,8 @@
             plot(x$y$x,x$basis[,m+i],type="l",lty=1,xlab=xlab1,ylab=yl1,col=basiscol,...)
             if(i==1)
                 title(interaction.title)
-			if(missing(h))
-			{
-	            plot.ts(x$coeff[, m + i], xlab = xlab2, ylab = yl2, 
+            plot.ts(x$coeff[, m + i], xlab = xlab2, ylab = yl2, 
       	          col = coeffcol, ...)
-			}
-			else
-			{
-				plot(forecast(x$coeff[,m+i], h = h), xlab = xlab2, ylab = yl2, 
-					 col = coeffcol, main="",...)
-			}
 	        if (!is.null(x$wt))
             {
                 if(sum(x$wt < 0.1)/length(x$wt) < 0.2)

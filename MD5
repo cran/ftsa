@@ -1,5 +1,5 @@
-0beb2f47d83b04db8822bbf15d92e7d0 *CHANGELOG
-2865ff0f8d7fe120bd746d7cfef511d3 *DESCRIPTION
+b91b0f71e0827603d3ea5498d933f637 *CHANGELOG
+483cf8ba4bc94c7788151738e67e30af *DESCRIPTION
 513b669e734abfb4c04f07436c7cc765 *NAMESPACE
 d99136b6ff171bb74b33b849e8679c4c *R/Jacob.R
 3e96f9c6faba64f3c1331054cdeb2366 *R/KalmanLike.r
@@ -79,8 +79,8 @@ b00b3f9bf2024c9342a0b3af32c35fdd *R/norm.r
 5aac82dd6ee65e856332f0299c88acc8 *R/pegelsna.r
 054577fae958ca2311b194860afe5308 *R/plot.fm.R
 314f0e6ef0010b337aee155437c32e09 *R/plot.fmres.R
-3a064fcd382ac0690dd9f49af81fbb33 *R/plot.ftsf.R
-fcbf475d76bff653fb3df1fada18bb91 *R/plot.ftsm.R
+f86e2ec95e12bfa5dd7c661969be3686 *R/plot.ftsf.R
+d5921a9bfcaebcd28a80f0a2d05a44af *R/plot.ftsm.R
 d2c29775e776831b8dc2d23a01b31653 *R/plotfplsr.R
 66573455319ca251930cc10aa8628750 *R/plsPI.r
 80f1fd1158500e6f4dc6525cd6130004 *R/plsr.R
@@ -142,8 +142,8 @@ d47aae11309177efccf0e58e865f67bc *man/median.fts.Rd
 649c12d31c0784df068a420df3ab5887 *man/pcscorebootstrapdata.Rd
 4dd639a1cdded846cdd4d54da2a0c28a *man/plot.fm.Rd
 42f6216741e19e405d09fd79898c62ff *man/plot.fmres.Rd
-9bea23458ffda27eb324530097206795 *man/plot.ftsf.Rd
-9bbf298929ae8e97e018e613f9488b7a *man/plot.ftsm.Rd
+4869e82179b271074ee014386477f8d0 *man/plot.ftsf.Rd
+393931a2c506fd7aba7f4cd128efcb1a *man/plot.ftsm.Rd
 767061d1a91a8ead4345786fcc9cfdfd *man/plotfplsr.Rd
 d6672314eed182536a3aed6039052d82 *man/quantile.fts.Rd
 020796228b7a40fb57d3979c1e22162b *man/residuals.fm.Rd
