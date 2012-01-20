@@ -9,7 +9,7 @@ Plot showing the basis functions in the top row of plots and the coefficients in
  xlab2 = "Time", ylab2 = "Coefficient", mean.lab = "Mean", 
   level.lab = "Level", main.title = "Main effects", 
    interaction.title = "Interaction", basiscol = 1, coeffcol = 1, 
-    outlier.col = 2, outlier.pch = 19, outlier.cex = 0.5, h, ...)   
+    outlier.col = 2, outlier.pch = 19, outlier.cex = 0.5, ...)   
 }
 \arguments{
 \item{x}{Output from \code{\link[ftsa]{ftsm}}.}
@@ -27,8 +27,6 @@ Plot showing the basis functions in the top row of plots and the coefficients in
 \item{outlier.col}{Colour for outlying years.}
 \item{outlier.pch}{Plotting character for outlying years.}
 \item{outlier.cex}{Size of plotting character for outlying years.}
-\item{h}{Forecast horizon. If \code{h} is specified, the forecasted pc scores are shown in the bottom panel. If \code{h} is not specified, the forecasted 
-        pc scores are shown.}
 \item{...}{Plotting parameters.}
 }
 
