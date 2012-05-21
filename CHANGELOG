@@ -1,3 +1,7 @@
+v 3.2
+
+1. Delete the standard sd.R, var.R, quantile.R, median.R functions, which are available in base
+
 v 3.1
 
 1. Update the scaled error measures in the error function

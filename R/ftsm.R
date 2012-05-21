@@ -42,34 +42,34 @@ ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classica
     if (weight == TRUE) {
 	    colmeanrm = matrix(colMeans(sco), dim(sco)[2], 1)
 		scomeanrm = sweep(sco, 2, colmeanrm)
-        coeff <- ts(cbind(rep(1, dim(y$y)[2]), scomeanrm), s = ytsp[1], 
-            f = ytsp[3])
+        coeff <- ts(cbind(rep(1, dim(y$y)[2]), scomeanrm), start = ytsp[1], 
+            frequency = ytsp[3])
     }
     else {
-        coeff <- ts(y.pca$coeff, s = ytsp[1], f = ytsp[3])
+        coeff <- ts(y.pca$coeff, start = ytsp[1], frequency = ytsp[3])
     }
     if (weight == TRUE) {
 		my = my + load %*% colmeanrm
         basis <- cbind(my, load)
         colnames(basis) = c("mean", paste("phi", 1:order, sep = ""))
         colnames(coeff) = c("mean", paste("beta", 1:order, sep = ""))
-        fits <- fts(y$x, sweep(load %*% t(scomeanrm), 1, my, "+"), s = ytsp[1], f = ytsp[3], 
+        fits <- fts(y$x, sweep(load %*% t(scomeanrm), 1, my, "+"), start = ytsp[1], frequency = ytsp[3], 
             xname = y$xname, yname = paste("Fitted", y$yname))
     }
     else {
         basis <- y.pca$basis
-        fits <- fts(y$x, basis %*% t(coeff), s = ytsp[1], f = ytsp[3], 
+        fits <- fts(y$x, basis %*% t(coeff), start = ytsp[1], frequency = ytsp[3], 
             xname = y$xname, yname = paste("Fitted", y$yname))
     }
     rownames(basis) <- paste(y$x)
-    res <- fts(y$x, y$y - fits$y, s = ytsp[1], f = ytsp[3], xname = y$xname, 
+    res <- fts(y$x, y$y - fits$y, start = ytsp[1], frequency = ytsp[3], xname = y$xname, 
         yname = paste("Residuals", y$yname))
     if (weight == FALSE) {
         out <- list(x1 = as.numeric(colnames(y$y)), y1 = as.numeric(rownames(y$y)), 
             y = fts(y$x, y$y, xname = y$xname, yname = y$yname), 
             basis = basis, coeff = coeff, fitted = fits, residuals = res, 
-            varprop = y.pca$varprop, wt = ts(y.pca$weights, s = ytsp[1], 
-                f = ytsp[3]), v = ts(y.pca$v, s = ytsp[1], f = ytsp[3]), 
+            varprop = y.pca$varprop, wt = ts(y.pca$weights, start = ytsp[1], 
+                frequency = ytsp[3]), v = ts(y.pca$v, start = ytsp[1], frequency = ytsp[3]), 
             basis2 = y.pca$basis2, coeff2 = y.pca$coeff2, mean.se = mean.se, 
             call = match.call())
     }

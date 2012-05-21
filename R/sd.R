@@ -1,2 +1,0 @@
-sd <- function(...) 
-UseMethod("sd")

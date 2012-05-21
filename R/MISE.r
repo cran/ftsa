@@ -31,20 +31,20 @@ MISE = function (actual, estimate, neval = 1000)
     }
     delta <- (max(x) - min(x))/neval
     out <- list(x = x, error = e)
-    out$MIE <- ts(colSums(e.big, na.rm = TRUE) * delta, s = s,
-        f = m)
+    out$MIE <- ts(colSums(e.big, na.rm = TRUE) * delta, start = s,
+        frequency = m)
     out$MIAE <- ts(colSums(abs(e.big), na.rm = TRUE) * delta,
-        s = s, f = m)
-    out$MISE <- ts(colSums(e.big^2, na.rm = TRUE) * delta, s = s,
-        f = m)
+        start = s, frequency = m)
+    out$MISE <- ts(colSums(e.big^2, na.rm = TRUE) * delta, start = s,
+        frequency = m)
     out$ME <- rowMeans(e, na.rm = TRUE)
     out$MAE <- rowMeans(abs(e), na.rm = TRUE)
     out$MSE <- rowMeans(e^2, na.rm = TRUE)
     if (calcpc) {
         out$MIPE <- ts(colSums(pe.big, na.rm = TRUE) * delta,
-            s = s, f = m)
+            start = s, frequency = m)
         out$MIAPE <- ts(colSums(abs(pe.big), na.rm = TRUE) *
-            delta, s = s, f = m)
+            delta, start = s, frequency = m)
         out$MPE <- rowMeans(pe, na.rm = TRUE)
         out$MAPE <- rowMeans(abs(pe), na.rm = TRUE)
     }

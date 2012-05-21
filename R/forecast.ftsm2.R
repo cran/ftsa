@@ -32,7 +32,7 @@ forecast.ftsm2 = function (object, h = 50, method = c("arima", "ar", "ets", "ets
     usedata <- min(usedata, l)
     ytsp <- tsp(object$coeff)
     x <- xx <- ts(as.matrix(object$coeff[(l - usedata + 1):l, 
-        ]), s = ytsp[1] + l - usedata, f = ytsp[3])
+        ]), start = ytsp[1] + l - usedata, frequency = ytsp[3])
     xx[object$weights[(l - usedata + 1):l] < 0.1, ] <- NA
     fmodels <- list()
     if (method == "ets") {
@@ -113,7 +113,7 @@ forecast.ftsm2 = function (object, h = 50, method = c("arima", "ar", "ets", "ets
                     ...) 
                   {
                     .xxi <- x
-                    fit <- ar(.xxi, method = "mle", order = max.p, 
+                    fit <- ar(.xxi, method = "mle", order.max = max.p, 
                       aic = aic)
                     assign(".xxi", .xxi, envir = .GlobalEnv)
                     return(fit)
@@ -154,14 +154,14 @@ forecast.ftsm2 = function (object, h = 50, method = c("arima", "ar", "ets", "ets
     }
     else stop("Unknown method")
     ytsp <- tsp(object$fitted$time)
-    error <- ts(object$coeff - fitted, s = ytsp[1], f = ytsp[3])
+    error <- ts(object$coeff - fitted, start = ytsp[1], frequency = ytsp[3])
     ferror <- onestepfcast <- object$y
     onestepfcast$y <- object$basis %*% t(fitted)
     onestepfcast$yname <- "One step forecasts"
     ferror$y <- object$y$y - onestepfcast$y
     ferror$yname <- "One step errors"
-    fmean <- fts(object$y$x, object$basis %*% t(meanfcast), s = ytsp[2] + 
-        1, f = ytsp[3], xname = object$y$xname, yname = "Forecasts")
+    fmean <- fts(object$y$x, object$basis %*% t(meanfcast), start = ytsp[2] + 
+        1, frequency = ytsp[3], xname = object$y$xname, yname = "Forecasts")
     res <- object$residuals
     res$y <- res$y^2
     vx <- mean(res)$y
@@ -176,17 +176,17 @@ forecast.ftsm2 = function (object, h = 50, method = c("arima", "ar", "ets", "ets
     if (length(qconf) > 1) 
         stop("Multiple confidence levels not yet implemented")
     tmp <- qconf * sqrt(totalvar)
-    flower <- fts(object$y$x, fmean$y - tmp, s = ytsp[2] + 1, 
-        f = ytsp[3], xname = object$y$xname, yname = "Forecast lower limit")
-    fupper <- fts(object$y$x, fmean$y + tmp, s = ytsp[2] + 1, 
-        f = ytsp[3], xname = object$y$xname, yname = "Forecast upper limit")
+    flower <- fts(object$y$x, fmean$y - tmp, start = ytsp[2] + 1, 
+        frequency = ytsp[3], xname = object$y$xname, yname = "Forecast lower limit")
+    fupper <- fts(object$y$x, fmean$y + tmp, start = ytsp[2] + 1, 
+        frequency = ytsp[3], xname = object$y$xname, yname = "Forecast upper limit")
     coeff <- list()
     for (i in 1:nb) {
         coeff[[i]] <- structure(list(mean = ts(meanfcast[, i], 
-            s = ytsp[2] + 1, f = ytsp[3]), lower = ts(meanfcast[, 
-            i] - qconf * sqrt(varfcast[, i]), s = ytsp[2] + 1, 
-            f = ytsp[3]), upper = ts(meanfcast[, i] + qconf * 
-            sqrt(varfcast[, i]), s = ytsp[2] + 1, f = ytsp[3]), 
+            start = ytsp[2] + 1, frequency = ytsp[3]), lower = ts(meanfcast[, 
+            i] - qconf * sqrt(varfcast[, i]), start = ytsp[2] + 1, 
+            frequency = ytsp[3]), upper = ts(meanfcast[, i] + qconf * 
+            sqrt(varfcast[, i]), start = ytsp[2] + 1, frequency = ytsp[3]), 
             level = level, x = x[, i], method = method, model = fmodels[[i]]), 
             class = "forecast")
     }

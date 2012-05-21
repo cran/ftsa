@@ -1,2 +1,0 @@
-var <- function(...) 
-UseMethod("var")
