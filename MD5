@@ -1,10 +1,10 @@
-e898348c9777c26c9a8f86971c20ed8b *CHANGELOG
-75f238a392c27ec632ef88752fa272a2 *DESCRIPTION
-513b669e734abfb4c04f07436c7cc765 *NAMESPACE
+414f3395414a0bf6047e5544002fd61a *CHANGELOG
+826857414d610baba8920ac5cfa3fd6e *DESCRIPTION
+7a73cff5de18fa3662d0eaff5909289d *NAMESPACE
 d99136b6ff171bb74b33b849e8679c4c *R/Jacob.R
 3e96f9c6faba64f3c1331054cdeb2366 *R/KalmanLike.r
 9abe2405d651acfe06e77c475c66b5f2 *R/L1median2.r
-202fdefcb55e37955424b4e831a9ba1c *R/MISE.r
+6bd24b0ea18fbb7d52648aa6a94bfac9 *R/MISE.r
 5d95361e6e07c6237fd762c08ceda0e2 *R/PCAproj.r
 f1364f8f0d2d30d4fba150d0797bd8a0 *R/Qn.r
 eab3f6d307c87841347b9cc330b541ff *R/ScaleAdv.r
@@ -29,12 +29,12 @@ db135315029f7088b4981586121babec *R/extract.time.R
 59272d7bd15f338b49afa4b36991a22f *R/extract.x.R
 03fe325b97dfd24692bb4ad650f8b245 *R/fbootstrap.R
 c1b9ae34ec028226674b40f3673e63bd *R/fdpca.R
-1f5d712ad0c3a96d8f16fb3e63532286 *R/forecast.ftsm.R
-29cba49187f442725b4612acd325c092 *R/forecast.ftsm2.R
+6b4cdc2aba7a91e2c8c88c8453052822 *R/forecast.ftsm.R
+040622c49c7678f96bbf206b94478e10 *R/forecast.ftsm2.R
 3d505253d3578ddc52c2acea332b71c5 *R/forecastfplsr.R
 3ad3e412993d70be6e72e6f6a9a0dca6 *R/fplsr.R
 9a8a5c51f9aa78942eb2180c85f25e24 *R/fplsrPI.R
-b43993dcb5bf98424fc85e5a95c7db2b *R/ftsm.R
+07cb0ed598180839e6e3166d1e15cd4d *R/ftsm.R
 ffe8917925925d5de4c9d570521ffb75 *R/ftsmPI.r
 8c459ff44af1c09c0fd9f7e25852fd3e *R/ftsmiterativeforecasts.R
 b5fa02c4b9b685ecb5447ee3381f548e *R/ftsmweightselect.R
@@ -78,7 +78,7 @@ b00b3f9bf2024c9342a0b3af32c35fdd *R/norm.r
 6dd8500f2c94a881a6428ec89229634f *R/pcscorebootstrapdata.R
 5aac82dd6ee65e856332f0299c88acc8 *R/pegelsna.r
 054577fae958ca2311b194860afe5308 *R/plot.fm.R
-314f0e6ef0010b337aee155437c32e09 *R/plot.fmres.R
+b32935e5e201c38c25db3b9f63fe21ea *R/plot.fmres.R
 f86e2ec95e12bfa5dd7c661969be3686 *R/plot.ftsf.R
 d5921a9bfcaebcd28a80f0a2d05a44af *R/plot.ftsm.R
 d2c29775e776831b8dc2d23a01b31653 *R/plotfplsr.R
@@ -90,7 +90,6 @@ f3082e3561119bcb00890062bdd23522 *R/plsrPIsboot.R
 ae35dbb6159dea31839ddc105efc82a6 *R/print.fmres.R
 3561c0b36d60a91764f55fa242503968 *R/print.ftsf.R
 5b54e5f852170a29cd53752a4a079991 *R/print.ftsm.R
-682401061e36fa18460efaad81550e83 *R/quantile.R
 e3af040f69d9d9033ba79af1c78a8a61 *R/quantile.fts.R
 454da7bead8a30473d938aad1823cbf3 *R/quantile.outliers.pond.R
 c01d51e3dcd090f3817367ad7928bcc5 *R/quantile.outliers.trim.R
@@ -105,8 +104,6 @@ ba3a65a82142c9653bc9354959e36510 *R/residuals.fm.R
 ab8ff4a899c1f8747dac13c166a460de *R/rmsse.R
 c7dd9e9d583cdfbea8e35d7280035759 *R/rstep.r
 8709d9e58ec5fbb19e1c8eedb35e3677 *R/rw.drift.r
-b0eb2364dfaef29749fdf2352470becb *R/sd.R
-aff15e0cee809d0d06f2bd7be71cb1be *R/sd.default.R
 d75e060ab4f24f2f52079f27c19c97ea *R/sd.fts.R
 27aa41711b3acafff8fc11bffccae6d0 *R/simpls.R
 ad5505e3661f2f9fbc37f4c45ad764ce *R/skernel.norm.R
@@ -117,8 +114,6 @@ d24c72a8862c561db4211f5b843aa751 *R/sse.R
 6a5e78ae609ba54296d277ecce6f445e *R/struct.forecast.r
 f8b66881efd656c057316686290fa2c9 *R/summary.fm.R
 51d262d5fef22e065ba3740a7e279351 *R/unitsimpls.R
-d4a0aed7983e5aea31699dd7a92cc89a *R/var.R
-a4cdc5294cafd34fe3b0fc2cb39c6189 *R/var.default.R
 44479f3193633dab68de2196dbf792d5 *R/var.fts.R
 a3af19ad86c096a25d5c9865eb9f6980 *R/wpcr.R
 6bcb804805eac6834785ad3ac9e9f1b8 *man/centre.Rd
@@ -147,8 +142,6 @@ d47aae11309177efccf0e58e865f67bc *man/median.fts.Rd
 767061d1a91a8ead4345786fcc9cfdfd *man/plotfplsr.Rd
 d6672314eed182536a3aed6039052d82 *man/quantile.fts.Rd
 020796228b7a40fb57d3979c1e22162b *man/residuals.fm.Rd
-0c075258370c83daa9cf193f1176ed51 *man/sd.Rd
-a18795efb67b982bae948b40b78a981a *man/sd.fts.Rd
+568dd154f540ac3e85a4e6fe4234a269 *man/sd.fts.Rd
 dfede54ce512543246fb45593761a249 *man/summary.fm.Rd
-a738c9cc32223f9f08d6ea126af62365 *man/var.Rd
-1a97203dee82a6f0789c07272f47d848 *man/var.fts.Rd
+6037e18b8e6391675f439f7b74534cdf *man/var.fts.Rd
