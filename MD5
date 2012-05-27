@@ -1,6 +1,6 @@
-414f3395414a0bf6047e5544002fd61a *CHANGELOG
-826857414d610baba8920ac5cfa3fd6e *DESCRIPTION
-7a73cff5de18fa3662d0eaff5909289d *NAMESPACE
+8c9a6e4660cb5a038626867785e64085 *CHANGELOG
+5a5171419fcf8584b21f9138a0de445f *DESCRIPTION
+513b669e734abfb4c04f07436c7cc765 *NAMESPACE
 d99136b6ff171bb74b33b849e8679c4c *R/Jacob.R
 3e96f9c6faba64f3c1331054cdeb2366 *R/KalmanLike.r
 9abe2405d651acfe06e77c475c66b5f2 *R/L1median2.r
@@ -90,7 +90,8 @@ f3082e3561119bcb00890062bdd23522 *R/plsrPIsboot.R
 ae35dbb6159dea31839ddc105efc82a6 *R/print.fmres.R
 3561c0b36d60a91764f55fa242503968 *R/print.ftsf.R
 5b54e5f852170a29cd53752a4a079991 *R/print.ftsm.R
-e3af040f69d9d9033ba79af1c78a8a61 *R/quantile.fts.R
+682401061e36fa18460efaad81550e83 *R/quantile.R
+f7c29acb2af9e59ebc05cd02295890ff *R/quantile.fts.R
 454da7bead8a30473d938aad1823cbf3 *R/quantile.outliers.pond.R
 c01d51e3dcd090f3817367ad7928bcc5 *R/quantile.outliers.trim.R
 f71eec428f7b21abeb0dde14137d87f0 *R/rapca.r
@@ -104,6 +105,8 @@ ba3a65a82142c9653bc9354959e36510 *R/residuals.fm.R
 ab8ff4a899c1f8747dac13c166a460de *R/rmsse.R
 c7dd9e9d583cdfbea8e35d7280035759 *R/rstep.r
 8709d9e58ec5fbb19e1c8eedb35e3677 *R/rw.drift.r
+b0eb2364dfaef29749fdf2352470becb *R/sd.R
+aff15e0cee809d0d06f2bd7be71cb1be *R/sd.default.R
 d75e060ab4f24f2f52079f27c19c97ea *R/sd.fts.R
 27aa41711b3acafff8fc11bffccae6d0 *R/simpls.R
 ad5505e3661f2f9fbc37f4c45ad764ce *R/skernel.norm.R
@@ -114,6 +117,8 @@ d24c72a8862c561db4211f5b843aa751 *R/sse.R
 6a5e78ae609ba54296d277ecce6f445e *R/struct.forecast.r
 f8b66881efd656c057316686290fa2c9 *R/summary.fm.R
 51d262d5fef22e065ba3740a7e279351 *R/unitsimpls.R
+d4a0aed7983e5aea31699dd7a92cc89a *R/var.R
+0879abf72bc694072cead9e525bd6a53 *R/var.default.R
 44479f3193633dab68de2196dbf792d5 *R/var.fts.R
 a3af19ad86c096a25d5c9865eb9f6980 *R/wpcr.R
 6bcb804805eac6834785ad3ac9e9f1b8 *man/centre.Rd
@@ -140,8 +145,10 @@ d47aae11309177efccf0e58e865f67bc *man/median.fts.Rd
 4869e82179b271074ee014386477f8d0 *man/plot.ftsf.Rd
 393931a2c506fd7aba7f4cd128efcb1a *man/plot.ftsm.Rd
 767061d1a91a8ead4345786fcc9cfdfd *man/plotfplsr.Rd
-d6672314eed182536a3aed6039052d82 *man/quantile.fts.Rd
+377ffa04b4d94cb9877d52531d1f510c *man/quantile.fts.Rd
 020796228b7a40fb57d3979c1e22162b *man/residuals.fm.Rd
-568dd154f540ac3e85a4e6fe4234a269 *man/sd.fts.Rd
+0c075258370c83daa9cf193f1176ed51 *man/sd.Rd
+a18795efb67b982bae948b40b78a981a *man/sd.fts.Rd
 dfede54ce512543246fb45593761a249 *man/summary.fm.Rd
-6037e18b8e6391675f439f7b74534cdf *man/var.fts.Rd
+a738c9cc32223f9f08d6ea126af62365 *man/var.Rd
+1a97203dee82a6f0789c07272f47d848 *man/var.fts.Rd

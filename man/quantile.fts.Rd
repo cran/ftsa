@@ -5,7 +5,7 @@
 Computes quantiles of functional time series at each variable.
 }
 \usage{
-\method{quantile}{fts}(x, probs = c(0.25, 0.75), ...)
+\method{quantile}{fts}(x, probs, ...)
 }
 \arguments{
 \item{x}{An object of class \code{fts}.}

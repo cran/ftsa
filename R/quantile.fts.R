@@ -1,5 +1,9 @@
-quantile.fts = function(x, probs = c(0.25, 0.75), ...)
+quantile.fts = function(x, probs, ...)
 {
+  if(missing(probs))
+  {
+	probs = c(0, 0.25, 0.5, 0.75, 1)
+  }
   if (class(x)[1] == "fts"|class(x)[1] == "fds"|class(x)[1] =="sfts"){
       y = x$y
       p = dim(y)[1]
@@ -7,7 +11,7 @@ quantile.fts = function(x, probs = c(0.25, 0.75), ...)
       for(i in 1:p){
           q[i,] = quantile(y[i,], probs = probs)
       }
-      colnames(q) = c(0.25,0.75)
+      colnames(q) = paste(round(100*probs,0), "%", sep="")
       rownames(q) = x$x
       if (class(x)[1] == "fds"){
           warning("Object is not a functional time series.")
