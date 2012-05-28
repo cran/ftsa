@@ -19,15 +19,18 @@ error,
 fbootstrap,
 fplsr,
 dynupdate,
+var.default,
+sd.default,
 sd.fts,
-median,
 quantile.fts,
+median,
+sd,
+var,
 ftsmweightselect,
 forecastfplsr,
 ftsmiterativeforecasts,
 plotfplsr,
 centre,
-median,
 pcscorebootstrapdata
 )
 
@@ -53,5 +56,4 @@ import(forecast)
 
 import(grDevices)
 
-import(stats)
-
+importFrom(stats)
