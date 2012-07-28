@@ -26,6 +26,5 @@ R. J. Hyndman and H. Booth (2008) "Stochastic population forecasts using functio
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{summary.fm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.fmres}}}
 \examples{
 plot(residuals(object = ftsm(ElNino)), xlab = "Year", ylab = "Month")
-plot(residuals(object = fplsr(ElNino)), xlab = "Year", ylab = "Month")
 }
 \keyword{models}

@@ -31,13 +31,10 @@ R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with d
 Han Lin Shang
 }
 \note{
-Can be computational intensive.
+Can be computational intensive, as it takes about half-minute to compute. For example, ftsmweightselect(ElNinosmooth, ntrainyear = 1).
 }
 \seealso{
 \code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}
-}
-\examples{
-ftsmweightselect(ElNinosmooth, ntrainyear = 1)
 }
 \keyword{methods}
 

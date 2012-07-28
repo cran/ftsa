@@ -1,6 +1,7 @@
 fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean, 
     level = level, lambda = 2.3262, iter = 1, ...) 
 {
+	x = 1:length(x)	
     n <- ncol(y)
     m <- length(x)
     if (lambda < 1) 
@@ -71,32 +72,33 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
             w <- ifelse(v < medv + lambda * sqrt(medv), 1, 0)
             V <- repmat(w/mean(w), 1, ngrid) * t(yy)
             s <- La.svd(V)
-            Phi <- as.matrix(t(s$vt)[, 1:order])            
+            Phi <- as.matrix(t(s$vt)[, 1:order])
         }
         varprop <- s$d^2
         varprop <- varprop/sum(s$d^2)
-    }   
-	Phinorm = matrix(NA, length(x), order)
-	Phinormngrid = matrix(NA, ngrid, order)
+    }
+    Phinorm = matrix(NA, length(x), order)
+    Phinormngrid = matrix(NA, ngrid, order)
     for (i in 1:order) {
-        Phinorm[, i] = approx(xx, Phi[, i], xout = x)$y/delta/(sqrt(sum((approx(xx, Phi[, i], xout = x)$y/delta)^2)))
-		Phinormngrid[,i] = approx(x, Phinorm[, i], xout = xx)$y
-    }	
-	B <- t(yy) %*% Phinormngrid
-    v <- colSums((yy - Phinormngrid %*% t(B))^2) * delta	
-	colnames(B) <- paste("beta", 1:order, sep = "")
-	coeffdummy = B * delta
-	colmeanrm = matrix(colMeans(coeffdummy), dim(B)[2], 1)
-	coeff <- cbind(coeff, sweep(coeffdummy, 2, colmeanrm))
-	m <- ncol(basis) 
-    basis = basis + Phinorm %*% colmeanrm     	
-	for(i in 1:order) {
-	    basis <- cbind(basis, Phinorm[, i])
-	    if (sum(basis[, i + m]) < 0) {
-			basis[, i + m] <- -basis[, i + m]
-			coeff[, i + m] <- -coeff[, i + m]
+        Phinorm[, i] = approx(xx, Phi[, i], xout = x)$y/delta/(sqrt(sum((approx(xx, 
+            Phi[, i], xout = x)$y/delta)^2)))
+        Phinormngrid[, i] = approx(x, Phinorm[, i], xout = xx)$y
+    }
+    B <- t(yy) %*% Phinormngrid
+    v <- colSums((yy - Phinormngrid %*% t(B))^2) * delta
+    colnames(B) <- paste("beta", 1:order, sep = "")
+    coeffdummy = B * delta
+    colmeanrm = matrix(colMeans(coeffdummy), dim(B)[2], 1)
+    coeff <- cbind(coeff, sweep(coeffdummy, 2, colmeanrm))
+    m <- ncol(basis)
+    basis = basis + Phinorm %*% colmeanrm
+    for (i in 1:order) {
+        basis <- cbind(basis, Phinorm[, i])
+        if (sum(basis[, i + m]) < 0) {
+            basis[, i + m] <- -basis[, i + m]
+            coeff[, i + m] <- -coeff[, i + m]
         }
-    }	
+    }
     colnames(basis)[m + (1:order)] <- paste("phi", 1:order, sep = "")
     varprop <- varprop[1:order]
     yy <- yy - Phinormngrid %*% t(B)
@@ -104,23 +106,25 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
     if (class(s) == "try-error") {
         s <- svd(t(yy), LINPACK = TRUE)
         s$vt <- t(s$v)
-    }	
+    }
     Phi2 <- as.matrix(t(s$vt)[, s$d > 1e-06])
     m <- ncol(Phi2)
-    basis2 <- coeff2 <- NULL	
-	Phinorm2 = matrix(NA, length(x), m)
-	Phinorm2ngrid = matrix(NA, ngrid, m)
+    basis2 <- coeff2 <- NULL
+    Phinorm2 = matrix(NA, length(x), m)
+    Phinorm2ngrid = matrix(NA, ngrid, m)
     if (m > 0) {
-	    for(i in 1:m) {
-		    Phinorm2[, i] = approx(xx, Phi2[, i], xout = x)$y/delta/(sqrt(sum((approx(xx, Phi2[, i], xout = x)$y/delta)^2)))
-			Phinorm2ngrid[, i] = approx(x, Phinorm2[, i], xout = xx)$y			
-		}		
-        B2 <- t(yy) %*% Phinorm2ngrid        
-		colnames(B2) <- paste("beta", order + (1:ncol(B2)), sep = "")		
-        coeff2dummy <- B2 * delta		
-		colmeanrm2 = matrix(colMeans(coeff2dummy), dim(B2)[2], 1)
-		coeff2 = sweep(coeff2dummy, 2, colmeanrm2)
-		for (i in 1:m) {
+        for (i in 1:m) {
+            Phinorm2[, i] = approx(xx, Phi2[, i], xout = x)$y/delta/(sqrt(sum((approx(xx, 
+                Phi2[, i], xout = x)$y/delta)^2)))
+            Phinorm2ngrid[, i] = approx(x, Phinorm2[, i], xout = xx)$y
+        }
+        B2 <- t(yy) %*% Phinorm2ngrid
+        colnames(B2) <- paste("beta", order + (1:ncol(B2)), sep = "")
+        coeff2dummy <- B2 * delta
+        colmeanrm2 = matrix(colMeans(coeff2dummy), dim(B2)[2], 
+            1)
+        coeff2 = sweep(coeff2dummy, 2, colmeanrm2)
+        for (i in 1:m) {
             basis2 <- cbind(basis2, Phinorm2[, i])
             if (sum(basis2[, i]) < 0) {
                 basis2[, i] <- -basis2[, i]

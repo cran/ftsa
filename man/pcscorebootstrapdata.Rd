@@ -53,8 +53,5 @@ Han Lin Shang
 }
 \examples{
 boot1 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "st")
-boot2 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "sm", smo = 0.05)
-boot3 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "mvn")
-boot4 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "stiefel")
 }
 \keyword{models}
