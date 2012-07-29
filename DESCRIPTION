@@ -1,8 +1,8 @@
 Package: ftsa
 Type: Package
 Title: Functional time series analysis
-Version: 3.3
-Date: 2012-05-27
+Version: 3.4
+Date: 2012-07-28
 Depends: R (>= 2.10.0), forecast, rainbow
 Suggests: tseries, fds
 LazyLoad: yes
@@ -12,6 +12,6 @@ Maintainer: Han Lin Shang <HanLin.Shang@monash.edu>
 Description: Functions for functional time series
 License: GPL (>= 2)
 URL: http://monashforecasting.com/index.php?title=R_packages
-Packaged: 2012-05-27 23:21:49 UTC; hanshang
+Packaged: 2012-07-28 23:33:06 UTC; hanlinshang
 Repository: CRAN
-Date/Publication: 2012-05-28 06:40:05
+Date/Publication: 2012-07-29 09:02:07

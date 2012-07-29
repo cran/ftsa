@@ -18,6 +18,5 @@ Summarizes a basis function model fitted to a functional time series. It returns
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.fmres}}}
 \examples{
 summary(object = ftsm(ElNino))
-summary(object = fplsr(ElNino))
 }
 \keyword{models}

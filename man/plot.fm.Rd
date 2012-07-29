@@ -45,8 +45,6 @@ R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with d
 \author{Rob J Hyndman}
 \examples{
 plot(x = ftsm(y = ElNino))
-plot(x = fplsr(data = ElNino), ylab1 = "Predictor score", 
-     ylab2 = "Response loading")
 }
 \keyword{hplot}
 

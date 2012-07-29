@@ -64,16 +64,6 @@ H. L. Shang and R. J. Hyndman (2011) "Nonparametric time series forecasting with
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}}
 \examples{
 dynupdate(data = ElNino, newdata = ElNino$y[1:4,57], 
-          holdoutdata = ElNino$y[5:12,57], method = "ts")
-dynupdate(data = ElNino, newdata = ElNino$y[1:4,57], 
-          holdoutdata = ElNino$y[5:12,57], method = "block")
-dynupdate(data = ElNino, newdata = ElNino$y[1:4,57], 
-          holdoutdata = ElNino$y[5:12,57], method = "ols")
-dynupdate(data = ElNino, newdata = ElNino$y[1:4,57], 
-          holdoutdata = ElNino$y[5:12,57], method = "pls")
-dynupdate(data = ElNino, newdata = ElNino$y[1:4,57], 
-          holdoutdata = ElNino$y[5:12,57], method = "ridge")
-dynupdate(data = ElNino, newdata = ElNino$y[1:4,57], 
           holdoutdata = ElNino$y[5:12,57], method = "block", interval = TRUE)
 }
 \keyword{models}

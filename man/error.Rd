@@ -5,15 +5,16 @@
 Computes the forecast error measure.
 }
 \usage{
-error(forecast, forecastbench, true, method = c("me", "mpe", "mae", 
+error(forecast, forecastbench, true, insampletrue, method = c("me", "mpe", "mae", 
  "mse", "sse", "rmse", "mdae", "mdse", "mape", "mdape", "smape", 
   "smdape", "rmspe", "rmdspe", "mrae", "mdrae", "gmrae", 
    "relmae", "relmse", "mase", "mdase", "rmsse"), giveall = FALSE)
 }
 \arguments{
-  \item{forecast}{Forecasted values.}
+  \item{forecast}{Out-of-sample forecasted values.}
   \item{forecastbench}{Forecasted values using a benchmark method, such as random walk.}
-  \item{true}{Observed values.}
+  \item{true}{Out-of-sample holdout values.}
+  \item{insampletrue}{Insample values.}
   \item{method}{Method of forecast error measure.}
   \item{giveall}{If \code{giveall = TRUE}, all error measures are provided.}
 }
@@ -85,9 +86,8 @@ R. J. Hyndman and A. Koehler (2006) "Another look at measures of forecast accura
 \author{Han Lin Shang}
 \examples{
 error(forecast = 1:2, true = 3:4, method = "mae")
-error(forecast = 1:2, true = 3:4, method = "mse")
 error(forecast = 1:5, forecastbench = 6:10, true = 11:15, method = "mrae")
-error(forecast = 1:5, forecastbench = 6:10, true = 11:15, method = "mdrae")
+error(forecast = 1:5, forecastbench = 6:10, true = 11:15, insampletrue = 16:20, giveall=TRUE)
 }
 \keyword{methods}
 

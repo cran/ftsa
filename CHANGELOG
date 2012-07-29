@@ -1,3 +1,11 @@
+v 3.4
+
+1. Update the ftsm function
+2. Update the var.default function
+3. Update the ftsa:::plsPI function
+4. Add the vignette
+
+
 v 3.3
 
 1. Update the sd.default.R, var.default.R functions.
