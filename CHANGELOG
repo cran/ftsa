@@ -1,3 +1,8 @@
+v 3.5
+
+1. Update the plot.fmres function using the colorspace package
+2. Delete some internal functions, namely cm.spline.R, KalmanLike.R, L1median.R, PCAproj.R, ash2.R, bin2.R
+
 v 3.4
 
 1. Update the ftsm function
