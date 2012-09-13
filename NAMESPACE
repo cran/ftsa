@@ -53,7 +53,5 @@ S3method(print,ftsf)
 S3method(print,fmres)
 
 import(forecast)
-
 import(grDevices)
-
 importFrom(stats)
