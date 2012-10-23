@@ -1,4 +1,4 @@
-`median.fts` <- function (x, method = c("hossjercroux", "coordinate", "FM", "mode", "RP", "RPD"), ...) 
+`median.fts` <- function (x, method = c("hossjercroux", "coordinate", "FM", "mode", "RP", "RPD", "radius"), alpha, beta, weight, ...) 
 {
     if (class(x)[1] == "fts"|class(x)[1] == "fds"|class(x)[1] == "sfts"){
         method = match.arg(method)
@@ -19,6 +19,9 @@
         }
         if (method == "RPD"){    
             loc <- depth.RPD(x)$median
+        }
+        if (method == "radius"){
+        	loc <- depth.radius(x, alpha, beta, weight)$median
         }
         if (class(x)[1] == "fds"){
             warning("Object is not a functional time series.")

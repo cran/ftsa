@@ -60,6 +60,7 @@ Han Lin Shang
 }
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{plot.ftsf}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}}
 \examples{
-ftsmiterativeforecasts(Australiasmoothfertility, components = 2, iteration = 5)              
+# Iterative one-step-ahead forecasts via functional principal component analysis.	
+\donttest{ftsmiterativeforecasts(Australiasmoothfertility, components = 2, iteration = 5)}
 }
 \keyword{models}

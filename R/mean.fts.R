@@ -1,5 +1,5 @@
-`mean.fts` <- function (x, method = c("coordinate", "FM", "mode", "RP", "RPD"), 
-                         na.rm = TRUE, ...) 
+`mean.fts` <- function (x, method = c("coordinate", "FM", "mode", "RP", "RPD", "radius"), 
+                         na.rm = TRUE, alpha, beta, weight, ...) 
 {
    if (class(x)[1] == "fts"|class(x)[1] == "fds"|class(x)[1] == "sfts"){
        method = match.arg(method)
@@ -17,6 +17,9 @@
        }
        if (method == "RPD"){
           loc <- depth.RPD(x)$mtrim    
+       }
+       if (method == "radius"){
+       	  loc <- depth.radius(x, alpha, beta, weight)$mtrim
        }
        if (class(x)[1] == "fds"){
            warning("Object is not a functional time series.")

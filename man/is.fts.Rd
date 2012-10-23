@@ -12,6 +12,7 @@ is.fts(x)
 }
 \author{Rob J Hyndman}
 \examples{
+# check if ElNino is the class of the functional time series.	
 is.fts(x = ElNino)
 }
 \keyword{ts}

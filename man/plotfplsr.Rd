@@ -34,6 +34,7 @@ Han Lin Shang
 \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.ftsf}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}
 }
 \examples{
+# Fit the data by the functional partial least squares.	
 ausfplsr = fplsr(Australiasmoothfertility, 2)
 plotfplsr(ausfplsr)
 }

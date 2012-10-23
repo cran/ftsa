@@ -23,6 +23,9 @@ Han Lin Shang
 \code{\link[ftsa]{pcscorebootstrapdata}}
 }
 \examples{
+# mean function is often removed in the functional principal component analysis.
+# trimmed mean function is sometimes employed for robustness in the presence of outliers.
+# In calculating trimmed mean function, several functional depth measures were employed.	
 centre(ElNino$y, "mean")
 }
 \keyword{models}

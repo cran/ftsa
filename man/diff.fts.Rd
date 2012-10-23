@@ -18,6 +18,8 @@ Computes differences of a \code{fts} object at each variable.
 \author{Rob J Hyndman}
 
 \examples{
+# ElNino is an object of sliced functional time series.
+# Differencing is sometimes used to achieve stationarity.	
 diff(x = ElNino)
 }
 \keyword{ts}

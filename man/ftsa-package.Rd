@@ -10,16 +10,30 @@ This package presents descriptive statistics for modeling functional data; imple
 \author{
 Rob J Hyndman and Han Lin Shang 
 
-Maintainer: Han Lin Shang <HanLin.Shang@buseco.monash.edu.au>
+Maintainer: Han Lin Shang <HanLin.Shang@monash.edu>
 }
 \references{
 R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with discussion)", \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.
 
-R. J. Hyndman and H. L. Shang. (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{19}(1), 29-45.
+R. J. Hyndman and H. L. Shang (2010) "Rainbow plots, bagplots, and boxplots for functional data", \emph{Journal of Computational and Graphical Statistics}, \bold{19}(1), 29-45.
 
-H. L. Shang and R. J. Hyndman (2011) "Nonparametric time series forecasting with dynamic updating", Mathematics and Computers in Simulation, \bold{81}(7), 1310-1324.
+H. L. Shang and R. J. Hyndman (2011) "Nonparametric time series forecasting with dynamic updating", \emph{Mathematics and Computers in Simulation}, \bold{81}(7), 1310-1324.
 
-H. L. Shang, H. Booth and R. J. Hyndman (2011) "Point and interval forecasts of mortality rates and life expectancy: a comparison of ten principal component methods, Demographic Research, \bold{25}(5), 173-214.
+H. L. Shang, H. Booth and R. J. Hyndman (2011) "Point and interval forecasts of mortality rates and life expectancy: a comparison of ten principal component methods, \emph{Demographic Research}, \bold{25}(5), 173-214.
+
+
+
+H. L. Shang (2011) "rainbow: an R package for visualizing functional time series, \emph{The R Journal}, 3(2), 54-59.
+
+H. L. Shang (2012) "Point and interval forecasts of age-specific fertility rates: a comparison of functional principal component methods", \emph{Journal of Population Research}, \bold{29}(3), 249-267.
+
+
+
+H. L. Shang (2012) "Point and interval forecasts of age-specific life expectancies: a model averaging", \emph{Demographic Research}, \bold{in press}.
+
+
+
+H. L. Shang (2012) "Functional time series approach for forecasting very short-term electricity demand", \emph{Journal of Applied Statistics}, \bold{in press}.
 }
 \keyword{package}
 

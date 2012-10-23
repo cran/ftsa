@@ -111,18 +111,26 @@ D. Bosq (2000) \emph{Linear processes in function spaces}, New York: Springer.
 N. Faber (2002) "Uncertainty estimation for multivariate regression coefficients", \emph{Chemometrics and Intelligent Laboratory Systems}, \bold{64}(2), 169-179.
 
 J. A. Fernandez Pierna and L. Jin and F. Wahl and N. M. Faber and D. L. Massart (2003) "Estimation of partial least squares regression prediction uncertainty	when the reference values carry a sizeable measurement error", \emph{Chemometrics and Intelligent Laboratory Systems}, \bold{65}(2), 281-291.
+
+P. T. Reiss and R. T. Ogden (2007), "Functional principal component regression and functional partial least squares", \emph{Journal of the American Statistical Association}, \bold{102}(479), 984-996.
+
+A. Delaigle and P. Hall (2012), "Methodology and theory for partial least squares applied to functional data", \emph{Annals of Statistics}, \bold{40}(1), 322-352. 
 }
 \author{Han Lin Shang}
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}}, 
 \code{\link[ftsa]{summary.fm}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{plot.fmres}}}
 \examples{
-fplsr(ElNino, type = "nipals")
-fplsr(ElNino)
-fplsr(ElNino, weight = TRUE)
+# When weight = FALSE, all observations are assigned equally.
+# When weight = TRUE, all observations are assigned geometrically decaying weights.
+fplsr(ElNino, order = 6, type = "nipals")
+fplsr(ElNino, order = 6)
+\donttest{fplsr(ElNino, weight = TRUE)
 fplsr(ElNino, unit.weights = FALSE)
 fplsr(ElNino, unit.weights = FALSE, weight = TRUE)
+# The prediction intervals are calculated numerically.
 fplsr(ElNino, interval = TRUE, method = "delta")
-fplsr(ElNino, interval = TRUE, method = "boota")
+# The prediction intervals are calculated by bootstrap method. 
+fplsr(ElNino, interval = TRUE, method = "boota")}
 }
 \keyword{models}
 

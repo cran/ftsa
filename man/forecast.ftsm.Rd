@@ -71,13 +71,19 @@ R. J. Hyndman and M. S. Ullah (2007) "Robust forecasting of mortality and fertil
 R. J. Hyndman and H. Booth (2008) "Stochastic population forecasts using functional data models for mortality, fertility and migration", \emph{International Journal of Forecasting}, \bold{24}(3), 323-342.
 
 R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series" (with discussion), \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.
+
+H. L. Shang (2012) "Functional time series approach for forecasting very short-term electricity demand", \emph{Journal of Applied Statistics}, \bold{in press}.
 }
 
 \author{Rob J Hyndman}
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecastfplsr}}, \code{\link[ftsa]{plot.ftsf}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}}
 \examples{
-forecast(object = ftsm(ElNino))              
-forecast(object = ftsm(ElNino, weight = TRUE))
+# ElNino is an object of class sliced functional time series.
+# Via functional principal component decomposition, the dynamic was captured by a few principal components and principal component scores. 
+# By using an exponential smoothing method, the principal component scores are forecasted.
+# The forecasted curves are constructed by forecasted principal components times fixed principal components plus the mean function.	
+forecast(object = ftsm(ElNino), h = 10, method = "ets")              
+\donttest{forecast(object = ftsm(ElNino, weight = TRUE))}
 }
 \keyword{models}
 

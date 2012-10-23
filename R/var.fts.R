@@ -1,4 +1,4 @@
-`var.fts` <- function(x, method = c("coordinate", "FM", "mode", "RP", "RPD"), trim = 0.25,...)
+`var.fts` <- function(x, method = c("coordinate", "FM", "mode", "RP", "RPD", "radius"), trim = 0.25, alpha, weight, ...)
 {
    if (class(x)[1] == "fts"|class(x)[1] == "fds"|class(x)[1] == "sfts"){
        functions = t(x$y) 
@@ -24,6 +24,10 @@
            lista = depth.RPD(x, trim = trim)$ltrim
            loc = func.var(functions[lista,])
        }   
+       if (method == "radius"){
+       	   lista = which(depth.radius(x, alpha, trim, weight)$weight==1)
+       	   loc = func.var(functions[lista,])
+       }
        if (class(x)[1] == "fds"){
            warning("Object is not a functional time series.")
        }
