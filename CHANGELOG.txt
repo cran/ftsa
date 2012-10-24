@@ -1,3 +1,8 @@
+v 3.6
+
+1. Add more detail to the example section
+2. Add the depth.radius option to the mean.fts, median.fts, sd.fts and var.fts
+
 v 3.5
 
 1. Update the plot.fmres function using the colorspace package

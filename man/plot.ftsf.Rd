@@ -52,7 +52,7 @@ R. J. Hyndman and H. Booth (2008) "Stochastic population forecasts using functio
 
 R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with discussion)", \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.
 }
-\examples{
+\examples{	
 plot(x = forecast(object = ftsm(y = ElNino)))
 }
 \keyword{hplot}

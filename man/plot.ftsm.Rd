@@ -44,6 +44,7 @@ R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series" (with 
 \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.ftsf}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}
 }
 \examples{
-plot.ftsm(ftsm(ElNino, 2), components = 2)
+# plot different principal components.	
+plot.ftsm(ftsm(ElNino, order = 2), components = 2)
 }
 \keyword{models}

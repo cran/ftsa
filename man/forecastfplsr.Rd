@@ -25,6 +25,8 @@ Han Lin Shang
 \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.ftsf}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}
 }
 \examples{
+# A set of functions are decomposed by functional partial least squares decomposition.	
+# By forecasting univariate partial least squares scores, the forecasted curves are obtained by multiplying the forecasted scores by fixed functional partial least squares function plus fixed mean function.
 forecastfplsr(Australiasmoothfertility, h = 5)
 }
 \keyword{models}

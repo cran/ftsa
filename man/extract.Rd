@@ -22,6 +22,8 @@ as data but with a subset of \code{time} variables.
 }
 \author{Han Lin Shang}
 \examples{
+# ElNino is an object of class sliced functional time series.
+# This function truncates the data series rowwise or columnwise.	
 extract(ElNino, direction = "time", timeorder = 1980:2006) # Last 27 curves
 extract(ElNino, direction = "x", xorder = 1:8) # First 8 x variables
 }

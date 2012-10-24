@@ -7,8 +7,7 @@ Bootstrap independent and identically distributed functional data or functional 
 Computes bootstrap or smoothed bootstrap samples based on either independent and identically distributed functional data or functional time series.
 }
 \usage{
-pcscorebootstrapdata(dat, bootrep, statistic, bootmethod = c("st", "sm", "mvn", 
- "stiefel"), smo)
+pcscorebootstrapdata(dat, bootrep, statistic, bootmethod = c("st", "sm", "mvn", "stiefel"), smo)
 }
 \arguments{
   \item{dat}{An object of class \code{matrix}.}
@@ -52,6 +51,10 @@ Han Lin Shang
 \code{\link[ftsa]{fbootstrap}}
 }
 \examples{
+# Bootstrapping the distribution of a summary statistics of functional data.	
 boot1 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "st")
+\donttest{boot1 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "sm")
+boot1 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "mvn")
+boot1 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "stiefel")}
 }
 \keyword{models}
