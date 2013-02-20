@@ -179,7 +179,7 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
         1, frequency = ytsp[3], xname = object$y$xname, yname = "Forecasts")
     res <- object$residuals
     res$y <- res$y^2
-    vx <- rowMeans(res$y)
+    vx <- rowMeans(res$y, na.rm = TRUE)
     modelvar <- object$basis^2 %*% t(varfcast)
     totalvar <- sweep(modelvar, 1, vx + object$mean.se^2, "+")
     if (adjust & nb > 1) {

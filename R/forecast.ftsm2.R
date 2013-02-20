@@ -74,23 +74,6 @@ forecast.ftsm2 = function (object, h = 50, method = c("arima", "ar", "ets", "ets
             fitted[, i] <- pegelsfit$fitted
         }
     }
-    else if (method == "struct") {
-        if (var(xx[, i], na.rm = TRUE) < 1e-08) {
-            cc <- mean(xx[, i], na.rm = TRUE)
-            meanfcast[, i] <- rep(cc, h)
-            varfcast[, i] <- rep(0, h)
-            fitted[, i] <- rep(cc, length(xx[, i]))
-        }
-        else {
-            for (i in 1:nb) {
-                fitStruct <- struct.forecast(xx[, i], h = h, 
-                  level = level, ...)
-                meanfcast[, i] <- fitStruct$mean
-                varfcast[, i] <- fitStruct$var
-                fitted[, i] <- fitStruct$fitted
-            }
-        }
-    }
     else if (method == "arima") {
         if (length(stationary) == 1) 
             stationary <- c(TRUE, rep(stationary, nb))
@@ -106,34 +89,15 @@ forecast.ftsm2 = function (object, h = 50, method = c("arima", "ar", "ets", "ets
                 fitted[, i] <- rep(cc, length(xx[, i]))
             }
             else {
-                if (stationary[i]) {
-                  .xxi <- xx[, i]
-                  old.warn <- options(warn = -1)
-                  my.ar <- function(x, max.p = 5, aic = TRUE, 
-                    ...) 
-                  {
-                    .xxi <- x
-                    fit <- ar(.xxi, method = "mle", order.max = max.p, 
-                      aic = aic)
-                    assign(".xxi", .xxi, envir = .GlobalEnv)
-                    return(fit)
-                  }
-                  barima <- my.ar(xx[, i], ...)
-                  options(old.warn)
-                  fitted[, i] <- xx[, i] - barima$resid
-                }
-                else {
-                  barima <- auto.arima(xx[, i], ...)
-                  fitted[, i] <- fitted(barima)
-                }
-                pred <- forecast(barima, h = h, level = level)
+                barima <- auto.arima(xx[,i],stationary=stationary[i],...)
+                fitted[,i] <- fitted(barima)
+                pred <- forecast(barima,h=h,level=level)
                 fmodels[[i]] <- pred
-                meanfcast[, i] <- pred$mean
-                varfcast[, i] <- ((pred$upper[, 1] - pred$lower[, 
-                  1])/(2 * qconf[1]))^2
+                meanfcast[,i] <- pred$mean
+                varfcast[,i] <- ((pred$upper[,1]-pred$lower[,1])/(2*qconf[1]))^2
             }
         }
-    }
+    }    
     else if (method == "rwdrift") {
         for (i in 1:nb) {
             fcast <- fmodels[[i]] <- rw.drift(x[, i], ...)
@@ -152,6 +116,23 @@ forecast.ftsm2 = function (object, h = 50, method = c("arima", "ar", "ets", "ets
             fitted[, i] <- c(NA, diff(x[, i]))
         }
     }
+    else if (method == "struct") {
+        if (var(xx[, i], na.rm = TRUE) < 1e-08) {
+            cc <- mean(xx[, i], na.rm = TRUE)
+            meanfcast[, i] <- rep(cc, h)
+            varfcast[, i] <- rep(0, h)
+            fitted[, i] <- rep(cc, length(xx[, i]))
+        }
+        else {
+            for (i in 1:nb) {
+                fitStruct <- struct.forecast(xx[, i], h = h, 
+                  level = level, ...)
+                meanfcast[, i] <- fitStruct$mean
+                varfcast[, i] <- fitStruct$var
+                fitted[, i] <- fitStruct$fitted
+            }
+        }
+    }    
     else stop("Unknown method")
     ytsp <- tsp(object$fitted$time)
     error <- ts(object$coeff - fitted, start = ytsp[1], frequency = ytsp[3])
@@ -164,7 +145,7 @@ forecast.ftsm2 = function (object, h = 50, method = c("arima", "ar", "ets", "ets
         1, frequency = ytsp[3], xname = object$y$xname, yname = "Forecasts")
     res <- object$residuals
     res$y <- res$y^2
-    vx <- mean(res)$y
+    vx <- rowMeans(res$y, na.rm = TRUE)
     modelvar <- object$basis^2 %*% t(varfcast)
     totalvar <- sweep(modelvar, 1, vx + object$mean.se^2, "+")
     if (adjust & nb > 1) {
