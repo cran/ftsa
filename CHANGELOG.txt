@@ -1,3 +1,8 @@
+v 3.7
+
+1. Update the forecast.ftsm function
+2. Update the forecast.ftsm2 function
+
 v 3.6
 
 1. Add more detail to the example section
@@ -14,7 +19,6 @@ v 3.4
 2. Update the var.default function
 3. Update the ftsa:::plsPI function
 4. Add the vignette
-
 
 v 3.3
 

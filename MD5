@@ -1,5 +1,5 @@
-c3ee9b0d401ba5aaa6bf30f809793156 *CHANGELOG.txt
-b0aff6064b90f79ff5afbc922b3032da *DESCRIPTION
+4e0e55027d74e30413ce193807b2ce28 *CHANGELOG.txt
+973b6029b02759e7199469d149f91583 *DESCRIPTION
 ed6cdb468580b432423fa6fa09aeb85b *NAMESPACE
 f1dc0a39646b946ade1d2525dd239e4d *R/DataPostProc.r
 d99136b6ff171bb74b33b849e8679c4c *R/Jacob.R
@@ -28,8 +28,8 @@ db135315029f7088b4981586121babec *R/extract.time.R
 59272d7bd15f338b49afa4b36991a22f *R/extract.x.R
 03fe325b97dfd24692bb4ad650f8b245 *R/fbootstrap.R
 50e1967341deb4e017db614d86cdd00e *R/fdpca.R
-6b4cdc2aba7a91e2c8c88c8453052822 *R/forecast.ftsm.R
-040622c49c7678f96bbf206b94478e10 *R/forecast.ftsm2.R
+87c936865d44eeda2785761ae233c3f8 *R/forecast.ftsm.R
+ea31ab9d2ddc2b9e9152164becd43fb3 *R/forecast.ftsm2.R
 3d505253d3578ddc52c2acea332b71c5 *R/forecastfplsr.R
 3ad3e412993d70be6e72e6f6a9a0dca6 *R/fplsr.R
 9a8a5c51f9aa78942eb2180c85f25e24 *R/fplsrPI.R
@@ -121,7 +121,7 @@ d4a0aed7983e5aea31699dd7a92cc89a *R/var.R
 83115c5da6fc540e665b4b6411cc94a5 *R/var.fts.R
 a3af19ad86c096a25d5c9865eb9f6980 *R/wpcr.R
 b369c840f2cdb8ed906e7ea59586e044 *inst/doc/ftsa.Rnw
-ee094ee356ae7044f46e3d1b80d655d4 *inst/doc/ftsa.pdf
+0bc54e15c923d7ca980291467c1b52c4 *inst/doc/ftsa.pdf
 5bcdc4595aafa7507ab112de8514a506 *inst/doc/master.bib
 d568f831aae74b1a5fc8b1779177c2c9 *man/centre.Rd
 320aaceb71d91c8d3cf6f1751ea884af *man/diff.fts.Rd
