@@ -70,8 +70,7 @@ H. L. Shang (2012) "Functional time series approach for forecasting very short-t
 # When we observe some newly arrived information in the most recent time period, this function allows us to update the point and interval forecasts for the remaining time period.
 dynupdate(data = ElNino, newdata = ElNino$y[1:4,57], holdoutdata = ElNino$y[5:12,57], method = "block", interval = FALSE)
 \donttest{dynupdate(data = ElNino, newdata = ElNino$y[1:4,57], holdoutdata = ElNino$y[5:12,57], method = "block", interval = TRUE)
-dynupdate(data = ElNino, newdata = ElNino$y[1:4,57], holdoutdata = ElNino$y[5:12,57], method = "ols", interval = FALSE)
-dynupdate(data = ElNino, newdata = ElNino$y[1:4,57], holdoutdata = ElNino$y[5:12,57], method = "ols", interval = TRUE)}
+dynupdate(data = ElNino, newdata = ElNino$y[1:4,57], holdoutdata = ElNino$y[5:12,57], method = "ols", interval = FALSE)}
 }
 \keyword{models}
 

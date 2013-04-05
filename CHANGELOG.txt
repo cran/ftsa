@@ -1,3 +1,9 @@
+v 3.8
+
+1. Update the ftsa:::fdpca function
+2. Update the ftsm function
+4. Update the plot.ftsm function
+
 v 3.7
 
 1. Update the forecast.ftsm function
