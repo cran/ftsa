@@ -1,5 +1,5 @@
-4e0e55027d74e30413ce193807b2ce28 *CHANGELOG.txt
-973b6029b02759e7199469d149f91583 *DESCRIPTION
+74857f10574a973f087a159cf263759f *CHANGELOG.txt
+00516eb3d470a6835d44b5b001c272f1 *DESCRIPTION
 ed6cdb468580b432423fa6fa09aeb85b *NAMESPACE
 f1dc0a39646b946ade1d2525dd239e4d *R/DataPostProc.r
 d99136b6ff171bb74b33b849e8679c4c *R/Jacob.R
@@ -27,13 +27,13 @@ c188dc92206c3a0705c329f807085ed7 *R/dynupdate.R
 db135315029f7088b4981586121babec *R/extract.time.R
 59272d7bd15f338b49afa4b36991a22f *R/extract.x.R
 03fe325b97dfd24692bb4ad650f8b245 *R/fbootstrap.R
-50e1967341deb4e017db614d86cdd00e *R/fdpca.R
+52b20661fc7ec0ef167b85a7c77fe4a9 *R/fdpca.R
 87c936865d44eeda2785761ae233c3f8 *R/forecast.ftsm.R
 ea31ab9d2ddc2b9e9152164becd43fb3 *R/forecast.ftsm2.R
 3d505253d3578ddc52c2acea332b71c5 *R/forecastfplsr.R
 3ad3e412993d70be6e72e6f6a9a0dca6 *R/fplsr.R
 9a8a5c51f9aa78942eb2180c85f25e24 *R/fplsrPI.R
-ecc579a951ae9c02fe816e35f0fa5fd7 *R/ftsm.R
+475d1c6c9803d52e0d5b67569583ca13 *R/ftsm.R
 ffe8917925925d5de4c9d570521ffb75 *R/ftsmPI.r
 8c459ff44af1c09c0fd9f7e25852fd3e *R/ftsmiterativeforecasts.R
 b5fa02c4b9b685ecb5447ee3381f548e *R/ftsmweightselect.R
@@ -79,7 +79,7 @@ b00b3f9bf2024c9342a0b3af32c35fdd *R/norm.r
 054577fae958ca2311b194860afe5308 *R/plot.fm.R
 7a4942aed9beca1a5817b9cca6dedfa9 *R/plot.fmres.R
 f86e2ec95e12bfa5dd7c661969be3686 *R/plot.ftsf.R
-d5921a9bfcaebcd28a80f0a2d05a44af *R/plot.ftsm.R
+e3ba3056762516b415410c84b354805a *R/plot.ftsm.R
 d2c29775e776831b8dc2d23a01b31653 *R/plotfplsr.R
 aea3d66e01956c9f327c2b32c2892c20 *R/plsPI.r
 80f1fd1158500e6f4dc6525cd6130004 *R/plsr.R
@@ -121,11 +121,11 @@ d4a0aed7983e5aea31699dd7a92cc89a *R/var.R
 83115c5da6fc540e665b4b6411cc94a5 *R/var.fts.R
 a3af19ad86c096a25d5c9865eb9f6980 *R/wpcr.R
 b369c840f2cdb8ed906e7ea59586e044 *inst/doc/ftsa.Rnw
-0bc54e15c923d7ca980291467c1b52c4 *inst/doc/ftsa.pdf
+2f30ffdac8db90cfabc1934dc7c9a711 *inst/doc/ftsa.pdf
 5bcdc4595aafa7507ab112de8514a506 *inst/doc/master.bib
 d568f831aae74b1a5fc8b1779177c2c9 *man/centre.Rd
 320aaceb71d91c8d3cf6f1751ea884af *man/diff.fts.Rd
-cce590ed4549eb584bb8910d3445de8e *man/dynupdate.Rd
+ffd77fccf49ab57471b9572fa078db87 *man/dynupdate.Rd
 06a8a0be405e5931c3e5739a27dbe118 *man/error.Rd
 6b09d429df6ee30318da92646892f3bc *man/extract.Rd
 db36138a8600dfd5138ebb2e1390f0e8 *man/fbootstrap.Rd

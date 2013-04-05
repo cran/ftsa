@@ -1,7 +1,9 @@
 fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean, 
     level = level, lambda = 2.3262, iter = 1, ...) 
 {
-	x = 1:length(x)	
+	xnam = x
+	coefnam = colnames(y)
+    x = 1:length(x)
     n <- ncol(y)
     m <- length(x)
     if (lambda < 1) 
@@ -19,12 +21,12 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
         method <- "classical"
     }
     yy <- matrix(NA, nrow = ngrid, ncol = n)
-    xx <- seq(min(x), max(x), l = ngrid)
-    delta <- xx[2] - xx[1]
     for (i in 1:n) {
         miss <- is.na(y[, i])
         yy[, i] <- spline(x[!miss], y[!miss, i], n = ngrid)$y
     }
+    xx <- seq(min(x[!miss]), max(x[!miss]), l = ngrid)
+    delta <- xx[2] - xx[1]
     if (mean) {
         if (method == "M" | method == "rapca") 
             ax <- L1median2(t(yy), method = "hoss")
@@ -48,6 +50,7 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
         basis <- cbind(approx(xx, ax, xout = x)$y, basis)
         colnames(coeff)[1] <- colnames(basis)[1] <- "mean"
     }
+    rownames(coeff) = as.numeric(coefnam)
     if (order == 0) 
         return(list(basis = basis, coeff = coeff, weights = rep(1, 
             n), v = rep(1, n), mean.se = axse))
@@ -77,12 +80,12 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
         varprop <- s$d^2
         varprop <- varprop/sum(s$d^2)
     }
-    Phinorm = matrix(NA, length(x), order)
+    Phinorm = matrix(NA, length(x[!miss]), order)    
     Phinormngrid = matrix(NA, ngrid, order)
     for (i in 1:order) {
-        Phinorm[, i] = approx(xx, Phi[, i], xout = x)$y/delta/(sqrt(sum((approx(xx, 
-            Phi[, i], xout = x)$y/delta)^2)))
-        Phinormngrid[, i] = approx(x, Phinorm[, i], xout = xx)$y
+        Phinorm[, i] = approx(xx, Phi[, i], xout = x[!miss])$y/delta/(sqrt(sum((approx(xx, 
+            Phi[, i], xout = x[!miss])$y/delta)^2)))
+        Phinormngrid[, i] = approx(x[!miss], Phinorm[, i], xout = xx)$y
     }
     B <- t(yy) %*% Phinormngrid
     v <- colSums((yy - Phinormngrid %*% t(B))^2) * delta
@@ -91,7 +94,8 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
     colmeanrm = matrix(colMeans(coeffdummy), dim(B)[2], 1)
     coeff <- cbind(coeff, sweep(coeffdummy, 2, colmeanrm))
     m <- ncol(basis)
-    basis = basis + Phinorm %*% colmeanrm
+    basis = basis[!miss] + Phinorm %*% colmeanrm
+    colnames(basis) = "mean"
     for (i in 1:order) {
         basis <- cbind(basis, Phinorm[, i])
         if (sum(basis[, i + m]) < 0) {
@@ -110,13 +114,13 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
     Phi2 <- as.matrix(t(s$vt)[, s$d > 1e-06])
     m <- ncol(Phi2)
     basis2 <- coeff2 <- NULL
-    Phinorm2 = matrix(NA, length(x), m)
+    Phinorm2 = matrix(NA, length(x[!miss]), m)
     Phinorm2ngrid = matrix(NA, ngrid, m)
     if (m > 0) {
         for (i in 1:m) {
-            Phinorm2[, i] = approx(xx, Phi2[, i], xout = x)$y/delta/(sqrt(sum((approx(xx, 
-                Phi2[, i], xout = x)$y/delta)^2)))
-            Phinorm2ngrid[, i] = approx(x, Phinorm2[, i], xout = xx)$y
+            Phinorm2[, i] = approx(xx, Phi2[, i], xout = x[!miss])$y/delta/(sqrt(sum((approx(xx, 
+                Phi2[, i], xout = x[!miss])$y/delta)^2)))
+            Phinorm2ngrid[, i] = approx(x[!miss], Phinorm2[, i], xout = xx)$y
         }
         B2 <- t(yy) %*% Phinorm2ngrid
         colnames(B2) <- paste("beta", order + (1:ncol(B2)), sep = "")
@@ -133,7 +137,13 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
         }
         colnames(basis2) <- paste("phi", order + (1:m), sep = "")
     }
-    return(list(basis = basis, coeff = coeff, varprop = varprop, 
-        weights = w/mean(w), v = v, basis2 = basis2, coeff2 = coeff2, 
+    basiscomb = matrix(,nrow(y),ncol(basis))
+    basis2comb = matrix(,nrow(y),ncol(basis2))
+	basiscomb[!miss,] = basis
+	basis2comb[!miss,] = basis2
+	rownames(basiscomb) = rownames(basis2comb) = as.numeric(xnam)
+	rownames(coeff) = rownames(coeff2) = coefnam 
+    return(list(naindex = as.numeric(which(miss)), basis = basiscomb, coeff = coeff, varprop = varprop, 
+        weights = w/mean(w), v = v, basis2 = basis2comb, coeff2 = coeff2, 
         mean.se = axse))
 }

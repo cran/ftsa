@@ -2,6 +2,15 @@ ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classica
     "M", "rapca"), mean = TRUE, level = FALSE, lambda = 3, weight = FALSE, 
     beta = 0.1, ...) 
 {
+	if(length(colnames(y$y)) > 0)
+	{
+		y$time = ts(as.numeric(colnames(y$y)),start=head(as.numeric(colnames(y$y)),1),
+					end=tail(as.numeric(colnames(y$y)),1))
+	}
+	else
+	{
+		y$time = ts(1:ncol(y$y), start=1, end = ncol(y$y))
+	}
     method <- match.arg(method)
     if (!mean & !level & order < 1) 
         stop("No model to fit")
@@ -62,9 +71,11 @@ ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classica
         fits <- fts(1:length(y$x), basis %*% t(coeff), start = ytsp[1], 
             frequency = ytsp[3], xname = y$xname, yname = paste("Fitted", 
                 y$yname))
-		fits$x = y$x                
+        fits$x = y$x
+        colnames(basis) = c("mean", paste("phi", 1:order, sep = ""))
+        colnames(coeff) = c("mean", paste("beta", 1:order, sep = ""))
     }
-    rownames(basis) <- paste(y$x)
+    # rownames(basis) <- paste(y$x)
     res <- fts(y$x, y$y - fits$y, start = ytsp[1], frequency = ytsp[3], 
         xname = y$xname, yname = paste("Residuals", y$yname))
     if (weight == FALSE) {
