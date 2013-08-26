@@ -1,4 +1,5 @@
-`wpcr` <- function(data, ncomp, method = c("ets", "rw"), h, beta = NULL, median = FALSE, transform = FALSE){
+`wpcr` <- function(data, ncomp, method = c("ets", "rw"), h, beta = NULL, median = FALSE, transform = FALSE)
+{
      n = ncol(data)
      q = matrix(,n,1)
      for(i in 1:n){
@@ -34,3 +35,4 @@
      }
      return(forecast)
 }
+

@@ -71,7 +71,8 @@ R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with d
 \code{\link[ftsa]{ftsmweightselect}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.ftsf}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}
 }
 \examples{
-# ElNino is an object of class sliced functional time series, constructed from a univariate time series. 
+# ElNino is an object of class sliced functional time series, constructed 
+# from a univariate time series. 
 # By default, all observations are assigned with equal weighting. 	
 ftsm(y = ElNino, order = 6, method = "classical", weight = FALSE)
 # When weight = TRUE, geometrically decaying weights are used.

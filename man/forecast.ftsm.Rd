@@ -79,9 +79,12 @@ H. L. Shang (2012) "Functional time series approach for forecasting very short-t
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecastfplsr}}, \code{\link[ftsa]{plot.ftsf}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}}
 \examples{
 # ElNino is an object of class sliced functional time series.
-# Via functional principal component decomposition, the dynamic was captured by a few principal components and principal component scores. 
-# By using an exponential smoothing method, the principal component scores are forecasted.
-# The forecasted curves are constructed by forecasted principal components times fixed principal components plus the mean function.	
+# Via functional principal component decomposition, the dynamic was captured 
+# by a few principal components and principal component scores. 
+# By using an exponential smoothing method, 
+# the principal component scores are forecasted.
+# The forecasted curves are constructed by forecasted principal components 
+# times fixed principal components plus the mean function.	
 forecast(object = ftsm(ElNino), h = 10, method = "ets")              
 \donttest{forecast(object = ftsm(ElNino, weight = TRUE))}
 }

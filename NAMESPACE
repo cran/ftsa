@@ -26,6 +26,7 @@ quantile.fts,
 median,
 sd,
 var,
+quantile,
 ftsmweightselect,
 forecastfplsr,
 ftsmiterativeforecasts,
@@ -54,4 +55,6 @@ S3method(print,fmres)
 
 import(forecast)
 import(grDevices)
-importFrom(stats)
+import(rainbow)
+import(stats)
+import(colorspace)

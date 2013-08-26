@@ -1,3 +1,8 @@
+v 3.9
+
+1. Update the plot.ftsf function
+2. Add Imports field in the description file
+
 v 3.8
 
 1. Update the ftsa:::fdpca function

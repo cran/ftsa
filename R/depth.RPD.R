@@ -52,7 +52,7 @@
     lista = which(prof >= quantile(prof, probs = trim))
     mtrim = apply(functions[lista, ], 2, mean)
     if (graph) {
-        windows()
+        dev.new()
         cgray = 1 - (prof - min(prof))/(max(prof) - min(prof))
         if (nc == 2) {
             plot(range(functions[, 1]), range(functions[, 2]), 
