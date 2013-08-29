@@ -28,7 +28,7 @@ fbootstrap = function(data, estad = func.mean, alpha = 0.05, nb = 200, suav = 0.
   }
   dist <- max(distboot[rank(distboot) <= floor((1 - alpha) * nb)])
   if(graph){
-     windows()
+     dev.new()
      plot(fts(seq(plotx[1], plotx[length(plotx)], length = ncol), t(estboot)),type = "n")
          if(distboot[i] <= dist){
             lines(fts(seq(plotx[1], plotx[length(plotx)], length = ncol), t(estboot)), lty = 2, col = 3, 

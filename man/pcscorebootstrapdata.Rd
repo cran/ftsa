@@ -7,7 +7,8 @@ Bootstrap independent and identically distributed functional data or functional 
 Computes bootstrap or smoothed bootstrap samples based on either independent and identically distributed functional data or functional time series.
 }
 \usage{
-pcscorebootstrapdata(dat, bootrep, statistic, bootmethod = c("st", "sm", "mvn", "stiefel"), smo)
+pcscorebootstrapdata(dat, bootrep, statistic, bootmethod = c("st", "sm", 
+	"mvn", "stiefel"), smo)
 }
 \arguments{
   \item{dat}{An object of class \code{matrix}.}

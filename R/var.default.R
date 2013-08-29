@@ -1,4 +1,4 @@
 var.default <- function (...) 
 {
-	stats:::var(...)
+	stats::var(...)
 }

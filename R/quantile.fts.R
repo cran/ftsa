@@ -9,7 +9,7 @@ quantile.fts = function(x, probs, ...)
       p = dim(y)[1]
       q = matrix(, p, length(probs))
       for(i in 1:p){
-          q[i,] = quantile(y[i,], probs = probs)
+          q[i,] = stats::quantile(y[i,], probs = probs)
       }
       colnames(q) = paste(round(100*probs,0), "%", sep="")
       rownames(q) = x$x

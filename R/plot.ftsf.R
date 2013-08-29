@@ -41,8 +41,8 @@
                  xlab = "", ylab = "")
         if (components > 0) {
             for (i in 1:components) {
-                 yl1 <- ifelse(n > 1, paste(ylab1, i), ylab1)
-                 yl2 <- ifelse(n > 1, paste(ylab2, i), ylab2)
+                 yl1 <- ifelse(components > 1, paste(ylab1, i), ylab1)
+                 yl2 <- ifelse(components > 1, paste(ylab2, i), ylab2)
                  plot(fit$y$x, fit$basis[, m + i], type = "l", 
                       lty = 1, xlab = xlab1, ylab = yl1, col = basiscol, 
                       ...)

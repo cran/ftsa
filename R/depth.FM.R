@@ -14,7 +14,7 @@
     ans <- apply(d, 1, mean)
     k = which.max(ans)
     med = functions[k,]
-    lista = which(ans >= quantile(ans, probs = trim, na.rm = TRUE))
+    lista = which(ans >= stats::quantile(ans, probs = trim, na.rm = TRUE))
     mtrim = apply(functions[lista,], 2, mean)
     if(graph){
        cgray = 1 - (ans - min(ans)) / (max(ans) - min(ans))
