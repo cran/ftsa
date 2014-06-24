@@ -1,5 +1,5 @@
-84caca4401cc8d105f5301414a71abfc *ChangeLog
-a72ab2b1661c6ba5ddcbbcd8c56e48f5 *DESCRIPTION
+bce1233b8afb82ba3de23aecb6265db6 *ChangeLog
+b4ba3db2297f75a7cff230230f1a256d *DESCRIPTION
 d2df3ef078cf705c81c90640a1c0275e *NAMESPACE
 f1dc0a39646b946ade1d2525dd239e4d *R/DataPostProc.r
 d99136b6ff171bb74b33b849e8679c4c *R/Jacob.R
@@ -28,12 +28,12 @@ db135315029f7088b4981586121babec *R/extract.time.R
 59272d7bd15f338b49afa4b36991a22f *R/extract.x.R
 1f9642fc69ba3f9c98c8a6712eeec581 *R/fbootstrap.R
 52b20661fc7ec0ef167b85a7c77fe4a9 *R/fdpca.R
-87c936865d44eeda2785761ae233c3f8 *R/forecast.ftsm.R
+c2835d8c4b3b43e1759a2eb4596074d2 *R/forecast.ftsm.R
 ea31ab9d2ddc2b9e9152164becd43fb3 *R/forecast.ftsm2.R
 3d505253d3578ddc52c2acea332b71c5 *R/forecastfplsr.R
 3ad3e412993d70be6e72e6f6a9a0dca6 *R/fplsr.R
 9a8a5c51f9aa78942eb2180c85f25e24 *R/fplsrPI.R
-475d1c6c9803d52e0d5b67569583ca13 *R/ftsm.R
+62441985d463c9a30d46dfff9f018caa *R/ftsm.R
 ffe8917925925d5de4c9d570521ffb75 *R/ftsmPI.r
 8c459ff44af1c09c0fd9f7e25852fd3e *R/ftsmiterativeforecasts.R
 b5fa02c4b9b685ecb5447ee3381f548e *R/ftsmweightselect.R
@@ -119,6 +119,7 @@ d4a0aed7983e5aea31699dd7a92cc89a *R/var.R
 2a4f1d3f4a6ed2fc61d1ebbdc8ff40ad *R/var.default.R
 83115c5da6fc540e665b4b6411cc94a5 *R/var.fts.R
 2b89fc297d35dda415dcd525e3deb122 *R/wpcr.R
+c14db45c6540c5df7f3858a44ca9ebeb *build/vignette.rds
 594f5a515f70cc07bea05274ff5f39fc *inst/doc/ftsa.R
 b369c840f2cdb8ed906e7ea59586e044 *inst/doc/ftsa.Rnw
 2f30ffdac8db90cfabc1934dc7c9a711 *inst/doc/ftsa.pdf

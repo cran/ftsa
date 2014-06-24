@@ -1,3 +1,7 @@
+v 4.0
+
+1. Update the ftsm and forecast.ftsm functions for handling functional time series
+
 v 3.9
 
 1. Update the plot.ftsf function

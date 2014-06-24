@@ -4,9 +4,9 @@ ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classica
 {
 	if(length(colnames(y$y)) > 0)
 	{
-		y$time = ts(as.numeric(colnames(y$y)),start=head(as.numeric(colnames(y$y)),1),
-					end=tail(as.numeric(colnames(y$y)),1))
-	}
+        y$time = ts(as.numeric(colnames(y$y)), start = head(as.numeric(colnames(y$y)),1),
+					end = tail(as.numeric(colnames(y$y)),1), frequency = 1/diff(as.numeric(colnames(y$y)))[1])
+  	}
 	else
 	{
 		y$time = ts(1:ncol(y$y), start=1, end = ncol(y$y))
@@ -60,8 +60,16 @@ ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classica
     if (weight == TRUE) {
         my = my + load %*% colmeanrm
         basis <- cbind(my, load)
-        colnames(basis) = c("mean", paste("phi", 1:order, sep = ""))
-        colnames(coeff) = c("mean", paste("beta", 1:order, sep = ""))
+        if(order == 0)
+        {
+            colnames(basis) = "mean"
+            colnames(coeff) = "mean"
+        }
+        else
+        {
+	        colnames(basis) = c("mean", paste("phi", 1:order, sep = ""))
+    	    colnames(coeff) = c("mean", paste("beta", 1:order, sep = ""))
+    	}
         fits <- fts(y$x, sweep(load %*% t(scomeanrm), 1, my, 
             "+"), start = ytsp[1], frequency = ytsp[3], xname = y$xname, 
             yname = paste("Fitted", y$yname))
@@ -72,8 +80,16 @@ ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classica
             frequency = ytsp[3], xname = y$xname, yname = paste("Fitted", 
                 y$yname))
         fits$x = y$x
-        colnames(basis) = c("mean", paste("phi", 1:order, sep = ""))
-        colnames(coeff) = c("mean", paste("beta", 1:order, sep = ""))
+        if(order == 0)
+        {
+            colnames(basis) = "mean"
+            colnames(coeff) = "mean"
+        }
+        else
+        {
+	        colnames(basis) = c("mean", paste("phi", 1:order, sep = ""))
+    	    colnames(coeff) = c("mean", paste("beta", 1:order, sep = ""))
+    	}
     }
     # rownames(basis) <- paste(y$x)
     res <- fts(y$x, y$y - fits$y, start = ytsp[1], frequency = ytsp[3], 

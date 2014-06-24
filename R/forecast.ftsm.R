@@ -2,7 +2,7 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
     "rwdrift", "rw", "struct", "arfima"), level = 80, jumpchoice = c("fit", "actual"), 
     pimethod = c("parametric", "nonparametric"), B = 100, usedata = nrow(object$coeff), 
     adjust = TRUE, model = NULL, damped = NULL, stationary = FALSE, 
-    ...) 
+    ...)
 {
     method <- match.arg(method)
     jumpchoice <- match.arg(jumpchoice)
@@ -173,10 +173,12 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
     ferror <- onestepfcast <- object$y
     onestepfcast$y <- object$basis %*% t(fitted)
     onestepfcast$yname <- "One step forecasts"
+    colnames(onestepfcast$y) = colnames(object$y$y)
     ferror$y <- object$y$y - onestepfcast$y
     ferror$yname <- "One step errors"
     fmean <- fts(object$y$x, object$basis %*% t(meanfcast), start = ytsp[2] + 
-        1, frequency = ytsp[3], xname = object$y$xname, yname = "Forecasts")
+        1/ytsp[3], frequency = ytsp[3], xname = object$y$xname, yname = "Forecasts")
+    colnames(fmean$y) = seq(ytsp[2]+1/ytsp[3], ytsp[2]+h/ytsp[3], by=1/ytsp[3])    
     res <- object$residuals
     res$y <- res$y^2
     vx <- rowMeans(res$y, na.rm = TRUE)
@@ -193,16 +195,15 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
     if (pimethod == "parametric") {
         tmp <- qconf * sqrt(totalvar)
         flower <- fts(object$y$x, fmean$y - tmp, start = ytsp[2] + 
-            1, frequency = ytsp[3], xname = object$y$xname, yname = "Forecast lower limit")
+            1/ytsp[3], frequency = ytsp[3], xname = object$y$xname, yname = "Forecast lower limit")
         fupper <- fts(object$y$x, fmean$y + tmp, start = ytsp[2] + 
-            1, frequency = ytsp[3], xname = object$y$xname, yname = "Forecast upper limit")
+            1/ytsp[3], frequency = ytsp[3], xname = object$y$xname, yname = "Forecast upper limit")
+        colnames(flower$y) = colnames(fupper$y) = seq(ytsp[2]+1/ytsp[3], ytsp[2]+h/ytsp[3], by=1/ytsp[3])        
         coeff <- list()
         for (i in 1:nb) {
             coeff[[i]] <- structure(list(mean = ts(meanfcast[, 
-                i], start = ytsp[2] + 1, frequency = ytsp[3]), lower = ts(meanfcast[, 
-                i] - qconf * sqrt(varfcast[, i]), start = ytsp[2] + 
-                1, frequency = ytsp[3]), upper = ts(meanfcast[, i] + 
-                qconf * sqrt(varfcast[, i]), start = ytsp[2] + 1, 
+                i], start = ytsp[2] + 1/ytsp[3], frequency = ytsp[3]), lower = ts(meanfcast[,
+                i] - qconf * sqrt(varfcast[, i]), start = ytsp[2] + 1/ytsp[3], frequency = ytsp[3]), upper = ts(meanfcast[, i] + qconf * sqrt(varfcast[, i]), start = ytsp[2] + 1/ytsp[3],
                 frequency = ytsp[3]), level = level, x = x[, i], method = method, 
                 model = fmodels[[i]]), class = "forecast")
         }
@@ -216,10 +217,11 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
     }
     else {
         junk = ftsmPI(object, B = B, level = level, h = h, fmethod = "ets")
-        lb = fts(object$y$x, junk$lb, start = ytsp[2] + 1, frequency = ytsp[3], 
+        lb = fts(object$y$x, junk$lb, start = ytsp[2] + 1/ytsp[3], frequency = ytsp[3],
             xname = object$y$xname, yname = "Forecast lower limit")
-        ub = fts(object$y$x, junk$ub, start = ytsp[2] + 1, frequency = ytsp[3], 
+        ub = fts(object$y$x, junk$ub, start = ytsp[2] + 1/ytsp[3], frequency = ytsp[3], 
             xname = object$y$xname, yname = "Forecast upper limit")
+        colnames(lb$y) = colnames(ub$y) = seq(ytsp[2]+1/ytsp[3], ytsp[2]+h/ytsp[3], by=1/ytsp[3])
         return(structure(list(mean = fmean, bootsamp = junk$bootsamp, 
             lower = lb, upper = ub, model = object), class = "ftsf"))
     }
