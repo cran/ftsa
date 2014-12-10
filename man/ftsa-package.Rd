@@ -1,5 +1,6 @@
 \name{ftsa-package}
 \alias{ftsa-package}
+\alias{ftsa}
 \docType{package}
 \title{
 Functional time series analysis
@@ -10,7 +11,7 @@ This package presents descriptive statistics for modeling functional data; imple
 \author{
 Rob J Hyndman and Han Lin Shang 
 
-Maintainer: Han Lin Shang <HanLin.Shang@monash.edu>
+Maintainer: Han Lin Shang <hanlin.shang@anu.edu.au>
 }
 \references{
 R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with discussion)", \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.
@@ -23,17 +24,17 @@ H. L. Shang, H. Booth and R. J. Hyndman (2011) "Point and interval forecasts of 
 
 
 
-H. L. Shang (2011) "rainbow: an R package for visualizing functional time series, \emph{The R Journal}, 3(2), 54-59.
+H. L. Shang (2011) "rainbow: an R package for visualizing functional time series, \emph{The R Journal}, \bold{3}(2), 54-59.
 
 H. L. Shang (2012) "Point and interval forecasts of age-specific fertility rates: a comparison of functional principal component methods", \emph{Journal of Population Research}, \bold{29}(3), 249-267.
 
 
 
-H. L. Shang (2012) "Point and interval forecasts of age-specific life expectancies: a model averaging", \emph{Demographic Research}, \bold{in press}.
+H. L. Shang (2012) "Point and interval forecasts of age-specific life expectancies: a model averaging", \emph{Demographic Research}, \bold{27}, 593-644.
 
 
 
-H. L. Shang (2012) "Functional time series approach for forecasting very short-term electricity demand", \emph{Journal of Applied Statistics}, \bold{in press}.
+H. L. Shang (2013) "Functional time series approach for forecasting very short-term electricity demand", \emph{Journal of Applied Statistics}, \bold{40}(1), 152-168.
 }
 \keyword{package}
 

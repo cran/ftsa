@@ -54,8 +54,8 @@ Han Lin Shang
 \examples{
 # Bootstrapping the distribution of a summary statistics of functional data.	
 boot1 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "st")
-\donttest{boot1 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "sm")
-boot1 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "mvn")
-boot1 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "stiefel")}
+boot2 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "sm", smo=0.05)
+boot3 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "mvn")
+boot4 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "stiefel")
 }
 \keyword{models}

@@ -76,6 +76,6 @@ R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with d
 # By default, all observations are assigned with equal weighting. 	
 ftsm(y = ElNino, order = 6, method = "classical", weight = FALSE)
 # When weight = TRUE, geometrically decaying weights are used.
-\donttest{ftsm(y = ElNino, order = 6, method = "classical", weight = TRUE)}
+ftsm(y = ElNino, order = 6, method = "classical", weight = TRUE)
 }
 \keyword{models}

@@ -124,13 +124,15 @@ A. Delaigle and P. Hall (2012), "Methodology and theory for partial least square
 # When weight = TRUE, all observations are assigned geometrically decaying weights.
 fplsr(ElNino, order = 6, type = "nipals")
 fplsr(ElNino, order = 6)
-\donttest{fplsr(ElNino, weight = TRUE)
+fplsr(ElNino, weight = TRUE)
 fplsr(ElNino, unit.weights = FALSE)
 fplsr(ElNino, unit.weights = FALSE, weight = TRUE)
+
 # The prediction intervals are calculated numerically.
 fplsr(ElNino, interval = TRUE, method = "delta")
+
 # The prediction intervals are calculated by bootstrap method. 
-fplsr(ElNino, interval = TRUE, method = "boota")}
+fplsr(ElNino, interval = TRUE, method = "boota")
 }
 \keyword{models}
 

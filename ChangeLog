@@ -1,3 +1,9 @@
+v 4.1
+
+1. Add pcaPP and MASS packages as imports
+2. Remove \donttest in the examples
+3. Add \alias{ftsa} in the ftsa-package help file
+
 v 4.0
 
 1. Update the ftsm and forecast.ftsm functions for handling functional time series

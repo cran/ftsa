@@ -86,7 +86,7 @@ H. L. Shang (2012) "Functional time series approach for forecasting very short-t
 # The forecasted curves are constructed by forecasted principal components 
 # times fixed principal components plus the mean function.	
 forecast(object = ftsm(ElNino), h = 10, method = "ets")              
-\donttest{forecast(object = ftsm(ElNino, weight = TRUE))}
+forecast(object = ftsm(ElNino, weight = TRUE))
 }
 \keyword{models}
 

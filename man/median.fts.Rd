@@ -56,13 +56,13 @@ D. Gervini (2012) "Outlier detection and trimmed estimation in general functiona
 \examples{
 # Calculate the median function by the different depth measures.	
 median(x = ElNino, method = "hossjercroux")
-\donttest{median(x = ElNino, method = "coordinate")
+median(x = ElNino, method = "coordinate")
 median(x = ElNino, method = "FM")
 median(x = ElNino, method = "mode")
 median(x = ElNino, method = "RP")
 median(x = ElNino, method = "RPD")
 median(x = ElNino, method = "radius", alpha=0.5, beta=0.25, weight="hard")
-median(x = ElNino, method = "radius", alpha=0.5, beta=0.25, weight="soft")}
+median(x = ElNino, method = "radius", alpha=0.5, beta=0.25, weight="soft")
 }
 \keyword{methods}
 

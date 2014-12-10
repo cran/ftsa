@@ -59,12 +59,12 @@ D. Gervini (2012) "Outlier detection and trimmed estimation in general functiona
 \examples{
 # Fraiman-Muniz depth was arguably the oldest functional depth.	
 sd(x = ElNino, method = "FM")
-\donttest{sd(x = ElNino, method = "coordinate")
+sd(x = ElNino, method = "coordinate")
 sd(x = ElNino, method = "mode")
 sd(x = ElNino, method = "RP")
 sd(x = ElNino, method = "RPD")
 sd(x = ElNino, method = "radius", alpha=0.5, weight="hard")
-sd(x = ElNino, method = "radius", alpha=0.5, weight="soft")}
+sd(x = ElNino, method = "radius", alpha=0.5, weight="soft")
 }
 \keyword{methods}
 
