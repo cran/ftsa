@@ -45,12 +45,12 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
         colnames(coeff) <- colnames(basis) <- "level"
     }
     else coeff <- basis <- NULL
-    if (mean) {
+    if(mean) {
         coeff <- cbind(rep(1, n), coeff)
         basis <- cbind(approx(xx, ax, xout = x)$y, basis)
         colnames(coeff)[1] <- colnames(basis)[1] <- "mean"
     }
-    rownames(coeff) = as.numeric(coefnam)
+    # rownames(coeff) = as.numeric(coefnam)
     if (order == 0) 
         return(list(basis = basis, coeff = coeff, weights = rep(1, 
             n), v = rep(1, n), mean.se = axse))
@@ -94,8 +94,11 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
     colmeanrm = matrix(colMeans(coeffdummy), dim(B)[2], 1)
     coeff <- cbind(coeff, sweep(coeffdummy, 2, colmeanrm))
     m <- ncol(basis)
-    basis = basis[!miss] + Phinorm %*% colmeanrm
-    colnames(basis) = "mean"
+    if(mean == TRUE)
+    {
+	    basis = basis[!miss] + Phinorm %*% colmeanrm
+	    colnames(basis) = "mean"
+	}
     for (i in 1:order) {
         basis <- cbind(basis, Phinorm[, i])
         if (sum(basis[, i + m]) < 0) {
@@ -138,11 +141,11 @@ fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
         colnames(basis2) <- paste("phi", order + (1:m), sep = "")
     }
     basiscomb = matrix(,nrow(y),ncol(basis))
+	basiscomb[!miss,] = basis	
     basis2comb = matrix(,nrow(y),ncol(basis2))
-	basiscomb[!miss,] = basis
 	basis2comb[!miss,] = basis2
-	rownames(basiscomb) = rownames(basis2comb) = as.numeric(xnam)
-	rownames(coeff) = rownames(coeff2) = coefnam 
+	#rownames(basiscomb) = rownames(basis2comb) = as.numeric(xnam)
+	#rownames(coeff) = rownames(coeff2) = coefnam 
     return(list(naindex = as.numeric(which(miss)), basis = basiscomb, coeff = coeff, varprop = varprop, 
         weights = w/mean(w), v = v, basis2 = basis2comb, coeff2 = coeff2, 
         mean.se = axse))

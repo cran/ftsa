@@ -1,4 +1,4 @@
-plsPI = function (data, newdata, order, B, alpha, lambda) 
+plsPI <- function (data, newdata, order, B, alpha, lambda) 
 {
     data = data$y
     n = dim(data)[2]
@@ -47,10 +47,19 @@ plsPI = function (data, newdata, order, B, alpha, lambda)
     }
     I = diag(1:order)
     betapls = matrix(, order, B)
-    for (i in 1:B) {
-        betapls[, i] = ginv(t(load4) %*% load4 + lambda * I) %*% 
-            (t(load4) %*% (newdata - mdata1) + lambda * bbeta[, 
-                i])
+    if(n2 == 1)
+    {
+    	for(i in 1:B)
+    	{
+    		betapls[,i] = ginv(t(matrix(load4, nrow=1)) %*% matrix(load4, nrow=1) + lambda * I) %*% (t(matrix(load4, nrow=1)) %*% (newdata - mdata1) + lambda * bbeta[,i])
+    	}	
+    }
+    if(n2 > 1)
+    {
+	    for (i in 1:B) 
+	    {
+    	    betapls[, i] = ginv(t(load4) %*% load4 + lambda * I) %*% (t(load4) %*% (newdata - mdata1) + lambda * bbeta[, i])
+	    }
     }
     bootsamp = load5 %*% betapls + k2 + mdata3
     w1 = w2 = w3 = w4 = matrix(, (p - n2), 1)

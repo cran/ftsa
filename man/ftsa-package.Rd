@@ -3,7 +3,7 @@
 \alias{ftsa}
 \docType{package}
 \title{
-Functional time series analysis
+Functional Time Series Analysis
 }
 \description{
 This package presents descriptive statistics for modeling functional data; implements principal component regression and partial least squares regression to provide point and distributional forecasts for functional data; utilizes ordinary least squares, penalized least squares, ridge regression, and moving block approaches to dynamically update point and distributional forecasts when partial data points in the most recent curve are observed.

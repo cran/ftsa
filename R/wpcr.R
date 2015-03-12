@@ -1,4 +1,4 @@
-`wpcr` <- function(data, ncomp, method = c("ets", "rw"), h, beta = NULL, median = FALSE, transform = FALSE)
+wpcr <- function(data, ncomp, method = c("ets", "rw"), h, beta = NULL, median = FALSE, transform = FALSE)
 {
      n = ncol(data)
      q = matrix(,n,1)
@@ -17,22 +17,27 @@
      load = svd(new)$v[,1:ncomp]
      sco = newdata %*% load
      fore = matrix(NA, ncomp, h)
-     if(method == "ets"){
-         for(i in 1:ncomp){
+     if(method == "ets")
+     {
+         for(i in 1:ncomp)
+         {
              fore[i,] = forecast(ets(sco[,i]), h = h)$mean
          }
      }
-     if (method == "rw"){
-         for(i in 1:ncomp){
+     if(method == "rw")
+     {
+         for(i in 1:ncomp)
+         {
              fore[i,] = rwf(sco[,i], h = h, drift = FALSE)$mean
          }
      }
-     if (transform == TRUE){
+     if(transform == TRUE)
+     {
          forecast = exp(load %*% fore + mdata)
      }
-     if (transform == FALSE){
+     if(transform == FALSE)
+     {
          forecast = load %*% fore + mdata
      }
      return(forecast)
 }
-

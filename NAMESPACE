@@ -15,12 +15,12 @@ diff.fts,
 mean.fts,
 median.fts,
 var.fts,
+sd.default,
+var.default,
 error,
 fbootstrap,
 fplsr,
 dynupdate,
-var.default,
-sd.default,
 sd.fts,
 quantile.fts,
 median,
@@ -32,7 +32,8 @@ forecastfplsr,
 ftsmiterativeforecasts,
 plotfplsr,
 centre,
-pcscorebootstrapdata
+pcscorebootstrapdata,
+MFDM
 )
 
 
@@ -41,6 +42,7 @@ S3method(median,fts)
 S3method(quantile,fts)
 S3method(plot,ftsf)
 S3method(plot,fm)
+S3method(plot,ftsm)
 S3method(plot,fmres)
 S3method(residuals,fm)
 S3method(summary,fm)
@@ -48,6 +50,8 @@ S3method(forecast,ftsm)
 S3method(var,fts)
 S3method(sd,fts)
 S3method(diff,fts)
+S3method(var,default)
+S3method(sd,default)
 S3method(print,fm)
 S3method(print,ftsm)
 S3method(print,ftsf)
@@ -60,3 +64,4 @@ import(stats)
 import(colorspace)
 import(MASS)
 import(pcaPP)
+import(R2jags)

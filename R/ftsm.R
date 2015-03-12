@@ -87,8 +87,16 @@ ftsm = function (y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classica
         }
         else
         {
-	        colnames(basis) = c("mean", paste("phi", 1:order, sep = ""))
-    	    colnames(coeff) = c("mean", paste("beta", 1:order, sep = ""))
+        	if(mean)
+        	{
+		        colnames(basis) = c("mean", paste("phi", 1:order, sep = ""))
+    		    colnames(coeff) = c("mean", paste("beta", 1:order, sep = ""))
+    		}
+    		else
+    		{
+		   		colnames(basis) = c(paste("phi", 1:order, sep = ""))
+    		    colnames(coeff) = c(paste("beta", 1:order, sep = ""))
+    		}
     	}
     }
     # rownames(basis) <- paste(y$x)
