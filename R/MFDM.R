@@ -1,7 +1,7 @@
 MFDM <- function(mort_female, mort_male, mort_ave, percent_1 = 0.95, percent_2 = 0.95, fh, level = 80, alpha = 0.2, 
 				MCMCiter = 100, fmethod = c("auto_arima", "ets"), BC = c(FALSE, TRUE), lambda) 
 {
-	fmethod = match.arg(fmethod)
+   	fmethod = match.arg(fmethod)
 	if(BC == TRUE)
 	{
 		mort_female = BoxCox(mort_female, lambda)
@@ -126,10 +126,16 @@ MFDM <- function(mort_female, mort_male, mort_ave, percent_1 = 0.95, percent_2 =
 		taueps_1 ~ dgamma(1.0E-3, 1.0E-3)
 		taueps_2 ~ dgamma(1.0E-3, 1.0E-3)
 	}	
-	bugs_chose = jags(data = data_A, inits = inits_A, model.file = popmodel,
+	if(requireNamespace("R2jags", quietly = TRUE)) 
+	{
+		bugs_chose = R2jags::jags(data = data_A, inits = inits_A, model.file = popmodel,
 		                    parameters.to.save = c("xi", "zi", "fi", "taueps_1", "taueps_2", "lambda_b", "lambda_f", "lambda_w"),
 		                    n.chains = 1, n.burnin = 5000, n.iter = 6000, DIC = TRUE)
-	
+	}
+	else
+	{
+		stop("Please install JAGS")
+	}
 	mortality_female_coda = bugs_chose$BUGSoutput$sims.list
 		
     taueps_female = mortality_female_coda$taueps_1

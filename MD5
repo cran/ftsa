@@ -1,10 +1,10 @@
-5fa307453896e15f10c2dd6ec94e614f *ChangeLog
-4998b012a4c185e78e8f63920e1a6d58 *DESCRIPTION
-89f869ab22435975ccb4157c8a6f8011 *NAMESPACE
+8c6b55c9e7e12e2332e07ee636d43a93 *ChangeLog
+dadeaa70c41cb93e6417d1b1123b5a93 *DESCRIPTION
+30911f79e60511bdfbcf524793e83633 *NAMESPACE
 f1dc0a39646b946ade1d2525dd239e4d *R/DataPostProc.r
 d99136b6ff171bb74b33b849e8679c4c *R/Jacob.R
 9abe2405d651acfe06e77c475c66b5f2 *R/L1median2.r
-784e7f857f2d0c31f8dfed841024c3fb *R/MFDM.R
+f804b035a73ea29597edc2b88216642e *R/MFDM.R
 6bd24b0ea18fbb7d52648aa6a94bfac9 *R/MISE.r
 8f46a858b36e48b5976bc2d084970323 *R/ParseControlStructure.r
 deff8edffc10e936ae9378fcb8035945 *R/ParseDevString.r
@@ -134,7 +134,7 @@ db36138a8600dfd5138ebb2e1390f0e8 *man/fbootstrap.Rd
 7b0126e462c31628f2867ace35c9d1c5 *man/forecast.ftsm.Rd
 3c4d216440647d81907c93479192c625 *man/forecastfplsr.Rd
 9322622ac5dfd2b254e202b0963263c8 *man/fplsr.Rd
-5bb222cef8264bf983526a5d5b48f75c *man/ftsa-package.Rd
+14a3e3651b0d2ae94979691819cd782b *man/ftsa-package.Rd
 5b1a7e85355cfa77488919aea74e5b40 *man/ftsm.Rd
 6c39bcf9bf7fd7a5edc1f9f8eef0f445 *man/ftsmiterativeforecasts.Rd
 e2888d29bd43d145ce0ffe4f328541ba *man/ftsmweightselect.Rd

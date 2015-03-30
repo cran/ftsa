@@ -22,19 +22,21 @@ H. L. Shang and R. J. Hyndman (2011) "Nonparametric time series forecasting with
 
 H. L. Shang, H. Booth and R. J. Hyndman (2011) "Point and interval forecasts of mortality rates and life expectancy: a comparison of ten principal component methods, \emph{Demographic Research}, \bold{25}(5), 173-214.
 
-
-
 H. L. Shang (2011) "rainbow: an R package for visualizing functional time series, \emph{The R Journal}, \bold{3}(2), 54-59.
 
 H. L. Shang (2012) "Point and interval forecasts of age-specific fertility rates: a comparison of functional principal component methods", \emph{Journal of Population Research}, \bold{29}(3), 249-267.
 
-
-
 H. L. Shang (2012) "Point and interval forecasts of age-specific life expectancies: a model averaging", \emph{Demographic Research}, \bold{27}, 593-644.
 
-
-
 H. L. Shang (2013) "Functional time series approach for forecasting very short-term electricity demand", \emph{Journal of Applied Statistics}, \bold{40}(1), 152-168.
+
+H. L. Shang (2013) "ftsa: An R package for analyzing functional time series", \emph{The R Journal}, \bold{5}(1), 64-72.
+
+H. L. Shang, A. Wisniowski, J. Bijak, P. W. F. Smith and J. Raymer (2014) "Bayesian functional models for population forecasting", in M. Marsili and G. Capacci (eds), Proceedings of the Sixth Eurostat/UNECE Work Session on Demographic Projections, Istituto nazionale di statistica, Rome, pp. 313-325.
+
+H. L. Shang (2015) "Selection of the optimal Box-Cox transformation parameter for modelling and forecasting age-specific fertility", \emph{Journal of Population Research}, \bold{32}(1), 69-79.
+
+H. L. Shang (2015) "Forecast accuracy comparison of age-specific mortality and life expectancy: Statistical tests of the results", \emph{Population Studies}, forthcoming.
 }
 \keyword{package}
 
