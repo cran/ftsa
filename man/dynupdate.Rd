@@ -11,9 +11,10 @@ are observed.
 dynupdate(data, newdata = NULL, holdoutdata, method = c("ts", "block", 
  "ols", "pls", "ridge"), fmethod = c("arima", "ar", "ets", "ets.na", 
   "rwdrift", "rw"), pcdmethod = c("classical", "M", "rapca"), 
-   ngrid = max(1000, ncol(data$y)), order = 6, lambda = 0.01, 
-    value = FALSE, interval = FALSE, level = 80, 
-     pimethod = c("parametric", "nonparametric"), B = 1000)
+   ngrid = max(1000, ncol(data$y)), order = 6, 
+    robust_lambda = 2.33, lambda = 0.01, value = FALSE, 
+     interval = FALSE, level = 80, 
+      pimethod = c("parametric", "nonparametric"), B = 1000)
 }
 \arguments{
   \item{data}{An object of class \code{sfts}.}
@@ -25,7 +26,8 @@ dynupdate(data, newdata = NULL, holdoutdata, method = c("ts", "block",
   \item{pcdmethod}{Method to use for principal components decomposition. Possibilities are "M", "rapca" and "classical".}
   \item{ngrid}{Number of grid points to use in calculations. Set to maximum of 1000 and \code{ncol(data$y)}.}
   \item{order}{Number of principal components to fit.}
-  \item{lambda}{Penalty parameter used in \code{method = "pls"}.}
+  \item{robust_lambda}{Tuning parameter in the two-step robust functional principal component analysis, when \code{pcdmethod = "M"}.}
+  \item{lambda}{Penalty parameter used in \code{method = "pls"} or \code{method = "ridge"}.}
   \item{value}{When \code{value = TRUE}, returns forecasts or when \code{value = FALSE}, returns forecast errors.}
   \item{interval}{When \code{interval = TRUE}, produces distributional forecasts.}
   \item{level}{Nominal coverage probability.}

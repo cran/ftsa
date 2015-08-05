@@ -17,8 +17,7 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
         object$basis[, idx] <- trueval[, n]
         for (i in 1:ncol(object$basis)) {
             if (i != idx) 
-                object$coeff[, i] <- object$coeff[, i] - object$coeff[n, 
-                  i]
+                object$coeff[, i] <- object$coeff[, i] - object$coeff[n, i]
         }
     }
     else if (jumpchoice != "fit") 
@@ -216,7 +215,7 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
             class = "ftsf"))
     }
     else {
-        junk = ftsmPI(object, B = B, level = level, h = h, fmethod = "ets")
+        junk = ftsmPI(object, B = B, level = level, h = h, fmethod = method)
         lb = fts(object$y$x, junk$lb, start = ytsp[2] + 1/ytsp[3], frequency = ytsp[3],
             xname = object$y$xname, yname = "Forecast lower limit")
         ub = fts(object$y$x, junk$ub, start = ytsp[2] + 1/ytsp[3], frequency = ytsp[3], 

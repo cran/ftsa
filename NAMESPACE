@@ -33,7 +33,9 @@ ftsmiterativeforecasts,
 plotfplsr,
 centre,
 pcscorebootstrapdata,
-MFDM
+MFDM,
+farforecast,
+T_stationary
 )
 
 
@@ -58,9 +60,16 @@ S3method(print,ftsf)
 S3method(print,fmres)
 
 import(forecast)
-import(grDevices)
 import(rainbow)
 import(stats)
 import(colorspace)
 import(MASS)
-import(pcaPP)
+
+importFrom(pcaPP, PCAproj)
+importFrom(pcaPP, l1median)
+importFrom(sde, BBridge)
+importFrom(fda, create.fourier.basis)
+importFrom(fda, eval.basis)
+importFrom("graphics", "abline", "contour", "filled.contour", "image", "legend", "lines", "par", "persp", "points", "text", "title")
+importFrom("utils", "head", "tail")
+importFrom("grDevices", "dev.new", "gray")     

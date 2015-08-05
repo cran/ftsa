@@ -1,0 +1,23 @@
+
+year <- sub("-.*", "", meta$Date)
+vers <- paste("R package version", meta$Version)
+
+citHeader("To cite the ftsa package, use:")
+
+bibentry(bibtype = "Manual",
+  title = "{ftsa}: Functional Time Series Analysis",
+  author = personList(as.person("Rob J Hyndman"), as.person("Han Lin Shang")),
+  year = year,
+  note = vers,
+  url = "http://cran.r-project.org/package=ftsa")
+
+
+bibentry(bibtype = "Article",
+  title     = "ftsa: An {R} Package for Analyzing Functional Time Series",
+  author    = as.person("Han Lin Shang"),
+  journal   = "The {R} Journal",
+  volume    =  5,
+  number    =  1,
+  pages     = "64--72",
+  year      =  2013,
+  url       = "http://journal.r-project.org/archive/2013-1/shang.pdf")
