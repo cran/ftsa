@@ -12,7 +12,7 @@ fplsr(data, order = 6, type = c("simpls", "nipals"), unit.weights =
    backh = 10)
 }
 \arguments{
-  \item{data}{An object of class \code{fts}.}
+  \item{data}{An object of class \code{\link[rainbow]{fts}}.}
   \item{order}{Number of principal components to fit.}
   \item{type}{When \code{type = "nipals"}, uses the NIPALS algorithm; when \code{type = "simpls"}, uses the SIMPLS algorithm.}
   \item{unit.weights}{Constrains predictor loading weights to have unit norm.}
@@ -110,11 +110,15 @@ D. Bosq (2000) \emph{Linear processes in function spaces}, New York: Springer.
 
 N. Faber (2002) "Uncertainty estimation for multivariate regression coefficients", \emph{Chemometrics and Intelligent Laboratory Systems}, \bold{64}(2), 169-179.
 
-J. A. Fernandez Pierna and L. Jin and F. Wahl and N. M. Faber and D. L. Massart (2003) "Estimation of partial least squares regression prediction uncertainty	when the reference values carry a sizeable measurement error", \emph{Chemometrics and Intelligent Laboratory Systems}, \bold{65}(2), 281-291.
+J. A. Fernandez Pierna and L. Jin and F. Wahl and N. M. Faber and D. L. Massart (2003) "Estimation of partial least squares regression prediction uncertainty when the reference values carry a sizeable measurement error", \emph{Chemometrics and Intelligent Laboratory Systems}, \bold{65}(2), 281-291.
 
 P. T. Reiss and R. T. Ogden (2007), "Functional principal component regression and functional partial least squares", \emph{Journal of the American Statistical Association}, \bold{102}(479), 984-996.
 
 A. Delaigle and P. Hall (2012), "Methodology and theory for partial least squares applied to functional data", \emph{Annals of Statistics}, \bold{40}(1), 322-352. 
+
+C. Preda, G. Saporta (2005) "PLS regression on a stochastic process", \emph{Computational Statistics and Data Analysis}, \bold{48}(1), 149-158.
+
+C. Preda, G. Saporta, C. Leveder (2007) "PLS classification of functional data", \emph{Computational Statistics}, \bold{22}, 223-235.
 }
 \author{Han Lin Shang}
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}}, 
@@ -123,16 +127,16 @@ A. Delaigle and P. Hall (2012), "Methodology and theory for partial least square
 # When weight = FALSE, all observations are assigned equally.
 # When weight = TRUE, all observations are assigned geometrically decaying weights.
 fplsr(ElNino, order = 6, type = "nipals")
-fplsr(ElNino, order = 6)
-fplsr(ElNino, weight = TRUE)
-fplsr(ElNino, unit.weights = FALSE)
-fplsr(ElNino, unit.weights = FALSE, weight = TRUE)
+fplsr(data = ElNino, order = 6)
+fplsr(data = ElNino, weight = TRUE)
+fplsr(data = ElNino, unit.weights = FALSE)
+fplsr(data = ElNino, unit.weights = FALSE, weight = TRUE)
 
 # The prediction intervals are calculated numerically.
-fplsr(ElNino, interval = TRUE, method = "delta")
+fplsr(data = ElNino, interval = TRUE, method = "delta")
 
 # The prediction intervals are calculated by bootstrap method. 
-fplsr(ElNino, interval = TRUE, method = "boota")
+fplsr(data = ElNino, interval = TRUE, method = "boota")
 }
 \keyword{models}
 

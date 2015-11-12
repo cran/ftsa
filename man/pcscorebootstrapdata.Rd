@@ -8,7 +8,7 @@ Computes bootstrap or smoothed bootstrap samples based on either independent and
 }
 \usage{
 pcscorebootstrapdata(dat, bootrep, statistic, bootmethod = c("st", "sm", 
-	"mvn", "stiefel"), smo)
+	"mvn", "stiefel", "meboot"), smo)
 }
 \arguments{
   \item{dat}{An object of class \code{matrix}.}
@@ -18,7 +18,7 @@ pcscorebootstrapdata(dat, bootrep, statistic, bootmethod = c("st", "sm",
   the smoothed boostrap method can be implemented by adding multivariate Gaussian random noise. When \code{bootmethod = "mvn"}, the bootstrapped principal 
   component scores are drawn from a multivariate Gaussian distribution with the mean and covariance matrices of the original principal component scores. 
   When \code{bootmethod = "stiefel"}, the bootstrapped principal component scores are drawn from a Stiefel manifold with the mean and covariance matrices of
-  the original principal component scores.}
+  the original principal component scores. When \code{bootmethod = "meboot"}, the bootstrapped principal component scores are drawn from a maximum entropy algorithm of Vinod (2004).}
   \item{smo}{Smoothing parameter.}
 }
 \details{
@@ -42,7 +42,13 @@ Holding the mean and \eqn{L} and \eqn{R} fixed at their realized values, there a
 \item{meanfunction}{Bootstrap summary statistics. If the original data matrix is \eqn{p} by \eqn{n}, then the bootstrapped summary statistics is \eqn{p} by \eqn{bootrep}.}
 }
 \references{
-D. S. Poskitt and A. Sengarapillai (2012), "Description length and dimensionality reduction in functional data analysis", Computational Statistics and Data Analysis, in press.
+H. D. Vinod (2004), "Ranking mutual funds using unconventional utility theory and stochastic dominance", \emph{Journal of Empirical Finance}, \bold{11}(3), 353-377.
+
+A. Cuevas, M. Febrero, R. Fraiman (2006), "On the use of the bootstrap for estimating functions with functional data", \emph{Computational Statistics and Data Analysis}, \bold{51}(2), 1063-1074.
+
+D. S. Poskitt and A. Sengarapillai (2013), "Description length and dimensionality reduction in functional data analysis", \emph{Computational Statistics and Data Analysis}, \bold{58}, 98-113.
+
+H. L. Shang (2015), "Re-sampling techniques for estimating the distribution of descriptive statistics of functional data", \emph{Communications in Statistics--Simulation and Computation}, \bold{44}(3), 614-635.
 }
 \author{
 Han Lin Shang
@@ -54,8 +60,9 @@ Han Lin Shang
 \examples{
 # Bootstrapping the distribution of a summary statistics of functional data.	
 boot1 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "st")
-boot2 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "sm", smo=0.05)
+boot2 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "sm", smo = 0.05)
 boot3 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "mvn")
 boot4 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "stiefel")
+boot5 = pcscorebootstrapdata(ElNino$y, 500, "mean", bootmethod = "meboot")
 }
 \keyword{models}

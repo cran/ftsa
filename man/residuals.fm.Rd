@@ -24,11 +24,11 @@ R. J. Hyndman and H. Booth (2008) "Stochastic population forecasts using functio
 
 H. L. Shang (2012) "Point and interval forecasts of age-specific fertility rates: a comparison of functional principal component methods", \emph{Journal of Population Research}, \bold{29}(3), 249-267.
 
-H. L. Shang (2012) "Point and interval forecasts of age-specific life expectancies: a model averaging", \emph{Demographic Research}, \bold{in press}.
+H. L. Shang (2012) "Point and interval forecasts of age-specific life expectancies: a model averaging", \emph{Demographic Research}, \bold{27}, 593-644.
 }
 \author{Rob J Hyndman}
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{summary.fm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.fmres}}}
 \examples{
-plot(residuals(object = ftsm(ElNino)), xlab = "Year", ylab = "Month")
+plot(residuals(object = ftsm(y = ElNino)), xlab = "Year", ylab = "Month")
 }
 \keyword{models}

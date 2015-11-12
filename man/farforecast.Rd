@@ -11,20 +11,20 @@ The forecast coefficients are then multiplied by the functional principal compon
 farforecast(object, h = 10, var_type = "const", level = 80, PI = FALSE)
 }
 \arguments{
-  \item{object}{An object of \code{ftsm}}
-  \item{h}{Forecast horizon}
-  \item{var_type}{Type of multivariate time series forecasting method; see \code{VAR} for details.}
-  \item{level}{Nominal coverage probability}
-  \item{PI}{When \code{PI = TRUE}, a prediction interval will be given along with point forecast}
+  \item{object}{An object of \code{\link{ftsm}}.}
+  \item{h}{Forecast horizon.}
+  \item{var_type}{Type of multivariate time series forecasting method; see \code{\link[vars]{VAR}} for details.}
+  \item{level}{Nominal coverage probability.}
+  \item{PI}{When \code{PI = TRUE}, a prediction interval will be given along with the point forecast.}
 }
 \details{
-1. Decompose the smooth curves via a functional principal component analysis.
+1. Decompose the smooth curves via a functional principal component analysis (FPCA).
 
-2. Fit a multivariate time-series model to each of the principal component scores.
+2. Fit a multivariate time-series model to the principal component score matrix.
 
-3. Forecast the principal component scores using the fitted multivariate time-series models.
+3. Forecast the principal component scores using the fitted multivariate time-series models. The order of VAR is selected optimally via an information criterion.
 
-4. Multiply the forecast principal component scores by fixed principal components to obtain forecasts of \eqn{f_{n+h}(x)}.
+4. Multiply the forecast principal component scores by estimated principal components to obtain forecasts of \eqn{f_{n+h}(x)}.
 
 5. Prediction intervals are constructed by taking quantiles of the one-step-ahead forecast errors. 
 }
@@ -40,10 +40,10 @@ A. Aue, D. D. Norinho and S. Hormann (2015) "On the prediction of stationary fun
 Han Lin Shang
 }
 \seealso{
-\code{\link{forecast.ftsm}}
+\code{\link{forecast.ftsm}}, \code{\link{forecastfplsr}}
 }
 \examples{
-ElNino_subset = extract(ElNino,"time",timeorder = 1967:2006)
-ex = farforecast(ftsm(ElNino_subset), PI=TRUE)
+ElNino_subset = extract(data = ElNino, direction = "time",timeorder = 1967:2006)
+ex = farforecast(ftsm(y = ElNino_subset), PI = TRUE)
 }
 \keyword{models}

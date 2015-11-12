@@ -11,7 +11,7 @@ isfe.fts(data, max.order = N - 3, N = 10, h = 5:10, method =
    "rw", "arfima"), lambda = 3, ...)
 }
 \arguments{
-\item{data}{An object of class \code{fts}.}
+\item{data}{An object of class \code{\link[rainbow]{fts}}.}
 \item{max.order}{Maximum number of principal components to fit.}
 \item{N}{Minimum number of functional observations to be used in fitting a model.}
 \item{h}{Forecast horizons over which to average.}

@@ -1,10 +1,7 @@
-T_stationary <- function(sample, L = 49, J = 500, reps = 1000, seedlen = 50, 
-                         quan=c(.90,.95), Ker1 = FALSE, Ker2 = TRUE)
-{	
+T_stationary <- function(sample, L = 49, J = 500, MC_rep=1000, cumulative_var = .90, Ker1 = FALSE, Ker2 = TRUE, h = ncol(sample)^.5, pivotal=FALSE)
+{
     xrefine = N = ncol(sample)
-    refinement = nrow(sample)
-    sampling_points = nrow(sample)-1
-    
+    trefine = nrow(sample)
     if(Ker1)
     {
         K=function(x)
@@ -21,177 +18,166 @@ T_stationary <- function(sample, L = 49, J = 500, reps = 1000, seedlen = 50,
             return(output)
         }
     }
-    
     basis = create.fourier.basis(c(0,1),L)
-    time = c(1:(reps/50))*50
-    rep = reps
-    stataT = c(1:reps)
-    ld = length(quan)
-    reject95T = reject9T=matrix(0,reps,ld)
-    r_95T = r_9T=matrix(0,reps,ld)
-    evals = matrix(0,L,reps)
-    dres = rp_95 = rp_9 = matrix(0,reps,ld)
-    
-    Con = .3416
-    F = function(x,y)
+    ld = length(cumulative_var)
+    h1 = h
+    X1_bar = rowMeans(sample)
+    mean_subtracted_X1 = sample - X1_bar
+    gamma_hat = list()
+    for(i in 0:(N-1))
     {
-        return(Con * exp(.5 * (x^2 + y^2)))
+        temp_matrix = matrix(rep(0, trefine^2), trefine,trefine)
+        for(j in (i+1):N)
+        {
+            temp_matrix = temp_matrix + (mean_subtracted_X1[,j] %*% t(mean_subtracted_X1[,j-i]))
+        }
+        gamma_hat[i+1]=list(temp_matrix/N)
     }
-    
-    Km = matrix(0,refinement,refinement)
-    for(j in c(1:refinement))
+    cov_sample1 = gamma_hat[[1]]
+    for(index in 1:(N-1))
     {
-        for(k in c(1:refinement))
+        cov_sample1 = cov_sample1 + K(index/h1) *(gamma_hat[[index+1]] + t(gamma_hat[[index+1]]))
+    }
+    Z_matrix = cov_sample1
+
+    e1 = list()
+    for(index in 1:L)
+    {
+        e1[index] = list(as.matrix(eval.basis(evalarg =(1:trefine)/trefine, basisobj = basis,Lfdobj=0)[,index]))
+    }
+    eigenvalues1 = (eigen(Z_matrix)$values)/trefine
+    D = matrix(0,L,L)
+    for(k in 1:L)
+    {
+        for(ell in 1:L)
         {
-            Km[j,k]=F(j/(refinement),k/(refinement))
+            Integrand_matrix = Z_matrix * (e1[[k]] %*% t(e1[[ell]]))
+            D[k,ell] = 1/(trefine^2)*sum(Integrand_matrix)
         }
     }
-    
-    trefine=sampling_points+1
-    h1=N^.5
-    
-    for(ll in c(1:reps))
-    {
-        seed = matrix(0,sampling_points+1,seedlen)
-        seederror = matrix(0,sampling_points+1,seedlen)
-        for(j in c(1:seedlen))
-        {
-            seederror[,j] = BBridge(x = 0, y = 0, t0 = 0, T = 1, N = sampling_points)
-        }
-        seed[,1] = seederror[,1]
-        for(j in c(2:seedlen))
-        {
-            seed[,j]=(Km %*% seed[,j-1]) * (1/(refinement)) + seederror[,j]
-        }
-        e = matrix(0,(sampling_points+1),N)
-        e[,1] = seed[,seedlen]
-        
-        # sample = matrix(0,sampling_points+1,N)
-        # for(ss in c(1:N))
-        # {
-        #     sample[,ss] = BBridge(x = 0, y = 0, t0 = 0, T = 1, N = sampling_points)
-        # }
-        
-        for(index in 2:N)
-        {
-            e[,index]=(Km %*% e[,(index-1)])*(1/(refinement))+sample[,index]
-        }
-        X1_bar = rowMeans(e)
-        data1 = e
-        mean_subtracted_X1 = data1 - X1_bar
-        gamma_hat = list()
-        for(i in 0:(N-1))
-        {
-            temp_matrix = matrix(rep(0, refinement^2), refinement, refinement)
-            for(j in (i+1):N)
-            {
-                temp_matrix = temp_matrix + (mean_subtracted_X1[,j] %*% t(mean_subtracted_X1[,j-i]))
-            }
-            gamma_hat[i+1]=list(temp_matrix/N)
-        }
-        cov_sample1 = gamma_hat[[1]]
-        for(index in 1:(N-1))
-        {
-            cov_sample1 = cov_sample1 + K(index/h1) * (gamma_hat[[index+1]] + t(gamma_hat[[index+1]]))
-        }
-        Z_matrix = cov_sample1
-        
-        e1 = list()
-        for(index in 1:L)
-        {
-            e1[index] = list(as.matrix(eval.basis(evalarg = (1:refinement)/refinement, basisobj = basis, Lfdobj=0)[,index]))
-        }
-        eigenvalues1 = (eigen(Z_matrix)$values)/trefine
-        D = matrix(0,L,L)
-        for(k in 1:L)
-        {
-            for(ell in 1:L)
-            {
-                Integrand_matrix = Z_matrix * (e1[[k]] %*% t(e1[[ell]]))
-                D[k,ell] = 1/(refinement^2)*sum(Integrand_matrix)
-            }
-        }
-        eigenpairs = eigen(D)
-        eigenvectors = eigenpairs$vec
-        eigenvalues = eigenpairs$val
-        evals[,ll] = eigenvalues
-        d = c(1:ld)
-        ind = 0
+    eigenpairs = eigen(D)
+    eigenvectors = eigenpairs$vec
+	  eigenvectors2 = eigen(Z_matrix)$vectors
+    eigenvalues = eigenpairs$val
+    evals = eigenvalues
+  	if(pivotal)
+  	{
+		    d = c(1:ld)
+        switch = 0
         stoper = 1
         spot = 1
-        while(ind==0)
+        while(switch==0)
         {
-            while((sum(eigenvalues[c(1:spot)])/sum(eigenvalues)) < quan[stoper])
+            while((sum(eigenvalues[c(1:spot)])/sum(eigenvalues)) < cumulative_var[stoper])
             {
-                spot = spot+1
+              spot = spot+1
             }
             d[stoper] = spot
             stoper = stoper+1
             if(stoper == (length(d)+1))
             {
-                ind = 1
+              switch = 1
             }
         }
-        dres[ll,] = d
-        T = c(1:rep)
+    		T_N0=1:ld
+		    for(r in 1:ld)
+		    {
+        		ds=d[r]
+        		inp.matrix=matrix(0,ds,N)
+        		eig.v.norm=((trefine)^.5)*eigenvectors2
+			      for(j in (1:ds))
+			      {
+				        for(k in (1:N))
+				        {
+					          inp.matrix[j,k]=t(sample[,k])%*%(eig.v.norm[,j])/trefine
+				        }
+				    }
+      	  	T_Nsum=rep(0,ds)
+        		for(j in (1:ds))
+        		{
+			          s.0=sum(inp.matrix[j,(1:xrefine)])
+			          for(x in (1:xrefine))
+			          {
+				            T_Nsum[j]=T_Nsum[j]+(1/xrefine)*((1/N^.5)*(sum(inp.matrix[j,(1:x)])-(x/xrefine)*s.0))^2
+			          }
+			       }
+          	 T_N0[r]=sum(T_Nsum/eigenvalues[1:ds])
+    		}
+        T = vector(, MC_rep)
+        T_array = matrix(0, length(d), MC_rep)
         lambda = eigenvalues
-        p_9T = p_95T = c(1:length(d))
-        for(dd in c(1:length(d)))
+        for(dd in 1:length(d))
         {
-            for(k in c(1:rep))
+            for(k in 1:MC_rep)
             {
                 z=rnorm(d[dd]*J)
                 tot=0
                 for(n in c(1:d[dd]))
                 {
-                    sum1 = 0
-                    sum1 = sum((z[c(((n-1)*d[dd]+1):((n-1)*d[dd]+J))]/(pi*c(1:J)))^2)
-                    tot = tot+lambda[n]*sum1
+                  sum1 = 0
+                  sum1 =sum((z[c(((n-1)*d[dd]+1):((n-1)*d[dd]+J))]/(pi*c(1:J)))^2)
+                  tot = tot+sum1
                 }
-                T[k] = tot
-            } 
-            fT9 = function(x)
-            {
-                ecdf(T)(x)-.9
+                T_array[dd,k] = T[k] = tot
             }
-            fT95 = function(x)
-            {
-                ecdf(T)(x)-.95
-            }
-            p_9T[dd] = uniroot(fT9, c(mean(T),max(T)),tol=.001,maxiter=1000)$root
-            p_95T[dd] = uniroot(fT95, c(mean(T),max(T)),tol=.001,maxiter=1000)$root
-            r_9T[ll,dd]=p_9T[dd]
-            r_95T[ll,dd]=p_95T[dd]
         }
-        Q <- function(x,t)
+        p_values=(1:ld)
+        for(dd in 1:length(d))
         {
-            data2 = c(1:sampling_points+1)
-            data3 = c(1:sampling_points+1)
-            for(j in c(1:sampling_points+1))
-            {
-                data2[j] = sum(data1[j,c(1:floor(N*x))])
-                data3[j] = sum(data1[j,c(1:N)])
-            }
-            return(((1/N)^.5)*(data2[t] - (floor(N*x)/N)*data3[t]))
+            p_values[dd] = round(1 - ecdf(T_array[dd,])(T_N0[dd]),4)
         }
-        int = sum(((1/sqrt(N))*((data1[,c(1:1)])-(1/xrefine)*rowSums(data1)))^2/(xrefine*trefine))
-        for(x in c(2:xrefine))
-        {
-            int = int + sum(((1/sqrt(N))*(rowSums(data1[,c(1:x)])-(x/xrefine)*rowSums(data1)))^2/(xrefine*trefine))
-        }
-        stataT[ll] = int
-        for(dd in c(1:length(d)))
-        {
-            if(stataT[ll] > p_9T[dd])
-            {
-                reject9T[ll,dd] = 1
-            }
-            if(stataT[ll] > p_95T[dd])
-            {
-                reject95T[ll,dd] = 1
-            }
-        }
-        print(ll)
+        cat("\n")
+        cat("Pivotal test of stationarity for a functional time series\n")
+        cat("\n")
+        cat("null hypothesis: the series is stationary\n")
+        cat("\n")
+
+        cat(paste("p-values = ", p_values, sep=""),"\n")
+        cat(paste("N (number of functions) = ", N, sep=""),"\n")
+        cat(paste("number of MC replications = ", MC_rep, sep=""))
+        cat("\n")
+        return(list(p_values = p_values))
     }
-    return(list(reject9T = reject9T, reject95T = reject95T))
+  	if(pivotal==FALSE)
+  	{
+        T = vector(, MC_rep)
+        T_array = (1: MC_rep)
+        lambda = eigenvalues
+	      d = min(c(length(which(lambda>0)),15))       
+        for(k in 1:MC_rep)
+        {
+            z=rnorm(d*J)
+            tot=0
+            for(n in c(1:d))
+            {
+                sum1 = 0
+                sum1 =sum((z[c(((n-1)*d+1):((n-1)*d+J))]/(pi*c(1:J)))^2)
+                tot = tot+lambda[n]*sum1
+            }
+            T_array[k] = T[k] = tot
+        }
+    }
+    int = sum(((1/sqrt(N)) *((sample[,1])-(1/xrefine)*rowSums(sample)))^2/(xrefine * trefine))
+    for(x in 2:xrefine)
+    {
+        int = int + sum(((1/sqrt(N)) * (rowSums(sample[,1:x]) -(x/xrefine) * rowSums(sample)))^2/(xrefine * trefine))
+    }
+    statT_N = int
+    p_values=(1:ld)
+    for(dd in 1:length(d))
+    {
+        p_values = round(1 - ecdf(T_array)(statT_N),4)
+    }
+    cat("\n")
+    cat("Monte Carlo test of stationarity of a functional time series\n")
+    cat("\n")
+    cat("null hypothesis: the series is stationary\n")
+    cat("\n")
+
+    #cat(paste("data: ", fts_data$yname, sep=""),"\n")
+    cat(paste("p-values = ", p_values, sep=""),"\n")
+    cat(paste("N (number of functions) = ", N, sep=""),"\n")
+    cat(paste("number of MC replications = ", MC_rep, sep=""))
+    cat("\n")
+    return(list(p_values = p_values))
 }

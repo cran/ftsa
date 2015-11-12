@@ -8,7 +8,7 @@ Creates subsets of a \code{fts} object.
 extract(data, direction = c("time", "x"), timeorder, xorder)
 }
 \arguments{
-   \item{data}{An object of \code{fts}.}
+   \item{data}{An object of \code{\link[rainbow]{fts}}.}
    \item{direction}{In time direction or x variable direction?}
    \item{timeorder}{Indexes of time order.}
    \item{xorder}{Indexes of x variable order.}
@@ -24,8 +24,8 @@ as data but with a subset of \code{time} variables.
 \examples{
 # ElNino is an object of class sliced functional time series.
 # This function truncates the data series rowwise or columnwise.	
-extract(ElNino, direction = "time", timeorder = 1980:2006) # Last 27 curves
-extract(ElNino, direction = "x", xorder = 1:8) # First 8 x variables
+extract(data = ElNino, direction = "time", timeorder = 1980:2006) # Last 27 curves
+extract(data = ElNino, direction = "x", xorder = 1:8) # First 8 x variables
 }
 \keyword{models}
 

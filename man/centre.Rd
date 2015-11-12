@@ -20,13 +20,13 @@ Return mean function, variance function, median function or trim mean function.
 Han Lin Shang
 }
 \seealso{
-\code{\link[ftsa]{pcscorebootstrapdata}}
+\code{\link[ftsa]{pcscorebootstrapdata}}, \code{\link[ftsa]{mean.fts}}, \code{\link[ftsa]{median.fts}}, \code{\link[ftsa]{sd.fts}}, \code{\link[ftsa]{var.fts}}
 }
 \examples{
 # mean function is often removed in the functional principal component analysis.
 # trimmed mean function is sometimes employed for robustness in the presence of outliers.
 # In calculating trimmed mean function, several functional depth measures were employed.	
-centre(ElNino$y, "mean")
+centre(x = ElNino$y, type = "mean")
 }
 \keyword{models}
 

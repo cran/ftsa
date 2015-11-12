@@ -9,7 +9,7 @@ Computes median of functional time series at each variable.
  "RP", "RPD", "radius"), alpha, beta, weight, ...)
 }
 \arguments{
-  \item{x}{An object of class \code{fts}.}
+  \item{x}{An object of class \code{\link[rainbow]{fts}}.}
   \item{method}{Method for computing median.}
   \item{alpha}{Tuning parameter when \code{method="radius"}.}
   \item{beta}{Trimming percentage, by default it is 0.25, when \code{method="radius"}.}
@@ -61,8 +61,8 @@ median(x = ElNino, method = "FM")
 median(x = ElNino, method = "mode")
 median(x = ElNino, method = "RP")
 median(x = ElNino, method = "RPD")
-median(x = ElNino, method = "radius", alpha=0.5, beta=0.25, weight="hard")
-median(x = ElNino, method = "radius", alpha=0.5, beta=0.25, weight="soft")
+median(x = ElNino, method = "radius", alpha = 0.5, beta = 0.25, weight = "hard")
+median(x = ElNino, method = "radius", alpha = 0.5, beta = 0.25, weight = "soft")
 }
 \keyword{methods}
 

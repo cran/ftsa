@@ -12,7 +12,7 @@ components to obtain a forecast curve.
 ftsmiterativeforecasts(object, components, iteration = 20)
 }
 \arguments{
-  \item{object}{An object of class \code{fts}.}
+  \item{object}{An object of class \code{\link[rainbow]{fts}}.}
   \item{components}{Number of principal components.}
   \item{iteration}{Number of iterative one-step-ahead forecasts.}
 }
@@ -61,6 +61,6 @@ Han Lin Shang
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{plot.ftsf}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}}
 \examples{
 # Iterative one-step-ahead forecasts via functional principal component analysis.	
-ftsmiterativeforecasts(Australiasmoothfertility, components = 2, iteration = 5)
+ftsmiterativeforecasts(object = Australiasmoothfertility, components = 2, iteration = 5)
 }
 \keyword{models}

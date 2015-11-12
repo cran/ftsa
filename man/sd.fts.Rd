@@ -63,8 +63,8 @@ sd(x = ElNino, method = "coordinate")
 sd(x = ElNino, method = "mode")
 sd(x = ElNino, method = "RP")
 sd(x = ElNino, method = "RPD")
-sd(x = ElNino, method = "radius", alpha=0.5, weight="hard")
-sd(x = ElNino, method = "radius", alpha=0.5, weight="soft")
+sd(x = ElNino, method = "radius", alpha = 0.5, weight = "hard")
+sd(x = ElNino, method = "radius", alpha = 0.5, weight = "soft")
 }
 \keyword{methods}
 

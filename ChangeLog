@@ -1,3 +1,12 @@
+v 4.5
+
+1. Update the description of the ftsa-package
+2. Update the T_stationary function
+3. Update the farforecast function
+4. Update the ftsa:::ftsmPI function for forecast horizon h > 1
+5. Add the meboot option in the pcscorebootstrapdata for bootstrapping a functional time series
+6. Add the dynamic_FLR function to update point and interval forecasts via a functional linear regression
+
 v 4.4
 
 1. Include PM10 pollution data set and its square root transformation

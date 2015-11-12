@@ -35,7 +35,7 @@ dynupdate(data, newdata = NULL, holdoutdata, method = c("ts", "block",
   \item{B}{Number of bootstrap samples.}  
 }
 \details{
-This function is designed to dynamically update point and distributional forecasts, when partial data in the most recent curve are observed.
+This function is designed to dynamically update point and interval forecasts, when partial data in the most recent curve are observed.
 
 If \code{method = "classical"}, then standard functional principal component decomposition is used, as described by Ramsay and Dalzell (1991). 
 
@@ -62,7 +62,9 @@ H. Shen (2009) "On modeling and forecasting time series of curves", \emph{Techno
 
 H. L. Shang and R. J. Hyndman (2011) "Nonparametric time series forecasting with dynamic updating", Mathematics and Computers in Simulation, \bold{81}(7), 1310-1324.
 
-H. L. Shang (2012) "Functional time series approach for forecasting very short-term electricity demand", \emph{Journal of Applied Statistics}, \bold{in press}.
+H. L. Shang (2013) "Functional time series approach for forecasting very short-term electricity demand", \emph{Journal of Applied Statistics}, \bold{40}(1), 152-168.
+
+H. L. Shang (2015) "Forecasting Intraday S&P 500 Index Returns: A Functional Time Series Approach", Working paper, \url{http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2647233}.
 }
 \author{Han Lin Shang}
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}}

@@ -58,8 +58,8 @@ var(x = ElNino, method = "coordinate")
 var(x = ElNino, method = "mode")
 var(x = ElNino, method = "RP")
 var(x = ElNino, method = "RPD")
-var(x = ElNino, method = "radius", alpha=0.5, weight="hard")
-var(x = ElNino, method = "radius", alpha=0.5, weight="soft")
+var(x = ElNino, method = "radius", alpha = 0.5, weight = "hard")
+var(x = ElNino, method = "radius", alpha = 0.5, weight = "soft")
 }
 \keyword{methods}
 

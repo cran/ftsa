@@ -91,7 +91,7 @@ R. J. Hyndman and A. Koehler (2006) "Another look at measures of forecast accura
 error(forecast = 1:2, true = 3:4, method = "mae")
 error(forecast = 1:5, forecastbench = 6:10, true = 11:15, method = "mrae")
 error(forecast = 1:5, forecastbench = 6:10, true = 11:15, insampletrue = 16:20, 
-	giveall=TRUE)
+	giveall = TRUE)
 }
 \keyword{methods}
 

@@ -9,7 +9,7 @@ Computes mean of functional time series at each variable.
  na.rm = TRUE, alpha, beta, weight, ...)
 }
 \arguments{
-\item{x}{An object of class \code{fts}.}
+\item{x}{An object of class \code{\link[rainbow]{fts}}.}
 \item{method}{Method for computing the mean function.}
 \item{na.rm}{A logical value indicating whether NA values should be stripped before the computation proceeds.}
 \item{alpha}{Tuning parameter when \code{method="radius"}.}
@@ -57,8 +57,8 @@ mean(x = ElNino, method = "FM")
 mean(x = ElNino, method = "mode")
 mean(x = ElNino, method = "RP")
 mean(x = ElNino, method = "RPD")
-mean(x = ElNino, method = "radius", alpha=0.5, beta=0.25, weight="hard")
-mean(x = ElNino, method = "radius", alpha=0.5, beta=0.25, weight="soft")
+mean(x = ElNino, method = "radius", alpha = 0.5, beta = 0.25, weight = "hard")
+mean(x = ElNino, method = "radius", alpha = 0.5, beta = 0.25, weight = "soft")
 }
 \keyword{methods}
 

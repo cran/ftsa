@@ -2,7 +2,7 @@
 \alias{ftsm}
 \title{Fit functional time series model}
 \description{
-Fits a principal component model to a \code{fts} object. The
+Fits a principal component model to a \code{\link[rainbow]{fts}} object. The
 function uses optimal orthonormal principal components obtained from a
 principal components decomposition.
 }
@@ -12,7 +12,7 @@ ftsm(y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classical",
   weight = FALSE, beta = 0.1, ...)
 }
 \arguments{
-\item{y}{An object of class \code{fts}.}
+\item{y}{An object of class \code{\link[rainbow]{fts}}.}
 \item{order}{Number of principal components to fit.}
 \item{ngrid}{Number of grid points to use in calculations. Set to maximum of 500 and \code{ncol(y$y)}.}
 \item{method}{Method to use for principal components decomposition. Possibilities are \dQuote{M}, \dQuote{rapca} and \dQuote{classical}.}

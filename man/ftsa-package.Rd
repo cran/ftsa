@@ -6,7 +6,7 @@
 Functional Time Series Analysis
 }
 \description{
-This package presents descriptive statistics for modeling functional data; implements principal component regression and partial least squares regression to provide point and distributional forecasts for functional data; utilizes ordinary least squares, penalized least squares, ridge regression, and moving block approaches to dynamically update point and distributional forecasts when partial data points in the most recent curve are observed.
+This package presents descriptive statistics for modeling functional data; implements principal component regression and partial least squares regression to provide point and distributional forecasts for functional data; utilizes functional linear regression, ordinary least squares, penalized least squares, ridge regression, and moving block approaches to dynamically update point and distributional forecasts when partial data points in the most recent curve are observed; performs stationarity test for a functional time series.
 }
 \author{
 Rob J Hyndman and Han Lin Shang 
@@ -37,6 +37,10 @@ H. L. Shang, A. Wisniowski, J. Bijak, P. W. F. Smith and J. Raymer (2014) "Bayes
 H. L. Shang (2015) "Selection of the optimal Box-Cox transformation parameter for modelling and forecasting age-specific fertility", \emph{Journal of Population Research}, \bold{32}(1), 69-79.
 
 H. L. Shang (2015) "Forecast accuracy comparison of age-specific mortality and life expectancy: Statistical tests of the results", \emph{Population Studies}, forthcoming.
+
+H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2015) "A multilevel functional data method for forecasting population, with an application to the United Kingdom, \emph{International Journal of Forecasting}, forthcoming.
+
+H. L. Shang (2015) "Forecasting Intraday S&P 500 Index Returns: A Functional Time Series Approach", Working paper, \url{http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2647233}.
 }
 \keyword{package}
 

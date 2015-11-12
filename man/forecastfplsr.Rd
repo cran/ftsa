@@ -13,7 +13,7 @@ forecastfplsr(object, components = 2, h = 20)
   \item{h}{Forecast horizon.}
 }
 \value{
-A \code{fts} class object, containing forecasts of responses.
+A \code{\link[rainbow]{fts}} class object, containing forecasts of responses.
 }
 \references{
 R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series" (with discussion), \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.
@@ -29,7 +29,7 @@ Han Lin Shang
 # By forecasting univariate partial least squares scores, the forecasted curves are 
 # obtained by multiplying the forecasted scores by fixed functional partial least 
 # squares function plus fixed mean function.
-forecastfplsr(Australiasmoothfertility, h = 5)
+forecastfplsr(object = Australiasmoothfertility, h = 5)
 }
 \keyword{models}
 

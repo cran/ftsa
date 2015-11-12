@@ -35,7 +35,8 @@ centre,
 pcscorebootstrapdata,
 MFDM,
 farforecast,
-T_stationary
+T_stationary,
+dynamic_FLR
 )
 
 
@@ -72,4 +73,5 @@ importFrom(fda, create.fourier.basis)
 importFrom(fda, eval.basis)
 importFrom("graphics", "abline", "contour", "filled.contour", "image", "legend", "lines", "par", "persp", "points", "text", "title")
 importFrom("utils", "head", "tail")
+
 importFrom("grDevices", "dev.new", "gray")     

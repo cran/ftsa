@@ -20,12 +20,12 @@ reliable statistical tools to determine, and justify the public, appropriate mea
 (see Stadlober, Hormann and Pfeiler, 2008). 
 }
 \source{
-Thanks Professor S. Hormann for providing this data set. The original data source is \url{http://www.umwelt.steiermark.at/cms/} 
+Thanks Professor Siegfried. Hormann for providing this data set. The original data source is \url{http://www.umwelt.steiermark.at/cms/} 
 }
 \references{
 A. Aue, D. D. Norinho, S. Hormann (2015) "On the prediction of stationary functional time series", \emph{Journal of the American Statistical Association}, \bold{110}(509), 378-392.
 
-E. Stadlober, S. H\"{o}rmann, B. Pfeiler (2008) "Quality and performance of a PM10 daily forecasting model", \emph{Atmospheric Environment}, \bold{42}, 1098-1109.
+E. Stadlober, S. Hormann, B. Pfeiler (2008) "Quality and performance of a PM10 daily forecasting model", \emph{Atmospheric Environment}, \bold{42}, 1098-1109.
 
 S. Hormann, B. Pfeiler, E. Stadlober (2005) "Analysis and prediction of particulate matter PM10 for the winter season in Graz", \emph{Austrian Journal of Statistics}, \bold{34}(4), 307-326.
 }
