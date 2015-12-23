@@ -29,7 +29,7 @@
   
   %% need no \usepackage{Sweave.sty}
   
-  \author{Han Lin Shang\\Monash University}
+  \author{Han Lin Shang\\Australian National University}
   
   \title{The \pkg{ftsa} Package}
   
@@ -38,20 +38,19 @@
   \Plaintitle{The ftsa Package}
   
   \Abstract{
-  Recent advances in computer recording and storing technology have tremendously increased the presence of functional data, whose graphical representation can be infinite-dimensional curve, image, or shape. When the same functional object is observed over a period of time, such data are known as functional time series. This article makes first attempt to describe several techniques (centered around functional principal component analysis) for modeling and forecasting functional time series from a computational aspect, using a readily-available R addon package. These methods are demonstrated using age-specific Australian fertility rate data from 1921 to 2006, and monthly sea surface temperature data from January 1950 to December 2011.
+  Recent advances in computer recording and storing technology have tremendously increased the presence of functional data, whose graphical representation can be infinite-dimensional curve, image, or shape. When the same functional object is observed over a period of time, such data are known as functional time series. This article makes first attempt to describe several techniques (centered around functional principal component analysis) for modeling and forecasting functional time series from computational and practical aspects, using a readily-available \textsf{R} addon package. These methods are demonstrated using age-specific Australian fertility rate data from 1921 to 2006, and monthly sea surface temperature data from January 1950 to December 2011.
 }
   
-  \Keywords{functional time series visualization, functional principal component analysis, 
-            functional partial least squares regression}
+  \Keywords{dynamic updating; functional time series visualization; functional principal component analysis; functional partial least squares regression; functional time series forecasting; stationary test for functional time series}
   
   \Plainkeywords{functional data analysis, functional time series}
   
   \Address{Han Lin Shang\\
-           Department of Econometrics \& Business Statistics \\
-           Monash University\\
-           Melbourne, VIC, 3800, \\
-           E-mail: \email{HanLin.Shang@monash.edu}\\
-           URL: \url{http://monashforecasting.com/index.php?title=User:Han} \\
+           Research School of Finance, Actuarial Studies and Statistics \\
+           Australian National University\\
+           Canberra, ACT 2601, Australia\\
+           E-mail: \email{hanlin.shang@anu.edu.au}\\
+           URL: \url{https://researchers.anu.edu.au/researchers/shang-h} \\
   }
   
   \begin{document}
@@ -67,9 +66,9 @@
     
   \section*{Introduction}
   
-The aim of this article is to describe the R functions that are readily-available in the \pkg{ftsa} package \citep{HS12}, for modeling and forecasting functional time series. This article was motivated by recent advances in computer recording and storing technology that have enabled researchers to collect and store (ultra) high-dimensional data. When the high-dimensional data are repeatedly measured on the same object over a period of time, a time series of continuous functions is observed within a common bounded interval \citep{SH08}.
+The aim of this article is to describe the \textsf{R} functions that are readily-available in the \pkg{ftsa} package \citep{HS12}, for modeling and forecasting functional time series. This article was motivated by recent advances in computer recording and storing technology that have enabled researchers to collect and store (ultra) high-dimensional data. When the high-dimensional data are repeatedly measured on the same object over a period of time, a time series of continuous functions is observed within a common bounded interval \citep{SH08}.
 
-Analyzing functional time series has received increasing attention in the functional data analysis literature \citep[see for example,][]{HK10, HHK10,HK12}. \cite{HS10} presented a rainbow plot for visualizing functional time series, where the distant past data are shown in red and most recent data are shown in purple. \cite{AOV99} proposed functional principal component regression (FPCR) to model and forecast functional time series.
+Analyzing functional time series has received increasing attention in the functional data analysis literature \citep[see for example,][]{AGH+09, HK10, HHK10, HK12, KMZ15}. \cite{HS10} presented a rainbow plot for visualizing functional time series, where the distant past data are shown in red and most recent data are shown in purple. \cite{AOV99} proposed functional principal component regression (FPCR) to model and forecast functional time series.
 
 Before reviewing the FPCR, we first define the problem more precisely. Let $y_t(x)$ denote a function, such as age-specific fertility rates for the continuous age variable $x$ in year $t$, or monthly sea surface temperatures for the continuous time variable $x$ in year $t$. In the latter example, functional time series techniques allow us to capture the underlying dynamic of the multiple seasonality in the data \citep[see][for example]{SH11, Shang12a}. We assume that there is an underlying smooth function $f_t(x)$ that observes with error at discretized grid points of $x$. In practice, we observe $\{x_i, y_t(x_i)\}$ for $t=1,2,\dots,n$ and $i=1,2,\dots,p$, from which we extract a smooth function $f_t(x)$, given by
 \begin{equation}
@@ -177,7 +176,7 @@ where $u_{n+h,k}=\text{Var}(\beta_{n+h,k}|\beta_{1,k},\beta_{2,k},\dots,\beta_{n
 
 Based on the normality assumption, the $100(1-\alpha)\%$ prediction interval for $y_{n+h}(x)$ is constructed as $\hat{y}_{n+h|n}(x)\pm z_{\alpha}\sqrt{\xi_{n+h}(x)}$, where $z_{\alpha}$ is the $(1-\alpha/2)$ standard normal quantile.
 
-\begin{figure}[!ht]
+\begin{figure}[!htbp]
 \centering
 <<fig=TRUE,echo=FALSE,keep.source=TRUE>>=
 # Plot the point forecast
@@ -193,6 +192,7 @@ legend("topright", c("Point forecasts", "Interval forecasts"),col=c(1,2), lty=1,
 \end{figure}
 
 Figure~\ref{fig:5} displays the forecasts of fertility rates in 2007, along with the 80\% prediction interval. It was created by the following code.
+
 \begin{smallexample}
   \begin{smallverbatim}
 # Plot the point forecast
@@ -232,7 +232,7 @@ The BM method re-defines the start and end points of trajectories. Because time 
 \tikzset{decorate with/.style={fill=cyan!20,draw=cyan}}
 \begin{figure}[!ht]
 \begin{center}
-\scalebox{.45}{
+\scalebox{.55}{
 \begin{tikzpicture}
 \draw (0,0) node[anchor=north east]{\LARGE{$x_p$}} rectangle (12,8);
 \draw (1.1,4.1) rectangle (13.1,12);

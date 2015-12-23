@@ -2,7 +2,7 @@
 ### Encoding: UTF-8
 
 ###################################################
-### code chunk number 1: ftsa.Rnw:113-116
+### code chunk number 1: ftsa.Rnw:112-115
 ###################################################
 library(ftsa)
 plot(forecast(ftsm(Australiasmoothfertility,
@@ -10,7 +10,7 @@ plot(forecast(ftsm(Australiasmoothfertility,
 
 
 ###################################################
-### code chunk number 2: ftsa.Rnw:145-152
+### code chunk number 2: ftsa.Rnw:144-151
 ###################################################
 # Plot the historical data in gray
 plot(Australiasmoothfertility, col = gray(0.8), xlab = "Age",
@@ -22,7 +22,7 @@ legend("topright", c("2007", "2026"), col = c("red", "blue"), lty = 1)
 
 
 ###################################################
-### code chunk number 3: ftsa.Rnw:182-190
+### code chunk number 3: ftsa.Rnw:181-189
 ###################################################
 # Plot the point forecast
 aus = forecast(ftsm(Australiasmoothfertility, order=2), h=1)

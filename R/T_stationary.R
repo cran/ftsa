@@ -57,12 +57,12 @@ T_stationary <- function(sample, L = 49, J = 500, MC_rep=1000, cumulative_var = 
     }
     eigenpairs = eigen(D)
     eigenvectors = eigenpairs$vec
-	  eigenvectors2 = eigen(Z_matrix)$vectors
+	eigenvectors2 = eigen(Z_matrix)$vectors
     eigenvalues = eigenpairs$val
     evals = eigenvalues
   	if(pivotal)
   	{
-		    d = c(1:ld)
+		d = c(1:ld)
         switch = 0
         stoper = 1
         spot = 1
@@ -79,30 +79,30 @@ T_stationary <- function(sample, L = 49, J = 500, MC_rep=1000, cumulative_var = 
               switch = 1
             }
         }
-    		T_N0=1:ld
-		    for(r in 1:ld)
-		    {
-        		ds=d[r]
-        		inp.matrix=matrix(0,ds,N)
-        		eig.v.norm=((trefine)^.5)*eigenvectors2
-			      for(j in (1:ds))
-			      {
-				        for(k in (1:N))
-				        {
-					          inp.matrix[j,k]=t(sample[,k])%*%(eig.v.norm[,j])/trefine
-				        }
-				    }
+    	T_N0=1:ld
+		for(r in 1:ld)
+		{
+        	ds=d[r]
+        	inp.matrix=matrix(0,ds,N)
+        	eig.v.norm=((trefine)^.5)*eigenvectors2
+			for(j in (1:ds))
+			{
+				for(k in (1:N))
+				{
+					inp.matrix[j,k]=t(sample[,k])%*%(eig.v.norm[,j])/trefine
+				}
+			}
       	  	T_Nsum=rep(0,ds)
-        		for(j in (1:ds))
-        		{
-			          s.0=sum(inp.matrix[j,(1:xrefine)])
-			          for(x in (1:xrefine))
-			          {
-				            T_Nsum[j]=T_Nsum[j]+(1/xrefine)*((1/N^.5)*(sum(inp.matrix[j,(1:x)])-(x/xrefine)*s.0))^2
-			          }
-			       }
-          	 T_N0[r]=sum(T_Nsum/eigenvalues[1:ds])
-    		}
+        	for(j in (1:ds))
+        	{
+			    s.0=sum(inp.matrix[j,(1:xrefine)])
+			    for(x in (1:xrefine))
+			    {
+				    T_Nsum[j]=T_Nsum[j]+(1/xrefine)*((1/N^.5)*(sum(inp.matrix[j,(1:x)])-(x/xrefine)*s.0))^2
+			    }
+			}
+          	T_N0[r]=sum(T_Nsum/eigenvalues[1:ds])
+    	}
         T = vector(, MC_rep)
         T_array = matrix(0, length(d), MC_rep)
         lambda = eigenvalues
@@ -132,18 +132,17 @@ T_stationary <- function(sample, L = 49, J = 500, MC_rep=1000, cumulative_var = 
         cat("null hypothesis: the series is stationary\n")
         cat("\n")
 
-        cat(paste("p-values = ", p_values, sep=""),"\n")
+        cat(paste("p-value = ", p_values, sep=""),"\n")
         cat(paste("N (number of functions) = ", N, sep=""),"\n")
         cat(paste("number of MC replications = ", MC_rep, sep=""))
         cat("\n")
-        return(list(p_values = p_values))
     }
   	if(pivotal==FALSE)
   	{
         T = vector(, MC_rep)
         T_array = (1: MC_rep)
         lambda = eigenvalues
-	      d = min(c(length(which(lambda>0)),15))       
+	    d = min(c(length(which(lambda>0)),15))       
         for(k in 1:MC_rep)
         {
             z=rnorm(d*J)
@@ -156,28 +155,26 @@ T_stationary <- function(sample, L = 49, J = 500, MC_rep=1000, cumulative_var = 
             }
             T_array[k] = T[k] = tot
         }
-    }
-    int = sum(((1/sqrt(N)) *((sample[,1])-(1/xrefine)*rowSums(sample)))^2/(xrefine * trefine))
-    for(x in 2:xrefine)
-    {
-        int = int + sum(((1/sqrt(N)) * (rowSums(sample[,1:x]) -(x/xrefine) * rowSums(sample)))^2/(xrefine * trefine))
-    }
-    statT_N = int
-    p_values=(1:ld)
-    for(dd in 1:length(d))
-    {
-        p_values = round(1 - ecdf(T_array)(statT_N),4)
-    }
-    cat("\n")
-    cat("Monte Carlo test of stationarity of a functional time series\n")
-    cat("\n")
-    cat("null hypothesis: the series is stationary\n")
-    cat("\n")
+    	int = sum(((1/sqrt(N)) *((sample[,1])-(1/xrefine)*rowSums(sample)))^2/(xrefine * trefine))
+	    for(x in 2:xrefine)
+	    {
+    	    int = int + sum(((1/sqrt(N)) * (rowSums(sample[,1:x]) -(x/xrefine) * rowSums(sample)))^2/(xrefine * trefine))
+    	}
+	    statT_N = int
+	    p_values=(1:ld)
+    	for(dd in 1:length(d))
+    	{
+        	p_values = round(1 - ecdf(T_array)(statT_N),4)
+	    }
+	    cat("\n")
+    	cat("Monte Carlo test of stationarity of a functional time series\n")
+	    cat("\n")
+	    cat("null hypothesis: the series is stationary\n")
+    	cat("\n")
 
-    #cat(paste("data: ", fts_data$yname, sep=""),"\n")
-    cat(paste("p-values = ", p_values, sep=""),"\n")
-    cat(paste("N (number of functions) = ", N, sep=""),"\n")
-    cat(paste("number of MC replications = ", MC_rep, sep=""))
-    cat("\n")
-    return(list(p_values = p_values))
+	    cat(paste("p-value = ", p_values, sep=""),"\n")
+	    cat(paste("N (number of functions) = ", N, sep=""),"\n")
+	    cat(paste("number of MC replications = ", MC_rep, sep=""))
+    	cat("\n")    
+    }
 }

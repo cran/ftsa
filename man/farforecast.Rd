@@ -1,7 +1,7 @@
 \name{farforecast}
 \alias{farforecast}
 \title{
-Functional data forecasting through functional principal component regression
+Functional data forecasting through functional principal component autoregression
 }
 \description{
 The coefficients from the fitted object are forecasted using a multivariate time-series forecasting method. 
@@ -14,7 +14,7 @@ farforecast(object, h = 10, var_type = "const", level = 80, PI = FALSE)
   \item{object}{An object of \code{\link{ftsm}}.}
   \item{h}{Forecast horizon.}
   \item{var_type}{Type of multivariate time series forecasting method; see \code{\link[vars]{VAR}} for details.}
-  \item{level}{Nominal coverage probability.}
+  \item{level}{Nominal coverage probability of prediction error bands.}
   \item{PI}{When \code{PI = TRUE}, a prediction interval will be given along with the point forecast.}
 }
 \details{
@@ -44,6 +44,9 @@ Han Lin Shang
 }
 \examples{
 ElNino_subset = extract(data = ElNino, direction = "time",timeorder = 1967:2006)
-ex = farforecast(ftsm(y = ElNino_subset), PI = TRUE)
+ex_PI = farforecast(ftsm(y = ElNino_subset), PI = TRUE)
+plot(extract(ex_PI$point_fore, direction = "time", 1), ylim = c(14, 31))
+lines(extract(ex_PI$PI_lb, direction = "time", 1), lty = 2, col = 2)
+lines(extract(ex_PI$PI_ub, direction = "time", 1), lty = 2, col = 2)
 }
 \keyword{models}

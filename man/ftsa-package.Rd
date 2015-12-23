@@ -36,7 +36,7 @@ H. L. Shang, A. Wisniowski, J. Bijak, P. W. F. Smith and J. Raymer (2014) "Bayes
 
 H. L. Shang (2015) "Selection of the optimal Box-Cox transformation parameter for modelling and forecasting age-specific fertility", \emph{Journal of Population Research}, \bold{32}(1), 69-79.
 
-H. L. Shang (2015) "Forecast accuracy comparison of age-specific mortality and life expectancy: Statistical tests of the results", \emph{Population Studies}, forthcoming.
+H. L. Shang (2015) "Forecast accuracy comparison of age-specific mortality and life expectancy: Statistical tests of the results", \emph{Population Studies}, 69(3), 317-335.
 
 H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2015) "A multilevel functional data method for forecasting population, with an application to the United Kingdom, \emph{International Journal of Forecasting}, forthcoming.
 
