@@ -39,13 +39,13 @@ This idea has been adopted from the Autoregressive Hilbertian processes of order
 
 \emph{\bold{Distributional forecasts:}}\cr
 
-Parametric method:
+\emph{Parametric method:}
 
 Influenced by the works of Denham (1997) and Phatak et al. (1993), one way of constructing prediction intervals in the PLSR
 is via a local linearization method (also known as the Delta method). It can be easily understood as the first two terms in a Taylor series
 expansion. The variance of coefficient estimators can be approximated, from which an analytic-formula based prediction intervals are constructed.
 
-Nonparametric method:
+\emph{Nonparametric method:}
 
 After discretizing and decentralizing functional data \eqn{f_t(x)} and \eqn{g_s(y)}, a PLSR model with \eqn{K} latent components is built.
 Then, the fit residuals \eqn{o_s(y_i)} between \eqn{g_s(y_i)} and \eqn{\hat{g}_s(y_i)}{hat(g)_s(y_i)} are calculated as

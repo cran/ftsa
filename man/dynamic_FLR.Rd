@@ -20,7 +20,7 @@ dynamic_FLR(dat, newdata, holdoutdata, order_k_percent = 0.9, order_m_percent = 
   \item{pcd_method}{Method to use for principal components decomposition. Possibilities are "M", "rapca" and "classical".}
   \item{robust_lambda}{Tuning parameter in the two-step robust functional principal component analysis, when \code{pcdmethod = "M"}.}
   \item{bootrep}{Number of bootstrap samples.}
-  \item{pointfore}{If \code{pointfore = TRUE}, point forecast are produced.}
+  \item{pointfore}{If \code{pointfore = TRUE}, point forecasts are produced.}
   \item{level}{Nominal coverage probability.}
 }
 \details{

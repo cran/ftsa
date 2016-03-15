@@ -1,3 +1,7 @@
+v 4.7
+
+1. Add a new vignette to describe the use of farforecast and T_stationary functions
+
 v 4.6
 
 1. Update the farforecast function and its help file

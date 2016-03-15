@@ -21,7 +21,7 @@ farforecast <- function (object, h = 10, var_type = "const", level = 80, PI = FA
   	}
   	point_fore = object$basis[, 2:(order + 1)] %*% t(meanfcast) + object$basis[, 1]
   	colnames(point_fore) = 1:h
-  	point_fore_fts = fts(x, point_fore, yname = "Forecasts")
+  	point_fore_fts = fts(x, point_fore, yname = "Forecasts", xname = object$y$xname)
   	if(PI == TRUE) 
   	{
     	n.curve = ncol(object$y$y)
@@ -46,8 +46,8 @@ farforecast <- function (object, h = 10, var_type = "const", level = 80, PI = FA
     	lb = point_fore + lb_resi
     	ub = point_fore + ub_resi
 	    colnames(lb) = colnames(ub) = 1:h
-    	PI_lb = fts(x, lb, yname = "Lower bound")
-    	PI_ub = fts(x, ub, yname = "Upper bound")
+    	PI_lb = fts(x, lb, yname = "Lower bound", xname = object$y$xname)
+    	PI_ub = fts(x, ub, yname = "Upper bound", xname = object$y$xname)
 	    return(list(point_fore = point_fore_fts, PI_lb = PI_lb, PI_ub = PI_ub))
   	}
   	else 

@@ -8,8 +8,8 @@ Fit a multilevel functional principal component model. The function uses two-ste
 }
 \usage{
 MFDM(mort_female, mort_male, mort_ave, percent_1 = 0.95, percent_2 = 0.95, fh, 
-	level = 80, alpha = 0.2, MCMCiter = 100, fmethod = c("auto_arima", "ets"), 
-		BC = c(FALSE, TRUE), lambda)
+	     level = 80, alpha = 0.2, MCMCiter = 100, fmethod = c("auto_arima", "ets"), 
+		   BC = c(FALSE, TRUE), lambda)
 }
 \arguments{
   \item{mort_female}{Female mortality.}
@@ -42,7 +42,7 @@ C-Z. Di and C. M. Crainiceanu and B. S. Caffo and N. M. Punjabi (2009) "Multilev
 
 V. Zipunnikov and B. Caffo and D. M. Yousem and C. Davatzikos and B. S. Schwartz and C. Crainiceanu (2015) "Multilevel functional principal component analysis for high-dimensional data", \emph{Journal of Computational and Graphical Statistics}, \bold{20}, 852-873.
 
-H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2015) "A multilevel functional data method for forecasting population, with an application to the United Kingdom", \emph{International Journal of Forecasting}, \bold{forthcoming}.
+H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2016) "A multilevel functional data method for forecasting population, with an application to the United Kingdom", \emph{International Journal of Forecasting}, \bold{forthcoming}.
 }
 \author{
 Han Lin Shang

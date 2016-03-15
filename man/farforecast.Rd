@@ -35,6 +35,8 @@ farforecast(object, h = 10, var_type = "const", level = 80, PI = FALSE)
 }
 \references{
 A. Aue, D. D. Norinho and S. Hormann (2015) "On the prediction of stationary functional time series", \emph{Journal of the American Statistical Association}, \bold{110}(509), 378-392.
+
+J. Klepsch, C. Kl\"{u}ppelberg and T. Wei (2016) "Prediction of functional ARMA processes with an application to traffic data", URL: \url{http://arxiv.org/abs/1603.02049}.
 }
 \author{
 Han Lin Shang
