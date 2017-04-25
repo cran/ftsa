@@ -15,15 +15,14 @@ diff.fts,
 mean.fts,
 median.fts,
 var.fts,
-sd.default,
-var.default,
 error,
 fbootstrap,
 fplsr,
 dynupdate,
 sd.fts,
 quantile.fts,
-median,
+sd.default,
+var.default,
 sd,
 var,
 quantile,
@@ -36,7 +35,8 @@ pcscorebootstrapdata,
 MFDM,
 farforecast,
 T_stationary,
-dynamic_FLR
+dynamic_FLR,
+long_run_covariance_estimation
 )
 
 
@@ -52,9 +52,9 @@ S3method(summary,fm)
 S3method(forecast,ftsm)
 S3method(var,fts)
 S3method(sd,fts)
-S3method(diff,fts)
 S3method(var,default)
 S3method(sd,default)
+S3method(diff,fts)
 S3method(print,fm)
 S3method(print,ftsm)
 S3method(print,ftsf)

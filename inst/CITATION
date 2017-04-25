@@ -9,7 +9,7 @@ bibentry(bibtype = "Manual",
   author = personList(as.person("Rob J Hyndman"), as.person("Han Lin Shang")),
   year = year,
   note = vers,
-  url = "http://cran.r-project.org/package=ftsa")
+  url = "https://CRAN.R-project.org/package=ftsa")
 
 
 bibentry(bibtype = "Article",
@@ -20,4 +20,4 @@ bibentry(bibtype = "Article",
   number    =  1,
   pages     = "64--72",
   year      =  2013,
-  url       = "http://journal.r-project.org/archive/2013-1/shang.pdf")
+  url       = "https://journal.r-project.org/archive/2013-1/shang.pdf")

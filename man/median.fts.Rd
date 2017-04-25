@@ -5,11 +5,12 @@
 Computes median of functional time series at each variable.
 }
 \usage{
-\method{median}{fts}(x, method = c("hossjercroux", "coordinate", "FM", "mode", 
+\method{median}{fts}(x, na.rm, method = c("hossjercroux", "coordinate", "FM", "mode", 
  "RP", "RPD", "radius"), alpha, beta, weight, ...)
 }
 \arguments{
   \item{x}{An object of class \code{\link[rainbow]{fts}}.}
+  \item{na.rm}{Remove any missing value.}
   \item{method}{Method for computing median.}
   \item{alpha}{Tuning parameter when \code{method="radius"}.}
   \item{beta}{Trimming percentage, by default it is 0.25, when \code{method="radius"}.}

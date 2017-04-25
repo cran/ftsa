@@ -6,7 +6,8 @@
 Functional Time Series Analysis
 }
 \description{
-This package presents descriptive statistics of functional data; implements principal component regression and partial least squares regression to provide point and distributional forecasts for functional data; utilizes functional linear regression, ordinary least squares, penalized least squares, ridge regression, and moving block approaches to dynamically update point and distributional forecasts when partial data points in the most recent curve are observed; performs stationarity test for a functional time series.
+This package presents descriptive statistics of functional data; implements principal component regression and partial least squares regression to provide point and distributional forecasts for functional data; utilizes functional linear regression, ordinary least squares, penalized least squares, ridge regression, and moving block approaches to dynamically update point and distributional forecasts when partial data points in the most recent curve are observed; performs stationarity test for a functional time series;
+    estimates a long-run covariance function by kernel sandwich estimator.
 }
 \author{
 Rob J Hyndman and Han Lin Shang 
@@ -38,9 +39,17 @@ H. L. Shang (2015) "Selection of the optimal Box-Cox transformation parameter fo
 
 H. L. Shang (2015) "Forecast accuracy comparison of age-specific mortality and life expectancy: Statistical tests of the results", \emph{Population Studies}, 69(3), 317-335.
 
-H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2016) "A multilevel functional data method for forecasting population, with an application to the United Kingdom, \emph{International Journal of Forecasting}, forthcoming.
+H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2016) "A multilevel functional data method for forecasting population, with an application to the United Kingdom, \emph{International Journal of Forecasting}, 32(3), 629-649.
 
 H. L. Shang (2015) "Forecasting Intraday S&P 500 Index Returns: A Functional Time Series Approach", Working paper, \url{http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2647233}.
+
+H. L. Shang (2016) "Bootstrap methods for stationary functional time series", \emph{Statistics and Computing}, in press.
+
+H. L. Shang and R. J. Hyndman (2016) "Grouped functional time series forecasting: An application to age-specific mortality rates", \emph{Journal of Computational and Graphical Statistics}, in press.
+
+H. L. Shang and S. Haberman (2016) "Grouped multivariate and functional time series forecasting: an application to annuity pricing", Presented at the Living to 100 Symposium, Orlando Florida, January 4-6, 2014.
+
+G. Rice and H. L. Shang (2016) "A plug-in bandwidth selection procedure for long run covariance estimation with stationary functional time series", \emph{Journal of Time Series Analysis}, in press.
 }
 \keyword{package}
 

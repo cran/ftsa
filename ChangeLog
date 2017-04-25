@@ -1,3 +1,11 @@
+v 4.8
+
+1. Add long_run_covariance_estimation function
+2. Add kweights and FlatTop functions
+3. Update smdape.R and smape.R functions
+4. remove median re-definition and create an S3 method for median.fts
+5. remove sd and var re-definition and create their S3 methods for var.fts and sd.fts
+
 v 4.7
 
 1. Add a new vignette to describe the use of farforecast and T_stationary functions

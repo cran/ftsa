@@ -54,7 +54,7 @@
   }
   
   \begin{document}
-\SweaveOpts{concordance=FALSE}
+
   
   %% Note that you should use the \pkg{}, \proglang{} and \code{} commands.
   
@@ -109,11 +109,7 @@ Figure~\ref{fig:3} presents the first two functional principal components and th
 
 \begin{figure}[!ht]
 \centering
-<<fig=TRUE,echo=FALSE,keep.source=TRUE>>=
-library(ftsa)
-plot(forecast(ftsm(Australiasmoothfertility,
-    order=2), h=20), "components")
-@
+\includegraphics{ftsa-001}
 \caption{The first two functional principal components and their associated principal component scores for the Australian fertility rate data from 1921 to 2006.}\label{fig:3}
 \end{figure}
 
@@ -141,15 +137,6 @@ Figure~\ref{fig:4} shows the forecasts of Australian fertility rate data from 20
 
 \begin{figure}[!ht]
   \begin{center}
-<<fig=TRUE,echo=FALSE,keep.source=TRUE,include=FALSE>>=
-# Plot the historical data in gray
-plot(Australiasmoothfertility, col = gray(0.8), xlab = "Age",
-    ylab = "Count of live birth (per 1,000 females)",
-    main = "Forecasted fertility rates (2007-2026)")
-# Plot the forecasts in rainbow color for Figure 4(a)
-plot(forecast(ftsm(Australiasmoothfertility, order=2), h = 20), add = TRUE)
-legend("topright", c("2007", "2026"), col = c("red", "blue"), lty = 1)
-@
 \includegraphics[width=0.6\textwidth]{ftsa-002}
 \end{center}
 \caption{Multiple-step-ahead forecasts. Based on the historical data from 1921 to 2006, we obtain 20-step-ahead forecasts for 2007 to 2026.}\label{fig:4}
@@ -178,16 +165,7 @@ Based on the normality assumption, the $100(1-\alpha)\%$ prediction interval for
 
 \begin{figure}[!htbp]
 \centering
-<<fig=TRUE,echo=FALSE,keep.source=TRUE>>=
-# Plot the point forecast
-aus = forecast(ftsm(Australiasmoothfertility, order=2), h=1)
-plot(aus, ylim=c(0,140))
-# Plot the lower and upper bounds
-lines(aus$lower, col=2)
-lines(aus$upper, col=2)
-# Add a legend to the plot
-legend("topright", c("Point forecasts", "Interval forecasts"),col=c(1,2), lty=1, cex=0.9)
-@
+\includegraphics{ftsa-003}
 \caption{Forecasts of fertility rates in 2007, along with the 80\% prediction interval.}\label{fig:5}
 \end{figure}
 
@@ -260,22 +238,7 @@ As an illustration, suppose we observe the monthly sea surface temperature from 
 
 \begin{figure}[!ht]
   \centering
-<<fig=TRUE,echo=FALSE,keep.source=TRUE,include=TRUE>>=
-# Name history to represent historical data,
-history = ElNino2011smooth
-# Name obs to represent partially observed data,
-obs = ElNino2011smooth$y[1:5,62]
-# Name fore to represent the forecasting period
-fore = ElNino2011smooth$y[6:12,62]
-int = dynupdate(data=history, newdata=obs, holdoutdata=fore, method="block", interval=TRUE)
-bmupdate = dynupdate(data=history, newdata=obs, holdoutdata=fore, method="block", value=TRUE)
-plot(6:12, fore, type="l", ylim=c(19,26),  xlab="Month", ylab="Sea surface temperature")
-lines(6:12, bmupdate, col=4)
-lines(6:12, int$low$y, col=2)
-lines(6:12, int$up$y, col=2)
-legend("topright", c("True observations", "Point forecasts", "Interval forecasts"), 
-       col=c(1,4,2), lty=1, cex=0.8)
-@
+\includegraphics{ftsa-004}
 \caption{Prediction intervals of the sea surface temperatures between June and December 2011. By incorporating the sea surface temperatures between January and May, the prediction intervals can be updated using the BM method}.\label{fig:9}
 \end{figure}
 
