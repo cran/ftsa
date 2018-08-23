@@ -1,4 +1,4 @@
-`smdape` <- function(forecast, true)
+smdape <- function(forecast, true)
 {
      if (length(forecast) != length(true))
          stop("SMDAPE: the lengths of input vectors must be the same.")

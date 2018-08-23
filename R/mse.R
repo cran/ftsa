@@ -1,4 +1,4 @@
-`mse` <- function(forecast, true)
+mse <- function(forecast, true)
 {
     if (length(forecast) != length(true))
         stop("MSE: the lengths of input vectors must be the same.")

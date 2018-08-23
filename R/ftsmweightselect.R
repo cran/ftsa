@@ -1,5 +1,4 @@
-ftsmweightselect <-
-function(data, ncomp=6, ntrainyear, errorcriterion=c("mae","mse","mape"))
+ftsmweightselect <- function(data, ncomp = 6, ntrainyear, errorcriterion = c("mae", "mse", "mape"))
 {
 errorcriterion = match.arg(errorcriterion)
 trainyear = max(data$time)-ntrainyear

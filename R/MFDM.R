@@ -1,5 +1,5 @@
-MFDM <- function(mort_female, mort_male, mort_ave, percent_1 = 0.95, percent_2 = 0.95, fh, level = 80, alpha = 0.2, 
-				MCMCiter = 100, fmethod = c("auto_arima", "ets"), BC = c(FALSE, TRUE), lambda) 
+MFDM <- function(mort_female, mort_male, mort_ave, percent_1 = 0.95, percent_2 = 0.95, fh, level = 80,
+                 alpha = 0.2, MCMCiter = 100, fmethod = c("auto_arima", "ets"), BC = c(FALSE, TRUE), lambda)
 {
    	fmethod = match.arg(fmethod)
 	if(BC == TRUE)

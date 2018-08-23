@@ -16,7 +16,6 @@ Computes differences of a \code{\link[rainbow]{fts}} object at each variable.
 \value{An object of class \code{fts}.}
 
 \author{Rob J Hyndman}
-
 \examples{
 # ElNino is an object of sliced functional time series.
 # Differencing is sometimes used to achieve stationarity.	

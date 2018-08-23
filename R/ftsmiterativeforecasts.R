@@ -1,5 +1,4 @@
-ftsmiterativeforecasts <-
-function(object, components, iteration = 20)
+ftsmiterativeforecasts <- function(object, components, iteration = 20)
 {
 	xname = object$xname
 	yname = object$yname

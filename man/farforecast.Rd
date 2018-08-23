@@ -36,7 +36,7 @@ farforecast(object, h = 10, var_type = "const", level = 80, PI = FALSE)
 \references{
 A. Aue, D. D. Norinho and S. Hormann (2015) "On the prediction of stationary functional time series", \emph{Journal of the American Statistical Association}, \bold{110}(509), 378-392.
 
-J. Klepsch, C. Kl\"{u}ppelberg and T. Wei (2016) "Prediction of functional ARMA processes with an application to traffic data", URL: \url{http://arxiv.org/abs/1603.02049}.
+J. Klepsch, C. Kl\"{u}ppelberg and T. Wei (2017) "Prediction of functional ARMA processes with an application to traffic data", \emph{Econometrics and Statistics}, \bold{1}, 128-149.
 }
 \author{
 Han Lin Shang
@@ -50,5 +50,13 @@ ex_PI = farforecast(ftsm(y = ElNino_subset), PI = TRUE)
 plot(extract(ex_PI$point_fore, direction = "time", 1), ylim = c(14, 31))
 lines(extract(ex_PI$PI_lb, direction = "time", 1), lty = 2, col = 2)
 lines(extract(ex_PI$PI_ub, direction = "time", 1), lty = 2, col = 2)
+
+sqrt_pm10 = sqrt(pm_10_GR$y)
+x = seq(0,23.5, by=.5)
+uni_forecast_sqrt_pm10 = forecast(ftsm(fts(x, sqrt_pm10)), h=30, method="arima")
+multi_forecast_sqrt_pm10 = farforecast(ftsm(fts(x,sqrt_pm10)), h=30)
+par(mfrow=c(1,2))
+plot(uni_forecast_sqrt_pm10, ylim=c(5.2,7.5))
+plot(multi_forecast_sqrt_pm10, ylim=c(5.2,7.5))
 }
 \keyword{models}

@@ -28,6 +28,8 @@ A. Aue, D. D. Norinho, S. Hormann (2015) "On the prediction of stationary functi
 E. Stadlober, S. Hormann, B. Pfeiler (2008) "Quality and performance of a PM10 daily forecasting model", \emph{Atmospheric Environment}, \bold{42}, 1098-1109.
 
 S. Hormann, B. Pfeiler, E. Stadlober (2005) "Analysis and prediction of particulate matter PM10 for the winter season in Graz", \emph{Austrian Journal of Statistics}, \bold{34}(4), 307-326.
+
+H. L. Shang (2017) "Functional time series forecasting with dynamic updating: An application to intraday particulate matter concentration", \emph{Econometrics and Statistics}, \bold{1}, 184-200. 
 }
 \examples{
 plot(pm_10_GR)

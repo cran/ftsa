@@ -1,4 +1,5 @@
-`depth.FM` <- function(data, trim = 0.25, xeps = 0.00000001, x = NULL, graph = FALSE){
+depth.FM <- function(data, trim = 0.25, xeps = 0.00000001, x = NULL, graph = FALSE)
+{
     functions = t(data$y)
     nrow <- dim(functions)[1]
     ncol <- dim(functions)[2]

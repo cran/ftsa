@@ -1,4 +1,4 @@
-repmat = function (A, m, n = m)
+repmat <- function(A, m, n = m)
 {
     A <- as.matrix(A)
     tmp <- matrix(rep(t(A), m), nrow = m * nrow(A), byrow = TRUE)

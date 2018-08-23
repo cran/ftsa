@@ -1,4 +1,4 @@
-aveISFE = function (data, order, N, h, method, fmethod, lambda, mean, level,
+aveISFE <- function (data, order, N, h, method, fmethod, lambda, mean, level,
     ...)
 {
     n <- ncol(data$y)

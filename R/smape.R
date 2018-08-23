@@ -1,4 +1,4 @@
-`smape` <-
+smape <-
 function(forecast, true)
 {
      if (length(forecast) != length(true))

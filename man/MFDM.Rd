@@ -42,7 +42,7 @@ C-Z. Di and C. M. Crainiceanu and B. S. Caffo and N. M. Punjabi (2009) "Multilev
 
 V. Zipunnikov and B. Caffo and D. M. Yousem and C. Davatzikos and B. S. Schwartz and C. Crainiceanu (2015) "Multilevel functional principal component analysis for high-dimensional data", \emph{Journal of Computational and Graphical Statistics}, \bold{20}, 852-873.
 
-H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2016) "A multilevel functional data method for forecasting population, with an application to the United Kingdom", \emph{International Journal of Forecasting}, \bold{forthcoming}.
+H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2016) "A multilevel functional data method for forecasting population, with an application to the United Kingdom", \emph{International Journal of Forecasting}, \bold{32}(3), 629-649.
 }
 \author{
 Han Lin Shang

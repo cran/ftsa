@@ -1,4 +1,4 @@
-ScaleAdv=function (x, center = mean, scale = sd)
+ScaleAdv <- function(x, center = mean, scale = sd)
 {
     if (class(x) != "matrix") {
         if (class(x) == "data.frame")

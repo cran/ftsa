@@ -31,6 +31,8 @@ As in traditional (scalar and vector) time series analysis, many inferential pro
 L. Horvath, P. Kokoszka, G. Rice (2014) "Testing stationarity of functional time series", \emph{Journal of Econometrics}, \bold{179}(1), 66-82.
 
 D. N. Politis (2003) "Adaptive bandwidth choice", \emph{Journal of Nonparametric Statistics}, \bold{15}(4-5), 517-533.
+
+A. Aue, G. Rice, O. S\"{o}nmez (2018) "Detecting and dating structural breaks in functional data without dimension reduction", \emph{Journal of the Royal Statistical Society: Series B}, \bold{forthcoming}.
 }
 \author{
 Greg. Rice and Han Lin Shang

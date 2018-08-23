@@ -1,4 +1,4 @@
-spl.coef.conv = function (z)
+spl.coef.conv <- function(z)
 {
     n <- length(z$x)
     h <- z$x[2:n] - z$x[1:(n - 1)]

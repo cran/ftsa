@@ -1,4 +1,4 @@
-plsr = function (Xtrain, Ytrain, Xtest, ncomp = NULL, type = c("simpls", "nipals"), 
+plsr <- function (Xtrain, Ytrain, Xtest, ncomp = NULL, type = c("simpls", "nipals"), 
                  unit.weights = TRUE, weight = FALSE, beta = 0.1) 
 {
   if(type == "simpls"){

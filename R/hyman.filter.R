@@ -1,4 +1,4 @@
-hyman.filter = function(z)
+hyman.filter <- function(z)
 {
     n <- length(z$x)
     ss <- (z$y[2:n] - z$y[1:(n - 1)])/(z$x[2:n] - z$x[1:(n - 1)])

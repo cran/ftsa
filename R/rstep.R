@@ -1,4 +1,4 @@
-rstep = function (x, FUN = Qn, order = 4, r = matrix.rank(x), mean = TRUE)
+rstep <- function(x, FUN = Qn, order = 4, r = matrix.rank(x), mean = TRUE)
 {
     if (order < 1)
         stop("Order must be positive")

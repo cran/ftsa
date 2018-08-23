@@ -1,4 +1,4 @@
-quantile.fts = function(x, probs, ...)
+quantile.fts <- function(x, probs, ...)
 {
   if(missing(probs))
   {

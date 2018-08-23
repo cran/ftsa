@@ -1,4 +1,4 @@
-sd.default = function (x, na.rm = FALSE, ...)
+sd.default <- function(x, na.rm = FALSE, ...)
 {
     if (is.matrix(x))
         apply(x, 2, sd, na.rm = na.rm)

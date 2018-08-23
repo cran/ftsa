@@ -1,4 +1,4 @@
-mrae = function(forecast, forecastbench, true)
+mrae <- function(forecast, forecastbench, true)
 {
   if (length(forecast) != length(true))
       stop("MRAE: the lengths of input vectors must be the same.")

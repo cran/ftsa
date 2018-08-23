@@ -1,4 +1,5 @@
-metri.p <- function(x1, x2, p = 2, w = 1){
+metri.p <- function(x1, x2, p = 2, w = 1)
+{
            if (length(x1) != length(x2)) 
                stop("Dimensions of matrices do not match\n")
            if (length(w) == 1) 

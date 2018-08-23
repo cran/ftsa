@@ -1,4 +1,4 @@
-extract.time = function (data, timeorder) 
+extract.time <- function(data, timeorder) 
 {
     x = data$x
     y = data$y

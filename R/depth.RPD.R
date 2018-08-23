@@ -1,4 +1,4 @@
-`depth.RPD` <- function (data, nproj = 50, deriv = c(0, 1), trim = 0.25, 
+depth.RPD <- function (data, nproj = 50, deriv = c(0, 1), trim = 0.25, 
     dfunc2 = depth.mode, x = NULL, spline = TRUE, graph = FALSE, 
     ...) 
 {

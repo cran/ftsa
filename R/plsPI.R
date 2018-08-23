@@ -1,8 +1,8 @@
-plsPI <- function (data, newdata, order, B, alpha, lambda) 
+plsPI <- function (data, newdata, order, B, alpha, lambda)
 {
     data = data$y
-    n = dim(data)[2]
-    p = dim(data)[1]
+    n = ncol(data)
+    p = nrow(data)
     n2 = length(newdata)
     newdata2 = scale(t(data), scale = FALSE)
     mdata = apply(data, 1, mean)

@@ -1,4 +1,4 @@
-hossjercroux = function (X, tol = 1e-06, maxstep = 100, na.rm = TRUE)
+hossjercroux <- function (X, tol = 1e-06, maxstep = 100, na.rm = TRUE)
 {
     n <- nrow(X)
     p <- ncol(X)

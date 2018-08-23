@@ -1,4 +1,4 @@
-Qn = function (x)
+Qn <- function(x)
 {
     n <- length(x)
     diffs <- outer(x, x, "-")

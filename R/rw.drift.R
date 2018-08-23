@@ -1,4 +1,4 @@
-rw.drift = function (x)
+rw.drift <- function(x)
 {
     x.diff <- diff(x)
     model <- summary(lm(x.diff ~ 1))

@@ -1,4 +1,4 @@
-print.fm = function (x, ...) 
+print.fm <- function(x, ...) 
 {
     if (class(x)[1] == "fm"){ 
         cat("Functional model\n")

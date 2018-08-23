@@ -1,4 +1,4 @@
-mdase = function(forecast, outsampletrue, insampletrue)
+mdase <- function(forecast, outsampletrue, insampletrue)
 {
 	if(length(forecast) != length(outsampletrue))
 		stop("MdASE: the lengths of input vectors must be the same.")

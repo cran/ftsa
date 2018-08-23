@@ -1,2 +1,2 @@
-diff = function (x, ...) 
+diff <- function (x, ...) 
 UseMethod("diff")

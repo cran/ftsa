@@ -1,4 +1,4 @@
-norm = function (A, p = 2)
+norm <- function(A, p = 2)
 {
     A <- as.matrix(A)
     if (min(dim(A)) == 1)

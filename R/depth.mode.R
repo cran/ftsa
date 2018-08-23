@@ -1,4 +1,5 @@
-`depth.mode` <- function(data, trim = 0.25, h = 0.15, mdist = NULL, scale = TRUE, x = NULL, graph = FALSE, ...){
+depth.mode <- function(data, trim = 0.25, h = 0.15, mdist = NULL, scale = TRUE, x = NULL, graph = FALSE, ...)
+{
   functions = t(data$y)
   nr <- nrow(functions)
   nc <- ncol(functions)

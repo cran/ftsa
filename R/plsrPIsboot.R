@@ -1,4 +1,4 @@
-plsrPIsboot = function (X, Y, Xnew, ncomp, B, alpha, weight, beta = .1) 
+plsrPIsboot <- function (X, Y, Xnew, ncomp, B, alpha, weight, beta = .1) 
 {
     pred = t(X)
     resp = t(Y)

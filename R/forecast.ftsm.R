@@ -1,4 +1,4 @@
-forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets.na", 
+forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets.na",
     "rwdrift", "rw", "struct", "arfima"), level = 80, jumpchoice = c("fit", "actual"), 
     pimethod = c("parametric", "nonparametric"), B = 100, usedata = nrow(object$coeff), 
     adjust = TRUE, model = NULL, damped = NULL, stationary = FALSE, 
@@ -41,9 +41,9 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
     fmodels <- list()
     if (method == "ets") {
         if (is.null(model)) 
-            model <- rep("ZZZ", nb)
+            model <- c("ANN", rep("ZZZ", nb - 1))
         else if (length(model) == 1) 
-            model <- c("ANN", rep(model, nb))
+            model <- c("ANN", rep(model, nb - 1))
         else if (length(model) == nb - 1) 
             model <- c("ANN", model)
         else stop("Length of model does not match number of coefficients")
@@ -68,15 +68,23 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
         }
     }
     else if (method == "ets.na") {
-        for (i in 1:nb) {
-            pegelsfit <- pegelsna(xx[, i], h = h, level = level, 
-                ...)
-            fmodels[[i]] <- pegelsfit
-            meanfcast[, i] <- pegelsfit$mean
-            varfcast[, i] <- ((pegelsfit$upper[, 1] - pegelsfit$lower[, 
-                1])/(2 * qconf[1]))^2
-            fitted[, i] <- pegelsfit$fitted
-        }
+      
+      if (is.null(model)) 
+        model <- c("ANN", rep("AZN", nb - 1))
+      else if (length(model) == 1) 
+        model <- c("ANN", rep(model, nb -1))
+      else if (length(model) == nb - 1) 
+        model <- c("ANN", model)
+      else stop("Length of model does not match number of coefficients")
+      
+      for (i in 1:nb) {
+        barima <-  pegelsna(xx[, i], model = model[i])
+        fitted[,i] <- fitted(barima)
+        pred <- forecast(barima,h=h,level=level)
+        fmodels[[i]] <- pred
+        meanfcast[,i] <- pred$mean
+        varfcast[,i] <- ((pred$upper[,1]-pred$lower[,1])/(2*qconf[1]))^2
+      }
     }
     else if (method == "arima") {
         if (length(stationary) == 1) 
@@ -106,22 +114,46 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
         }
     }
     else if (method == "rwdrift") {
-        for (i in 1:nb) {
-            fcast <- fmodels[[i]] <- rw.drift(x[, i], ...)
-            meanfcast[, i] <- object$coeff[l, i] + fcast$drift * 
-                (1:h)
-            varfcast[, i] <- (1:h) * fcast$see^2 + ((1:h) * fcast$sec)^2
-            fitted[, i] <- fcast$fits
+      for (i in 1:nb) {
+        if(var(xx[,i],na.rm=TRUE) < 1e-8)
+        {
+          cc <- mean(xx[,i],na.rm=TRUE)
+          fmodels[[i]] <- list("Constant",cc)
+          meanfcast[,i] <- rep(cc,h)
+          varfcast[,i] <- rep(0,h)
+          fitted[,i] <- rep(cc,length(xx[,i]))
         }
+        else
+        {
+        barima <-  Arima(xx[,i], order = c(0,1,0), include.drift = TRUE)
+        fitted[,i] <- fitted(barima)
+        pred <- forecast(barima,h=h,level=level)
+        fmodels[[i]] <- pred
+        meanfcast[,i] <- pred$mean
+        varfcast[,i] <- ((pred$upper[,1]-pred$lower[,1])/(2*qconf[1]))^2
+        }
+      }
     }
     else if (method == "rw") {
-        for (i in 1:nb) {
-            fmodels[[i]] <- list("Random walk", var(diff(x[, 
-                i])))
-            meanfcast[, i] <- rep(object$coeff[l, i], h)
-            varfcast[, i] <- (1:h) * fmodels[[i]][[2]]
-            fitted[, i] <- c(NA, diff(x[, i]))
+      for (i in 1:nb) {
+        if(var(xx[,i],na.rm=TRUE) < 1e-8)
+        {
+          cc <- mean(xx[,i],na.rm=TRUE)
+          fmodels[[i]] <- list("Constant",cc)
+          meanfcast[,i] <- rep(cc,h)
+          varfcast[,i] <- rep(0,h)
+          fitted[,i] <- rep(cc,length(xx[,i]))
         }
+        else
+        {
+        barima <-  Arima(xx[,i], order = c(0,1,0), include.drift = FALSE)
+        fitted[,i] <- fitted(barima)
+        pred <- forecast(barima,h=h,level=level)
+        fmodels[[i]] <- pred
+        meanfcast[,i] <- pred$mean
+        varfcast[,i] <- ((pred$upper[,1]-pred$lower[,1])/(2*qconf[1]))^2
+        }
+      }
     }
     else if(method=="struct")
     {

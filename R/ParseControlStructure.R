@@ -1,4 +1,4 @@
-ParseControlStructure = function (control, arguments)
+ParseControlStructure <- function (control, arguments)
 {
 	if (!is.list(control))
 		stop ("Invalid argument type: control structure must be of type list")

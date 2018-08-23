@@ -1,4 +1,4 @@
-print.ftsm = function (x, ...) 
+print.ftsm <- function(x, ...) 
 {
     if (class(x)[1] == "ftsm"){
         cat("Functional time series model\n")

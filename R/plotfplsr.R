@@ -1,6 +1,4 @@
-plotfplsr <-
-function(x, xlab1 = x$ypred$xname, ylab1 = "Basis function", xlab2 = "Time", ylab2 = "Coefficient", 
-  mean.lab = "Mean", interaction.title = "Interaction")
+plotfplsr <- function(x, xlab1 = x$ypred$xname, ylab1 = "Basis function", xlab2 = "Time", ylab2 = "Coefficient", mean.lab = "Mean", interaction.title = "Interaction")
 {
 	scores = x$T
 	order  = dim(scores)[2]

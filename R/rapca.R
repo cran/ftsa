@@ -1,4 +1,4 @@
-rapca = function (x, FUN = Qn, order = 4, mean = TRUE)
+rapca <- function(x, FUN = Qn, order = 4, mean = TRUE)
 {
     if (order < 1)
         stop("Order must be positive")

@@ -1,4 +1,4 @@
-fplsr = function (data, order = 6, type = c("simpls", "nipals"), unit.weights = TRUE, 
+fplsr <- function (data, order = 6, type = c("simpls", "nipals"), unit.weights = TRUE, 
     weight = FALSE, beta = 0.1, interval = FALSE, method = c("delta", 
         "boota"), alpha = 0.05, B = 100, adjust = FALSE, backh = 10) 
 {

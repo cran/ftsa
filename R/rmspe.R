@@ -1,4 +1,4 @@
-`rmspe` <- function(forecast, true)
+rmspe <- function(forecast, true)
 {
      if (length(forecast) != length(true))
          stop("RMSPE: the lengths of input vectors must be the same.")

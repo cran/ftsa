@@ -39,7 +39,7 @@ This function is designed to dynamically update point and interval forecasts, wh
 \references{
 J-M. Chiou (2012) "Dynamical functional prediction and classification with application to traffic flow prediction", \emph{Annals of Applied Statistics}, \bold{6}(4), 1588-1614.
 
-H. L. Shang (2015) "Forecasting Intraday S&P 500 Index Returns: A Functional Time Series Approach", Working paper, \url{http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2647233}.
+H. L. Shang (2015) "Forecasting Intraday S&P 500 Index Returns: A Functional Time Series Approach", \emph{Journal of Forecasting}, \bold{36}(7), 741-755.
 }
 \author{
 Han Lin Shang

@@ -1,4 +1,4 @@
-print.ftsf = function (x, ...) 
+print.ftsf <- function(x, ...) 
 {
     st <- ifelse(frequency(x$mean$time) != 1, deparse(start(x$mean$time)), 
         format(tsp(x$mean$time)[1]))

@@ -1,4 +1,4 @@
-`mean.fts` <- function (x, method = c("coordinate", "FM", "mode", "RP", "RPD", "radius"), 
+mean.fts <- function (x, method = c("coordinate", "FM", "mode", "RP", "RPD", "radius"), 
                          na.rm = TRUE, alpha, beta, weight, ...) 
 {
    if (class(x)[1] == "fts"|class(x)[1] == "fds"|class(x)[1] == "sfts"){

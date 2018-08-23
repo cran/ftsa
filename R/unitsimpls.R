@@ -1,4 +1,4 @@
-unitsimpls = function(Xtrain, Ytrain, Xtest = NULL, ncomp = NULL, weight = FALSE, beta) 
+unitsimpls <- function(Xtrain, Ytrain, Xtest = NULL, ncomp = NULL, weight = FALSE, beta) 
 {
   pls.out <- simpls(Xtrain = Xtrain, Ytrain = Ytrain, Xtest = Xtest, ncomp, weight = weight, beta = beta)
   euclidian.norm <- function(xvec) {

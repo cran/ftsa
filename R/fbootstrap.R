@@ -1,5 +1,5 @@
-fbootstrap = function(data, estad = func.mean, alpha = 0.05, nb = 200, suav = 0.0, media.dist = FALSE, 
-                      graph = FALSE, ...)
+fbootstrap <- function(data, estad = func.mean, alpha = 0.05, nb = 200, suav = 0.0, media.dist = FALSE,
+                       graph = FALSE, ...)
 {
   plotx <- data$x
   data <- t(data$y)

@@ -1,4 +1,4 @@
-`nipals` <- function (Xtrain, Ytrain, Xtest = NULL, ncomp, tol = .Machine$double.eps^0.5, 
+nipals <- function (Xtrain, Ytrain, Xtest = NULL, ncomp, tol = .Machine$double.eps^0.5, 
     weight = TRUE, beta = 0.1, ...) 
 {
     Ytrain = as.matrix(Ytrain)

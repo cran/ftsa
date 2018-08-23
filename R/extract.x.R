@@ -1,4 +1,4 @@
-extract.x = function (data, xorder) 
+extract.x <- function(data, xorder) 
 {
     x = data$x
     y = data$y

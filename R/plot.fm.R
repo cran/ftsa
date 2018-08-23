@@ -1,4 +1,4 @@
-`plot.fm` <- function (x, order, xlab1 = x$y$xname, ylab1 = "Principal component", 
+plot.fm <- function (x, order, xlab1 = x$y$xname, ylab1 = "Principal component", 
     xlab2 = "Time", ylab2 = "Coefficient", mean.lab = "Mean", 
     level.lab = "Level", main.title = "Main effects", interaction.title = "Interaction", 
     basiscol = 1, coeffcol = 1, outlier.col = 2, outlier.pch = 19, 

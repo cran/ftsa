@@ -1,4 +1,4 @@
-error = function (forecast, forecastbench, true, insampletrue, method = c("me", "mpe", 
+error <- function (forecast, forecastbench, true, insampletrue, method = c("me", "mpe", 
     "mae", "mse", "sse", "rmse", "mdae", "mdse", "mape", "mdape", 
     "smape", "smdape", "rmspe", "rmdspe", "mrae", "mdrae", "gmrae", 
     "relmae", "relmse", "mase", "mdase", "rmsse"), giveall = FALSE) 

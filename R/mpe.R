@@ -1,4 +1,4 @@
-`mpe` <- function(forecast, true)
+mpe <- function(forecast, true)
 {
      if (length(forecast) != length(true))
          stop("MPE: the lengths of input vectors must be the same.")

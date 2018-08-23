@@ -17,4 +17,3 @@ is.fts(x = ElNino)
 }
 \keyword{ts}
 
-

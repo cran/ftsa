@@ -1,4 +1,4 @@
-`sd.fts` <- function(x, method = c("coordinate", "FM", "mode", "RP", "RPD", "radius"), trim = 0.25, alpha, weight, ...)
+sd.fts <- function(x, method = c("coordinate", "FM", "mode", "RP", "RPD", "radius"), trim = 0.25, alpha, weight, ...)
 {
    if (class(x)[1] == "fts"|class(x)[1] == "fds"|class(x)[1] == "sfts")
    {

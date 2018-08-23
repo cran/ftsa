@@ -51,6 +51,8 @@ R. J. Hyndman and M. S. Ullah (2007) "Robust forecasting of mortality and fertil
 R. J. Hyndman and H. Booth (2008) "Stochastic population forecasts using functional data models for mortality, fertility and migration", \emph{International Journal of Forecasting}, \bold{24}(3), 323-342.
 
 R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with discussion)", \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.
+
+H. L. Shang, H. Booth and R. J. Hyndman (2011) "Point and interval forecasts of mortality rates and life expectancy: A comparison of ten principal component methods", \emph{Demographic Research}, \bold{25}(5), 173-214.
 }
 \examples{
 plot(x = forecast(object = ftsm(y = ElNino)))

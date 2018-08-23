@@ -1,3 +1,13 @@
+v 4.9
+
+1. Update the forecast.ftsm.R (model type ets.na in forecast.ftsm now returns en enriched arima model)
+2. Update the forecast.ftsm2.R (replaced rw and rwdrift models internally with the corresponding arima model)
+3. Update the ftsm.R (ftsm can handle years with only NAs)
+4. Update the pegelsna.R (ets.na accepts a lower bound for the parameters)
+5. Update the plot.ftsf.R (plot the fitted lines as well)
+6. Update the plot.ftsm.R (make the ftsm plots splittable by introducing a new parameter component)
+7. Update the ftsm.Rd (fixed typo in the help page)
+
 v 4.8
 
 1. Add long_run_covariance_estimation function

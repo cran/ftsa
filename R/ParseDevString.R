@@ -1,4 +1,4 @@
-ParseDevString = function (method)
+ParseDevString <- function (method)
 {
 	if (method[1] == "mad")  return (0)
 	if (method[1] == "sd")  return (1)

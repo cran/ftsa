@@ -1,4 +1,5 @@
-`func.mean` <- function(functions){
+func.mean <- function(functions)
+{
    apply(functions, 2, mean)
 }
 

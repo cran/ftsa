@@ -1,4 +1,4 @@
-depth.radius = function(data, alpha, beta, weight)
+depth.radius <- function(data, alpha, beta, weight)
 {
 	data = t(data$y)
 	p = dim(data)[2]

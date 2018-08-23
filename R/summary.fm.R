@@ -1,4 +1,4 @@
-summary.fm = function (object, ...) 
+summary.fm <- function(object, ...) 
 {
     if(class(object)[1] == "fm"|class(object)[1] == "ftsm"){
        print(object)

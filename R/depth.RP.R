@@ -1,4 +1,5 @@
-`depth.RP` <- function(data, trim = 0.25, nproj = 50, xeps = 0.0000001, x = NULL, graph = FALSE){
+depth.RP <- function(data, trim = 0.25, nproj = 50, xeps = 0.0000001, x = NULL, graph = FALSE)
+{
   functions = t(data$y)
   n = dim(functions)[1]
   p = dim(functions)[2]

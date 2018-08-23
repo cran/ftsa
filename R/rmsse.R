@@ -1,4 +1,4 @@
-rmsse = function(forecast, outsampletrue, insampletrue)
+rmsse <- function(forecast, outsampletrue, insampletrue)
 {
 	if(length(forecast) != length(outsampletrue))
 		stop("RMSSE: the lengths of input vectors must be the same.")

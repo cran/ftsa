@@ -1,4 +1,4 @@
-`mape` <- function(forecast, true)
+mape <- function(forecast, true)
 {
      if (length(forecast) != length(true))
          stop("MAPE: the lengths of input vectors must be the same.")

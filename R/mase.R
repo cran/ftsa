@@ -1,4 +1,4 @@
-mase = function(forecast, outsampletrue, insampletrue)
+mase <- function(forecast, outsampletrue, insampletrue)
 {
 	if(length(forecast) != length(outsampletrue))
 		stop("MASE: the lengths of input vectors must be the same.")

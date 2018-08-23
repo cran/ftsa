@@ -1,4 +1,4 @@
-extract = function (data, direction = c("time", "x"), timeorder, xorder) 
+extract <- function (data, direction = c("time", "x"), timeorder, xorder) 
 {
     direction = match.arg(direction)
     if (direction == "time") {

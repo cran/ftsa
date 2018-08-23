@@ -49,6 +49,8 @@ A. Cuevas, M. Febrero, R. Fraiman (2006), "On the use of the bootstrap for estim
 D. S. Poskitt and A. Sengarapillai (2013), "Description length and dimensionality reduction in functional data analysis", \emph{Computational Statistics and Data Analysis}, \bold{58}, 98-113.
 
 H. L. Shang (2015), "Re-sampling techniques for estimating the distribution of descriptive statistics of functional data", \emph{Communications in Statistics--Simulation and Computation}, \bold{44}(3), 614-635.
+
+H. L. Shang (2018), "Bootstrap methods for stationary functional time series", \emph{Statistics and Computing}, \bold{28}(1), 1-10.
 }
 \author{
 Han Lin Shang

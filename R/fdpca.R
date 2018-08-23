@@ -1,4 +1,4 @@
-fdpca = function (x, y, order = 2, ngrid = 500, method = "M", mean = mean, 
+fdpca <- function (x, y, order = 2, ngrid = 500, method = "M", mean = mean, 
     level = level, lambda = 2.3262, iter = 1, ...) 
 {
 	xnam = x

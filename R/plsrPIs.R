@@ -1,4 +1,4 @@
-`plsrPIs` <- function(X, Y, Xnew, ncomp1 = 1, ncomp, alpha = .05, weight = c("FALSE", "TRUE"), beta)
+plsrPIs <- function(X, Y, Xnew, ncomp1 = 1, ncomp, alpha = .05, weight = c("FALSE", "TRUE"), beta)
 {
       n = dim(X)[2]
       p = dim(X)[1]

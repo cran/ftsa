@@ -1,4 +1,4 @@
-`fplsrPI` <- function(X, Y, Xtest, order, method = c("delta", "boota"), alpha = 0.05, B = 1000, weight, beta = 0.1, 
+fplsrPI <- function(X, Y, Xtest, order, method = c("delta", "boota"), alpha = 0.05, B = 1000, weight, beta = 0.1, 
                       adjust = c(FALSE, TRUE), backh = 10)
 {
   p = dim(Y)[1]

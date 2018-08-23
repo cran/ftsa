@@ -41,7 +41,7 @@ If \code{method = "M"}, then the hybrid algorithm of Hyndman and Ullah (2005) is
 \item{basis}{Matrix of principal components evaluated at value of \code{y$x} (one column for each principal component).
     The first column is the fitted mean or median.}
 \item{basis2}{Matrix of principal components excluded from the selected model.}
-\item{coeffs}{Matrix of coefficients (one column for each coefficient series). The first column is all ones.}
+\item{coeff}{Matrix of coefficients (one column for each coefficient series). The first column is all ones.}
 \item{coeff2}{Matrix of coefficients associated with the principal components excluded from the selected model.}
 \item{fitted}{An object of class \code{fts} containing the fitted values.}
 \item{residuals}{An object of class \code{fts} containing the regression residuals (difference between observed and fitted).}

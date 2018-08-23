@@ -1,4 +1,4 @@
-MISE = function (actual, estimate, neval = 1000)
+MISE <- function(actual, estimate, neval = 1000)
 {
     m <- frequency(actual$time)
     s <- start(actual$time)

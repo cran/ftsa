@@ -59,7 +59,7 @@
   \Plainkeywords{functional data analysis, functional time series}
   
 \begin{document}
-  
+\SweaveOpts{concordance=FALSE}  
 
 \section{Testing stationarity of functional time series}
 

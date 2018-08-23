@@ -1,4 +1,4 @@
-`mdape` <- function(forecast, true)
+mdape <- function(forecast, true)
 {
      if (length(forecast) != length(true))
          stop("MDAPE: the lengths of input vectors must be the same.")

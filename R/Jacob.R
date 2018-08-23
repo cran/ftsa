@@ -1,4 +1,5 @@
-`Jacob` <- function(X, y, h){
+Jacob <- function(X, y, h)
+{
       n = dim(X)[1]
       p = dim(X)[2]
       S = t(X)%*%X

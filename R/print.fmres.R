@@ -1,4 +1,4 @@
-print.fmres = function (x, ...) 
+print.fmres <- function(x, ...) 
 {
     if (class(x)[1] == "fmres") {
         cat("Residuals of a functional model\n")

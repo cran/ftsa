@@ -1,4 +1,4 @@
-L1median2 = function (X, tol = 1e-06, maxstep = 200, na.rm = TRUE, method = c("hossjercroux",
+L1median2 <- function (X, tol = 1e-06, maxstep = 200, na.rm = TRUE, method = c("hossjercroux",
     "coordinate"))
 {
     method <- match.arg(method)

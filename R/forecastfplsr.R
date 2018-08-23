@@ -1,5 +1,4 @@
-forecastfplsr <-
-function(object, components = 2, h = 20)
+forecastfplsr <- function(object, components = 2, h = 20)
 {
 	xname = object$xname
 	yname = object$yname

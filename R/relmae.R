@@ -1,4 +1,4 @@
-relmae = function(forecast, forecastbench, true)
+relmae <- function(forecast, forecastbench, true)
 {
   if (length(forecast) != length(true))
       stop("RelMAE: the lengths of input vectors must be the same.")

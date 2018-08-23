@@ -1,4 +1,4 @@
-`median.fts` <- function (x, na.rm, method = c("hossjercroux", "coordinate", "FM", "mode", "RP", "RPD", "radius"), alpha, beta, weight, ...) 
+median.fts <- function (x, na.rm, method = c("hossjercroux", "coordinate", "FM", "mode", "RP", "RPD", "radius"), alpha, beta, weight, ...) 
 {
     if (class(x)[1] == "fts"|class(x)[1] == "fds"|class(x)[1] == "sfts"){
         method = match.arg(method)

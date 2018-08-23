@@ -1,4 +1,4 @@
-diff.default = function (x, lag = 1, differences = 1, ...) 
+diff.default <- function (x, lag = 1, differences = 1, ...) 
 {
     ismat <- is.matrix(x)
     xlen <- if (ismat) 

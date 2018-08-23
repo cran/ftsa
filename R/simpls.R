@@ -1,4 +1,4 @@
-simpls = function(Xtrain, Ytrain, Xtest, ncomp = NULL, weight = FALSE, beta = 0.1)
+simpls <- function(Xtrain, Ytrain, Xtest, ncomp = NULL, weight = FALSE, beta = 0.1)
 {
     X = scale(Xtrain, center = TRUE, scale = FALSE)
     if (is.vector(Ytrain)){

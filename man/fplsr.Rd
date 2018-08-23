@@ -114,11 +114,13 @@ J. A. Fernandez Pierna and L. Jin and F. Wahl and N. M. Faber and D. L. Massart 
 
 P. T. Reiss and R. T. Ogden (2007), "Functional principal component regression and functional partial least squares", \emph{Journal of the American Statistical Association}, \bold{102}(479), 984-996.
 
-A. Delaigle and P. Hall (2012), "Methodology and theory for partial least squares applied to functional data", \emph{Annals of Statistics}, \bold{40}(1), 322-352. 
-
 C. Preda, G. Saporta (2005) "PLS regression on a stochastic process", \emph{Computational Statistics and Data Analysis}, \bold{48}(1), 149-158.
 
 C. Preda, G. Saporta, C. Leveder (2007) "PLS classification of functional data", \emph{Computational Statistics}, \bold{22}, 223-235.
+
+A. Delaigle and P. Hall (2012), "Methodology and theory for partial least squares applied to functional data", \emph{Annals of Statistics}, \bold{40}(1), 322-352. 
+
+M. Febrero-Bande, P. Galeano, W. Gonz\'{a}lez-Manteiga (2017), "Functional principal component regression and functional partial least-squares regression: An overview and a comparative study", \emph{International Statistical Review}, \bold{85}(1), 61-83.
 }
 \author{Han Lin Shang}
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}}, 

@@ -1,4 +1,4 @@
-struct.forecast = function (x, h = 10, level = c(80, 95))
+struct.forecast <- function(x, h = 10, level = c(80, 95))
 {
     fit1 <- StructTS(x, "level")
     fit2 <- StructTS(x, "trend")
