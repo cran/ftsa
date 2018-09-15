@@ -1,5 +1,5 @@
-98c47f72931f09690c801d1e790e0fee *ChangeLog
-eb2b5d5e9c362879a791245505095712 *DESCRIPTION
+3ba0e0ffbcd3a4e80211cb6df10c146f *ChangeLog
+7fa856a6928e6ef1457b1195b7a16af0 *DESCRIPTION
 f8ccad0fd01c8e64c90bc9f6768d81a9 *NAMESPACE
 f1dc0a39646b946ade1d2525dd239e4d *R/DataPostProc.R
 f091488838d0e147f60a41f6743ab233 *R/FlatTop.R
@@ -21,8 +21,6 @@ f5d6e8fc6d4166792568d6853b7767e6 *R/depth.RP.R
 a38d55c18167da14d6779a75a4bba75b *R/depth.RPD.R
 9eef2a6d098887b7427d04f0c4fd77fa *R/depth.mode.R
 c68c35981c0130e713df6a6663cd04f2 *R/depth.radius.R
-bf4bcb4fd9415c54025070061a24646a *R/diff.R
-4e77f2e13fa7ebb45a8601ce74196762 *R/diff.default.R
 2300f2e3cc46a782dd8275ea31718378 *R/diff.fts.R
 17d0948bffb920f1ab4460e6402cc016 *R/dynamic_FLR.R
 f550dc021142c9ef6561be9361f76048 *R/dynupdate.R
@@ -125,15 +123,11 @@ d4a0aed7983e5aea31699dd7a92cc89a *R/var.R
 20e52a00fefd5e7026ea590e7e283ce9 *R/var.default.R
 d5053eebf0095591d009b42d505a2b78 *R/var.fts.R
 a176c09a8591157ffbd3b7ca976c418e *R/wpcr.R
-438b1105b8449eb5131561874d8683e6 *build/vignette.rds
 b2988cb57e7cf2de5e8b1105cbae1c4b *data/pm_10_GR.rda
 c1fddd84754d74ba3cd7f8eed4e79a63 *data/pm_10_GR_sqrt.rda
 1703a8b0a2680e197a44afb515cb0123 *inst/CITATION
-51c2c3ca447d7012efc77b379227e366 *inst/doc/ftsa.R
-d75e1b1bb401174fcb3f04059a2fb6f2 *inst/doc/ftsa.Rnw
-50e92b5436534e2f2447ada2ed807a50 *inst/doc/ftsa.pdf
-3af201c081b29a3572e34e0f51071404 *inst/doc/ftsa_test.Rnw
-161520e1274e885d404a89d3fc526914 *inst/doc/ftsa_test.pdf
+7a9dd6dab7c4a9aea826780084d6e241 *inst/doc/ftsa.pdf
+fee5c98cf957ccf84fa7377d24f2f3bc *inst/doc/ftsa_test.pdf
 aefc47fca91cab2480fe1bb962afc5c9 *man/MFDM.Rd
 a3270cdde6dbaf3ad9aac79ef4e3fa82 *man/T_stationary.Rd
 b546b3c871d7a8e060cbbb3034aac1aa *man/centre.Rd
@@ -142,7 +136,7 @@ b546b3c871d7a8e060cbbb3034aac1aa *man/centre.Rd
 1cc59022d939817e1867ba2148f14ab3 *man/dynupdate.Rd
 63a90a60ed268017152844cd9f5eaeb7 *man/error.Rd
 8edd39d3a5f88dae0b3e64264ed72e5e *man/extract.Rd
-3810d6cd06d3857b44e544e499cc2946 *man/farforecast.Rd
+c14513a7d89c6d77104c81fadbd477a4 *man/farforecast.Rd
 7bcdb77588400e784172a40d3188a1f0 *man/fbootstrap.Rd
 5653d3cd38ccf49b438a3775253cb357 *man/forecast.ftsm.Rd
 e54deefbae07bce46cb3f88bec1ca2eb *man/forecastfplsr.Rd
@@ -173,6 +167,7 @@ a738c9cc32223f9f08d6ea126af62365 *man/var.Rd
 a1f4b7938a4d540ed14a596f121f4f95 *man/var.fts.Rd
 81eb929d1ea791f06a87bf8ff91965db *vignettes/KokoszkaShang.bib
 d75e1b1bb401174fcb3f04059a2fb6f2 *vignettes/ftsa.Rnw
+a7d4a168ea2ece0e69b0d77cb58e6a1b *vignettes/ftsa.tex
 3af201c081b29a3572e34e0f51071404 *vignettes/ftsa_test.Rnw
 e9527693089af51b986d3c51ea71ecaa *vignettes/ibm.pdf
 c76cb8b4012ab7e723d86daa1a2417b5 *vignettes/master.bib

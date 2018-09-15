@@ -1,3 +1,8 @@
+v 5.0
+
+1. Remove R/diff.R  
+2. Remove R/diff.default.R
+
 v 4.9
 
 1. Update the forecast.ftsm.R (model type ets.na in forecast.ftsm now returns en enriched arima model)

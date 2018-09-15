@@ -45,12 +45,6 @@ Han Lin Shang
 \code{\link{forecast.ftsm}}, \code{\link{forecastfplsr}}
 }
 \examples{
-ElNino_subset = extract(data = ElNino, direction = "time",timeorder = 1967:2006)
-ex_PI = farforecast(ftsm(y = ElNino_subset), PI = TRUE)
-plot(extract(ex_PI$point_fore, direction = "time", 1), ylim = c(14, 31))
-lines(extract(ex_PI$PI_lb, direction = "time", 1), lty = 2, col = 2)
-lines(extract(ex_PI$PI_ub, direction = "time", 1), lty = 2, col = 2)
-
 sqrt_pm10 = sqrt(pm_10_GR$y)
 x = seq(0,23.5, by=.5)
 uni_forecast_sqrt_pm10 = forecast(ftsm(fts(x, sqrt_pm10)), h=30, method="arima")
