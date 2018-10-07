@@ -1,9 +1,9 @@
 Package: ftsa
 Type: Package
 Title: Functional Time Series Analysis
-Version: 5.0
-Date: 2018-09-15
-Depends: R (>= 3.5.0), forecast, rainbow, sde
+Version: 5.1
+Date: 2018-10-07
+Depends: R (>= 3.4.0), forecast, rainbow, sde
 Suggests: fds, R2jags, vars, meboot
 Imports: colorspace, MASS, pcaPP, fda
 LazyLoad: yes
@@ -13,6 +13,6 @@ Maintainer: Han Lin Shang <hanlin.shang@anu.edu.au>
 Description: Functions for visualizing, modeling, forecasting and hypothesis testing of functional time series.
 License: GPL (>= 2)
 NeedsCompilation: no
-Packaged: 2018-09-15 07:08:44 UTC; hanlinshang
+Packaged: 2018-10-07 07:10:27 UTC; hanlinshang
 Repository: CRAN
-Date/Publication: 2018-09-15 08:00:03 UTC
+Date/Publication: 2018-10-07 08:10:02 UTC
