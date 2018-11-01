@@ -1,4 +1,10 @@
-v 5.1.
+v 5.2
+
+1. Update the ftsm function to fix the warning message from the fts function
+2. Update the forecast.ftsm function to fix the warning message from the fts function
+3. Add some new references to the ../man
+
+v 5.1
 
 1. Replace Depends: R (>= 3.5.0) to R (>= 3.4.0)
 

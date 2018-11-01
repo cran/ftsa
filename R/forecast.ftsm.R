@@ -207,7 +207,9 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
     colnames(onestepfcast$y) = colnames(object$y$y)
     ferror$y <- object$y$y - onestepfcast$y
     ferror$yname <- "One step errors"
-    fmean <- fts(object$y$x, object$basis %*% t(meanfcast), start = ytsp[2] + 
+    basis_obj_fore = object$basis %*% t(meanfcast)
+    colnames(basis_obj_fore) = 1:h
+    fmean <- fts(object$y$x, basis_obj_fore, start = ytsp[2] + 
         1/ytsp[3], frequency = ytsp[3], xname = object$y$xname, yname = "Forecasts")
     colnames(fmean$y) = seq(ytsp[2]+1/ytsp[3], ytsp[2]+h/ytsp[3], by=1/ytsp[3])    
     res <- object$residuals
@@ -248,11 +250,11 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
     }
     else {
         junk = ftsmPI(object, B = B, level = level, h = h, fmethod = method)
+        colnames(junk$lb) = colnames(junk$ub) = seq(ytsp[2]+1/ytsp[3], ytsp[2]+h/ytsp[3], by=1/ytsp[3])
         lb = fts(object$y$x, junk$lb, start = ytsp[2] + 1/ytsp[3], frequency = ytsp[3],
             xname = object$y$xname, yname = "Forecast lower limit")
         ub = fts(object$y$x, junk$ub, start = ytsp[2] + 1/ytsp[3], frequency = ytsp[3], 
             xname = object$y$xname, yname = "Forecast upper limit")
-        colnames(lb$y) = colnames(ub$y) = seq(ytsp[2]+1/ytsp[3], ytsp[2]+h/ytsp[3], by=1/ytsp[3])
         return(structure(list(mean = fmean, bootsamp = junk$bootsamp, 
             lower = lb, upper = ub, model = object), class = "ftsf"))
     }

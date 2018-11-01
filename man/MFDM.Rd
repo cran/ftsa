@@ -12,9 +12,9 @@ MFDM(mort_female, mort_male, mort_ave, percent_1 = 0.95, percent_2 = 0.95, fh,
 		   BC = c(FALSE, TRUE), lambda)
 }
 \arguments{
-  \item{mort_female}{Female mortality.}
-  \item{mort_male}{Male mortality.}
-  \item{mort_ave}{Total mortality.}
+  \item{mort_female}{Female mortality (p by n matrix), where p denotes the dimension and n denotes the sample size.}
+  \item{mort_male}{Male mortality (p by n matrix).}
+  \item{mort_ave}{Total mortality (p by n matrix).}
   \item{percent_1}{Cumulative percentage used for determining the number of common functional principal components.}
   \item{percent_2}{Cumulative percentage used for determining the number of sex-specific functional principal components.}
   \item{fh}{Forecast horizon.}

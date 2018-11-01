@@ -32,7 +32,7 @@ L. Horvath, P. Kokoszka, G. Rice (2014) "Testing stationarity of functional time
 
 D. N. Politis (2003) "Adaptive bandwidth choice", \emph{Journal of Nonparametric Statistics}, \bold{15}(4-5), 517-533.
 
-A. Aue, G. Rice, O. S\"{o}nmez (2018) "Detecting and dating structural breaks in functional data without dimension reduction", \emph{Journal of the Royal Statistical Society: Series B}, \bold{forthcoming}.
+A. Aue, G. Rice, O. S\"{o}nmez (2018) "Detecting and dating structural breaks in functional data without dimension reduction", \emph{Journal of the Royal Statistical Society: Series B}, \bold{80}(3), 509-529.
 }
 \author{
 Greg. Rice and Han Lin Shang
@@ -41,7 +41,8 @@ Greg. Rice and Han Lin Shang
 \code{\link{farforecast}}
 }
 \examples{
-result = T_stationary(pm_10_GR_sqrt$y)
-result_pivotal = T_stationary(pm_10_GR_sqrt$y, J = 100, MC_rep = 5000, h = 20, pivotal = TRUE)
+result = T_stationary(sample = pm_10_GR_sqrt$y)
+result_pivotal = T_stationary(sample = pm_10_GR_sqrt$y, J = 100, MC_rep = 5000, 
+				h = 20, pivotal = TRUE)
 }
 \keyword{models}

@@ -99,14 +99,13 @@ B. Dayal and J. MacGregor (1997) "Recursive exponentially weighted PLS and its a
 
 B. D. Marx (1996) "Iteratively reweighted partial least squares estimation for generalized linear regression", \emph{Technometrics}, \bold{38}(4), 374-381.
 
-L. Xu and J-H. Jiang and W-Q. Lin and Y-P. Zhou and H-L. Wu and G-L. Shen and R-Q. Yu (2007) "Optimized sample-weighted partial least squares", 
-\emph{Talanta}, \bold{71}(2), 561-566.
+L. Xu and J-H. Jiang and W-Q. Lin and Y-P. Zhou and H-L. Wu and G-L. Shen and R-Q. Yu (2007) "Optimized sample-weighted partial least squares", \emph{Talanta}, \bold{71}(2), 561-566.
 
 A. Phatak and P. Reilly and A. Penlidis (1993) "An approach to interval estimation in partial least squares regression", \emph{Analytica Chimica Acta}, \bold{277}(2), 495-501.
 
 M. Denham (1997) "Prediction intervals in partial least squares", \emph{Journal of Chemometrics}, \bold{11}(1), 39-52.
 
-D. Bosq (2000) \emph{Linear processes in function spaces}, New York: Springer.
+D. Bosq (2000) \emph{Linear Processes in Function Spaces}, New York: Springer.
 
 N. Faber (2002) "Uncertainty estimation for multivariate regression coefficients", \emph{Chemometrics and Intelligent Laboratory Systems}, \bold{64}(2), 169-179.
 

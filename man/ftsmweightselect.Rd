@@ -7,12 +7,12 @@ Selection of the weight parameter used in the weighted functional time series mo
 The geometrically decaying weights are used to estimate the mean curve and functional principal components, where more weights are assigned to the more recent data than the data from the distant past.
 }
 \usage{
-ftsmweightselect(data, ncomp = 6, ntrainyear, errorcriterion = c("mae", "mse", "mape"))
+ftsmweightselect(data, ncomp = 6, ntestyear, errorcriterion = c("mae", "mse", "mape"))
 }
 \arguments{
   \item{data}{An object of class \code{\link[rainbow]{fts}}.}
   \item{ncomp}{Number of components.}
-  \item{ntrainyear}{Number of holdout observations used to assess the forecast accuracy.}
+  \item{ntestyear}{Number of holdout observations used to assess the forecast accuracy.}
   \item{errorcriterion}{Error measure.}
 }
 \details{
@@ -31,7 +31,7 @@ R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with d
 Han Lin Shang
 }
 \note{
-Can be computational intensive, as it takes about half-minute to compute. For example, ftsmweightselect(ElNinosmooth, ntrainyear = 1).
+Can be computational intensive, as it takes about half-minute to compute. For example, ftsmweightselect(ElNinosmooth, ntestyear = 1).
 }
 \seealso{
 \code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}

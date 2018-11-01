@@ -5,7 +5,7 @@
 The decentralized response is forecasted by multiplying the estimated regression coefficient with the new decentralized predictor
 }
 \usage{
-forecastfplsr(object, components = 2, h = 20)
+forecastfplsr(object, components, h)
 }
 \arguments{
   \item{object}{An object of class \code{fts}.}
@@ -29,7 +29,7 @@ Han Lin Shang
 # By forecasting univariate partial least squares scores, the forecasted curves are 
 # obtained by multiplying the forecasted scores by fixed functional partial least 
 # squares function plus fixed mean function.
-forecastfplsr(object = Australiasmoothfertility, h = 5)
+forecastfplsr(object = Australiasmoothfertility, components = 2, h = 5)
 }
 \keyword{models}
 

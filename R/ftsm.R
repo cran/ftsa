@@ -83,9 +83,11 @@ beta = 0.1, ...)
     }
     else {
         basis <- y.pca$basis
-        fits <- fts(1:length(y$x), basis %*% t(coeff), start = ytsp[1],
-        frequency = ytsp[3], xname = y$xname, yname = paste("Fitted",
-        y$yname))
+        basis_obj = basis %*% t(coeff)
+        colnames(basis_obj) = colnames(y$y)
+        fits <- fts(y$x, basis_obj, start = ytsp[1],
+                    frequency = ytsp[3], xname = y$xname, yname = paste("Fitted",
+                    y$yname))
         fits$x = y$x
         if(order == 0)
         {

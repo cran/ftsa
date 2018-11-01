@@ -55,8 +55,7 @@ If \code{method = "M"}, then the hybrid algorithm of Hyndman and Ullah (2005) is
 \references{
 J. O. Ramsay and C. J. Dalzell (1991) "Some tools for functional data analysis (with discussion)", \emph{Journal of the Royal Statistical Society: Series B}, \bold{53}(3), 539-572.
 
-M. Hubert and P. J. Rousseeuw and S. Verboven (2002) "A fast robust method for principal components with applications to chemometrics", \emph{Chemometrics and Intelligent Laboratory Systems},
-\bold{60}(1-2), 101-111.
+M. Hubert and P. J. Rousseeuw and S. Verboven (2002) "A fast robust method for principal components with applications to chemometrics", \emph{Chemometrics and Intelligent Laboratory Systems}, \bold{60}(1-2), 101-111.
 
 B. Erbas and R. J. Hyndman and D. M. Gertig (2007) "Forecasting age-specific breast cancer mortality using functional data model", \emph{Statistics in Medicine}, \bold{26}(2), 458-470.
 

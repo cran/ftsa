@@ -37,9 +37,19 @@ This function is designed to dynamically update point and interval forecasts, wh
 \item{err_boot}{Bootstrapped in-sample forecast error for the dynamically updating time period.}
 }
 \references{
+H. Shen and J. Z. Huang (2008) "Interday forecasting and intraday updating of call center arrivals", \emph{Manufacturing and Service Operations Management}, \bold{10}(3), 391-410.
+
+H. Shen (2009) "On modeling and forecasting time series of curves", \emph{Technometrics}, \bold{51}(3), 227-238.
+
+H. L. Shang and R. J. Hyndman (2011) "Nonparametric time series forecasting with dynamic updating", Mathematics and Computers in Simulation, \bold{81}(7), 1310-1324.
+
 J-M. Chiou (2012) "Dynamical functional prediction and classification with application to traffic flow prediction", \emph{Annals of Applied Statistics}, \bold{6}(4), 1588-1614.
 
+H. L. Shang (2013) "Functional time series approach for forecasting very short-term electricity demand", \emph{Journal of Applied Statistics}, \bold{40}(1), 152-168.
+
 H. L. Shang (2015) "Forecasting Intraday S&P 500 Index Returns: A Functional Time Series Approach", \emph{Journal of Forecasting}, \bold{36}(7), 741-755.
+
+H. L. Shang (2017) "Functional time series forecasting with dynamic updating: An application to intraday particulate matter concentration", \emph{Econometrics and Statistics}, \bold{1}, 184-200.
 }
 \author{
 Han Lin Shang

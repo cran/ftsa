@@ -43,7 +43,9 @@ depth.RPD <- function (data, nproj = 50, deriv = c(0, 1), trim = 0.25,
             matrx = newfunc[, , k]
             vproject[, k] = matrx %*% z[j, ]
         }
-        resul = dfunc2(fts(1:dim(vproject)[2],t(vproject)), ...)
+        vproject_mat = t(vproject)
+        colnames(vproject_mat) = colnames(data$y)
+        resul = dfunc2(fts(1:dim(vproject)[2], vproject_mat), ...)
         prof = prof + resul$prof
     }
     prof = prof/nproj
@@ -70,9 +72,9 @@ depth.RPD <- function (data, nproj = 50, deriv = c(0, 1), trim = 0.25,
             }
             lines(x, mtrim, lwd = 2, col = "yellow")
             lines(x, med, col = "red", lwd = 2)
-            legend("topleft", legend = c(paste("Trim", trim * 
+            legend("bottomleft", legend = c(paste("Trim", trim * 
                 100, "%", sep = ""), "Median"), lwd = 2, col = c("yellow", 
-                "red"))
+                "red"), cex = 0.8)
         }
     }
     return(list(median = med, lmed = k, mtrim = mtrim, ltrim = lista, 

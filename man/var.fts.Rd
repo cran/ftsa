@@ -45,7 +45,7 @@ M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2008) "Outlier detection in 
 
 M. Febrero and P. Galeano and W. Gonzalez-Manteiga (2010) "Measures of influence for the functional linear model with scalar response", \emph{Journal of Multivariate Analysis}, \bold{101}(2), 327-339. 
 
-J. A. Cuesta-Albertos and A. Nieto-Reyes (2010) "Functional classification and the random Tukey depth. Practical issues", Combining Soft Computing and Statistical Methods in Data Analysis, Advances in Intelligent and Soft Computing, Volume 77, 123-130.
+J. A. Cuesta-Albertos and A. Nieto-Reyes (2010) "Functional classification and the random Tukey depth. Practical issues", Combining Soft Computing and Statistical Methods in Data Analysis, \emph{Advances in Intelligent and Soft Computing}, \bold{77}, 123-130.
 
 D. Gervini (2012) "Outlier detection and trimmed estimation in general functional spaces", \emph{Statistica Sinica}, \bold{22}(4), 1639-1660.
 }
