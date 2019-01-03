@@ -1,3 +1,10 @@
+v 5.3
+
+1. Add the high-dimensional functional principal component regression
+2. Add the forecast function for the high-dimensional functional principal component regression
+3. Add the facf function for computing the functional autocorrelation function at various lags
+4. Update the two vignettes' titles
+
 v 5.2
 
 1. Update the ftsm function to fix the warning message from the fts function

@@ -1,4 +1,4 @@
-%\VignetteIndexEntry{The ftsa Package}
+%\VignetteIndexEntry{Functional Time Series Forecasting: the ftsa Package for R}
 %\VignetteDepends{ftsa, rainbow, forecast}
 %\VignetteKeywords{Functional time series, Functional time series modeling, Functional time series forecasting}
 %\VignettePackage{ftsa}

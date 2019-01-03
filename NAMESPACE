@@ -36,7 +36,10 @@ MFDM,
 farforecast,
 T_stationary,
 dynamic_FLR,
-long_run_covariance_estimation
+long_run_covariance_estimation,
+hdfpca,
+forecast.hdfpca,
+facf
 )
 
 
@@ -50,6 +53,7 @@ S3method(plot,fmres)
 S3method(residuals,fm)
 S3method(summary,fm)
 S3method(forecast,ftsm)
+S3method(forecast,hdfpca)
 S3method(var,fts)
 S3method(sd,fts)
 S3method(var,default)
@@ -73,5 +77,4 @@ importFrom(fda, create.fourier.basis)
 importFrom(fda, eval.basis)
 importFrom("graphics", "abline", "contour", "filled.contour", "image", "legend", "lines", "par", "persp", "points", "text", "title")
 importFrom("utils", "head", "tail")
-
 importFrom("grDevices", "dev.new", "gray")     
