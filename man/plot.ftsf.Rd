@@ -55,7 +55,7 @@ R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with d
 H. L. Shang, H. Booth and R. J. Hyndman (2011) "Point and interval forecasts of mortality rates and life expectancy: A comparison of ten principal component methods", \emph{Demographic Research}, \bold{25}(5), 173-214.
 }
 \examples{
-plot(x = forecast(object = ftsm(y = ElNino)))
+plot(x = forecast(object = ftsm(y = ElNino_ERSST_region_1and2)))
 }
 \keyword{hplot}
 

@@ -51,7 +51,7 @@ H. L. Shang (2018) Bootstrap methods for stationary functional time series, \emp
 }
 \examples{
 # Bootstrapping the distribution of a summary statistics of functional data.
-fbootstrap(data = ElNino)
+fbootstrap(data = ElNino_ERSST_region_1and2)
 }
 \keyword{multivariate}
 

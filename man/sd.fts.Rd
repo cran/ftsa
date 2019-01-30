@@ -58,13 +58,15 @@ D. Gervini (2012) "Outlier detection and trimmed estimation in general functiona
 \code{\link[ftsa]{quantile.fts}}}
 \examples{
 # Fraiman-Muniz depth was arguably the oldest functional depth.	
-sd(x = ElNino, method = "FM")
-sd(x = ElNino, method = "coordinate")
-sd(x = ElNino, method = "mode")
-sd(x = ElNino, method = "RP")
-sd(x = ElNino, method = "RPD")
-sd(x = ElNino, method = "radius", alpha = 0.5, weight = "hard")
-sd(x = ElNino, method = "radius", alpha = 0.5, weight = "soft")
+sd(x = ElNino_ERSST_region_1and2, method = "FM")
+sd(x = ElNino_ERSST_region_1and2, method = "coordinate")
+sd(x = ElNino_ERSST_region_1and2, method = "mode")
+sd(x = ElNino_ERSST_region_1and2, method = "RP")
+sd(x = ElNino_ERSST_region_1and2, method = "RPD")
+sd(x = ElNino_ERSST_region_1and2, method = "radius", 
+	alpha = 0.5, weight = "hard")
+sd(x = ElNino_ERSST_region_1and2, method = "radius", 
+	alpha = 0.5, weight = "soft")
 }
 \keyword{methods}
 

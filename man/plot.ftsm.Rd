@@ -45,6 +45,6 @@ R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series" (with 
 }
 \examples{
 # plot different principal components.	
-plot.ftsm(ftsm(y = ElNino, order = 2), components = 2)
+plot.ftsm(ftsm(y = ElNino_ERSST_region_1and2, order = 2), components = 2)
 }
 \keyword{models}

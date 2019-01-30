@@ -58,10 +58,12 @@ Han Lin Shang
 \code{\link{dynupdate}}
 }
 \examples{
-dynamic_FLR_point = dynamic_FLR(dat = ElNino$y[,1:56], newdata = ElNino$y[1:4,57], 
-	holdoutdata = ElNino$y[5:12,57], pointfore = TRUE)
+dynamic_FLR_point = dynamic_FLR(dat = ElNino_ERSST_region_1and2$y[,1:68], 
+	newdata = ElNino_ERSST_region_1and2$y[1:4,69], 
+	holdoutdata = ElNino_ERSST_region_1and2$y[5:12,69], pointfore = TRUE)
 
-dynamic_FLR_interval = dynamic_FLR(dat = ElNino$y[,1:56], newdata = ElNino$y[1:4,57], 
-	holdoutdata = ElNino$y[5:12,57], pointfore = FALSE)
+dynamic_FLR_interval = dynamic_FLR(dat = ElNino_ERSST_region_1and2$y[,1:68], 
+	newdata = ElNino_ERSST_region_1and2$y[1:4,69], 
+	holdoutdata = ElNino_ERSST_region_1and2$y[5:12,69], pointfore = FALSE)
 }
 \keyword{models}

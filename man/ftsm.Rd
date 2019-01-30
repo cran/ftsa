@@ -73,8 +73,8 @@ R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with d
 # ElNino is an object of class sliced functional time series, constructed 
 # from a univariate time series. 
 # By default, all observations are assigned with equal weighting. 	
-ftsm(y = ElNino, order = 6, method = "classical", weight = FALSE)
+ftsm(y = ElNino_ERSST_region_1and2, order = 6, method = "classical", weight = FALSE)
 # When weight = TRUE, geometrically decaying weights are used.
-ftsm(y = ElNino, order = 6, method = "classical", weight = TRUE)
+ftsm(y = ElNino_ERSST_region_1and2, order = 6, method = "classical", weight = TRUE)
 }
 \keyword{models}

@@ -31,6 +31,6 @@ Han Lin Shang
 \code{\link{fts}}
 }
 \examples{
-dum = long_run_covariance_estimation(dat = ElNino$y[,1:5])
+dum = long_run_covariance_estimation(dat = ElNino_OISST_region_1and2$y[,1:5])
 }
 \keyword{method}

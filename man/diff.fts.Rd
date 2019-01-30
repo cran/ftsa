@@ -19,6 +19,6 @@ Computes differences of a \code{\link[rainbow]{fts}} object at each variable.
 \examples{
 # ElNino is an object of sliced functional time series.
 # Differencing is sometimes used to achieve stationarity.	
-diff(x = ElNino)
+diff(x = ElNino_ERSST_region_1and2)
 }
 \keyword{ts}

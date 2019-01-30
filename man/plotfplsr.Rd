@@ -35,7 +35,7 @@ Han Lin Shang
 }
 \examples{
 # Fit the data by the functional partial least squares.	
-ausfplsr = fplsr(data = Australiasmoothfertility, order = 2)
+ausfplsr = fplsr(data = ElNino_ERSST_region_1and2, order = 2)
 plotfplsr(x = ausfplsr)
 }
 \keyword{models}

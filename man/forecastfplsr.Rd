@@ -29,7 +29,7 @@ Han Lin Shang
 # By forecasting univariate partial least squares scores, the forecasted curves are 
 # obtained by multiplying the forecasted scores by fixed functional partial least 
 # squares function plus fixed mean function.
-forecastfplsr(object = Australiasmoothfertility, components = 2, h = 5)
+forecastfplsr(object = ElNino_ERSST_region_1and2, components = 2, h = 5)
 }
 \keyword{models}
 

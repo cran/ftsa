@@ -74,8 +74,8 @@ H. L. Shang (2017) "Functional time series forecasting with dynamic updating: An
 # ElNino is an object of sliced functional time series, constructed from a univariate time series. 
 # When we observe some newly arrived information in the most recent time period, this function  
 # allows us to update the point and interval forecasts for the remaining time period. 
-dynupdate(data = ElNino, newdata = ElNino$y[1:4,57], holdoutdata = ElNino$y[5:12,57],  	
-    method = "block", interval = FALSE) 
+dynupdate(data = ElNino_ERSST_region_1and2, newdata = ElNino_ERSST_region_1and2$y[1:4,69], 
+	holdoutdata = ElNino_ERSST_region_1and2$y[5:12,57], method = "block", interval = FALSE) 
 }
 \keyword{models}
 

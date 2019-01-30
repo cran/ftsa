@@ -44,7 +44,7 @@ R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with d
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}, \code{\link[ftsa]{plot.fmres}}, \code{\link[ftsa]{plot.ftsf}}}
 \author{Rob J Hyndman}
 \examples{
-plot(x = ftsm(y = ElNino))
+plot(x = ftsm(y = ElNino_ERSST_region_1and2))
 }
 \keyword{hplot}
 

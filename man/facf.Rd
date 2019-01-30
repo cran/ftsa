@@ -27,6 +27,6 @@ L. Horv\'{a}th, G. Rice and S. Whipple (2016) Adaptive bandwidth selection in th
 Han Lin Shang
 }
 \examples{
-facf_value = facf(fun_data = t(ElNino$y))
+facf_value = facf(fun_data = t(ElNino_ERSST_region_1and2$y))
 }
 \keyword{methods}

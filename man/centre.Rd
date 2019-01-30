@@ -26,10 +26,10 @@ Han Lin Shang
 # mean function is often removed in the functional principal component analysis.
 # trimmed mean function is sometimes employed for robustness in the presence of outliers.
 # In calculating trimmed mean function, several functional depth measures were employed.	
-centre(x = ElNino$y, type = "mean")
-centre(x = ElNino$y, type = "var")
-centre(x = ElNino$y, type = "median")
-centre(x = ElNino$y, type = "trimmed")
+centre(x = ElNino_ERSST_region_1and2$y, type = "mean")
+centre(x = ElNino_ERSST_region_1and2$y, type = "var")
+centre(x = ElNino_ERSST_region_1and2$y, type = "median")
+centre(x = ElNino_ERSST_region_1and2$y, type = "trimmed")
 }
 \keyword{models}
 

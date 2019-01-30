@@ -24,7 +24,7 @@ Produces a plot.
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.fmres}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}}
 \examples{
 # colorspace package was used to provide a more coherent color option.	
-plot(residuals(ftsm(y = ElNino)), type = "filled.contour", xlab = "Month", 
+plot(residuals(ftsm(y = ElNino_ERSST_region_1and2)), type = "filled.contour", xlab = "Month", 
      ylab = "Residual sea surface temperature")
 }
 \keyword{hplot}

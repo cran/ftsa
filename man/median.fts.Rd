@@ -56,14 +56,16 @@ D. Gervini (2012) "Outlier detection and trimmed estimation in general functiona
 \seealso{\code{\link[ftsa]{mean.fts}}, \code{\link[ftsa]{var.fts}}, \code{\link[ftsa]{sd.fts}}, \code{\link[ftsa]{quantile.fts}}}
 \examples{
 # Calculate the median function by the different depth measures.	
-median(x = ElNino, method = "hossjercroux")
-median(x = ElNino, method = "coordinate")
-median(x = ElNino, method = "FM")
-median(x = ElNino, method = "mode")
-median(x = ElNino, method = "RP")
-median(x = ElNino, method = "RPD")
-median(x = ElNino, method = "radius", alpha = 0.5, beta = 0.25, weight = "hard")
-median(x = ElNino, method = "radius", alpha = 0.5, beta = 0.25, weight = "soft")
+median(x = ElNino_ERSST_region_1and2, method = "hossjercroux")
+median(x = ElNino_ERSST_region_1and2, method = "coordinate")
+median(x = ElNino_ERSST_region_1and2, method = "FM")
+median(x = ElNino_ERSST_region_1and2, method = "mode")
+median(x = ElNino_ERSST_region_1and2, method = "RP")
+median(x = ElNino_ERSST_region_1and2, method = "RPD")
+median(x = ElNino_ERSST_region_1and2, method = "radius", 
+	alpha = 0.5, beta = 0.25, weight = "hard")
+median(x = ElNino_ERSST_region_1and2, method = "radius", 
+	alpha = 0.5, beta = 0.25, weight = "soft")
 }
 \keyword{methods}
 

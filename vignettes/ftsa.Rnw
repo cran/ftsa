@@ -262,11 +262,11 @@ As an illustration, suppose we observe the monthly sea surface temperature from 
   \centering
 <<fig=TRUE,echo=FALSE,keep.source=TRUE,include=TRUE>>=
 # Name history to represent historical data,
-history = ElNino2011smooth
+history = ElNino_ERSST_region_1and2
 # Name obs to represent partially observed data,
-obs = ElNino2011smooth$y[1:5,62]
+obs = ElNino_ERSST_region_1and2$y[1:5,69]
 # Name fore to represent the forecasting period
-fore = ElNino2011smooth$y[6:12,62]
+fore = ElNino_ERSST_region_1and2$y[6:12,69]
 int = dynupdate(data=history, newdata=obs, holdoutdata=fore, method="block", interval=TRUE)
 bmupdate = dynupdate(data=history, newdata=obs, holdoutdata=fore, method="block", value=TRUE)
 plot(6:12, fore, type="l", ylim=c(19,26),  xlab="Month", ylab="Sea surface temperature")
@@ -283,11 +283,11 @@ Figure~\ref{fig:9} was created by the following code
 \begin{smallexample}
   \begin{smallverbatim}
 # Name history to represent historical data,
-history = ElNino2011smooth
+history = ElNino_ERSST_region_1and2
 # Name obs to represent partially observed data,
-obs = ElNino2011smooth$y[1:5,62]
+obs = ElNino_ERSST_region_1and2$y[1:5,69]
 # Name fore to represent the forecasting period
-fore = ElNino2011smooth$y[6:12,62]
+fore = ElNino_ERSST_region_1and2$y[6:12,69]
 int = dynupdate(data=history, newdata=obs, holdoutdata=fore, method="block", interval=TRUE)
 bmupdate = dynupdate(data=history, newdata=obs, holdoutdata=fore, method="block", value=TRUE)
 plot(6:12, fore, type="l", ylim=c(19,26), xlab="Month", ylab="Sea surface temperature")

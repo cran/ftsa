@@ -29,6 +29,7 @@ H. L. Shang (2012) "Point and interval forecasts of age-specific life expectanci
 \author{Rob J Hyndman}
 \seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{summary.fm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.fmres}}}
 \examples{
-plot(residuals(object = ftsm(y = ElNino)), xlab = "Year", ylab = "Month")
+plot(residuals(object = ftsm(y = ElNino_ERSST_region_1and2)), 
+	xlab = "Year", ylab = "Month")
 }
 \keyword{models}

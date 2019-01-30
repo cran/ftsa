@@ -127,17 +127,17 @@ M. Febrero-Bande, P. Galeano, W. Gonz\'{a}lez-Manteiga (2017), "Functional princ
 \examples{
 # When weight = FALSE, all observations are assigned equally.
 # When weight = TRUE, all observations are assigned geometrically decaying weights.
-fplsr(ElNino, order = 6, type = "nipals")
-fplsr(data = ElNino, order = 6)
-fplsr(data = ElNino, weight = TRUE)
-fplsr(data = ElNino, unit.weights = FALSE)
-fplsr(data = ElNino, unit.weights = FALSE, weight = TRUE)
+fplsr(data = ElNino_ERSST_region_1and2, order = 6, type = "nipals")
+fplsr(data = ElNino_ERSST_region_1and2, order = 6)
+fplsr(data = ElNino_ERSST_region_1and2, weight = TRUE)
+fplsr(data = ElNino_ERSST_region_1and2, unit.weights = FALSE)
+fplsr(data = ElNino_ERSST_region_1and2, unit.weights = FALSE, weight = TRUE)
 
 # The prediction intervals are calculated numerically.
-fplsr(data = ElNino, interval = TRUE, method = "delta")
+fplsr(data = ElNino_ERSST_region_1and2, interval = TRUE, method = "delta")
 
 # The prediction intervals are calculated by bootstrap method. 
-fplsr(data = ElNino, interval = TRUE, method = "boota")
+fplsr(data = ElNino_ERSST_region_1and2, interval = TRUE, method = "boota")
 }
 \keyword{models}
 

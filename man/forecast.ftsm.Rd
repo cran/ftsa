@@ -95,8 +95,8 @@ H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2016) "A multilevel functi
 # the principal component scores are forecasted.
 # The forecasted curves are constructed by forecasted principal components 
 # times fixed principal components plus the mean function.	
-forecast(object = ftsm(ElNino), h = 10, method = "ets")              
-forecast(object = ftsm(ElNino, weight = TRUE))
+forecast(object = ftsm(ElNino_ERSST_region_1and2), h = 10, method = "ets")              
+forecast(object = ftsm(ElNino_ERSST_region_1and2, weight = TRUE))
 }
 \keyword{models}
 
