@@ -61,15 +61,17 @@ Y. Gao, H. L. Shang and Y. Yang (2017) "High-dimensional functional time series 
 
 Y. Gao and H. L. Shang (2017) "Multivariate functional time series forecasting: An application to age-specific mortality rates", \emph{Risks}, \bold{5}(2), Article 21.
 
-Y. Gao, H. L. Shang and Y. Yang (2018) "High-dimensional functional time series forecasting: An application to age-specific mortality rates", \emph{Journal of Multivariate Analysis}, \bold{forthcoming}.
-
-H. L. Shang (2018) "Visualizing rate of change: An application to age-specific fertility rates", \emph{Journal of the Royal Statistical Society: Series A (Statistics in Society)}, forthcoming.
+H. L. Shang (2018) "Visualizing rate of change: An application to age-specific fertility rates", \emph{Journal of the Royal Statistical Society: Series A (Statistics in Society)}, \bold{182}(1), 249-262.
 
 H. L. Shang (2018) "Bootstrap methods for stationary functional time series", \emph{Statistics and Computing}, \bold{28}(1), 1-10.
 
-###################################
+Y. Gao, H. L. Shang and Y. Yang (2019) "High-dimensional functional time series forecasting: An application to age-specific mortality rates", \emph{Journal of Multivariate Analysis}, \bold{170}, 232-243.
+
+D. Li, P. M. Robinson and H. L. Shang (2019) "Long-range dependent curve time series", \emph{Journal of the American Statistical Association: Theory and Methods}, \bold{forthcoming}.
+
+#############################
 # References in Population Studies
-###################################
+#############################
 
 H. L. Shang, H. Booth and R. J. Hyndman (2011) "Point and interval forecasts of mortality rates and life expectancy: a comparison of ten principal component methods, \emph{Demographic Research}, \bold{25}(5), 173-214.
 
@@ -87,15 +89,21 @@ H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2016) "A multilevel functi
 
 H. L. Shang (2017) "Reconciling forecasts of infant mortality rates at national and sub-national levels: Grouped time-series method", \emph{Population Research and Policy Review}, 36(1), 55-84.
 
-##################################
+###########################
 # References in Actuarial Studies
-##################################
+###########################
 
 H. L. Shang and S. Haberman (2017) "Grouped multivariate and functional time series forecasting: An application to annuity pricing", Presented at the Living to 100 Symposium, Orlando Florida, January 4-6, 2017.
 
 H. L. Shang and S. Haberman (2017) "Grouped multivariate and functional time series forecasting: An application to annuity pricing", \emph{Insurance: Mathematics and Economics}, \bold{75}, 166-179.
 
 H. L. Shang and S. Haberman (2018) "Model confidence sets and forecast combination: An application to age-specific mortality", \emph{Genus - Journal of Population Sciences}, \bold{forthcoming}.
+
+####################
+# References in Finance
+####################
+
+F. Kearney and H. L. Shang (2019) "Uncovering predictability in the evolution of the WTI oil futures curve", \emph{European Financial Management}, \bold{forthcoming}.
 }
 \keyword{package}
 

@@ -27,6 +27,7 @@ beta = 0.1, ...)
         method = method, mean = mean, level = level, lambda = lambda,
         ...)
         mean.se = y.pca$mean.se
+        eigen_values = y.pca$eigen_value
     }
     if (weight == TRUE) {
         q <- beta * (1 - beta)^(0:(n - 1))
@@ -48,6 +49,7 @@ beta = 0.1, ...)
         }
         V <- rep(1, ngrid) * t(yy)
         dummy <- La.svd(V)
+        eigen_values = dummy$d^2
         varprop = (dummy$d[1:order])^2/(sum((dummy$d)^2))
         mean.se = approx(xx, sqrt(apply(yy, 1, var)/n), xout = x)$y
     }
@@ -115,7 +117,8 @@ beta = 0.1, ...)
         out <- list(x1 = as.numeric(colnames(y$y)), y1 = as.numeric(rownames(y$y)),
         y = fts(y$x, y$y, xname = y$xname, yname = y$yname),
         basis = basis, coeff = coeff, fitted = fits, residuals = res,
-        varprop = y.pca$varprop, wt = ts(y.pca$weights, start = ytsp[1],
+        varprop = y.pca$varprop, eigen_values = eigen_values, 
+        wt = ts(y.pca$weights, start = ytsp[1],
         frequency = ytsp[3]), v = ts(y.pca$v, start = ytsp[1],
         frequency = ytsp[3]), basis2 = y.pca$basis2,
         coeff2 = y.pca$coeff2, mean.se = mean.se, call = match.call())
@@ -124,7 +127,7 @@ beta = 0.1, ...)
         out <- list(x1 = as.numeric(colnames(y$y)), y1 = as.numeric(rownames(y$y)),
         y = fts(y$x, y2, xname = y$xname, yname = y$yname),
         basis = basis, coeff = coeff, fitted = fits, residuals = res,
-        varprop = varprop, wt = rev(q), mean.se = mean.se,
+        varprop = varprop, eigen_values = eigen_values, wt = rev(q), mean.se = mean.se,
         call = match.call())
     }
     return(structure(out, class = c("ftsm", "fm")))

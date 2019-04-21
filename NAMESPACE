@@ -39,7 +39,9 @@ dynamic_FLR,
 long_run_covariance_estimation,
 hdfpca,
 forecast.hdfpca,
-facf
+facf,
+mftsc,
+dmfpca
 )
 
 
@@ -69,6 +71,7 @@ import(rainbow)
 import(stats)
 import(colorspace)
 import(MASS)
+import(pdfCluster)
 
 importFrom(pcaPP, PCAproj)
 importFrom(pcaPP, l1median)

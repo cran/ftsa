@@ -1,3 +1,10 @@
+v 5.5
+
+1. Update fdpca and ftsm functions
+2. Add ftsa:::method.FPE function used in the farforecast function
+3. Add dmfpca function for implementing dynamic multilevel functional principal component analysis
+4. Add mftsc function for clustering multiple functional time series
+
 v 5.4
 
 1. Update the ElNino data set
