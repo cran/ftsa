@@ -8,12 +8,14 @@ The coefficients from the fitted object are forecasted using a multivariate time
 The forecast coefficients are then multiplied by the functional principal components to obtain a forecast curve.
 }
 \usage{
-farforecast(object, h = 10, var_type = "const", Pmax_value, level = 80, PI = FALSE)
+farforecast(object, h = 10, var_type = "const", Dmax_value, Pmax_value, 
+	level = 80, PI = FALSE)
 }
 \arguments{
   \item{object}{An object of \code{\link{fds}}.}
   \item{h}{Forecast horizon.}
   \item{var_type}{Type of multivariate time series forecasting method; see \code{\link[vars]{VAR}} for details.}
+  \item{Dmax_value}{Maximum number of components considered.}
   \item{Pmax_value}{Maximum order of VAR model considered.}
   \item{level}{Nominal coverage probability of prediction error bands.}
   \item{PI}{When \code{PI = TRUE}, a prediction interval will be given along with the point forecast.}
@@ -31,6 +33,7 @@ farforecast(object, h = 10, var_type = "const", Pmax_value, level = 80, PI = FAL
 }
 \value{
 \item{point_fore}{Point forecast}
+\item{order_select}{Selected VAR order and number of components}
 \item{PI_lb}{Lower bound of a prediction interval}
 \item{PI_ub}{Upper bound of a prediction interval}
 }
@@ -48,10 +51,8 @@ Han Lin Shang
 \examples{
 sqrt_pm10 = sqrt(pm_10_GR$y)
 x = seq(0,23.5, by=.5)
-uni_forecast_sqrt_pm10 = forecast(ftsm(fts(x, sqrt_pm10)), h = 10, method = "arima")
-multi_forecast_sqrt_pm10 = farforecast(object = fts(x,sqrt_pm10), h = 10, Pmax_value = 3)
-par(mfrow = c(1,2))
-plot(uni_forecast_sqrt_pm10, ylim = c(5.2,8.5))
-plot(multi_forecast_sqrt_pm10, ylim = c(5.2,8.5))
+multi_forecast_sqrt_pm10 = farforecast(object = fts(x,sqrt_pm10), h = 10, 
+	Dmax_value = 21, Pmax_value = 3)
+plot(multi_forecast_sqrt_pm10$point_fore, ylim = c(5.2,8.5))
 }
 \keyword{models}

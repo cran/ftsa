@@ -11,6 +11,7 @@ rapca <- function(x, FUN = Qn, order = 4, mean = TRUE)
     }
     else xx <- X
     tmp <- La.svd(xx)
+    eigen_value = tmp$d^2
     r = sum(tmp$d > (max(n, p) * max(tmp$d) * 1e-12))
     P <- t(tmp$vt)[, 1:r]
     tmp2 <- rstep(t(xx %*% P), order = order, r = tmp$r, mean = mean)
@@ -25,5 +26,5 @@ rapca <- function(x, FUN = Qn, order = 4, mean = TRUE)
         basis <- tmp
         coef <- xx %*% basis
     }
-    return(list(basis = basis, coeff = coef, X = xx))
+    return(list(basis = basis, coeff = coef, X = xx, eigen_value = eigen_value))
 }

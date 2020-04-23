@@ -64,6 +64,7 @@ fdpca <- function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
         robusteig <- rapca(yy, order = order, mean = FALSE, ...)
         B <- robusteig$coeff
         Phi <- robusteig$basis
+        eigen_value = robusteig$eigen_value
         yyhat <- Phi %*% t(B)
         v <- colSums((yy - yyhat)^2) * delta
     }
@@ -74,7 +75,8 @@ fdpca <- function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
     }
     if (method == "rapca") 
     {
-        varprop <- rep(NA, order)
+        # varprop <- rep(NA, order)
+        varprop <- eigen_value/sum(eigen_value)
         w <- rep(1, order)
     }
     else 

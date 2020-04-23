@@ -1,7 +1,7 @@
-ed09817830a738576da0d036433a6f8c *ChangeLog
-e681ed49811849c797b7d94c5603a145 *DESCRIPTION
+ac4b0625c5b71102f3f973c07e12457f *ChangeLog
+d531a817c185db68bf001f20c2b8a939 *DESCRIPTION
 5628b5bc7cf1aa603c7158c1f74af64c *NAMESPACE
-f1dc0a39646b946ade1d2525dd239e4d *R/DataPostProc.R
+f1dc0a39646b946ade1d2525dd239e4d *R/DataPostProc.r
 4fb02b2193cf674af0617ef37785527a *R/FPCA.R
 4c1179aecf850d09864316c3a17bdbc6 *R/FPE.trace.R
 f091488838d0e147f60a41f6743ab233 *R/FlatTop.R
@@ -35,9 +35,9 @@ e34eb34ef22ce2946190c05759c08ce9 *R/extract.R
 e2a99ae29b887606c67a25330de010ab *R/extract.time.R
 4a29574f33c10a3c11d4c40a7a319fc6 *R/extract.x.R
 cfe93e35e94115e9b38d987bfb5d5a32 *R/facf.R
-b98d5c3fbbcda9d59b6dce4fbdec3e75 *R/farforecast.R
+23044422b9f9b1b99b34c0a6d62b26cb *R/farforecast.R
 05281def0935a86376583a41c1b5a6b5 *R/fbootstrap.R
-fdc48b9fdfc3915d0ed519a2ce5f1ee2 *R/fdpca.R
+0c26705fe83de01a5cdc76973eb8bea1 *R/fdpca.R
 8ffe6d54dbc6401b80cb500a16e004c2 *R/forecast.ftsm.R
 be23f8a1fda049185fc0a30fa05795f8 *R/forecast.ftsm2.R
 29c8de5b5e62dc1f13e04f11b42055e1 *R/forecast.hdfpca.R
@@ -63,9 +63,9 @@ c4bdc06dbc7a0d50bd176aaaa42206fc *R/func.trim.mode.R
 b6743be5beda59f6d92baa6ce33eb6f5 *R/hossjercroux.R
 4ea49699d2ca84221bfca095bef7f43b *R/hyman.filter.R
 6cfa579fd0e8a9ff05641ddbfe0a9a07 *R/is.fts.R
-91cfe6aae917a109d145448597b04a02 *R/isfe.fts.R
+91cfe6aae917a109d145448597b04a02 *R/isfe.fts.r
 abc759364e32bcd710eff636a3a6ffeb *R/kweights.R
-4146122d9df417867358f1cb95a1de0e *R/loadSgnU.R
+4146122d9df417867358f1cb95a1de0e *R/loadSgnU.r
 92ae1b251277652f1b63fe8379bfb9ef *R/long_run_covariance_estimation.R
 15b75e71f6bd67d1b980044a784af3a7 *R/mae.R
 993349deea4cc06155d63582872283de *R/mape.R
@@ -108,7 +108,7 @@ f7c4c5ee80a7648cd55441f061941e8c *R/plsrPIsboot.R
 0c26b016d00b4bde69fb62d35d9c7a2b *R/quantile.fts.R
 46f2cc3de3fd254a71c6e2d092b19f53 *R/quantile.outliers.pond.R
 549bc45347abb68b4b0f573d7e8902cb *R/quantile.outliers.trim.R
-021267e3569ec428a8eeb9ed6e836bfd *R/rapca.R
+ff54088fc58375870272f56334ca6a31 *R/rapca.R
 8944c506b3b3401af04d0764090782c5 *R/relmae.R
 3068a3ddf52ed6cf0dea8b46ff720dc1 *R/relmse.R
 abf4a1ff375156ad6bd410b89ffa70b6 *R/repmat.R
@@ -154,7 +154,7 @@ fbf82312d081ee690d2ed5390d88acc9 *man/centre.Rd
 63a90a60ed268017152844cd9f5eaeb7 *man/error.Rd
 37f0997457e0853bc08a0d355da7b119 *man/extract.Rd
 f74a533a4038d5aeb6a1305805052aee *man/facf.Rd
-dd8b626ee56fe84abc86939044eb0429 *man/farforecast.Rd
+94dc17aba6673bbdaaa36ccd8941fef8 *man/farforecast.Rd
 94e9ff20df7d00e0879ab9a6cec7ffa9 *man/fbootstrap.Rd
 bae3c5e67d39496ee69f9fe5db78cfae *man/forecast.ftsm.Rd
 3a10208448f1fabb321cb69c4808aa9d *man/forecast.hdfpca.Rd

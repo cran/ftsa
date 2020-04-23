@@ -1,3 +1,8 @@
+v 5.6
+
+1. Update the fdpca and rapca functions in R
+2. Update the farforecast manual and farforecast function in R
+
 v 5.5
 
 1. Update fdpca and ftsm functions
@@ -28,7 +33,7 @@ v 5.1
 
 v 5.0
 
-1. Remove R/diff.R  
+1. Remove R/diff.R
 2. Remove R/diff.default.R
 
 v 4.9
@@ -71,7 +76,7 @@ v 4.4
 
 1. Include PM10 pollution data set and its square root transformation
 2. Include multivariate time series method for forecasting principal component scores, called farforecast
-3. Include a stationarity test, called T_stationary, for functional time series 
+3. Include a stationarity test, called T_stationary, for functional time series
 4. Update forecast.ftsm function (ftsa:::ftsmPI)
 
 v 4.3
@@ -167,9 +172,9 @@ v 2.6
 
 1. Update ftsm function to produce the orthonormal basis functions
 
-v 2.5 
+v 2.5
 
-1. correct ftsm function 
+1. correct ftsm function
 
 v 2.4
 
@@ -179,13 +184,13 @@ v 2.3
 
 1. correct ftsm function
 
-v 2.2 
+v 2.2
 
 1. correct ftsm function
 
 v 2.1
 
-1. update ftsm 
+1. update ftsm
 2. update mean.fts and median.fts
 
 v 2.0
@@ -224,7 +229,7 @@ v 1.4
 
 v 1.3
 
-1. Add dynupdatelambdaselect function. 
+1. Add dynupdatelambdaselect function.
 
 v 1.2
 

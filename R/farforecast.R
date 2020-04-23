@@ -1,13 +1,14 @@
-farforecast <- function(object, h = 10, var_type = "const", Pmax_value, level = 80, PI = FALSE)
+farforecast <- function(object, h = 10, var_type = "const", Dmax_value,
+                        Pmax_value, level = 80, PI = FALSE)
 {
-    order_select = method.FPE(object = object, Pmax = Pmax_value)
-    
+    order_select = method.FPE(object = object, D = Dmax_value, var_type = var_type, Pmax = Pmax_value)
+
     order = order_select[2]
     ftsm_object = ftsm(y = object, order = order)
     if(requireNamespace("vars", quietly = TRUE))
     {
-        var_pred = predict(vars::VAR(ftsm_object$coeff[, 2:(order + 1)], lag.max = order_select[1],
-        type = var_type), n.ahead = h, ci = level/100)
+        var_pred = predict(vars::VAR(ftsm_object$coeff[, 2:(order + 1)], p = order_select[1],
+                            type = var_type), n.ahead = h, ci = level/100)
     }
     else
     {
@@ -53,10 +54,11 @@ farforecast <- function(object, h = 10, var_type = "const", Pmax_value, level = 
         colnames(lb) = colnames(ub) = 1:h
         PI_lb = fts(x, lb, yname = "Lower bound", xname = object$xname)
         PI_ub = fts(x, ub, yname = "Upper bound", xname = object$xname)
-        return(list(point_fore = point_fore_fts, PI_lb = PI_lb, PI_ub = PI_ub))
+        return(list(point_fore = point_fore_fts, order_select = order_select,
+                    PI_lb = PI_lb, PI_ub = PI_ub))
     }
     else
     {
-        return(point_fore_fts)
+        return(list(point_fore = point_fore_fts, order_select = order_select))
     }
 }
