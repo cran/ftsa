@@ -41,7 +41,10 @@ hdfpca,
 forecast.hdfpca,
 facf,
 mftsc,
-dmfpca
+dmfpca,
+ER_GR,
+stop_time_detect,
+stop_time_sim_data
 )
 
 
@@ -72,6 +75,9 @@ import(stats)
 import(colorspace)
 import(MASS)
 import(pdfCluster)
+import(ecp)
+import(strucchange)
+import(e1071)
 
 importFrom(pcaPP, PCAproj)
 importFrom(pcaPP, l1median)
@@ -80,4 +86,4 @@ importFrom(fda, create.fourier.basis)
 importFrom(fda, eval.basis)
 importFrom("graphics", "abline", "contour", "filled.contour", "image", "legend", "lines", "par", "persp", "points", "text", "title")
 importFrom("utils", "head", "tail")
-importFrom("grDevices", "dev.new", "gray")     
+importFrom("grDevices", "dev.new", "gray")

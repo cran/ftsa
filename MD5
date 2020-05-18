@@ -1,7 +1,8 @@
-ac4b0625c5b71102f3f973c07e12457f *ChangeLog
-d531a817c185db68bf001f20c2b8a939 *DESCRIPTION
-5628b5bc7cf1aa603c7158c1f74af64c *NAMESPACE
+a8e0538c201bf5e1082016394114e64b *ChangeLog
+85277fbb8103bcbfc267d6a27d3d8bee *DESCRIPTION
+5d43a18a41650346030aa0e1f4b6d006 *NAMESPACE
 f1dc0a39646b946ade1d2525dd239e4d *R/DataPostProc.r
+5ac9b2b2fd67f7736358c54fd4a25c99 *R/ER_GR.R
 4fb02b2193cf674af0617ef37785527a *R/FPCA.R
 4c1179aecf850d09864316c3a17bdbc6 *R/FPE.trace.R
 f091488838d0e147f60a41f6743ab233 *R/FlatTop.R
@@ -129,6 +130,8 @@ ba95fc8489354f55d16e876751ceecf4 *R/skernel.norm.R
 e023348e9400ad3158e20fd227c7fef7 *R/smdape.R
 981793ada9b5a428fe69baa418ed025d *R/spl.coef.conv.R
 c03a8c19224c3a83923c1b0e534a6afb *R/sse.R
+5cc4cf9c17633b04036a1193f1e327f3 *R/stop_time_detect.R
+3ecc07ba010f9cf473702101b0a5c23e *R/stop_time_sim_data.R
 ec4c9824249e36c2207d6ef2186a8506 *R/struct.forecast.R
 85ffc0835632d97c485e3c3da54a2bd9 *R/summary.fm.R
 5c69e09427f8053562db5d04606bfb80 *R/tsse.R
@@ -142,8 +145,9 @@ b2988cb57e7cf2de5e8b1105cbae1c4b *data/pm_10_GR.rda
 c1fddd84754d74ba3cd7f8eed4e79a63 *data/pm_10_GR_sqrt.rda
 a3f736ac82030f349601b160003911df *data/sim_ex_cluster.rda
 1703a8b0a2680e197a44afb515cb0123 *inst/CITATION
-0290967341f97159002118fc21d928d3 *inst/doc/ftsa.pdf
-e19a8a801e6a69fea5983afb7d13972b *inst/doc/ftsa_test.pdf
+21d82fb09dff6e5c63899de1c672c9f0 *inst/doc/ftsa.pdf
+c7fda9abea9d4bb6cf2c39e083904d5c *inst/doc/ftsa_test.pdf
+344c5c349f1b2187c89eb4655f234251 *man/ER_GR.Rd
 f64df0c0200074eb5afb7f48d4e1e46f *man/MFDM.Rd
 6040492598185fb6a865eeded1694705 *man/T_stationary.Rd
 fbf82312d081ee690d2ed5390d88acc9 *man/centre.Rd
@@ -185,6 +189,8 @@ d56bee38684b553aa427de445899c749 *man/quantile.fts.Rd
 0c075258370c83daa9cf193f1176ed51 *man/sd.Rd
 24a1b889bc6fd45de2b622dacee16248 *man/sd.fts.Rd
 1cb21c0cade052d73725affccf116b98 *man/sim_ex_cluster.Rd
+be7ebea4446c90aa04e5053e3ab879b1 *man/stop_time_detect.Rd
+6ca47429dea6b1230c35b6dc3373fbfe *man/stop_time_sim_data.Rd
 e0d033f8c143ef5e14fe6c988ccc41f5 *man/summary.fm.Rd
 a738c9cc32223f9f08d6ea126af62365 *man/var.Rd
 31b7d33323f7544c5d042076accadc6c *man/var.fts.Rd

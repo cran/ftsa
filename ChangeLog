@@ -1,3 +1,9 @@
+v 5.7
+
+1. Add a function (ER_GR) for selecting the number of retained principal components 
+2. Add a function (stop_time_detect) for detecting the optimal stopping time in a curve time series
+3. Add a function (stop_time_sim_data) for generating simulated data following a functional autoregression of order one with a breakpoint at the middle of a curve sample
+
 v 5.6
 
 1. Update the fdpca and rapca functions in R
