@@ -44,7 +44,9 @@ mftsc,
 dmfpca,
 ER_GR,
 stop_time_detect,
-stop_time_sim_data
+stop_time_sim_data,
+MAF_multivariate,
+MFPCA
 )
 
 

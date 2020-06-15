@@ -12,7 +12,7 @@ fplsr(data, order = 6, type = c("simpls", "nipals"), unit.weights =
    backh = 10)
 }
 \arguments{
-  \item{data}{An object of class \code{\link[rainbow]{fts}}.}
+  \item{data}{An object of class \code{fts}.}
   \item{order}{Number of principal components to fit.}
   \item{type}{When \code{type = "nipals"}, uses the NIPALS algorithm; when \code{type = "simpls"}, uses the SIMPLS algorithm.}
   \item{unit.weights}{Constrains predictor loading weights to have unit norm.}

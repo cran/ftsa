@@ -2,13 +2,13 @@
 \alias{diff.fts}
 \title{Differences of a functional time series}
 \description{
-Computes differences of a \code{\link[rainbow]{fts}} object at each variable.
+Computes differences of a \code{fts} object at each variable.
 }
 \usage{
 \method{diff}{fts}(x, lag = 1, differences = 1, ...)
 }
 \arguments{
-\item{x}{An object of class \code{\link[rainbow]{fts}}.}
+\item{x}{An object of class \code{fts}.}
 \item{lag}{An integer indicating which lag to use.}
 \item{differences}{An integer indicating the order of the difference.}
 \item{...}{Other arguments.}

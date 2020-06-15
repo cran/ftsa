@@ -1,5 +1,6 @@
 \name{sim_ex_cluster}
 \alias{sim_ex_cluster}
+\alias{sim_ex_cluster.smooth}
 \docType{data}
 \title{
 Simulated multiple sets of functional time series

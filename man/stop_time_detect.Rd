@@ -10,7 +10,7 @@ Detecting the optimal stopping time for the glue curing of wood panels in an aut
 stop_time_detect(data, forecasting_method = c("ets", "arima", "rw"))
 }
 \arguments{
-  \item{data}{An object of class \code{\link[rainbow]{fts}}}
+  \item{data}{An object of class \code{fts}}
   \item{forecasting_method}{A univariate time series forecasting method}
 }
 \value{

@@ -1,9 +1,9 @@
 Package: ftsa
 Type: Package
 Title: Functional Time Series Analysis
-Version: 5.7
-Date: 2020-5-18
-Depends: R (>= 3.4.0), forecast, rainbow, sde
+Version: 5.8
+Date: 2020-6-15
+Depends: R (>= 3.5.0), forecast, rainbow, sde
 Suggests: fds, R2jags, vars, meboot
 Imports: colorspace, MASS, pcaPP, fda, pdfCluster, ecp, strucchange,
         e1071
@@ -12,14 +12,14 @@ LazyData: yes
 ByteCompile: TRUE
 Authors@R: c(
 	person("Rob", "Hyndman", role="aut", comment = c(ORCID = "0000-0002-2140-5352")),
-	person("Han Lin", "Shang", email="hanlin.shang@anu.edu.au", role=c("aut", "cre", "cph"), comment = c(ORCID = "0000-0003-1769-6430"))
+	person("Han Lin", "Shang", email="hanlin.shang@mq.edu.au", role=c("aut", "cre", "cph"), comment = c(ORCID = "0000-0003-1769-6430"))
 	)
-Maintainer: Han Lin Shang <hanlin.shang@anu.edu.au>
+Maintainer: Han Lin Shang <hanlin.shang@mq.edu.au>
 Description: Functions for visualizing, modeling, forecasting and hypothesis testing of functional time series.
 License: GPL-3
 NeedsCompilation: no
-Packaged: 2020-05-17 22:41:14 UTC; hanlin
+Packaged: 2020-06-14 19:56:37 UTC; hanlin
 Author: Rob Hyndman [aut] (<https://orcid.org/0000-0002-2140-5352>),
   Han Lin Shang [aut, cre, cph] (<https://orcid.org/0000-0003-1769-6430>)
 Repository: CRAN
-Date/Publication: 2020-05-18 04:50:11 UTC
+Date/Publication: 2020-06-15 12:20:07 UTC

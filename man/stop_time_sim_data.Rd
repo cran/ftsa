@@ -15,7 +15,7 @@ stop_time_sim_data(sample_size, omega, seed_number)
   \item{seed_number}{Random seed number}
 }
 \value{
-An object of class \code{\link[rainbow]{fts}}
+An object of class \code{fts}
 }
 \author{
 Han Lin Shang

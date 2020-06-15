@@ -12,7 +12,7 @@ components to obtain a forecast curve.
 ftsmiterativeforecasts(object, components, iteration = 20)
 }
 \arguments{
-  \item{object}{An object of class \code{\link[rainbow]{fts}}.}
+  \item{object}{An object of class \code{fts}.}
   \item{components}{Number of principal components.}
   \item{iteration}{Number of iterative one-step-ahead forecasts.}
 }

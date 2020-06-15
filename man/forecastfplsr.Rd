@@ -13,7 +13,7 @@ forecastfplsr(object, components, h)
   \item{h}{Forecast horizon.}
 }
 \value{
-A \code{\link[rainbow]{fts}} class object, containing forecasts of responses.
+A \code{fts} class object, containing forecasts of responses.
 }
 \references{
 R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series" (with discussion), \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.

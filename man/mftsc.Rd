@@ -1,33 +1,31 @@
 \name{mftsc}
 \alias{mftsc}
 \title{
-Clustering multiple functional time series
+ Multiple funtional time series clustering
 }
 \description{
-Clustering multiple functional time series. This function uses a functional panel data model to cluster different functional time series into subgroups.
+Clustering the multiple functional time series. The function uses the functional panel data model to cluster different time series into subgroups
 }
-\usage{
-mftsc(X, alpha)
-}
+\usage{mftsc(X, alpha)}
 \arguments{
-  \item{X}{A list of functional time series to be clustered for each object, it is a \code{p} by \code{q} matrix, where \code{p} denotes sample size and \code{q} denotes number of grid points within a function support.}
-  \item{alpha}{An input value for adjusted rand index to measure similarity of the memberships with last iteration, can be any value bigger than 0.9.}
+\item{X}{A list of sets of smoothed functional time series to be clustered, for each object, it is a p x q matrix, where p is the sample size and q is the number of grid points of the function}
+
+\item{alpha}{A value input for adjusted rand index to measure similarity of the memberships with last iteration, can be any value big than 0.9}
 }
+\details{As an initial step, conventional k-means clustering is performed on the dynamic FPC scores, then an iterative membership updating process is applied by fitting the MFPCA model.}
 \value{
-\item{iteration}{Number of iterations until convergence}
-\item{membership}{A list of all membership matrices at each iteration}
-\item{member.final}{Final membership}
+\item{iteration}{the number of iterations until convergence}
+\item{memebership}{a list of all the membership matrices at each iteration}
+\item{member.final}{the final membership}
 }
-\author{
-Chen Tang and Han Lin Shang
-}
+\author{Chen Tang, Yanrong Yang and Han Lin Shang}
 \seealso{
-\code{\link{dmfpca}}
+\code{\link{MFPCA}}
 }
 \examples{
-## The following takes about 20 minutes to run ##
 \dontrun{
-cluster_result <- mftsc(X = sim_ex_cluster, alpha = 0.99)
+data(sim_ex_cluster)
+cluster_result<-mftsc(X=sim_ex_cluster, alpha=0.99)
+cluster_result$member.final
 }
 }
-\keyword{methods}

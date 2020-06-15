@@ -9,7 +9,7 @@ Computes mean of functional time series at each variable.
  na.rm = TRUE, alpha, beta, weight, ...)
 }
 \arguments{
-\item{x}{An object of class \code{\link[rainbow]{fts}}.}
+\item{x}{An object of class \code{fts}.}
 \item{method}{Method for computing the mean function.}
 \item{na.rm}{A logical value indicating whether NA values should be stripped before the computation proceeds.}
 \item{alpha}{Tuning parameter when \code{method="radius"}.}

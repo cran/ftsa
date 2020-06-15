@@ -8,7 +8,7 @@ Creates subsets of a \code{fts} object.
 extract(data, direction = c("time", "x"), timeorder, xorder)
 }
 \arguments{
-   \item{data}{An object of \code{\link[rainbow]{fts}}.}
+   \item{data}{An object of \code{fts}.}
    \item{direction}{In time direction or x variable direction?}
    \item{timeorder}{Indexes of time order.}
    \item{xorder}{Indexes of x variable order.}

@@ -9,7 +9,7 @@ Computes median of functional time series at each variable.
  "RP", "RPD", "radius"), alpha, beta, weight, ...)
 }
 \arguments{
-  \item{x}{An object of class \code{\link[rainbow]{fts}}.}
+  \item{x}{An object of class \code{fts}.}
   \item{na.rm}{Remove any missing value.}
   \item{method}{Method for computing median.}
   \item{alpha}{Tuning parameter when \code{method="radius"}.}

@@ -12,7 +12,7 @@ dynamic_FLR(dat, newdata, holdoutdata, order_k_percent = 0.9, order_m_percent = 
     	pointfore, level = 80)
 }
 \arguments{
-  \item{dat}{An object of class \code{\link[rainbow]{sfts}}.}
+  \item{dat}{An object of class \code{sfts}.}
   \item{newdata}{A data vector of newly arrived observations.}
   \item{holdoutdata}{A data vector of holdout sample to evaluate point forecast accuracy.}
   \item{order_k_percent}{Select the number of components that explains at least 90 percent of the total variation.}

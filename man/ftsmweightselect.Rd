@@ -10,7 +10,7 @@ The geometrically decaying weights are used to estimate the mean curve and funct
 ftsmweightselect(data, ncomp = 6, ntestyear, errorcriterion = c("mae", "mse", "mape"))
 }
 \arguments{
-  \item{data}{An object of class \code{\link[rainbow]{fts}}.}
+  \item{data}{An object of class \code{fts}.}
   \item{ncomp}{Number of components.}
   \item{ntestyear}{Number of holdout observations used to assess the forecast accuracy.}
   \item{errorcriterion}{Error measure.}

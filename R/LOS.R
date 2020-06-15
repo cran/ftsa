@@ -1,5 +1,5 @@
-LOS <- function(z, J=NULL, N=NULL, K1=NULL, K2=NULL, phi1=NULL, phi2=NULL, tlength=1)
-{
+LOS <-
+function(z, J=NULL, N=NULL, K1=NULL, K2=NULL, phi1=NULL, phi2=NULL, tlength=1){
   resd <- z
   cross.integral <- matrix(0, K1, K2)
   for(i in 1:K1)
@@ -17,8 +17,7 @@ LOS <- function(z, J=NULL, N=NULL, K1=NULL, K2=NULL, phi1=NULL, phi2=NULL, tleng
   }
   s1 <- matrix(0, J, K1)
   s2 <- matrix(0, J, K2)
-  
-  design.xi <- MASS::ginv( diag(rep(1,K1)) - cross.integral %*% t(cross.integral) )
+  design.xi <- ginv( diag(rep(1,K1)) - cross.integral %*% t(cross.integral) )
   resid <- rep(0, K1)
   for(j in 1:J) {
     index <- j
@@ -32,4 +31,4 @@ LOS <- function(z, J=NULL, N=NULL, K1=NULL, K2=NULL, phi1=NULL, phi2=NULL, tleng
     s2[index,] <- int2[index,] - drop( t(cross.integral) %*% xi.temp )
   }
   return( list(scores1.out=s1, scores2.out=s2) )
-} 
+}
