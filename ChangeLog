@@ -1,3 +1,10 @@
+v 5.9
+
+1. Add the plsPI_var.R function
+2. Update the dynamic_FLR.R function
+3. Update the dmfpca.R function
+4. Update the pm_10_GR.Rd manual file
+
 v 5.8
 
 1. Add MAF_Multivariate function to perform maximum autocorrelation factors

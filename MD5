@@ -1,5 +1,5 @@
-c79149aac0dcab40eee5fc95f011efa1 *ChangeLog
-e3af464a7107c4218bc2fc23080fe8e5 *DESCRIPTION
+a8598b94fb34a822250114143a9dee23 *ChangeLog
+18f17d50337d837eb6218a3f66780cf7 *DESCRIPTION
 4902e98e6fdd7681df61f2db4f36fffc *NAMESPACE
 8c11f3555d477b2dbbacc924b044c3ac *R/DFPCA.R
 f1dc0a39646b946ade1d2525dd239e4d *R/DataPostProc.r
@@ -30,9 +30,9 @@ f6f692e344091862198f68518107b518 *R/depth.RPD.R
 9eef2a6d098887b7427d04f0c4fd77fa *R/depth.mode.R
 c68c35981c0130e713df6a6663cd04f2 *R/depth.radius.R
 2300f2e3cc46a782dd8275ea31718378 *R/diff.fts.R
-87a398cc45ff9dd5880d1241f19ed71d *R/dmfpca.R
+6e5af2a23a3febec8d05e1d3be213ec8 *R/dmfpca.R
 0b36d77a6af339cc237c0a39d3bf86c0 *R/dynamic.pca.R
-17d0948bffb920f1ab4460e6402cc016 *R/dynamic_FLR.R
+e78653a53372205e233a310b535ed62a *R/dynamic_FLR.R
 7d614719f882b075db238d38f9523f42 *R/dynupdate.R
 78421d492b4571d22caa995faa956302 *R/error.R
 e34eb34ef22ce2946190c05759c08ce9 *R/extract.R
@@ -102,6 +102,7 @@ d2f3e027f324a340c88ae134a9374a06 *R/nicerange.R
 885ca8adbcd63765cc107f5960fd879f *R/plot.ftsm.R
 b13cafaeda5c567f59faeae150ff8210 *R/plotfplsr.R
 5a98bed4b31d58468f243c7e99feeee1 *R/plsPI.R
+faa905e6bf91dd761420f8163e500fd4 *R/plsPI_var.R
 1148111aaaded826f771a1bade79bf27 *R/plsr.R
 3c6e5afd20c1fbd75f7addd7705f174e *R/plsrPIs.R
 f7c4c5ee80a7648cd55441f061941e8c *R/plsrPIsboot.R
@@ -188,7 +189,7 @@ fbc6aca1419908e8638b3f77ce28c821 *man/mftsc.Rd
 0ee5e3e9cfe95157bf65959a72aae819 *man/plot.ftsf.Rd
 b2d2843734e384c5afd2d39aeacc3265 *man/plot.ftsm.Rd
 bfc4d9b661d79736c3138f12439ae406 *man/plotfplsr.Rd
-feaf9b17241e50d97c78daab4e70fb5e *man/pm_10_GR.Rd
+9038e1508c63ed9ea33f37757e589535 *man/pm_10_GR.Rd
 8ebdbd44c7fcbd19aee214301317e7ea *man/quantile.Rd
 d56bee38684b553aa427de445899c749 *man/quantile.fts.Rd
 612512309b16c0e3bc32dd29c26b56f2 *man/residuals.fm.Rd

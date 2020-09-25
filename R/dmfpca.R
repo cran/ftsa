@@ -34,7 +34,8 @@ dmfpca <- function(y,  M=NULL, J=NULL, N=NULL, tstart=0, tlength=1)
     
     ###     Estimate the three covariance functions: overall covariance G, 
     ###     between covariance Gb and within covariance Gw
-    Gb <- long_run_covariance_estimation(t(Rj))$BT_FT_fix_C0
+    # Gb <- long_run_covariance_estimation(t(Rj))$BT_FT_fix_C0
+    Gb <- long_run_covariance_estimation(t(Rj))
     Gw <- cov(Uij)
     
     
