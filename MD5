@@ -1,5 +1,5 @@
-a8598b94fb34a822250114143a9dee23 *ChangeLog
-18f17d50337d837eb6218a3f66780cf7 *DESCRIPTION
+7381e1933a99f77daf928376a7fa4504 *ChangeLog
+4d2b5f398ae414d9c2ffa5aa1d41a5ab *DESCRIPTION
 4902e98e6fdd7681df61f2db4f36fffc *NAMESPACE
 8c11f3555d477b2dbbacc924b044c3ac *R/DFPCA.R
 f1dc0a39646b946ade1d2525dd239e4d *R/DataPostProc.r
@@ -18,7 +18,7 @@ ba6aac30bb13608792ac09bc241fa74e *R/ParseControlStructure.R
 e4e47de687a74ea8a534a7853575af3d *R/ParseDevString.R
 796091ee099ff74cb970e994bd401a93 *R/Qn.R
 0f097f20109c480a16a68026a18cf462 *R/ScaleAdv.R
-cc59e20a48099895611535851e0c414f *R/T_stationary.R
+e86953821ae7e2b3d032ff37c5302589 *R/T_stationary.R
 3bab4655edc13696c3c4895b18842159 *R/aveISFE.R
 a89446edec0d539195ac3b23baf57d14 *R/center.R
 427c23fdce094810caa5f37bd33ed804 *R/centre.R
@@ -61,6 +61,7 @@ c4bdc06dbc7a0d50bd176aaaa42206fc *R/func.trim.mode.R
 2c2afcc9f31c02fcb71ce3dc0ea7a900 *R/func.trimvar.RPD.R
 9251683facc1b33f3b9bb0ae972f46a9 *R/func.trimvar.mode.R
 7ab4a7a920c6e9db9572defead4aacb6 *R/func.var.R
+22e18b5536e60e2059f7908d7856ec42 *R/gamma_matrix.R
 770bb3b81c1a8f4d11fa52a2ff1ac14c *R/gmrae.R
 2a3d680b6d3b339a8aa810bacedabc31 *R/hdfpca.R
 814f226bd7566252046072be66f14c69 *R/hdts.pca.R
@@ -156,7 +157,7 @@ c7fda9abea9d4bb6cf2c39e083904d5c *inst/doc/ftsa_test.pdf
 fe43127bc0866c9ab3357330e01d2c8a *man/MAF_multivariate.Rd
 f64df0c0200074eb5afb7f48d4e1e46f *man/MFDM.Rd
 be19ad171c9d5e2a535fa6b7dff216f7 *man/MFPCA.Rd
-6040492598185fb6a865eeded1694705 *man/T_stationary.Rd
+a37426ce2379a91768761d23fc308b80 *man/T_stationary.Rd
 fbf82312d081ee690d2ed5390d88acc9 *man/centre.Rd
 77e4a27b4db5b405ff9c8a92cf8561bd *man/diff.fts.Rd
 01e28b41598a748492555487fe18999c *man/dmfpca.Rd
@@ -183,7 +184,7 @@ d3352101bddfe653b04609f7b8bcdfa9 *man/hdfpca.Rd
 a49c9cab5a2575124dc81ee0dadf9ad6 *man/mean.fts.Rd
 3cd9c60b5a5f1b632866ba891073f457 *man/median.fts.Rd
 fbc6aca1419908e8638b3f77ce28c821 *man/mftsc.Rd
-6c87effe990ad90a95b8c74a97769750 *man/pcscorebootstrapdata.Rd
+ecf7b1a38cf51017d75e1a7594e7cce6 *man/pcscorebootstrapdata.Rd
 2c52fa5edcb01493b6ba43acc8963f83 *man/plot.fm.Rd
 33b621d84d6a78e4b1fa5631ddbffa37 *man/plot.fmres.Rd
 0ee5e3e9cfe95157bf65959a72aae819 *man/plot.ftsf.Rd

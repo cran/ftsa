@@ -1,3 +1,8 @@
+V 6.0
+
+1. Update the T_stationary function by introducing critical values (see Table 6.1 in Horvath and Kokoszka's book) 
+
+
 v 5.9
 
 1. Add the plsPI_var.R function

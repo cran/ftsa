@@ -61,15 +61,15 @@ Han Lin Shang
 }
 \examples{
 # Bootstrapping the distribution of a summary statistics of functional data.	
-boot1 = pcscorebootstrapdata(ElNino_ERSST_region_1and2$y, 400, 
-	"mean", bootmethod = "st")
-boot2 = pcscorebootstrapdata(ElNino_ERSST_region_1and2$y, 400, 
-	"mean", bootmethod = "sm", smo = 0.05)
-boot3 = pcscorebootstrapdata(ElNino_ERSST_region_1and2$y, 400, 
-	"mean", bootmethod = "mvn")
-boot4 = pcscorebootstrapdata(ElNino_ERSST_region_1and2$y, 400, 
-	"mean", bootmethod = "stiefel")
-boot5 = pcscorebootstrapdata(ElNino_ERSST_region_1and2$y, 400, 
-	"mean", bootmethod = "meboot")
+boot1 = pcscorebootstrapdata(dat = ElNino_ERSST_region_1and2$y, bootrep = 200, 
+	statistic = "mean", bootmethod = "st")
+boot2 = pcscorebootstrapdata(dat = ElNino_ERSST_region_1and2$y, bootrep = 200, 
+	statistic = "mean", bootmethod = "sm", smo = 0.05)
+boot3 = pcscorebootstrapdata(dat = ElNino_ERSST_region_1and2$y, bootrep = 200, 
+	statistic = "mean", bootmethod = "mvn")
+boot4 = pcscorebootstrapdata(dat = ElNino_ERSST_region_1and2$y, bootrep = 200, 
+	statistic = "mean", bootmethod = "stiefel")
+boot5 = pcscorebootstrapdata(dat = ElNino_ERSST_region_1and2$y, bootrep = 200, 
+	statistic = "mean", bootmethod = "meboot")
 }
 \keyword{models}
