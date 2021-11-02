@@ -1,7 +1,12 @@
-V 6.0
+v 6.1
 
-1. Update the T_stationary function by introducing critical values (see Table 6.1 in Horvath and Kokoszka's book) 
+1. Add CoDa_FPCA, LQDT_FPCA, Horta_Ziegelmann_FPCA and skew_t_fun functions for forecasting densities
+2. Add CoDa_BayesNW function for forecasting densities
+3. Add GAEVforecast function for forecasting a time series of densities of extreme values
 
+v 6.0
+
+1. Update the T_stationary function by introducing critical values (see Table 6.1 in Horvath and Kokoszka's book)
 
 v 5.9
 
@@ -13,7 +18,7 @@ v 5.9
 v 5.8
 
 1. Add MAF_Multivariate function to perform maximum autocorrelation factors
-2. Add multilevel functional principal component analysis and multiple funtional time series clustering
+2. Add multilevel functional principal component analysis and multiple functional time series clustering
 3. Update long_run_covariance_estimation function
 
 v 5.7

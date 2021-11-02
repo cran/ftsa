@@ -20,7 +20,7 @@ method.FPE <- function(object, D = 21, var_type = "const", Pmax)
         {
             if(d == 1)
             {
-                res = as.matrix(arima(scores, order = c(p, 0, 0))$residuals)
+                res = as.matrix(arima(scores, order = c(p, 0, 0), method = "ML")$residuals)
             }
             else
             {

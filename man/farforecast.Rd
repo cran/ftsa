@@ -50,9 +50,7 @@ Han Lin Shang
 }
 \examples{
 sqrt_pm10 = sqrt(pm_10_GR$y)
-x = seq(0,23.5, by=.5)
-multi_forecast_sqrt_pm10 = farforecast(object = fts(x,sqrt_pm10), h = 10, 
-	Dmax_value = 21, Pmax_value = 3)
-plot(multi_forecast_sqrt_pm10$point_fore, ylim = c(5.2,8.5))
+multi_forecast_sqrt_pm10 = farforecast(object = fts(seq(0, 23.5, by = 0.5), sqrt_pm10), 
+	h = 1, Dmax_value = 5, Pmax_value = 3)
 }
 \keyword{models}

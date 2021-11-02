@@ -46,7 +46,13 @@ ER_GR,
 stop_time_detect,
 stop_time_sim_data,
 MAF_multivariate,
-MFPCA
+MFPCA,
+skew_t_fun,
+Horta_Ziegelmann_FPCA,
+CoDa_FPCA,
+LQDT_FPCA,
+CoDa_BayesNW,
+GAEVforecast
 )
 
 
@@ -86,6 +92,20 @@ importFrom(pcaPP, l1median)
 importFrom(sde, BBridge)
 importFrom(fda, create.fourier.basis)
 importFrom(fda, eval.basis)
+importFrom(psych, geometric.mean)
+importFrom(fGarch, dsstd)
+importFrom(fGarch, sstdFit)
+importFrom(KernSmooth, dpik)
+importFrom(vars, VARselect)
+importFrom(vars, VAR)
+importFrom(fdapace, trapzRcpp)
+importFrom(fdapace, cumtrapzRcpp)
+importFrom(boot, logit)
+importFrom(boot, inv.logit)
+importFrom(evgam, evgam)
+importFrom(glue, glue)
+importFrom(LaplacesDemon, KLD)
+importFrom(ROOPSD, dgev)
 importFrom("graphics", "abline", "contour", "filled.contour", "image", "legend", "lines", "par", "persp", "points", "text", "title")
-importFrom("utils", "head", "tail")
+importFrom("utils", "head", "tail", "globalVariables")
 importFrom("grDevices", "dev.new", "gray")

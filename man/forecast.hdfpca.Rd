@@ -34,7 +34,9 @@ Y. Gao and H. L. Shang
 \code{\link[ftsa]{hdfpca}}, \code{\link[ftsa]{hd_data}} 
 }
 \examples{
+\dontrun{
 hd_model = hdfpca(hd_data, order = 2, r = 2)
 hd_model_fore = forecast.hdfpca(object = hd_model, h = 1)
+}
 }
 \keyword{models}
