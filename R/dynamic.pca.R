@@ -23,7 +23,7 @@ dfpca <- function(x, order, q)
         f <- f + (wtflat((h/q), 0.5))*c1[h,,] + (wtflat((-h/q), 0.5))*c2[h,,]
     }
     f <- f + c1[1,,]
-  
+
     md <- eigen(f, symmetric = TRUE)
     md$values[md$values<0] <- 0
     score <- xs%*%md$vectors[, 1:order]
@@ -31,49 +31,4 @@ dfpca <- function(x, order, q)
     varprop <- cumsum(md$values/sum(md$values))[1:order]
     basis <- cbind(apply(x, 2, mean), md$vectors[, 1:order])
     return(list(coef= score, fitted =fitted, basis = basis, varprop =varprop, order = order))
-}
-
-# weight function (flat top)
-
-wtflat <- function(x, c)
-{
-    if(-1< x & x <= -c)
-    {
-        return(x/(1-c) + 1/(1-c))
-    }
-    if(-c< x & x < c)
-    {
-        return(1)
-    }
-    if( c< x & x <1)
-    {
-        return(x/(c-1) - 1/(c-1))
-    }
-    else return(0)
-}
-
-# weight function (triangle)
-
-wt.tri <- function(x)
-{
-    if(abs(x)>1)
-    {
-        return(0)
-    }
-    else
-    {
-        return(1-abs(x))
-    }
-}
-
-forecast.dfpca <- function(object, h = 10)
-{
-    k <- object$order
-    y <- array(NA, dim = c(h, k))
-    for(ik in 1:k)
-    {
-        y[, ik] <- forecast(auto.arima(object$coef[, ik]), h = h)$mean
-    }
-    f <- object$basis[, 2: (k+1)]%*%t(y) + object$basis[,1]
-    return(f)
 }

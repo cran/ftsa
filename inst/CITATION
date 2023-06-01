@@ -6,7 +6,7 @@ citHeader("To cite the ftsa package, use:")
 
 bibentry(bibtype = "Manual",
   title = "{ftsa}: Functional Time Series Analysis",
-  author = personList(as.person("Rob J Hyndman"), as.person("Han Lin Shang")),
+  author = c(as.person("Rob J Hyndman"), as.person("Han Lin Shang")),
   year = year,
   note = vers,
   url = "https://CRAN.R-project.org/package=ftsa")

@@ -6,7 +6,7 @@ function(data, normalization,
 {
     # check if input data are densities
 
-    if(getmode(trunc(diff(apply(data, 1, sum))) == 0))
+    if(all(trunc(diff(apply(data, 1, sum))) == 0))
     {
         Y = t(data)
     }

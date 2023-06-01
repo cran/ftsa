@@ -7,7 +7,7 @@ function(data, gridpoints, h_scale = 1, p = 5, m = 5001,
 {
     # check if input data are densities
 
-    if(getmode(trunc(diff(apply(data, 1, sum))) == 0))
+    if(all(trunc(diff(apply(data, 1, sum))) == 0))
     {
         N = nrow(data)
         Y = t(data)

@@ -30,13 +30,16 @@ mftsc<-function(X, alpha){
   ncluster = which(trans_distort == max(trans_distort))+1
   cluster.kmeans<-kmeans(distance.score, ncluster)
   member.ks<- cluster.kmeans$cluster
-  member.initial<-data.frame(V1=c(1:20),V2=c(rep(1,10),rep(2,10)),V3=as.vector(member.ks))
+  #member.initial<-data.frame(V1=c(1:20),V2=c(rep(1,10),rep(2,10)),V3=as.vector(member.ks))
+  member.initial <- data.frame(V1 = c(1:length(X)),
+                                 V2 = rep(NA, length(X)),
+                                 V3 = as.vector(member.ks))
   colnames(member.initial)<-c("ID","ture membership","cluster")
   
   member_it1<-member.initial
   membership<-list()
   r<-2
-  membership[[1]] <- matrix (0.1,20,3)
+  membership[[1]] <- matrix(0.1, length(X), 3)
   colnames(membership[[1]])<-c("ID","ture membership","cluster")
   membership[[2]] <- member_it1
   id.cluster<-sort(unique(member.initial[,2]))

@@ -1,3 +1,10 @@
+v 6.2
+
+1. Add sieve bootstrapping
+2. Update the mftsc.R code
+3. Add FANOVA and two-way functional median polish decompositions
+4. Add the all_hmd_female_data and all_hmd_male_data data sets
+
 v 6.1
 
 1. Add CoDa_FPCA, LQDT_FPCA, Horta_Ziegelmann_FPCA and skew_t_fun functions for forecasting densities

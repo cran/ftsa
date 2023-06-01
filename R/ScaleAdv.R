@@ -1,7 +1,8 @@
 ScaleAdv <- function(x, center = mean, scale = sd)
 {
-    if (class(x) != "matrix") {
-        if (class(x) == "data.frame")
+    if (!is(x, "matrix"))
+    {
+        if (is(x, "data.frame"))
             x = as.matrix(x)
         else x = matrix(x, ncol = 1)
     }

@@ -124,7 +124,7 @@ fdpca <- function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
     varprop <- varprop[1:order]
     yy <- yy - Phinormngrid %*% t(B)
     s <- try(La.svd(t(yy)), silent = TRUE)
-    if (class(s) == "try-error") 
+    if (is(s, "try-error"))
     {
         s <- svd(t(yy), LINPACK = TRUE)
         s$vt <- t(s$v)

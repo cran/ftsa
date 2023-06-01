@@ -75,7 +75,7 @@ skew_t_fun <- function(data, gridpoints, M = 5001)
     A_fore = exp(VAR_fore_parest[3] + tail(para_est_new[3,],1))
     dum = try(uniroot(f = function(df){pt(-2, df) - A_fore},
                           interval = c(min(para_est[3,])-1, max(para_est[3,])+1))$root, silent = TRUE)
-    if(class(dum) == "try-error")
+    if(is(dum, "try-error"))
     {
         print("Unit root problem")
         VAR_fore_parest_new[3] = tail(df_cal,1)

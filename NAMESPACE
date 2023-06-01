@@ -52,7 +52,9 @@ Horta_Ziegelmann_FPCA,
 CoDa_FPCA,
 LQDT_FPCA,
 CoDa_BayesNW,
-GAEVforecast
+GAEVforecast,
+FANOVA,
+Two_way_median_polish
 )
 
 
@@ -67,6 +69,7 @@ S3method(residuals,fm)
 S3method(summary,fm)
 S3method(forecast,ftsm)
 S3method(forecast,hdfpca)
+S3method(forecast,dfpca)
 S3method(var,fts)
 S3method(sd,fts)
 S3method(var,default)
@@ -109,3 +112,4 @@ importFrom(ROOPSD, dgev)
 importFrom("graphics", "abline", "contour", "filled.contour", "image", "legend", "lines", "par", "persp", "points", "text", "title")
 importFrom("utils", "head", "tail", "globalVariables")
 importFrom("grDevices", "dev.new", "gray")
+importFrom("methods", "is")

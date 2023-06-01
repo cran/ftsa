@@ -3,7 +3,7 @@ depth.radius <- function(data, alpha, beta, weight)
 	data = t(data$y)
 	p = dim(data)[2]
 	n = dim(data)[1]
-	if(class(colnames(data))=="NULL")
+	if(is(colnames(data), "NULL"))
 	{	
 		h = as.matrix(c(0.5, rep(1,(p-2)), 0.5))
 	}

@@ -5,15 +5,13 @@ forecast.hdfpca <- function(object, h = 3, level = 80, B = 50, ...)
     m = object$m
     p = object$p
     n = dim(object$y[[1]])[2]
-    ## residual function
     resid<- list()
     for(im in 1: m)
     {
         resid[[im]] <- object$y[[im]]-object$fitted[[im]]
     }
-    
+
     mod.fore = load.fore <- list()
-    ######################
     for(io in 1:order)
     {
         load.fore[[io]] <- array(NA, dim = c(h, r))
@@ -43,16 +41,19 @@ forecast.hdfpca <- function(object, h = 3, level = 80, B = 50, ...)
         {
             fun.fore[[im]] <- object$model$model1[[im]]$basis[, 1] + object$model$model1[[im]]$basis[, 2:(1+order)] %*% score[[im]]
         }
-    }else if (h >= (n/2)){
+    }
+    else if (h >= (n/2))
+    {
         stop('forecast horizon is too big considering the sample size')
-    }else {
+    }
+    else
+    {
         for(im in 1: m)
         {
             fun.fore[[im]] <- object$model$model1[[im]]$basis[, 1] + object$model$model1[[im]]$basis[, 2:(1+order)] %*% t(score[[im]])
         }
     }
-    
-    boot <- list() # bootstrap forecast factor loading residuals
+    boot <- list()
     for(io in 1:order)
     {
         boot[[io]] <- array(NA, dim = c(r, h, B))
@@ -61,7 +62,6 @@ forecast.hdfpca <- function(object, h = 3, level = 80, B = 50, ...)
             boot[[io]][ir,,] <- t(sco.resamp(mod.fore[[io]][[ir]], h = h, B = B))
         }
     }
-    
     fsid = boot.beta = boot.curve <- list()
     for(im in 1:m)
     {
@@ -81,7 +81,6 @@ forecast.hdfpca <- function(object, h = 3, level = 80, B = 50, ...)
                 abc[[io]] <- (modhd[[io]]$basis[, 1] + modhd[[io]]$basis[,2:(r+1)]%*%boot[[io]][,,ib])[im,]
             }
             boot.beta[[im]][,,ib] <- t(sapply(abc, '[', 1:h)) # combine bootstrapped score forecast
-            
             for(ih in 1:h)
             {
                 for(ip in 1: p) # resample function residual
@@ -89,11 +88,10 @@ forecast.hdfpca <- function(object, h = 3, level = 80, B = 50, ...)
                     fsid[[im]][ip, ih, ] <- sample(resid[[im]][ip,], B, replace = T)
                 }
             }
-            # construct bootstrapped functions
             boot.curve[[im]][,,ib] <- object$model$model1[[im]]$basis[,1] + object$model$model1[[im]]$basis[,2:(order+1)]%*%boot.beta[[im]][,,ib] + fsid[[im]][,,ib]
         }
     }
-    upper = lower = list() # confidence interval
+    upper = lower = list()
     for(im in 1:m)
     {
         upper[[im]] <- apply(boot.curve[[im]], c(1, 2), quantile, c((1-level/100)/2, 1-(1-level/100)/2))[1,,]

@@ -6,7 +6,7 @@ function(data, normalization, h_scale = 1, m = 5001,
 {
     # check if input data are densities
 
-    if(getmode(trunc(diff(apply(data, 1, sum))) == 0))    
+    if(all(trunc(diff(apply(data, 1, sum))) == 0))
     {
         CoDa_mat = t(data)
     }
