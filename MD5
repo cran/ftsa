@@ -1,6 +1,6 @@
-377c372c2a81d99e880869aa508215a7 *ChangeLog
-d1aa9037a8ff001643c31542b49ce832 *DESCRIPTION
-69a0ed60ccb1530e04d100bbd00505f5 *NAMESPACE
+b687a7406c853e693b58c03c31eaff6c *ChangeLog
+333808411abf365409bb08a15de59d43 *DESCRIPTION
+0c87cc3804b33111ae031c2cbbf06f58 *NAMESPACE
 77751ea0acbf2c99d60216d963e49264 *R/CoDa_BayesNW.R
 2e1566954313b9a32098d3c8d85e5dd9 *R/CoDa_FPCA.R
 1f55eaac3d14160af6599fc3dff15489 *R/CoDa_NFR.R
@@ -32,8 +32,8 @@ e4e47de687a74ea8a534a7853575af3d *R/ParseDevString.R
 157834784b7f446ac8c21832c4933328 *R/ScaleAdv.R
 58f0a242ff4eace8154460da13135f57 *R/Substraction.R
 e86953821ae7e2b3d032ff37c5302589 *R/T_stationary.R
-cc4e3f764ed30e696408699b08f4f05d *R/Two_way_Residuals.R
-4c580b1a5fc506fc4353eb9413da1c0b *R/Two_way_Residuals_means.R
+cafc1652c17be6a02a2db8f641521ff9 *R/Two_way_Residuals.R
+bc3651b321003bb88a7b207e3ecb05fd *R/Two_way_Residuals_means.R
 51e549b61e9efbe92ae3de7fb0d34da9 *R/Two_way_median_polish.R
 3bab4655edc13696c3c4895b18842159 *R/aveISFE.R
 a89446edec0d539195ac3b23baf57d14 *R/center.R
@@ -65,7 +65,7 @@ cfe93e35e94115e9b38d987bfb5d5a32 *R/facf.R
 6152f8c43c455e1d9a77a7c342d00ac7 *R/ffunopare.knn.R
 25ce97e261d9be3d696878375b9401b2 *R/ffunopare.knn.gcv.R
 0f5a68947ac9de398cc960bd222b5696 *R/forecast.dfpca.R
-8ffe6d54dbc6401b80cb500a16e004c2 *R/forecast.ftsm.R
+916c0a858d9c65788af773f2e182b203 *R/forecast.ftsm.R
 be23f8a1fda049185fc0a30fa05795f8 *R/forecast.ftsm2.R
 f17fdcc5bbfc3f3751a9f956806d6ab7 *R/forecast.hdfpca.R
 081f160fea3ec160c3c76b2b80b5747d *R/forecastfplsr.R
@@ -196,7 +196,7 @@ c7fda9abea9d4bb6cf2c39e083904d5c *inst/doc/ftsa_test.pdf
 060dd73411ea4f8baeec37360f4f3da3 *man/CoDa_FPCA.Rd
 8a1a0756dd99a5d0b6ee86f3adbd250e *man/DJI_return.Rd
 344c5c349f1b2187c89eb4655f234251 *man/ER_GR.Rd
-5f273c4e3a2b32eea0e682ed50bdbb48 *man/FANOVA.Rd
+e8d4946712e878dc270d48fcf359f01b *man/FANOVA.Rd
 5fbcf560c8a72fbf135e0a95c1fbe574 *man/GAEVforecast.Rd
 e32ee293dad435c608f9d2c4fe9410e3 *man/Horta_Ziegelmann_FPCA.Rd
 a76e62e8667ca6604ef56d494954c2fa *man/LQDT_FPCA.Rd
@@ -204,7 +204,9 @@ fe43127bc0866c9ab3357330e01d2c8a *man/MAF_multivariate.Rd
 f64df0c0200074eb5afb7f48d4e1e46f *man/MFDM.Rd
 be19ad171c9d5e2a535fa6b7dff216f7 *man/MFPCA.Rd
 a37426ce2379a91768761d23fc308b80 *man/T_stationary.Rd
-d9329ea2d0151385ca18a931ec1695af *man/Two_way_median_polish.Rd
+c7905ca148ea89e8b4df02e5ffbd6fec *man/Two_way_Residuals.Rd
+5a25a6ee89533ecd288a6d639b44fd91 *man/Two_way_Residuals_means.Rd
+64ae982d5d8e8681b899451af90377a0 *man/Two_way_median_polish.Rd
 122856ef1ab944b270e654337a7f4c28 *man/all_hmd_female_data.Rd
 9bba06f9d42d795cebf881745aa69a8c *man/all_hmd_male_data.Rd
 fbf82312d081ee690d2ed5390d88acc9 *man/centre.Rd

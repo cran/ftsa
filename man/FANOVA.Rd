@@ -24,11 +24,12 @@ FANOVA(data_pop1, data_pop2, year=1959:2020, age= 0:100,
 \item{FCE_mean}{FCE_mean, a matrix of dimension length(column_partition_index) by p.}
 }
 \references{
-C. F. Jim\'{e}nez Var\'{o}n, Y. Sun and H. L. Shang (2023) ``Forecasting high-dimensional functional time series: Application to sub-national age-specific mortality".\\
+C. F. Jimenez Varon, Y. Sun and H. L. Shang (2023) ``Forecasting high-dimensional functional time series: Application to sub-national age-specific mortality".
+
 Ramsay, J. and B. Silverman (2006). Functional Data Analysis. Springer Series in Statistics. Chapter 13. New York: Springer
 }
 \author{
-Cristian Felipe Jim\'{e}nez Var\'{o}n, Ying Sun, Han Lin Shang
+Cristian Felipe Jimenez Varon, Ying Sun, Han Lin Shang
 }
 
 \seealso{

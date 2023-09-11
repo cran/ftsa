@@ -22,13 +22,13 @@ Two_way_median_polish(Y, year=1959:2020, age=0:100, n_prefectures=51, n_populati
 \item{col_effect}{col_effect, a matrix of dimension length(column_partition_index) by p}
 }
 \references{
-C. F. Jim\'{e}nez Var\'{o}n, Y. Sun and H. L. Shang (2023) ``Forecasting high-dimensional functional time series: Application to sub-national age-specific mortality".
+C. F. Jimenez Varon, Y. Sun and H. L. Shang (2023) ``Forecasting high-dimensional functional time series: Application to sub-national age-specific mortality".
 
 Sun, Ying, and Marc G. Genton (2012) ``Functional Median Polish", Journal of Agricultural, Biological, and Environmental Statistics, 17(3), 354-376. 
 }
 
 \author{
-Cristian Felipe Jim\'{e}nez Var\'{o}n, Ying Sun, Han Lin Shang
+Cristian Felipe Jimenez Varon, Ying Sun, Han Lin Shang
 }
 \seealso{
 \code{\link{FANOVA}}
@@ -40,11 +40,11 @@ Cristian Felipe Jim\'{e}nez Var\'{o}n, Ying Sun, Han Lin Shang
 FMP = Two_way_median_polish(cbind(all_hmd_male_data, all_hmd_female_data), 
 		n_prefectures = 3, year = 1959:2020, age = 0:100, n_populations = 2)
 
-##1. The funcional grand effect
+##1. The functional grand effect
 FGE = FMP$grand_effect
-##2. The funcional row effect
+##2. The functional row effect
 FRE = FMP$row_effect
-##3. The funcional column effect
+##3. The functional column effect
 FCE = FMP$col_effect
 }
 \keyword{methods}

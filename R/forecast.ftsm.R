@@ -105,7 +105,15 @@ forecast.ftsm <- function (object, h = 10, method = c("ets", "arima", "ar", "ets
             else
             {
                 barima <- auto.arima(xx[,i],stationary=stationary[i],...)
-                fitted[,i] <- fitted(barima)
+                if(any(is.na(xx[,i])))
+                {
+                   fitted[which(is.na(xx[,i])),i] <- rep(NA, length(which(is.na(xx[,i]))))
+                   fitted[which(!is.na(xx[,i])), i] <- fitted(barima)
+                }
+                else
+                {
+                   fitted[,i] <- fitted(barima)
+                }
                 pred <- forecast(barima,h=h,level=level)
                 fmodels[[i]] <- pred
                 meanfcast[,i] <- pred$mean

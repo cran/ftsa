@@ -1,3 +1,8 @@
+v 6.3
+
+1. Add Two_way_Residuals_means and Two_way_Residuals functions
+2. Update the forecast.ftsm function
+
 v 6.2
 
 1. Add sieve bootstrapping
