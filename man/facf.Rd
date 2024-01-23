@@ -21,7 +21,7 @@ The autocovariance at lag \eqn{i} is estimated by the function \eqn{\widehat{\ga
 A vector of functional autocorrelation function at various lags
 }
 \references{
-L. Horv\'{a}th, G. Rice and S. Whipple (2016) Adaptive bandwidth selection in the long run covariance estimator of functional time series, \emph{Computational Statistics and Data Analysis}, \bold{100}, 676-693.
+L. Horv\'ath, G. Rice and S. Whipple (2016) Adaptive bandwidth selection in the long run covariance estimator of functional time series, \emph{Computational Statistics and Data Analysis}, \bold{100}, 676-693.
 }
 \author{
 Han Lin Shang

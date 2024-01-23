@@ -2,13 +2,13 @@
 \alias{fplsr}
 \title{Functional partial least squares regression}
 \description{
-Fits a functional partial least squares (PLSR) model using nonlinear partial least squares 
+Fits a functional partial least squares (PLSR) model using nonlinear partial least squares
 (NIPALS) algorithm or simple partial least squares (SIMPLS) algorithm.
 }
 \usage{
-fplsr(data, order = 6, type = c("simpls", "nipals"), unit.weights = 
- TRUE, weight = FALSE, beta = 0.1, interval = FALSE, method = 
-  c("delta", "boota"), alpha = 0.05, B = 100, adjust = FALSE, 
+fplsr(data, order = 6, type = c("simpls", "nipals"), unit.weights =
+ TRUE, weight = FALSE, beta = 0.1, interval = FALSE, method =
+  c("delta", "boota"), alpha = 0.05, B = 100, adjust = FALSE,
    backh = 10)
 }
 \arguments{
@@ -23,18 +23,18 @@ fplsr(data, order = 6, type = c("simpls", "nipals"), unit.weights =
   \item{alpha}{\code{1-alpha} gives the nominal coverage probability.}
   \item{B}{Number of replications.}
   \item{adjust}{When \code{adjust = TRUE}, an adjustment is performed.}
-  \item{backh}{When \code{adjust = TRUE}, an adjustment is performed by evaluating the difference between 
+  \item{backh}{When \code{adjust = TRUE}, an adjustment is performed by evaluating the difference between
                predicted and actual values in a testing set. \code{backh} specifies the testing set.}
 }
 \details{
 \emph{\bold{Point forecasts:}}\cr
 
-The NIPALS function implements the orthogonal scores algorithm, as described in Martens and Naes (1989). 
-This is one of the two classical PLSR algorthms, the other is the simple partial least squares regression in DeJong (1993). 
-The difference between these two approaches is that the NIPALS deflates the original predictors and responses, 
-while the SIMPLS deflates the covariance matrix of original predictors and responses. Thus, SIMPLS is more computationally efficient than NIPALS. 
+The NIPALS function implements the orthogonal scores algorithm, as described in Martens and Naes (1989).
+This is one of the two classical PLSR algorthms, the other is the simple partial least squares regression in DeJong (1993).
+The difference between these two approaches is that the NIPALS deflates the original predictors and responses,
+while the SIMPLS deflates the covariance matrix of original predictors and responses. Thus, SIMPLS is more computationally efficient than NIPALS.
 
-In a functional data set, the functional PLSR can be performed by setting the functional responses to be 1 lag ahead of the functional predictors. 
+In a functional data set, the functional PLSR can be performed by setting the functional responses to be 1 lag ahead of the functional predictors.
 This idea has been adopted from the Autoregressive Hilbertian processes of order 1 (ARH(1)) of Bosq (2000).
 
 \emph{\bold{Distributional forecasts:}}\cr
@@ -51,15 +51,15 @@ After discretizing and decentralizing functional data \eqn{f_t(x)} and \eqn{g_s(
 Then, the fit residuals \eqn{o_s(y_i)} between \eqn{g_s(y_i)} and \eqn{\hat{g}_s(y_i)}{hat(g)_s(y_i)} are calculated as
 \deqn{o_s(y_i)=g_s(y_i)-\hat{g}_s(y_i), i=1,...,p.}{o_s(y_i)=[g_s(y_i)-hat(g)_s(y_i)], i=1,...,p.}
 
-The next step is to generate \eqn{B} bootstrap samples \eqn{o_s^b(y_i)} by randomly sampling with replacement 
-from \eqn{[o_1(y_i),...,o_n(y_i)]}. Adding bootstrapped residuals to the original 
+The next step is to generate \eqn{B} bootstrap samples \eqn{o_s^b(y_i)} by randomly sampling with replacement
+from \eqn{[o_1(y_i),...,o_n(y_i)]}. Adding bootstrapped residuals to the original
 response variables in order to generate new bootstrap responses,
 \deqn{g_s^b(y_i)=g_s(y_i)+o_s^b(y_i).}\cr
-Then, the PLSR models are constructed using the centered and discretized predictors and bootstrapped responses 
+Then, the PLSR models are constructed using the centered and discretized predictors and bootstrapped responses
 to obtain the boostrapped regression coefficients and point forecasts, from which the empirical prediction intervals and kernel density plots are constructed.
-} 
-\value{ 
-A list containing the following components is returned. 
+}
+\value{
+A list containing the following components is returned.
   \item{B}{\eqn{(p \times m)}{(p x m)} matrix containing the regression coefficients. \eqn{p} is the number of variables in
   the predictors and \eqn{m} is the number of variables in the responses.}
   \item{P}{\eqn{(p \times order)}{(p x order)} matrix containing the predictor loadings.}
@@ -117,12 +117,12 @@ C. Preda, G. Saporta (2005) "PLS regression on a stochastic process", \emph{Comp
 
 C. Preda, G. Saporta, C. Leveder (2007) "PLS classification of functional data", \emph{Computational Statistics}, \bold{22}, 223-235.
 
-A. Delaigle and P. Hall (2012), "Methodology and theory for partial least squares applied to functional data", \emph{Annals of Statistics}, \bold{40}(1), 322-352. 
+A. Delaigle and P. Hall (2012), "Methodology and theory for partial least squares applied to functional data", \emph{Annals of Statistics}, \bold{40}(1), 322-352.
 
-M. Febrero-Bande, P. Galeano, W. Gonz\'{a}lez-Manteiga (2017), "Functional principal component regression and functional partial least-squares regression: An overview and a comparative study", \emph{International Statistical Review}, \bold{85}(1), 61-83.
+M. Febrero-Bande, P. Galeano, W. Gonz\'alez-Manteiga (2017), "Functional principal component regression and functional partial least-squares regression: An overview and a comparative study", \emph{International Statistical Review}, \bold{85}(1), 61-83.
 }
 \author{Han Lin Shang}
-\seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}}, 
+\seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}},
 \code{\link[ftsa]{summary.fm}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{plot.fmres}}}
 \examples{
 # When weight = FALSE, all observations are assigned equally.
@@ -136,8 +136,7 @@ fplsr(data = ElNino_ERSST_region_1and2, unit.weights = FALSE, weight = TRUE)
 # The prediction intervals are calculated numerically.
 fplsr(data = ElNino_ERSST_region_1and2, interval = TRUE, method = "delta")
 
-# The prediction intervals are calculated by bootstrap method. 
+# The prediction intervals are calculated by bootstrap method.
 fplsr(data = ElNino_ERSST_region_1and2, interval = TRUE, method = "boota")
 }
 \keyword{models}
-

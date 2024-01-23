@@ -7,8 +7,8 @@ Testing stationarity of functional time series
 A hypothesis test for stationarity of functional time series.
 }
 \usage{
-T_stationary(sample, L = 49, J = 500, MC_rep = 1000, cumulative_var = .90, 
-		    Ker1 = FALSE, Ker2 = TRUE, h = ncol(sample)^.5, pivotal = FALSE, 
+T_stationary(sample, L = 49, J = 500, MC_rep = 1000, cumulative_var = .90,
+		    Ker1 = FALSE, Ker2 = TRUE, h = ncol(sample)^.5, pivotal = FALSE,
 		    use_table = FALSE, significance)
 }
 \arguments{
@@ -29,7 +29,7 @@ As in traditional (scalar and vector) time series analysis, many inferential pro
 }
 \value{
   \item{p-value}{When \code{p-value} is less than any level of significance, we reject the null hypothesis and conclude that the tested functional time series is not stationary.}
-} 
+}
 \references{
 L. Horvath and Kokoszka, P. (2012) Inference for Functional Data with Applications, Springer, New York.
 
@@ -37,7 +37,7 @@ L. Horvath, P. Kokoszka, G. Rice (2014) "Testing stationarity of functional time
 
 D. N. Politis (2003) "Adaptive bandwidth choice", \emph{Journal of Nonparametric Statistics}, \bold{15}(4-5), 517-533.
 
-A. Aue, G. Rice, O. S\"{o}nmez (2018) "Detecting and dating structural breaks in functional data without dimension reduction", \emph{Journal of the Royal Statistical Society: Series B}, \bold{80}(3), 509-529.
+A. Aue, G. Rice, O. S\"onmez (2018) "Detecting and dating structural breaks in functional data without dimension reduction", \emph{Journal of the Royal Statistical Society: Series B}, \bold{80}(3), 509-529.
 }
 \author{
 Greg. Rice and Han Lin Shang
@@ -47,7 +47,7 @@ Greg. Rice and Han Lin Shang
 }
 \examples{
 result = T_stationary(sample = pm_10_GR_sqrt$y)
-result_pivotal = T_stationary(sample = pm_10_GR_sqrt$y, J = 100, MC_rep = 5000, 
+result_pivotal = T_stationary(sample = pm_10_GR_sqrt$y, J = 100, MC_rep = 5000,
 				h = 20, pivotal = TRUE)
 }
 \keyword{models}

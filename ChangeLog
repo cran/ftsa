@@ -1,3 +1,8 @@
+v 6.4
+
+1. Add One_way_median_polish and One_way_Residuals functions
+2. Remove the vignette
+
 v 6.3
 
 1. Add Two_way_Residuals_means and Two_way_Residuals functions

@@ -4,12 +4,33 @@ beta = 0.1, ...)
 {
     if(length(colnames(y$y)) > 0)
     {
-        y$time = ts(as.numeric(colnames(y$y)), start = head(as.numeric(colnames(y$y)),1),
-        end = tail(as.numeric(colnames(y$y)),1), frequency = 1/diff(as.numeric(colnames(y$y)))[1])
+        if(is(class(colnames(y$y)), "character"))
+        {
+            char_value = colnames(y$y)
+            # Extract year and month
+            year <- as.numeric(substring(char_value, 1, 4))
+            month <- match(substring(char_value, 6), month.abb)
+            
+            if(all(is.na(month)))
+            {
+                colnames(y$y) = year
+            }
+            else
+            {
+                # Combine year and month into a numeric value
+                numeric_value <- year * 12 + month
+                colnames(y$y) = y$time = numeric_value/12
+            }
+        }
+        else
+        {
+            y$time = ts(as.numeric(colnames(y$y)), start = head(as.numeric(colnames(y$y)),1),
+                        end = tail(as.numeric(colnames(y$y)),1), frequency = 1/diff(as.numeric(colnames(y$y)))[1])
+        }
     }
     else
     {
-        y$time = ts(1:ncol(y$y), start=1, end = ncol(y$y))
+        y$time = ts(1:ncol(y$y), start = 1, end = ncol(y$y))
     }
     method <- match.arg(method)
     if (!mean & !level & order < 1)
@@ -53,7 +74,7 @@ beta = 0.1, ...)
         varprop = (dummy$d[1:order])^2/(sum((dummy$d)^2))
         mean.se = approx(xx, sqrt(apply(yy, 1, var)/n), xout = x)$y
     }
-    ytsp <- tsp(y$time)
+    ytsp <- tsp(as.ts(y$time))
     if (weight == TRUE) {
         colmeanrm = matrix(colMeans(sco), dim(sco)[2], 1)
         scomeanrm = sweep(sco, 2, colmeanrm)

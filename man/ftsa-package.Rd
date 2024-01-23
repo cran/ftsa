@@ -67,7 +67,41 @@ H. L. Shang (2018) "Bootstrap methods for stationary functional time series", \e
 
 Y. Gao, H. L. Shang and Y. Yang (2019) "High-dimensional functional time series forecasting: An application to age-specific mortality rates", \emph{Journal of Multivariate Analysis}, \bold{170}, 232-243.
 
-D. Li, P. M. Robinson and H. L. Shang (2019) "Long-range dependent curve time series", \emph{Journal of the American Statistical Association: Theory and Methods}, \bold{forthcoming}.
+D. Li, P. M. Robinson and H. L. Shang (2020) "Long-range dependent curve time series", \emph{Journal of the American Statistical Association: Theory and Methods}, \bold{115}(530), 957-971.
+
+H. L. Shang (2020) "A comparison of Hurst exponent estimators in long-range dependent curve time series", \emph{Journal of Time Series Econometrics}, \bold{12}(1).
+
+D. Li, P. M. Robinson and H. L. Shang (2021) "Local Whittle estimation of long range dependence for functional time series", \emph{Journal of Time Series Analysis}, \bold{42}(5-6), 685-695.
+
+H. L. Shang and R. Xu (2021) "Functional time series forecasting of extreme values", \emph{Communications in Statistics: Case Studies, Data Analysis and Applications}, \bold{7}(2), 182-199.
+
+U. Beyaztas, H. L. Shang and Z. Yaseen (2021) "Development of functional autoregressive model based exogenous hydrometeorological variables for river flow prediction", \emph{Journal of Hydrology}, \bold{598}, 126380.
+
+U. Beyaztas and H. L. Shang (2022) "Machine learning-based functional time series forecasting: Application to age-specific mortality rates", \emph{Forecasting}, \bold{4}(1), 394-408.
+
+Y. Yang, Y. Yang and H. L. Shang (2022) "Feature extraction for functional time series: Theory and application to NIR spectroscopy data", \emph{Journal of Multivariate Analysis}, \bold{189}, 104863.
+
+A. E. Fernandez, R. Jimenez and H. L. Shang (2022) "On projection methods for functional time series forecasting", \emph{Journal of Multivariate Analysis}, \bold{189}, 104890.
+
+H. L. Shang (2022) "Not all long-memory estimators are born equal: A case of non-stationary curve time series", \emph{The Canadian Journal of Statistics}, \bold{50}(1), 357-380.
+
+X. Huang, H. L. Shang and D. Pitt (2022) "Permutation entropy and its variants for measuring temporal dependence", \emph{Australian and New Zealand Journal of Statistics}, \bold{64}(4), 442-477.
+
+H. L. Shang, J. Cao and P. Sang (2022) "Stopping time detection of wood panel compression: A functional time series approach", \emph{Journal of the Royal Statistical Society: Series C}, \bold{71}(5), 1205-1224.
+
+C. Tang, H. L. Shang and Y. Yang (2022) "Clustering and forecasting multiple functional time series", \emph{The Annals of Applied Statistics}, \bold{16}(4), 2523-2553.
+
+J. Trinka, H. Haghbin, M. Maadooliat and H. L. Shang (2023) "Functional time series forecasting: Functional singular spectrum analysis approaches", \emph{Stat}, \bold{12}(1), e621.
+
+D. Li, P. M. Robinson and H. L. Shang (2023) "Nonstationary fractionally integrated functional time series", \emph{Bernoulli}, \bold{29}(2), 1505-1526.
+
+X. Huang and H. L. Shang (2023) "Nonlinear autocorrelation function of functional time series", \emph{Nonlinear Dynamics: An International Journal of Nonlinear Dynamics and Chaos in Engineering Systems}, \bold{111}, 2537-2554.
+
+H. L. Shang (2023) "Sieve bootstrapping memory parameter in long-range dependent stationary functional time series", \emph{AStA Advances in Statistical Analysis}, \bold{107}, 421-441.
+
+E. Paparoditis and H. L. Shang (2023) "Bootstrap prediction bands for functional time series", \emph{Journal of the American Statistical Association: Theory and Methods}, \bold{118}(542), 972-986.
+
+Y. Gao, H. L. Shang and Y. Yang (2024) "Factor-augmented smoothing model for functional data", \emph{Statistica Sinica}, \bold{34}(1), 1-26.
 
 #############################
 # References in Population Studies
@@ -89,6 +123,14 @@ H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2016) "A multilevel functi
 
 H. L. Shang (2017) "Reconciling forecasts of infant mortality rates at national and sub-national levels: Grouped time-series method", \emph{Population Research and Policy Review}, 36(1), 55-84.
 
+R. J. Hyndman, Y. Zeng and H. L. Shang (2021) "Forecasting the old-age dependency ratio to determine the best pension age", \emph{Australian and New Zealand Journal of Statistics}, \bold{63}(2), 241-256.
+
+Y. Yang and H. L. Shang (2022) "Is the group structure important in grouped functional time series?", \emph{Journal of Data Science}, \bold{20}(3), 303-324.
+
+H. L. Shang and Y. Yang (2022) "Forecasting Australian subnational age-specific mortality rates", \emph{Journal of Population Research}, \bold{38}, 1-24.
+
+Y. Yang, H. L. Shang and J. Raymer (2024) "Forecasting Australian fertility by age, region, and birthplace", \emph{International Journal of Forecasting}, in press.
+
 ###########################
 # References in Actuarial Studies
 ###########################
@@ -97,13 +139,29 @@ H. L. Shang and S. Haberman (2017) "Grouped multivariate and functional time ser
 
 H. L. Shang and S. Haberman (2017) "Grouped multivariate and functional time series forecasting: An application to annuity pricing", \emph{Insurance: Mathematics and Economics}, \bold{75}, 166-179.
 
-H. L. Shang and S. Haberman (2018) "Model confidence sets and forecast combination: An application to age-specific mortality", \emph{Genus - Journal of Population Sciences}, \bold{forthcoming}.
+H. L. Shang and S. Haberman (2018) "Model confidence sets and forecast combination: An application to age-specific mortality", \emph{Genus - Journal of Population Sciences}, \bold{74}, Article number: 19.
+
+H. L. Shang and S. Haberman (2020) "Forecasting multiple functional time series in a group structure: an application to mortality", \emph{ASTIN Bulletin}, \bold{50}(2), 357-379.
+
+H. L. Shang (2020) "Dynamic principal component regression for forecasting functional time series in a group structure", \emph{Scandinavian Actuarial Journal}, \bold{2020}(4), 307-322.
+
+H. L. Shang and S. Haberman (2020) "Forecasting age distribution of death counts: An application to annuity pricing", \emph{Annals of Actuarial Science}, \bold{14}(1), 150-169.
+
+H. L .Shang and S. Haberman and R. Xu (2022) "Multi-population modelling and forecasting age-specific life-table death counts", \emph{Insurance: Mathematics and Economics}, \bold{106}, 239-253.
 
 ####################
 # References in Finance
 ####################
 
-F. Kearney and H. L. Shang (2019) "Uncovering predictability in the evolution of the WTI oil futures curve", \emph{European Financial Management}, \bold{forthcoming}.
+F. Kearney and H. L. Shang (2020) "Uncovering predictability in the evolution of the WTI oil futures curve", \emph{European Financial Management}, \bold{26}(1), 238-257.
+
+H. L. Shang, K. Ji and U. Beyaztas (2021) "Granger causality of bivariate stationary curve time series", \emph{Journal of Forecasting}, \bold{40}(4), 626-635.
+
+S. Butler, P. Kokoszka, H. Miao and H. L. Shang (2021) "Neural network prediction of crude oil futures using B-splines", \emph{Energy Economics}, \bold{94}, 105080.
+
+H. L. Shang and F. Kearney (2022) "Dynamic functional time series forecasts of foreign exchange implied volatility surfaces", \emph{International Journal of Forecasting}, \bold{38}(3), 1025-1049. 
+
+H. L. Shang and K. Ji (2023) "Forecasting intraday financial time series with sieve bootstrapping and dynamic updating", \emph{Journal of Forecasting}, \bold{42}(8), 1973-1988.
 }
 \keyword{package}
 
