@@ -28,7 +28,7 @@ D. Li, P. M. Robinson and H. L. Shang (2018) Long-range dependent curve time ser
 Han Lin Shang
 }
 \seealso{
-\code{\link{fts}}
+\code{\link[rainbow]{fts}}
 }
 \examples{
 dum = long_run_covariance_estimation(dat = ElNino_OISST_region_1and2$y[,1:5])

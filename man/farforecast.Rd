@@ -12,7 +12,7 @@ farforecast(object, h = 10, var_type = "const", Dmax_value, Pmax_value,
 	level = 80, PI = FALSE)
 }
 \arguments{
-  \item{object}{An object of \code{\link{fds}}.}
+  \item{object}{An object of \code{\link[rainbow]{fds}}.}
   \item{h}{Forecast horizon.}
   \item{var_type}{Type of multivariate time series forecasting method; see \code{\link[vars]{VAR}} for details.}
   \item{Dmax_value}{Maximum number of components considered.}
@@ -46,7 +46,7 @@ J. Klepsch, C. Kl\"uppelberg and T. Wei (2017) "Prediction of functional ARMA pr
 Han Lin Shang
 }
 \seealso{
-\code{\link{forecast.ftsm}}, \code{\link{forecastfplsr}}
+\code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{forecastfplsr}}
 }
 \examples{
 sqrt_pm10 = sqrt(pm_10_GR$y)

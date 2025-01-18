@@ -52,13 +52,7 @@ Horta_Ziegelmann_FPCA,
 CoDa_FPCA,
 LQDT_FPCA,
 CoDa_BayesNW,
-GAEVforecast,
-FANOVA,
-Two_way_median_polish,
-Two_way_Residuals_means,
-Two_way_Residuals,
-One_way_median_polish,
-One_way_Residuals
+GAEVforecast
 )
 
 
