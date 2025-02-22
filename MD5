@@ -1,5 +1,5 @@
-e8206a884ac085efa6be327e0f06af9e *ChangeLog
-2fd11cb0191569c5c93d83da4f9f00e2 *DESCRIPTION
+e509c1616c1a0777db37d3d47b31f133 *ChangeLog
+ac4ffde97910ca0629a6dc4f4971dbf8 *DESCRIPTION
 e1c7e1ee6f0bb4da64fb93a9d0d3b52d *NAMESPACE
 77751ea0acbf2c99d60216d963e49264 *R/CoDa_BayesNW.R
 2e1566954313b9a32098d3c8d85e5dd9 *R/CoDa_FPCA.R
@@ -62,7 +62,7 @@ f17fdcc5bbfc3f3751a9f956806d6ab7 *R/forecast.hdfpca.R
 28a120924d4120699f547550a2f60434 *R/fplsr.R
 66baee1b82c697448d4d70cc6a9353cb *R/fplsrPI.R
 d396769826b3ece637abf01e45ebf760 *R/ftsm.R
-b4a780391aa50681bc80e9c8f3216d62 *R/ftsmPI.R
+181a9f7d4aac5411f6903abc8663e4f6 *R/ftsmPI.R
 9b6ce1fc2b59ed56058564d36b184d33 *R/ftsmiterativeforecasts.R
 772c31f7f0fa4756f62be1c11d2d57ec *R/ftsmweightselect.R
 f074bdd07974463e63bb7b661dd8168c *R/func.mean.R
@@ -107,7 +107,7 @@ f549ae0da52ee015be402a11bd2b0a25 *R/me.R
 2bef857a22414dff5685a26480a1ae0a *R/mrobj.R
 822517f3642f405279e143e30fe26e78 *R/mse.R
 d2f3e027f324a340c88ae134a9374a06 *R/nicerange.R
-92826f044a25e902a601f9c469a10b77 *R/nipals.R
+6378794cfff948a64ffc1889eabb07c2 *R/nipals.R
 63cc4bc628924f886fcb6fd3bee9d27d *R/norm.R
 0ba060781bc37f2d621741420a84054f *R/norme.R
 94da5216c7236158a93f32435908ba82 *R/pcscorebootstrapdata.R
@@ -217,7 +217,7 @@ de85a43faa094b387e08807931b27ebf *man/plot.fm.Rd
 0ee5e3e9cfe95157bf65959a72aae819 *man/plot.ftsf.Rd
 b2d2843734e384c5afd2d39aeacc3265 *man/plot.ftsm.Rd
 bfc4d9b661d79736c3138f12439ae406 *man/plotfplsr.Rd
-9038e1508c63ed9ea33f37757e589535 *man/pm_10_GR.Rd
+39d5dfc2abe5fbfd988493d47943833f *man/pm_10_GR.Rd
 8ebdbd44c7fcbd19aee214301317e7ea *man/quantile.Rd
 d56bee38684b553aa427de445899c749 *man/quantile.fts.Rd
 c5a4d292fc1249d63d40b3b3a1027b36 *man/residuals.fm.Rd

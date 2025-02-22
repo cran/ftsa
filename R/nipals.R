@@ -43,7 +43,8 @@ nipals <- function (Xtrain, Ytrain, Xtest = NULL, ncomp, tol = .Machine$double.e
             q = crossprod(Y, t.t)
             if (m == 1) 
                 break
-            if (sum(abs((t - t.old)/t), na.rm = T) < tol) 
+            # if (sum(abs((t - t.old)/t), na.rm = T) < tol) 
+            if (sum(abs((t - t.old)/t)) < tol) 
                 break
             else {
                 u = Y %*% q/c(crossprod(q))

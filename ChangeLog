@@ -1,3 +1,8 @@
+v 6.6
+
+1. Update the ftsmPI function
+2. Update the nipals.R function
+
 v 6.5
 
 1. Move the One_way_median_polish and Two_way_median_polish to a newly created hdftsa package
