@@ -126,7 +126,7 @@ fdpca <- function (x, y, order = 2, ngrid = 500, method = "M", mean = mean,
     s <- try(La.svd(t(yy)), silent = TRUE)
     if (is(s, "try-error"))
     {
-        s <- svd(t(yy), LINPACK = TRUE)
+        s <- svd(t(yy))
         s$vt <- t(s$v)
     }
     Phi2 <- as.matrix(t(s$vt)[, s$d > 1e-06])

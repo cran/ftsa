@@ -37,22 +37,19 @@ farforecast,
 T_stationary,
 dynamic_FLR,
 long_run_covariance_estimation,
-hdfpca,
-forecast.hdfpca,
 facf,
-mftsc,
-dmfpca,
 ER_GR,
 stop_time_detect,
 stop_time_sim_data,
 MAF_multivariate,
-MFPCA,
 skew_t_fun,
 Horta_Ziegelmann_FPCA,
 CoDa_FPCA,
 LQDT_FPCA,
 CoDa_BayesNW,
-GAEVforecast
+GAEVforecast,
+sim_FARMA,
+H_estimate_RS
 )
 
 
@@ -66,7 +63,6 @@ S3method(plot,fmres)
 S3method(residuals,fm)
 S3method(summary,fm)
 S3method(forecast,ftsm)
-S3method(forecast,hdfpca)
 S3method(forecast,dfpca)
 S3method(var,fts)
 S3method(sd,fts)
@@ -111,3 +107,4 @@ importFrom("graphics", "abline", "contour", "filled.contour", "image", "legend",
 importFrom("utils", "head", "tail", "globalVariables")
 importFrom("grDevices", "dev.new", "gray")
 importFrom("methods", "is")
+importFrom(sde, BM)

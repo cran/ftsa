@@ -1,3 +1,11 @@
+v 6.7
+
+1. Update the fdpca function
+2. Add H_estimate_RS function to estimate the long-memory parameter
+3. Add sim_FARMA function for simulating a long-memory functional time series
+4. Migrate the mftsc, MFPCA, dmfpca functions to the hdftsa package
+5. Migrate the hdftsa, forecast.hdfpca to the hdftsa package
+
 v 6.6
 
 1. Update the ftsmPI function
