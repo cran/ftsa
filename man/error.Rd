@@ -14,7 +14,7 @@ error(forecast, forecastbench, true, insampletrue, method = c("me", "mpe", "mae"
   \item{forecast}{Out-of-sample forecasted values.}
   \item{forecastbench}{Forecasted values using a benchmark method, such as random walk.}
   \item{true}{Out-of-sample holdout values.}
-  \item{insampletrue}{Insample values.}
+  \item{insampletrue}{In-sample values.}
   \item{method}{Method of forecast error measure.}
   \item{giveall}{If \code{giveall = TRUE}, all error measures are provided.}
 }
@@ -29,9 +29,9 @@ If \code{method = "mpe"}, the forecast error measure is mean percentage error.
 
 If \code{method = "mae"}, the forecast error measure is mean absolute error.
 
-If \code{method = "mse"}, the forecast error measure is mean square error.
+If \code{method = "mse"}, the forecast error measure is mean squared error.
 
-If \code{method = "sse"}, the forecast error measure is sum square error.
+If \code{method = "sse"}, the forecast error measure is sum of squared errors.
 
 If \code{method = "rmse"}, the forecast error measure is root mean square error.
 

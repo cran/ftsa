@@ -1,8 +1,9 @@
 MFDM <- function(mort_female, mort_male, mort_ave, percent_1 = 0.95, percent_2 = 0.95, fh, level = 80,
-                 alpha = 0.2, MCMCiter = 100, fmethod = c("auto_arima", "ets"), BC = c(FALSE, TRUE), lambda)
+                 alpha = 0.2, MCMCiter = 100, fmethod = c("auto_arima", "ets"), BC = FALSE, lambda)
 {
    	fmethod = match.arg(fmethod)
-  	if(BC == TRUE)
+	BC = as_flag(BC, "BC")
+  	if(BC)
   	{
     		mort_female = BoxCox(mort_female, lambda)
     		mort_male = BoxCox(mort_male, lambda)
@@ -374,7 +375,7 @@ MFDM <- function(mort_female, mort_male, mort_ave, percent_1 = 0.95, percent_2 =
   		}
   	}
   	
-  	if(BC == TRUE)
+  	if(BC)
   	{
   		mort_female_fore = InvBoxCox(female_fore_variance, lambda)
   		mort_male_fore   = InvBoxCox(male_fore_variance, lambda)

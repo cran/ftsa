@@ -18,11 +18,11 @@ long_run_covariance_estimation(dat, C0 = 3, H = 3)
 An estimated covariance function of size (p by p)
 }
 \references{
-L. Horvath, G. Rice and S. Whipple (2016) Adaptive bandwidth selection in the long run covariance estimation of functional time series, \emph{Computational Statistics and Data Analysis}, \bold{100}, 676-693.
+L. Horvath, G. Rice and S. Whipple (2016) Adaptive bandwidth selection in the long run covariance estimator of functional time series, \emph{Computational Statistics and Data Analysis}, \bold{100}, 676-693.
 
 G. Rice and H. L. Shang (2017) A plug-in bandwidth selection procedure for long run covariance estimation with stationary functional time series, \emph{Journal of Time Series Analysis}, \bold{38}(4), 591-609.
 
-D. Li, P. M. Robinson and H. L. Shang (2018) Long-range dependent curve time series, \emph{Journal of the American Statistical Association: Theory and Methods}, under revision.
+D. Li, P. M. Robinson and H. L. Shang (2020) Long-range dependent curve time series, \emph{Journal of the American Statistical Association: Theory and Methods}, \bold{115}(530), 957-971.
 }
 \author{
 Han Lin Shang
@@ -33,4 +33,4 @@ Han Lin Shang
 \examples{
 dum = long_run_covariance_estimation(dat = ElNino_OISST_region_1and2$y[,1:5])
 }
-\keyword{method}
+\keyword{methods}

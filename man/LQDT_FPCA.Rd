@@ -4,7 +4,7 @@
 Log quantile density transform
 }
 \description{
-Probability density function, cumulative distribution function and quantile density function are three characterizations of a distribution. Of these three, quantile density function is the least constrained. The only constrain is nonnegative. By taking a log transformation, there is no constrain. 
+Probability density function, cumulative distribution function, and quantile density function are three characterizations of a distribution. Of these three, the quantile density function is the least constrained. The only constraint is non-negativity. By taking a log transformation, there is no constraint. 
 }
 \usage{
 LQDT_FPCA(data, gridpoints, h_scale = 1, M = 3001, m = 5001, lag_maximum = 4, 
@@ -32,7 +32,7 @@ LQDT_FPCA(data, gridpoints, h_scale = 1, M = 3001, m = 5001, lag_maximum = 4,
   \item{VAR_type}{If \code{forecasting_method = "multi"}, specify a particular type of vector autoregressive model}
 }
 \details{
-1) Transform the densities f into log quantile densities Y and c specifying the value of the cdf at 0 for the target density f.
+1) Transform the densities f into log quantile densities Y and c, specifying the value of the cdf at 0 for the target density f.
 2) Compute the predictions for future log quantile density and c value.
 3) Transform the forecasts in Step 2) into the predicted density f.
 }
@@ -46,7 +46,7 @@ LQDT_FPCA(data, gridpoints, h_scale = 1, M = 3001, m = 5001, lag_maximum = 4,
 \item{u}{m number of grid points} 
 }
 \references{
-Petersen, A. and Muller, H.-G. (2016) `Functional data analysis for density functions by transformation to a Hilbert space', \emph{The Annals of Statistics}, \bold{44}, 183-218.
+Petersen, A. and M\"uller, H.-G. (2016) `Functional data analysis for density functions by transformation to a Hilbert space', \emph{The Annals of Statistics}, \bold{44}, 183-218.
 
 Jones, M. C. (1992) `Estimating densities, quantiles, quantile densities and density quantiles', \emph{Annals of the Institute of Statistical Mathematics}, \bold{44}, 721-727.
 }

@@ -13,7 +13,7 @@ sim_FARMA(n = 500, d = 0.1, no_grid = 101, seed_number, process = c("FAR", "FARM
   \item{n}{Number of curves}
   \item{d}{Memory parameter}
   \item{no_grid}{Number of grid points within a unit interval}
-  \item{seed_number}{Psuedo-random seed number}
+  \item{seed_number}{Pseudo-random seed number}
   \item{process}{FAR or FARMA process}
 }
 \value{

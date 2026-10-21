@@ -2,7 +2,7 @@
 \alias{diff.fts}
 \title{Differences of a functional time series}
 \description{
-Computes differences of a \code{fts} object at each variable.
+Computes differences of an \code{fts} object for each variable.
 }
 \usage{
 \method{diff}{fts}(x, lag = 1, differences = 1, ...)

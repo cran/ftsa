@@ -10,7 +10,7 @@ Implementation of a dynamic functional principal component analysis to forecast 
 Horta_Ziegelmann_FPCA(data, gridpoints, h_scale = 1, p = 5, m = 5001, 
 	kernel = c("gaussian", "epanechnikov"), band_choice = c("Silverman", "DPI"), 
 	VAR_type = "both", lag_maximum = 6, no_boot = 1000, alpha_val = 0.1, 
-	ncomp_select = "TRUE", D_val = 10)
+	ncomp_select = TRUE, D_val = 10)
 }
 \arguments{
   \item{data}{Densities or raw data matrix of dimension N by p, where N denotes sample size and p denotes dimensionality}
@@ -24,15 +24,17 @@ Horta_Ziegelmann_FPCA(data, gridpoints, h_scale = 1, p = 5, m = 5001,
   \item{lag_maximum}{A tuning parameter in the \code{super_fun} function}
   \item{no_boot}{A tuning parameter in the \code{super_fun} function}
   \item{alpha_val}{A tuning parameter in the \code{super_fun} function}
-  \item{ncomp_select}{A tuning parameter in the \code{super_fun} function}
+  \item{ncomp_select}{Logical. If \code{TRUE}, the number of components is
+  selected by the bootstrap test of Bathia et al. (2010), and the associated
+  p-values are returned. Default is \code{TRUE}.}
   \item{D_val}{A tuning parameter in the \code{super_fun} function}
 }
 \details{
 1) Compute a kernel covariance function
 2) Via eigen-decomposition, a density can be decomposed into a set of functional principal components and their associated scores
-3) Fit a vector autoregressive model to the scores with the order selected by Akaike information criterion
+3) Fit a vector autoregressive model to the scores with the order selected by the Akaike information criterion
 4) By multiplying the estimated functional principal components with the forecast scores, obtain forecast densities
-5) Since forecast densities may neither be non-negative nor sum to one, normalize the forecast densities accordingly
+5) Since forecast densities may fail to be non-negative or to integrate to one, normalize the forecast densities accordingly
 }
 \value{
 \item{Yhat.fix_den}{Forecast density}
@@ -60,7 +62,7 @@ Han Lin Shang
 \examples{
 \dontrun{
 Horta_Ziegelmann_FPCA(data = DJI_return, kernel = "epanechnikov", 
-				band_choice = "DPI", ncomp_select = "FALSE")
+				band_choice = "DPI", ncomp_select = FALSE)
 }
 }
 \keyword{methods}

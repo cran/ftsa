@@ -2,7 +2,7 @@
 \alias{plot.ftsf}
 \title{Plot fitted model components for a functional time series model}
 \description{
-Plot fitted model components for a \code{fts} object.
+Plot fitted model components for an \code{fts} object.
 }
 \usage{
 \method{plot}{ftsf}(x, plot.type = c("function", "components", "variance"), 
@@ -38,7 +38,7 @@ Plot fitted model components for a \code{fts} object.
 \details{
 When \code{plot.type = "function"}, it produces a plot of the forecast functions; 
 
-When \code{plot.type = "components"}, it produces a plot of the principla components and coefficients with forecasts and prediction intervals for each coefficient;
+When \code{plot.type = "components"}, it produces a plot of the principal components and coefficients with forecasts and prediction intervals for each coefficient;
 
 When \code{plot.type = "variance"}, it produces a plot of the variance components.
 }

@@ -4,7 +4,7 @@
 Skewed t distribution
 }
 \description{
-Fitting a parametric skewed t distribution of Fernandez and Steel's (1998) method
+Fitting a parametric skewed t distribution using Fernandez and Steel's (1998) method
 }
 \usage{
 skew_t_fun(data, gridpoints, M = 5001)

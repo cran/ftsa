@@ -130,7 +130,7 @@ function(data, gridpoints, h_scale = 1, M = 3001,  m = 5001, lag_maximum = 4, no
     {
         dt = diff(t)[1]
         foo_out = super_fun(Y = lqd_new, lag_max = lag_maximum, B = no_boot, alpha = alpha_val, du = dt,
-                            p = p, m = (M-2), u = t_new, select_ncomp = "TRUE")
+                            p = p, m = (M-2), u = t_new, select_ncomp = TRUE)
 
         # read outputs
 

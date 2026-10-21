@@ -41,7 +41,7 @@ J. A. Cuesta-Albertos and A. Nieto-Reyes (2010) "Functional classification and t
 
 D. Gervini (2012) "Outlier detection and trimmed estimation in general functional spaces", \emph{Statistica Sinica}, \bold{22}(4), 1639-1660.
 
-H. L. Shang (2015) "Re-sampling techniques for estimating the distribution of descriptive statistics of functional data", \emph{Communication in Statistics--Simulation and Computation}, \bold{44}(3), 614-635.
+H. L. Shang (2015) "Re-sampling techniques for estimating the distribution of descriptive statistics of functional data", \emph{Communications in Statistics--Simulation and Computation}, \bold{44}(3), 614-635.
 
 H. L. Shang (2018) Bootstrap methods for stationary functional time series, \emph{Statistics and Computing}, \bold{28}(1), 1-10.
 }

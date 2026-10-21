@@ -13,8 +13,9 @@ Plot showing the basis functions in the top row of plots and the coefficients in
 }
 \arguments{
 \item{x}{Output from \code{\link[ftsa]{ftsm}}.}
-\item{components}{Number of principal components to plot.}
-\item{components.start}{Plotting specified component.}
+\item{components}{Index of the last principal component to plot.}
+\item{components.start}{Index of the first component to plot. The default
+  \code{0} includes the mean and level panels before the first component.}
 \item{xlab1}{x-axis label for basis functions.}
 \item{xlab2}{x-axis label for coefficient time series.}
 \item{ylab1}{y-axis label for basis functions.}
@@ -23,9 +24,10 @@ Plot showing the basis functions in the top row of plots and the coefficients in
 \item{level.lab}{Label for level component.}
 \item{main.title}{Title for main effects.}
 \item{interaction.title}{Title for interaction terms.} 
-\item{basiscol}{Colors for basis functions if plot.type="components".}
-\item{coeffcol}{Colors for time series coefficients if plot.type="components".}
-\item{outlier.col}{Colour for outlying years.}
+\item{basiscol}{Color for the basis functions.}
+\item{coeffcol}{Color for the coefficient time series.}
+\item{outlier.col}{Color for outlying years, used only when \code{x} was fitted
+  with \code{ftsm(..., weight = TRUE)}.}
 \item{outlier.pch}{Plotting character for outlying years.}
 \item{outlier.cex}{Size of plotting character for outlying years.}
 \item{...}{Plotting parameters.}

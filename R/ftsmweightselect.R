@@ -1,8 +1,10 @@
 ftsmweightselect <- function(data, ncomp = 6, ntestyear, errorcriterion = c("mae", "mse", "mape"))
 {
     errorcriterion = match.arg(errorcriterion)
-    trainyear = max(data$time)-ntestyear
-    testdat = extract(data, direction = "time", timeorder = (max(data$time)-ntestyear+1):max(data$time))$y
+    time_index = as.numeric(colnames(data$y))
+    trainyear  = max(time_index) - ntestyear
+    testdat    = extract(data, direction = "time",
+                         timeorder = (max(time_index) - ntestyear + 1):max(time_index))$y
     if(errorcriterion == "mae")
     {
         optifunction = function(beta)
@@ -11,7 +13,7 @@ ftsmweightselect <- function(data, ncomp = 6, ntestyear, errorcriterion = c("mae
             for(i in 1:ntestyear)
             {
                 traindata[,i] =  forecast(ftsm(extract(data, direction = "time", 
-                                    timeorder = data$time[1]:trainyear), order = ncomp,
+                                    timeorder = time_index[1]:trainyear), order = ncomp,
                                     weight = TRUE, beta = beta), h = 1)$mean$y
                 trainyear = trainyear + 1
             }
@@ -27,7 +29,7 @@ ftsmweightselect <- function(data, ncomp = 6, ntestyear, errorcriterion = c("mae
             for(i in 1:ntestyear)
             {
                 traindata[,i] =  forecast(ftsm(extract(data, direction = "time", 
-                                          timeorder = data$time[1]:trainyear), order = ncomp,
+                                          timeorder = time_index[1]:trainyear), order = ncomp,
                                           weight = TRUE, beta = beta), h = 1)$mean$y
                 trainyear = trainyear + 1
             }
@@ -43,7 +45,7 @@ ftsmweightselect <- function(data, ncomp = 6, ntestyear, errorcriterion = c("mae
               for(i in 1:ntestyear)
               {
                   traindata[,i] =  forecast(ftsm(extract(data, direction = "time", 
-                                            timeorder = data$time[1]:trainyear), order = ncomp,
+                                            timeorder = time_index[1]:trainyear), order = ncomp,
                                             weight = TRUE, beta = beta), h = 1)$mean$y
                   trainyear = trainyear + 1
               }

@@ -6,13 +6,13 @@
 Functional Time Series Analysis
 }
 \description{
-This package presents descriptive statistics of functional data; implements principal component regression and partial least squares regression to provide point and distributional forecasts for functional data; utilizes functional linear regression, ordinary least squares, penalized least squares, ridge regression, and moving block approaches to dynamically update point and distributional forecasts when partial data points in the most recent curve are observed; performs stationarity test for a functional time series;
+This package presents descriptive statistics of functional data; implements principal component regression and partial least squares regression to provide point and distributional forecasts for functional data; utilizes functional linear regression, ordinary least squares, penalized least squares, ridge regression, and moving block approaches to dynamically update point and distributional forecasts when partial data points in the most recent curve are observed; performs a stationarity test for a functional time series;
     estimates a long-run covariance function by kernel sandwich estimator.
 }
 \author{
 Rob J Hyndman and Han Lin Shang 
 
-Maintainer: Han Lin Shang <hanlin.shang@anu.edu.au>
+Maintainer: Han Lin Shang <hanlin.shang@mq.edu.au>
 }
 \references{
 ###########################
@@ -25,7 +25,7 @@ R. J. Hyndman and H. L. Shang (2010) "Rainbow plots, bagplots, and boxplots for 
 
 H. L. Shang and R. J. Hyndman (2011) "Nonparametric time series forecasting with dynamic updating", \emph{Mathematics and Computers in Simulation}, \bold{81}(7), 1310-1324.
 
-H. L. Shang (2011) "rainbow: an R package for visualizing functional time series, \emph{The R Journal}, \bold{3}(2), 54-59.
+H. L. Shang (2011) "rainbow: an R package for visualizing functional time series", \emph{The R Journal}, \bold{3}(2), 54-59.
 
 H. L. Shang (2013) "Functional time series approach for forecasting very short-term electricity demand", \emph{Journal of Applied Statistics}, \bold{40}(1), 152-168.
 
@@ -61,7 +61,7 @@ Y. Gao, H. L. Shang and Y. Yang (2017) "High-dimensional functional time series 
 
 Y. Gao and H. L. Shang (2017) "Multivariate functional time series forecasting: An application to age-specific mortality rates", \emph{Risks}, \bold{5}(2), Article 21.
 
-H. L. Shang (2018) "Visualizing rate of change: An application to age-specific fertility rates", \emph{Journal of the Royal Statistical Society: Series A (Statistics in Society)}, \bold{182}(1), 249-262.
+H. L. Shang (2019) "Visualizing rate of change: An application to age-specific fertility rates", \emph{Journal of the Royal Statistical Society: Series A (Statistics in Society)}, \bold{182}(1), 249-262.
 
 H. L. Shang (2018) "Bootstrap methods for stationary functional time series", \emph{Statistics and Computing}, \bold{28}(1), 1-10.
 
@@ -103,11 +103,11 @@ E. Paparoditis and H. L. Shang (2023) "Bootstrap prediction bands for functional
 
 Y. Gao, H. L. Shang and Y. Yang (2024) "Factor-augmented smoothing model for functional data", \emph{Statistica Sinica}, \bold{34}(1), 1-26.
 
-M. Mutis, U. Beyaztas, G. G. Simsek, H. L. Shang and Z. M. Yaseen (2024) Development of functional quantile autoregressive model for river flow curve forecasting, \emph{Earth and Space Sciences}, \bold{11}(8), e2024EA003564.
+M. Mutis, U. Beyaztas, G. G. Simsek, H. L. Shang and Z. M. Yaseen (2024) Development of functional quantile autoregressive model for river flow curve forecasting, \emph{Earth and Space Science}, \bold{11}(8), e2024EA003564.
 
 W-K. Seo and H. L. Shang (2024) Fractional curve time series with cointegration, \emph{Electronic Journal of Statistics}, \bold{18}(2), 3858-3902.
 
-H. L. Shang (2024) Change-point detection in functional time series: Applications to age-specific mortality and fertility, \emph{Annals of Operations Research}, \bold{in press}.
+H. L. Shang (2026) Change-point detection in functional time series: Applications to age-specific mortality and fertility, \emph{Annals of Operations Research}, \bold{363}, 1113-1131.
 
 Y. Yang and H. L. Shang (2025) Nonstationary functional time series forecasting, \emph{Journal of Forecasting}, \bold{44}(4), 1347-1362.
 
@@ -124,7 +124,7 @@ and Methods}, \bold{in press}.
 # References in Population Studies
 ##################################
 
-H. L. Shang, H. Booth and R. J. Hyndman (2011) "Point and interval forecasts of mortality rates and life expectancy: a comparison of ten principal component methods, \emph{Demographic Research}, \bold{25}(5), 173-214.
+H. L. Shang, H. Booth and R. J. Hyndman (2011) "Point and interval forecasts of mortality rates and life expectancy: a comparison of ten principal component methods", \emph{Demographic Research}, \bold{25}(5), 173-214.
 
 H. L. Shang (2012) "Point and interval forecasts of age-specific fertility rates: a comparison of functional principal component methods", \emph{Journal of Population Research}, \bold{29}(3), 249-267.
 
@@ -136,7 +136,7 @@ H. L. Shang (2015) "Selection of the optimal Box-Cox transformation parameter fo
 
 H. L. Shang (2015) "Forecast accuracy comparison of age-specific mortality and life expectancy: Statistical tests of the results", \emph{Population Studies}, 69(3), 317-335.
 
-H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2016) "A multilevel functional data method for forecasting population, with an application to the United Kingdom, \emph{International Journal of Forecasting}, 32(3), 629-649.
+H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2016) "A multilevel functional data method for forecasting population, with an application to the United Kingdom", \emph{International Journal of Forecasting}, 32(3), 629-649.
 
 H. L. Shang (2017) "Reconciling forecasts of infant mortality rates at national and sub-national levels: Grouped time-series method", \emph{Population Research and Policy Review}, 36(1), 55-84.
 
@@ -155,7 +155,7 @@ H. L. Shang (2025) "Bootstrap prediction intervals for the age distribution of l
 # References in Actuarial Studies
 ##################################
 
-H. L. Shang and S. Haberman (2017) "Grouped multivariate and functional time series forecasting: An application to annuity pricing", Presented at the Living to 100 Symposium, Orlando Florida, January 4-6, 2017.
+H. L. Shang and S. Haberman (2017) "Grouped multivariate and functional time series forecasting: An application to annuity pricing", Presented at the Living to 100 Symposium, Orlando, Florida, January 4-6, 2017.
 
 H. L. Shang and S. Haberman (2017) "Grouped multivariate and functional time series forecasting: An application to annuity pricing", \emph{Insurance: Mathematics and Economics}, \bold{75}, 166-179.
 
@@ -167,17 +167,17 @@ H. L. Shang (2020) "Dynamic principal component regression for forecasting funct
 
 H. L. Shang and S. Haberman (2020) "Forecasting age distribution of death counts: An application to annuity pricing", \emph{Annals of Actuarial Science}, \bold{14}(1), 150-169.
 
-H. L .Shang and S. Haberman and R. Xu (2022) "Multi-population modelling and forecasting age-specific life-table death counts", \emph{Insurance: Mathematics and Economics}, \bold{106}, 239-253.
+H. L. Shang, S. Haberman and R. Xu (2022) "Multi-population modelling and forecasting age-specific life-table death counts", \emph{Insurance: Mathematics and Economics}, \bold{106}, 239-253.
 
 H. L. Shang and S. Haberman (2024) Weighted compositional data analysis for modeling and forecasting life-table death counts, \emph{Journal of Forecasting}, \bold{43}(8), 3051-3071.
 
 S. Wang, H. L. Shang, L. Tickle and H. Li (2024) Forecasting age- and sex-specific survival functions: Application to annuity pricing, \emph{Risks}, \bold{12}(7), 117.
 
-H. L. Shang and S. Haberman (2024) Forecasting age distribution of life-table death counts via alpha-transformation, \emph{Scandinavian Actuarial Journal}, \bold{2025}(4), 387-403.
+H. L. Shang and S. Haberman (2025) Forecasting age distribution of life-table death counts via alpha-transformation, \emph{Scandinavian Actuarial Journal}, \bold{2025}(4), 387-403.
 
 H. L. Shang and S. Haberman (2025) Forecasting age distribution of deaths: Cumulative distribution function transformation, \emph{Insurance: Mathematics and Economics}, \bold{122}, 249-261.
 
-H. L. Shang and S. Haberman (2025) Constructing prediction intervals for the age distribution of deaths, \emph{Scandinavian Actuarial Journal}, \bold{in press}.
+H. L. Shang and S. Haberman (2026) Constructing prediction intervals for the age distribution of deaths, \emph{Scandinavian Actuarial Journal}, \bold{2026}(5), 469-486.
 
 
 ########################
@@ -194,7 +194,7 @@ H. L. Shang and F. Kearney (2022) "Dynamic functional time series forecasts of f
 
 H. L. Shang and K. Ji (2023) "Forecasting intraday financial time series with sieve bootstrapping and dynamic updating", \emph{Journal of Forecasting}, \bold{42}(8), 1973-1988.
 
-X. Huang, H. L. Shang and K. Siu (2025) A IID test for functional time series with applications to high-frequency VIX index data, \emph{Risks}, \bold{13}(2), 25.
+X. Huang, H. L. Shang and K. Siu (2025) An IID test for functional time series with applications to high-frequency VIX index data, \emph{Risks}, \bold{13}(2), 25.
 
 U. Beyaztas, K. Ji, H. L. Shang and E. Wu (2025) "Stock return prediction based on a functional capital asset pricing model", \emph{Journal of Forecasting}, \bold{44}(6), 2017-2036.
 }

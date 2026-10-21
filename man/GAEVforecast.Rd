@@ -4,19 +4,19 @@
 Fit a generalized additive extreme value model to the functional data with given basis numbers
 }
 \description{
-One-step-ahead forecast for any given quantile(s) of functional time sereies of extreme values using a generalized additive extreme value (GAEV) model.
+One-step-ahead forecast for any given quantile(s) of functional time series of extreme values using a generalized additive extreme value (GAEV) model.
 }
 \usage{
 GAEVforecast(data, q, d.loc.max = 10, d.logscale.max = 10)
 }
 \arguments{
-  \item{data}{a n by p data matrix, where n denotes the number of functional objects and p denotes the number of realizations on each functional object}
+  \item{data}{an n by p data matrix, where n denotes the number of functional objects and p denotes the number of realizations on each functional object}
   \item{q}{a required scalar or vector of GEV quantiles that are of forecasting interest}
   \item{d.loc.max}{the maximum number of basis functions considered for the location parameter}
   \item{d.logscale.max}{the maximum number of basis functions considered for the (log-)scale parameter}
 }
 \details{
-For the functional time seres \eqn{\{X_t(u),t=1,...,T,u\in \mathcal{I}\}}, the GAEV model is given as
+For the functional time series \eqn{\{X_t(u),t=1,...,T,u\in \mathcal{I}\}}, the GAEV model is given as
 \deqn{
 X_{t}(u) ~ GEV[\mu_{t}(u),\sigma_t(u),\xi_t], 
 }
@@ -29,9 +29,9 @@ where
 }
 where \eqn{d_{j},j=1,2} are positive integers of basis numbers, \eqn{\{b^{(\mu)}_{i}(u),i=1,\dots,d_{1}\}} and \eqn{\{b^{(\sigma)}_{i}(u),i=1,\dots,d_{2}\}} are the cubic regression spline basis functions.
 
-The optimal number of basis functions \eqn{(d_1,d_2)} are chosen by minimizing the Kullback-Leibler divergence on the test set using a leave-one-out cross-validation technique.
+The optimal numbers of basis functions \eqn{(d_1,d_2)} are chosen by minimizing the Kullback-Leibler divergence on the test set using a leave-one-out cross-validation technique.
 
-The one-step-ahead forecast of the joint coefficients \eqn{(\widehat{\beta^{(\mu)}}_{T+1,i},\widehat{\beta^{(\sigma)}}_{T+1,j},\widehat{\xi}_{T+1},i=0,...,d_1,j=0,...,d_2)} are produced using a vector autoregressive model, whose order is selected via the corrected Akaike information criterion. Then the one-step-ahead forecast of the GEV parameter \eqn{(\widehat{\mu}_{T+1}(u),\widehat{\sigma}_{T+1}(u),\widehat{\xi}_{T+1})} can be computed accordingly.
+The one-step-ahead forecast of the joint coefficients \eqn{(\widehat{\beta^{(\mu)}}_{T+1,i},\widehat{\beta^{(\sigma)}}_{T+1,j},\widehat{\xi}_{T+1},i=0,...,d_1,j=0,...,d_2)} is produced using a vector autoregressive model, whose order is selected via the corrected Akaike information criterion. Then the one-step-ahead forecast of the GEV parameter \eqn{(\widehat{\mu}_{T+1}(u),\widehat{\sigma}_{T+1}(u),\widehat{\xi}_{T+1})} can be computed accordingly.
 
 The one-step-ahead forecast for the \eqn{\tau}-th quantile of the extreme values \eqn{\widehat{X}_{T+1}(u)} is computed by
 \deqn{
@@ -49,10 +49,10 @@ The one-step-ahead forecast for the \eqn{\tau}-th quantile of the extreme values
 \item{para.location.pred}{the predicted location function}
 \item{para.scale.pred}{the predicted scale function}
 \item{para.shape.pred}{the predicted shape parameter}
-\item{density.pred}{the prediced density function(s) for the given quantile(s)}
+\item{density.pred}{the predicted density function(s) for the given quantile(s)}
 }
 \references{
-Shang, H. L. and Xu, R. (2021) `Functional time series forecasting of extreme values', \emph{Communications in Statistics Case Studies Data Analysis and Applications}, \bold{in press}.
+Shang, H. L. and Xu, R. (2021) `Functional time series forecasting of extreme values', \emph{Communications in Statistics Case Studies Data Analysis and Applications}, \bold{7}(2), 182-199.
 }
 \author{
 Ruofan Xu and Han Lin Shang

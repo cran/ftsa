@@ -2,7 +2,7 @@
 \alias{ftsm}
 \title{Fit functional time series model}
 \description{
-Fits a principal component model to a \code{fts} object. The
+Fits a principal component model to an \code{fts} object. The
 function uses optimal orthonormal principal components obtained from a
 principal components decomposition.
 }
@@ -14,11 +14,11 @@ ftsm(y, order = 6, ngrid = max(500, ncol(y$y)), method = c("classical",
 \arguments{
 \item{y}{An object of class \code{fts}.}
 \item{order}{Number of principal components to fit.}
-\item{ngrid}{Number of grid points to use in calculations. Set to maximum of 500 and \code{ncol(y$y)}.}
+\item{ngrid}{Number of grid points to use in calculations. Set to a maximum of 500 and \code{ncol(y$y)}.}
 \item{method}{Method to use for principal components decomposition. Possibilities are \dQuote{M}, \dQuote{rapca} and \dQuote{classical}.}
-\item{mean}{If \code{mean = TRUE}, it will estimate mean term in the model before computing basis terms. 
+\item{mean}{If \code{mean = TRUE}, it will estimate the mean term in the model before computing basis terms. 
             If \code{mean = FALSE}, the mean term is assumed to be zero.}
-\item{level}{If \code{mean = TRUE}, it will include an additional (intercept) term that depends on \eqn{t} but not on \eqn{x}.}
+\item{level}{If \code{level = TRUE}, it will include an additional (intercept) term that depends on \eqn{t} but not on \eqn{x}.}
 \item{lambda}{Tuning parameter for robustness when \code{method = "M"}.}
 \item{weight}{When \code{weight = TRUE}, a set of geometrically decaying weights is applied to the decentralized data.}
 \item{beta}{When \code{weight = TRUE}, the speed of geometric decay is governed by a weight parameter.}
@@ -35,8 +35,8 @@ If \code{method = "M"}, then the hybrid algorithm of Hyndman and Ullah (2005) is
 }
 
 \value{Object of class \dQuote{ftsm} with the following components:
-\item{x1}{Time period of a \code{fts} object, which can be obtained from \code{colnames(y$y)}.}
-\item{y1}{Variables of a \code{fts} object, which can be obtained from \code{y$x}.}
+\item{x1}{Time period of an \code{fts} object, which can be obtained from \code{colnames(y$y)}.}
+\item{y1}{Variables of an \code{fts} object, which can be obtained from \code{y$x}.}
 \item{y}{Original functional time series or sliced functional time series.}
 \item{basis}{Matrix of principal components evaluated at value of \code{y$x} (one column for each principal component).
     The first column is the fitted mean or median.}
@@ -48,7 +48,7 @@ If \code{method = "M"}, then the hybrid algorithm of Hyndman and Ullah (2005) is
 \item{varprop}{Proportion of variation explained by each principal component.}
 \item{wt}{Weight associated with each time period.}
 \item{v}{Measure of variation for each time period.}
-\item{mean.se}{Measure of standar error associated with the mean.}
+\item{mean.se}{Measure of standard error associated with the mean.}
 }
 
 \author{Rob J Hyndman}

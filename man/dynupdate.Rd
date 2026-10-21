@@ -3,7 +3,7 @@
 \title{Dynamic updates via BM, OLS, RR and PLS methods}
 \description{ 
 Four methods, namely block moving (BM), ordinary least squares (OLS) regression, 
-ridge regression (RR), penalized least squares (PLS) regression, were proposed to 
+ridge regression (RR), and penalized least squares (PLS) regression were proposed to 
 address the problem of dynamic updating, when partial data in the most recent curve 
 are observed. 
 }
@@ -35,13 +35,13 @@ dynupdate(data, newdata = NULL, holdoutdata, method = c("ts", "block",
   \item{B}{Number of bootstrap samples.}  
 }
 \details{
-This function is designed to dynamically update point and interval forecasts, when partial data in the most recent curve are observed.
+This function is designed to dynamically update point and interval forecasts when partial data in the most recent curve are observed.
 
-If \code{method = "classical"}, then standard functional principal component decomposition is used, as described by Ramsay and Dalzell (1991). 
+If \code{pcdmethod = "classical"}, then standard functional principal component decomposition is used, as described by Ramsay and Dalzell (1991). 
 
-If \code{method = "rapca"}, then the robust principal component algorithm of Hubert, Rousseeuw and Verboven (2002) is used. 
+If \code{pcdmethod = "rapca"}, then the robust principal component algorithm of Hubert, Rousseeuw and Verboven (2002) is used. 
 
-If \code{method = "M"}, then the hybrid algorithm of Hyndman and Ullah (2005) is used. 
+If \code{pcdmethod = "M"}, then the hybrid algorithm of Hyndman and Ullah (2005) is used. 
 }
 \value{
   \item{forecasts}{An object of class \code{fts} containing the dynamic updated point forecasts.}

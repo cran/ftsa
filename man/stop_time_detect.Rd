@@ -22,9 +22,18 @@ stop_time_detect(data, forecasting_method = c("ets", "arima", "rw"))
 \item{ncomp_select_backward}{Number of components selected by the eigenvalue ratio tests based on the backward ISFEs}
 }
 \references{
-Bekhta, P., Ortynska, G. and Sedliacik, J. (2014). Properties of modified phenol-formaldehyde adhesive for plywood panels manufactured from high moisture content veneer. Drvna Industrija 65(4), 293-301.
+Bekhta, P., Ortynska, G. and Sedliacik, J. (2014). Properties of modified phenol-formaldehyde adhesive for plywood panels manufactured from high moisture content veneer. \emph{Drvna Industrija}, \bold{65}(4), 293-301.
 }
 \author{
 Han Lin Shang
+}
+\seealso{
+\code{\link{stop_time_sim_data}}
+}
+\examples{
+\donttest{
+sim_dat = stop_time_sim_data(sample_size = 50, omega = 0.1, seed_number = 123)
+stop_time_detect(data = sim_dat, forecasting_method = "rw")
+}
 }
 \keyword{methods}

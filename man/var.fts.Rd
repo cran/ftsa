@@ -10,7 +10,7 @@ Computes variance functions of functional time series at each variable.
 }
 \arguments{
   \item{x}{An object of class \code{fts}.}
-  \item{method}{Method for computing median.}
+  \item{method}{Method for computing variance function.}
   \item{trim}{Percentage of trimming.}
   \item{alpha}{Tuning parameter when \code{method="radius"}.}
   \item{weight}{Hard thresholding or soft thresholding.}
@@ -33,9 +33,11 @@ If \code{method = "radius"}, it computes the standard deviation function of trim
 A list containing \code{x} = variables and \code{y} = variance rates.
 }
 \references{
-O. Hossjer and C. Croux (1995) "Generalized univariate signed rank statistics for testing and estimating a multivariate location parameter", \emph{Nonparametric Statistics}, \bold{4}(3), 293-308.
+R. Fraiman and G. Muniz (2001) "Trimmed means for functional data", \emph{Test}, \bold{10}, 419-440.
 
-A. Cuevas and M. Febrero and R. Fraiman (2006) "On the use of bootstrap for estimating functions with functional data", \emph{Computational Statistics and Data Analysis}, \bold{51}(2), 1063-1074.
+O. H\"ossjer and C. Croux (1995) "Generalized univariate signed rank statistics for testing and estimating a multivariate location parameter", \emph{Journal of Nonparametric Statistics}, \bold{4}(3), 293-308.
+
+A. Cuevas, M. Febrero and R. Fraiman (2006) "On the use of bootstrap for estimating functions with functional data", \emph{Computational Statistics and Data Analysis}, \bold{51}(2), 1063-1074.
 
 A. Cuevas and M. Febrero and R. Fraiman (2007), "Robust estimation and classification for functional data via projection-based depth notions", \emph{Computational Statistics}, \bold{22}(3), 481-496.
 

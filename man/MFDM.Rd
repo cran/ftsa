@@ -9,7 +9,7 @@ Fit a multilevel functional principal component model. The function uses two-ste
 \usage{
 MFDM(mort_female, mort_male, mort_ave, percent_1 = 0.95, percent_2 = 0.95, fh, 
 	     level = 80, alpha = 0.2, MCMCiter = 100, fmethod = c("auto_arima", "ets"), 
-		   BC = c(FALSE, TRUE), lambda)
+		   BC = FALSE, lambda)
 }
 \arguments{
   \item{mort_female}{Female mortality (p by n matrix), where p denotes the dimension and n denotes the sample size.}
@@ -26,7 +26,7 @@ MFDM(mort_female, mort_male, mort_ave, percent_1 = 0.95, percent_2 = 0.95, fh,
   \item{lambda}{If \code{BC = TRUE}, specify a Box-Cox transformation parameter.}
 }
 \details{
-The basic idea of multilevel functional data method is to decompose functions from different sub-populations into an aggregated average, a sex-specific deviation from the aggregated average, a common trend, a sex-specific trend and measurement error. The common and sex-specific trends are modelled by projecting them onto the eigenvectors of covariance operators of the aggregated and sex-specific centred stochastic process, respectively.
+The basic idea of the multilevel functional data method is to decompose functions from different sub-populations into an aggregated average, a sex-specific deviation from the aggregated average, a common trend, a sex-specific trend, and measurement error. The common and sex-specific trends are modeled by projecting them onto the eigenvectors of covariance operators of the aggregated and sex-specific centered stochastic process, respectively.
 }
 \value{
 \item{first_percent}{Percentage of total variation explained by the first common functional principal component.}
@@ -40,7 +40,7 @@ C. M. Crainiceanu and J. Goldsmith (2010) "Bayesian functional data analysis usi
 
 C-Z. Di and C. M. Crainiceanu and B. S. Caffo and N. M. Punjabi (2009) "Multilevel functional principal component analysis", \emph{The Annals of Applied Statistics}, \bold{3}(1), 458-488.
 
-V. Zipunnikov and B. Caffo and D. M. Yousem and C. Davatzikos and B. S. Schwartz and C. Crainiceanu (2015) "Multilevel functional principal component analysis for high-dimensional data", \emph{Journal of Computational and Graphical Statistics}, \bold{20}, 852-873.
+V. Zipunnikov and B. Caffo and D. M. Yousem and C. Davatzikos and B. S. Schwartz and C. Crainiceanu (2011) "Multilevel functional principal component analysis for high-dimensional data", \emph{Journal of Computational and Graphical Statistics}, \bold{20}(4), 852-873.
 
 H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2016) "A multilevel functional data method for forecasting population, with an application to the United Kingdom", \emph{International Journal of Forecasting}, \bold{32}(3), 629-649.
 }
@@ -48,9 +48,17 @@ H. L. Shang, P. W. F. Smith, J. Bijak, A. Wisniowski (2016) "A multilevel functi
 Han Lin Shang
 }
 \note{
-It can be quite time consuming, especially when MCMCiter is large.
+It can be quite time-consuming, especially when MCMCiter is large.
 }
 \seealso{
 \code{\link{ftsm}}, \code{\link{forecast.ftsm}}, \code{\link{fplsr}}, \code{\link{forecastfplsr}}
+}
+\examples{
+\dontrun{
+# MFDM requires JAGS (external software) and the R2jags package.
+# mort_female, mort_male and mort_ave are (p by n) log mortality matrices.
+MFDM(mort_female = female_mort, mort_male = male_mort, mort_ave = total_mort,
+     fh = 10, MCMCiter = 100, fmethod = "ets", BC = FALSE)
+}
 }
 \keyword{models}

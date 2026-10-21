@@ -10,6 +10,9 @@ is.fts(x)
 \arguments{
   \item{x}{Arbitrary R object.}
 }
+\value{
+A logical value.
+}
 \author{Rob J Hyndman}
 \examples{
 # check if ElNino is the class of the functional time series.	

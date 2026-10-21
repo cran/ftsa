@@ -1,5 +1,4 @@
-CoDa_recon <-
-function(dat, normalize = c("TRUE", "FALSE"),
+CoDa_recon <- function(dat, normalize = TRUE,
                        fore_method = c("RWF", "ETS", "ARIMA"), drift_term,
                        fh, varprop, constant)
 {
@@ -22,14 +21,14 @@ function(dat, normalize = c("TRUE", "FALSE"),
     # standardization (closure operation)
 
     f_x_t = matrix(NA, n_year, n_age)
-    if(normalize == TRUE)
+    if(normalize)
     {
         for(ik in 1:n_year)
         {
             f_x_t[ik,] = (dat[ik,]/alpha_x)/sum(dat[ik,]/alpha_x)
         }
     }
-    if(normalize == FALSE)
+	else
     {
         for(ik in 1:n_year)
         {
@@ -41,7 +40,7 @@ function(dat, normalize = c("TRUE", "FALSE"),
 
     g_t = vector("numeric", n_year)
     h_x_t = matrix(NA, n_year, n_age)
-    if(normalize == TRUE)
+    if(normalize)
     {
         for(ik in 1:n_year)
         {
@@ -49,7 +48,7 @@ function(dat, normalize = c("TRUE", "FALSE"),
             h_x_t[ik,] = log(f_x_t[ik,]/g_t[ik])
         }
     }
-    if(normalize == FALSE)
+	else    
     {
         for(ik in 1:n_year)
         {

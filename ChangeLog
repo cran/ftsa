@@ -1,3 +1,14 @@
+v 6.8
+
+1. Add H_estimate_LW_NFTS function
+2. Fix handling of logical arguments in CoDa_BayesNW, CoDa_FPCA and
+   Horta_Ziegelmann_FPCA; character "TRUE"/"FALSE" is still accepted
+3. Correct documentation errors in ftsm, dynupdate, dynamic_FLR,
+   median.fts, sd.fts, var.fts, plot.fm and plot.ftsm
+4. Add examples to isfe.fts, ftsmweightselect, stop_time_detect, MFDM,
+   quantile, sd and var
+5. Move fds from Suggests to Depends
+
 v 6.7
 
 1. Update the fdpca function
@@ -51,7 +62,7 @@ v 5.9
 
 v 5.8
 
-1. Add MAF_Multivariate function to perform maximum autocorrelation factors
+1. Add MAF_multivariate function to perform maximum autocorrelation factors
 2. Add multilevel functional principal component analysis and multiple functional time series clustering
 3. Update long_run_covariance_estimation function
 
@@ -92,7 +103,7 @@ v 5.2
 
 v 5.1
 
-1. Replace Depends: R (>= 3.5.0) to R (>= 3.4.0)
+1. Replace Depends: R (>= 3.5.0) with R (>= 3.4.0)
 
 v 5.0
 

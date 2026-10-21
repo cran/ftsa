@@ -1,6 +1,6 @@
 \name{forecast.ftsm}
 \alias{forecast.ftsm}
-\title{Forecast functional time series}
+\title{Forecast functional time series via functional principal component analysis}
 \description{The coefficients from the fitted object are forecasted
 using either an ARIMA model (\code{method = "arima"}), an AR model (\code{method = "ar"}), 
 an exponential smoothing method (\code{method = "ets"}), a linear exponential smoothing 
@@ -17,11 +17,11 @@ components to obtain a forecast curve.}
 \arguments{
 \item{object}{Output from \code{\link[ftsa]{ftsm}}.}
 \item{h}{Forecast horizon.}
-\item{method}{Univariate time series forecasting methods. Current possibilities are \dQuote{ets}, \dQuote{arima}, \dQuote{ets.na}, \dQuote{rwdrift} and \dQuote{rw}.}
+\item{method}{Univariate time series forecasting methods. Current possibilities are \dQuote{ets}, \dQuote{arima}, \dQuote{ets.na}, \dQuote{rwdrift}, \dQuote{ar}, \dQuote{struct}, \dQuote{arfima}, and \dQuote{rw}.}
 \item{level}{Coverage probability of prediction intervals.}
 \item{jumpchoice}{Jump-off point for forecasts. Possibilities are \dQuote{actual} and \dQuote{fit}.
 	If \dQuote{actual}, the forecasts are bias-adjusted by the difference between the fit and the last year of observed data.
-	Otherwise, no adjustment is used. See Booth et al. (2006) for the detail on jump-off point.}
+	Otherwise, no adjustment is used. See Booth et al. (2006) for details on the jump-off point.}
 \item{pimethod}{Indicates if parametric method is used to construct prediction intervals.}
 \item{B}{Number of bootstrap samples.}
 \item{usedata}{Number of time periods to use in forecasts. Default is to use all.}
@@ -29,7 +29,7 @@ components to obtain a forecast curve.}
 \item{model}{If the \code{ets} method is used, \code{model} allows a model specification to be passed to \code{\link[forecast]{ets}()}.}
 \item{damped}{If the \code{ets} method is used, \code{damped} allows the damping specification to be passed to \code{\link[forecast]{ets}()}.}
 \item{stationary}{If \code{stationary = TRUE}, \code{method} is set to \code{method = "ar"} and only stationary AR models are used.}
-\item{...}{Other arguments passed to forecast routine.}
+\item{...}{Other arguments passed to the forecast routine.}
 }
 
 \details{
@@ -62,7 +62,7 @@ components to obtain a forecast curve.}
 }
 
 \references{
-H. Booth and R. J. Hyndman and L. Tickle and P. D. Jong (2006) "Lee-Carter mortality forecasting: A multi-country comparison of variants and extensions", \emph{Demographic Research}, \bold{15}, 289-310.
+H. Booth and R. J. Hyndman and L. Tickle and P. de Jong (2006) "Lee-Carter mortality forecasting: A multi-country comparison of variants and extensions", \emph{Demographic Research}, \bold{15}, 289-310.
 
 B. Erbas and R. J. Hyndman and D. M. Gertig (2007) "Forecasting age-specific breast cancer mortality using functional data model", \emph{Statistics in Medicine}, \bold{26}(2), 458-470.
 
@@ -72,7 +72,7 @@ R. J. Hyndman and H. Booth (2008) "Stochastic population forecasts using functio
 
 R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series" (with discussion), \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.
 
-H. L. Shang (2012) "Functional time series approach for forecasting very short-term electricity demand", \emph{Journal of Applied Statistics}, \bold{40}(1), 152-168.
+H. L. Shang (2013) "Functional time series approach for forecasting very short-term electricity demand", \emph{Journal of Applied Statistics}, \bold{40}(1), 152-168.
 
 H. L. Shang (2013) "ftsa: An R package for analyzing functional time series", \emph{The R Journal}, \bold{5}(1), 64-72.
 

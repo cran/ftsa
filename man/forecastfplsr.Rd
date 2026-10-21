@@ -1,8 +1,8 @@
 \name{forecastfplsr}
 \alias{forecastfplsr}
-\title{Forecast functional time series}
+\title{Forecast functional time series via functional partial least squares regression}
 \description{
-The decentralized response is forecasted by multiplying the estimated regression coefficient with the new decentralized predictor
+The decentralized response is forecasted by multiplying the estimated regression coefficient by the new decentralized predictor
 }
 \usage{
 forecastfplsr(object, components, h)
@@ -13,7 +13,7 @@ forecastfplsr(object, components, h)
   \item{h}{Forecast horizon.}
 }
 \value{
-A \code{fts} class object, containing forecasts of responses.
+An \code{fts} class object, containing forecasts of responses.
 }
 \references{
 R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series" (with discussion), \emph{Journal of the Korean Statistical Society}, \bold{38}(3), 199-221.
@@ -25,7 +25,7 @@ Han Lin Shang
 \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.ftsf}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}
 }
 \examples{
-# A set of functions are decomposed by functional partial least squares decomposition.	
+# A set of functions is decomposed by functional partial least squares decomposition.	
 # By forecasting univariate partial least squares scores, the forecasted curves are 
 # obtained by multiplying the forecasted scores by fixed functional partial least 
 # squares function plus fixed mean function.

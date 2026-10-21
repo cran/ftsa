@@ -87,7 +87,7 @@ super_fun = function(Y, lag_max, B, alpha, du, p, m, u, select_ncomp, dimension)
     gammahat.old = gammahat
     
     # Selecting the number of components
-    if(select_ncomp == "TRUE")
+    if(select_ncomp)
     {
       bs.pvalues = vector("numeric", lag_max)
       
@@ -157,7 +157,7 @@ super_fun = function(Y, lag_max, B, alpha, du, p, m, u, select_ncomp, dimension)
       d0 = head(which(bs.pvalues < alpha))[1] + 1
       if(is.na(d0)) d0 = 1
     }
-    if(select_ncomp == "FALSE")
+    if(!select_ncomp)
     {
       d0 = dimension
     }
@@ -197,7 +197,7 @@ super_fun = function(Y, lag_max, B, alpha, du, p, m, u, select_ncomp, dimension)
     
     # Defining epsilonhat (m x n)
     epsilonhat = Y - Yhat
-    if(select_ncomp == "TRUE")    
+    if(select_ncomp)    
     {
       return(list(Y = Y, Ybar = Ybar, thetahat = thetahat, gammahat = gammahat, psihat = psihat,
                   etahat = etahat, Yhat = Yhat, Yhat.fix = Yhat.fix, epsilonhat = epsilonhat, u = u, 

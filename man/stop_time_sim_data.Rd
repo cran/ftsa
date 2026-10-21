@@ -26,4 +26,4 @@ Han Lin Shang
 \examples{
 stop_time_sim_data(sample_size = 401, omega = 0.1, seed_number = 123)
 }
-\keyword{datasets}
+\keyword{datagen}

@@ -3,8 +3,10 @@ function(data, gridpoints, h_scale = 1, p = 5, m = 5001,
                             kernel = c("gaussian", "epanechnikov"),
                             band_choice = c("Silverman", "DPI"),
                             VAR_type = "both", lag_maximum = 6, no_boot = 1000,
-                            alpha_val = 0.10, ncomp_select = "TRUE", D_val = 10)
+                            alpha_val = 0.10, ncomp_select = TRUE, D_val = 10)
 {
+	ncomp_select = as_flag(ncomp_select, "ncomp_select")
+	
     # check if input data are densities
 
     if(all(trunc(diff(apply(data, 1, sum))) == 0))
@@ -79,7 +81,7 @@ function(data, gridpoints, h_scale = 1, p = 5, m = 5001,
     etahat_est = matrix(foo_out$etahat, ncol = N)
     selected_d0 = foo_out$d0
     thetahat_val = foo_out$thetahat
-    if(ncomp_select == "TRUE")
+    if(ncomp_select)
     {
         selected_d0_pvalues = foo_out$bs.pvalues
     }

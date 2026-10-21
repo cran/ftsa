@@ -4,7 +4,7 @@
 Dynamic updates via functional linear regression
 }
 \description{
-A functional linear regression is used to address the problem of dynamic updating, when partial data in the most recent curve are observed.
+A functional linear regression is used to address the problem of dynamic updating when partial data in the most recent curve are observed.
 }
 \usage{
 dynamic_FLR(dat, newdata, holdoutdata, order_k_percent = 0.9, order_m_percent = 0.9, 
@@ -15,16 +15,16 @@ dynamic_FLR(dat, newdata, holdoutdata, order_k_percent = 0.9, order_m_percent = 
   \item{dat}{An object of class \code{sfts}.}
   \item{newdata}{A data vector of newly arrived observations.}
   \item{holdoutdata}{A data vector of holdout sample to evaluate point forecast accuracy.}
-  \item{order_k_percent}{Select the number of components that explains at least 90 percent of the total variation.}
-  \item{order_m_percent}{Select the number of components that explains at least 90 percent of the total variation.}
-  \item{pcd_method}{Method to use for principal components decomposition. Possibilities are "M", "rapca" and "classical".}
-  \item{robust_lambda}{Tuning parameter in the two-step robust functional principal component analysis, when \code{pcdmethod = "M"}.}
+  \item{order_k_percent}{Select the number of components that explain at least 90 percent of the total variation.}
+  \item{order_m_percent}{Select the number of components that explain at least 90 percent of the total variation.}
+  \item{pcd_method}{Method to use for principal components decomposition. Possibilities are "classical" and "M".}
+  \item{robust_lambda}{Tuning parameter in the two-step robust functional principal component analysis, when \code{pcd_method = "M"}.}
   \item{bootrep}{Number of bootstrap samples.}
   \item{pointfore}{If \code{pointfore = TRUE}, point forecasts are produced.}
   \item{level}{Nominal coverage probability.}
 }
 \details{
-This function is designed to dynamically update point and interval forecasts, when partial data in the most recent curve are observed.
+This function is designed to dynamically update point and interval forecasts when partial data in the most recent curve are observed.
 }
 \value{
 \item{update_forecast}{Updated forecasts.}
@@ -47,7 +47,7 @@ J-M. Chiou (2012) "Dynamical functional prediction and classification with appli
 
 H. L. Shang (2013) "Functional time series approach for forecasting very short-term electricity demand", \emph{Journal of Applied Statistics}, \bold{40}(1), 152-168.
 
-H. L. Shang (2015) "Forecasting Intraday S&P 500 Index Returns: A Functional Time Series Approach", \emph{Journal of Forecasting}, \bold{36}(7), 741-755.
+H. L. Shang (2017) "Forecasting Intraday S&P 500 Index Returns: A Functional Time Series Approach", \emph{Journal of Forecasting}, \bold{36}(7), 741-755.
 
 H. L. Shang (2017) "Functional time series forecasting with dynamic updating: An application to intraday particulate matter concentration", \emph{Econometrics and Statistics}, \bold{1}, 184-200.
 }

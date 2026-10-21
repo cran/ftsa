@@ -1,5 +1,4 @@
-CoDa_NFR <-
-function(dat, normalize = c("TRUE", "FALSE"), constant)
+CoDa_NFR <- function(dat, normalize = TRUE, constant)
 {
     n_year = nrow(dat)
     n_age = ncol(dat)
@@ -19,14 +18,14 @@ function(dat, normalize = c("TRUE", "FALSE"), constant)
     # standardization (closure operation)
     
     f_x_t = matrix(NA, n_year, n_age)
-    if(normalize == TRUE)
+    if(normalize)
     {
         for(ik in 1:n_year)
         {
             f_x_t[ik,] = (dat[ik,]/alpha_x)/sum(dat[ik,]/alpha_x)
         }
     }
-    if(normalize == FALSE)
+	else
     {
         for(ik in 1:n_year)
         {
@@ -38,7 +37,7 @@ function(dat, normalize = c("TRUE", "FALSE"), constant)
     
     g_t = vector("numeric", n_year)
     h_x_t = matrix(NA, n_year, n_age)
-    if(normalize == TRUE)
+    if(normalize)
     {
         for(ik in 1:n_year)
         {
@@ -46,7 +45,7 @@ function(dat, normalize = c("TRUE", "FALSE"), constant)
             h_x_t[ik,] = log(f_x_t[ik,]/g_t[ik])
         }
     }
-    if(normalize == FALSE)
+	else
     {
         for(ik in 1:n_year)
         {

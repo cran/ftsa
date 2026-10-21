@@ -40,7 +40,7 @@ D. N. Politis (2003) "Adaptive bandwidth choice", \emph{Journal of Nonparametric
 A. Aue, G. Rice, O. S\"onmez (2018) "Detecting and dating structural breaks in functional data without dimension reduction", \emph{Journal of the Royal Statistical Society: Series B}, \bold{80}(3), 509-529.
 }
 \author{
-Greg. Rice and Han Lin Shang
+Gregory Rice and Han Lin Shang
 }
 \seealso{
 \code{\link{farforecast}}

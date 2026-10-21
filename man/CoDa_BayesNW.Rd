@@ -13,7 +13,7 @@ CoDa_BayesNW(data, normalization, m = 5001,
 }
 \arguments{
   \item{data}{Densities or raw data matrix of dimension N by p, where N denotes sample size and p denotes dimensionality}
-  \item{normalization}{If a standardization should be performed?}
+  \item{normalization}{Logical. If \code{TRUE}, the closure operation is applied so that each transformed curve sums to one. Default is \code{TRUE}.}
   \item{m}{Grid points within the data range}
   \item{band_choice}{Selection of optimal bandwidth}
   \item{kernel}{Type of kernel function}
@@ -23,7 +23,7 @@ CoDa_BayesNW(data, normalization, m = 5001,
 2) Apply the centered log-ratio transformation
 3) Apply a nonparametric function-on-function regression to the transformed data
 4) Transform forecasts back to the compositional data
-5) Add back the geometric means, to obtain the forecasts of the density function
+5) Add back the geometric means to obtain the forecasts of the density function
 }
 \value{
 Out-of-sample density forecasts
@@ -31,7 +31,7 @@ Out-of-sample density forecasts
 \references{
 Egozcue, J. J., Diaz-Barrero, J. L. and Pawlowsky-Glahn, V. (2006) `Hilbert space of probability density functions based on Aitchison geometry', \emph{Acta Mathematica Sinica}, \bold{22}, 1175-1182.
 
-Ferraty, F. and Shang, H. L. (2021) `Nonparametric density-on-density regression', working paper.
+Ferraty, F. and Shang, H. L. (2025) `Nonparametric density-on-density regression', arXiv, \url{https://arxiv.org/abs/2503.22904}.
 }
 \author{
 Han Lin Shang
@@ -41,7 +41,7 @@ Han Lin Shang
 }
 \examples{
 \dontrun{
-CoDa_BayesNW(data = DJI_return, normalization = "TRUE", 
+CoDa_BayesNW(data = DJI_return, normalization = TRUE, 
 		band_choice = "DPI", kernel = "epanechnikov")
 }	
 }

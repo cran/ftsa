@@ -1,23 +1,23 @@
 \name{ftsmweightselect}
 \alias{ftsmweightselect}
 \title{
-Selection of the weight parameter used in the weighted functional time series model.
+Selection of the weight parameter used in the weighted functional time series model
 }
 \description{
-The geometrically decaying weights are used to estimate the mean curve and functional principal components, where more weights are assigned to the more recent data than the data from the distant past.
+The geometrically decaying weights are used to estimate the mean curve and functional principal components, where more weight is assigned to the more recent data than to data from the distant past.
 }
 \usage{
 ftsmweightselect(data, ncomp = 6, ntestyear, errorcriterion = c("mae", "mse", "mape"))
 }
 \arguments{
-  \item{data}{An object of class \code{fts}.}
+  \item{data}{An object of class \code{sfts}.}
   \item{ncomp}{Number of components.}
   \item{ntestyear}{Number of holdout observations used to assess the forecast accuracy.}
   \item{errorcriterion}{Error measure.}
 }
 \details{
 The data set is split into a fitting period and forecasting period. Using the data in the fitting period, we compute the one-step-ahead forecasts and calculate
-the forecast error. Then, we increase the fitting period by one, and carry out the same forecasting procedure until the fitting period covers entire data set. 
+the forecast error. Then, we increase the fitting period by one, and carry out the same forecasting procedure until the fitting period covers the entire data set. 
 The forecast accuracy is determined by the averaged forecast error across the years in the forecasting period. By using an optimization algorithm, we select the
 optimal weight parameter that would result in the minimum forecast error.
 }
@@ -31,10 +31,15 @@ R. J. Hyndman and H. L. Shang (2009) "Forecasting functional time series (with d
 Han Lin Shang
 }
 \note{
-Can be computational intensive, as it takes about half-minute to compute. For example, ftsmweightselect(ElNinosmooth, ntestyear = 1).
+Can be computationally intensive, as it takes about half a minute to compute.
 }
 \seealso{
 \code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}
+}
+\examples{
+\donttest{
+ftsmweightselect(data = ElNino_ERSST_region_1and2, ncomp = 2, ntestyear = 1)
+}
 }
 \keyword{methods}
 

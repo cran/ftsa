@@ -1,9 +1,11 @@
 CoDa_FPCA <-
-function(data, normalization, h_scale = 1, m = 5001,
+function(data, normalization = TRUE, h_scale = 1, m = 5001,
                              band_choice = c("Silverman", "DPI"),
                              kernel = c("gaussian", "epanechnikov"),
                              varprop = 0.99, fmethod)
 {
+	normalization = as_flag(normalization, "normalization")
+	
     # check if input data are densities
 
     if(all(trunc(diff(apply(data, 1, sum))) == 0))

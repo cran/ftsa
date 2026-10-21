@@ -17,9 +17,9 @@ ER_GR(data)
 \item{k_GR}{The number of components selected by the growth ratio}
 }
 \references{
-Lam, C. and Yao, Q. (2012). Factor modelling for high-dimensional time series: Inference for the number of factors. The Annals of Statistics, 40, 694-726.
+Lam, C. and Yao, Q. (2012). Factor modelling for high-dimensional time series: Inference for the number of factors. \emph{The Annals of Statistics}, \bold{40}, 694-726.
 
-Ahn, S. and Horenstein, A. (2013). Eigenvalue ratio test for the number of factors. Econometrica, 81, 1203-1227.
+Ahn, S. and Horenstein, A. (2013). Eigenvalue ratio test for the number of factors. \emph{Econometrica}, \bold{81}, 1203-1227.
 }
 \author{
 Han Lin Shang

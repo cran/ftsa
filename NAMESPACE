@@ -8,7 +8,6 @@ plot.fmres,
 forecast.ftsm,
 isfe.fts,
 plot.ftsf,
-plot.fm,
 residuals.fm,
 summary.fm,
 diff.fts,
@@ -49,7 +48,8 @@ LQDT_FPCA,
 CoDa_BayesNW,
 GAEVforecast,
 sim_FARMA,
-H_estimate_RS
+H_estimate_RS,
+H_estimate_LW_NFTS
 )
 
 
@@ -83,6 +83,7 @@ import(pdfCluster)
 import(ecp)
 import(strucchange)
 import(e1071)
+import(fds)
 
 importFrom(pcaPP, PCAproj)
 importFrom(pcaPP, l1median)
@@ -108,3 +109,4 @@ importFrom("utils", "head", "tail", "globalVariables")
 importFrom("grDevices", "dev.new", "gray")
 importFrom("methods", "is")
 importFrom(sde, BM)
+importFrom(longmemo, per)

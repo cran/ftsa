@@ -1,6 +1,6 @@
 \name{plot.fmres}
 \alias{plot.fmres}
-\title{Plot residuals from a fitted functional model.}
+\title{Plot residuals from a fitted functional model}
 \description{
 Functions to produce a plot of residuals from a fitted functional model.
 }
@@ -21,7 +21,7 @@ Functions to produce a plot of residuals from a fitted functional model.
 Produces a plot.
 }
 \author{Rob J Hyndman}
-\seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{plot.fmres}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}}
+\seealso{\code{\link[ftsa]{ftsm}}, \code{\link[ftsa]{forecast.ftsm}}, \code{\link[ftsa]{plot.fm}}, \code{\link[ftsa]{residuals.fm}}, \code{\link[ftsa]{summary.fm}}}
 \examples{
 # colorspace package was used to provide a more coherent color option.	
 plot(residuals(ftsm(y = ElNino_ERSST_region_1and2)), type = "filled.contour", xlab = "Month", 

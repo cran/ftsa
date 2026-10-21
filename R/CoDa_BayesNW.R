@@ -1,9 +1,11 @@
 CoDa_BayesNW <-
-function(data, normalization,
+function(data, normalization = TRUE,
                           m = 5001,
                           band_choice = c("Silverman", "DPI"),
                           kernel = c("gaussian", "epanechnikov"))
 {
+	normalization = as_flag(normalization, "normalization")
+	
     # check if input data are densities
 
     if(all(trunc(diff(apply(data, 1, sum))) == 0))

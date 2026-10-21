@@ -2,8 +2,7 @@
 \alias{fplsr}
 \title{Functional partial least squares regression}
 \description{
-Fits a functional partial least squares (PLSR) model using nonlinear partial least squares
-(NIPALS) algorithm or simple partial least squares (SIMPLS) algorithm.
+Fits a functional partial least squares (PLSR) model using the nonlinear partial least squares (NIPALS) algorithm or simple partial least squares (SIMPLS) algorithm.
 }
 \usage{
 fplsr(data, order = 6, type = c("simpls", "nipals"), unit.weights =
@@ -30,7 +29,7 @@ fplsr(data, order = 6, type = c("simpls", "nipals"), unit.weights =
 \emph{\bold{Point forecasts:}}\cr
 
 The NIPALS function implements the orthogonal scores algorithm, as described in Martens and Naes (1989).
-This is one of the two classical PLSR algorthms, the other is the simple partial least squares regression in DeJong (1993).
+This is one of the two classical PLSR algorithms; the other is the simple partial least squares regression in DeJong (1993).
 The difference between these two approaches is that the NIPALS deflates the original predictors and responses,
 while the SIMPLS deflates the covariance matrix of original predictors and responses. Thus, SIMPLS is more computationally efficient than NIPALS.
 
@@ -43,7 +42,7 @@ This idea has been adopted from the Autoregressive Hilbertian processes of order
 
 Influenced by the works of Denham (1997) and Phatak et al. (1993), one way of constructing prediction intervals in the PLSR
 is via a local linearization method (also known as the Delta method). It can be easily understood as the first two terms in a Taylor series
-expansion. The variance of coefficient estimators can be approximated, from which an analytic-formula based prediction intervals are constructed.
+expansion. The variance of coefficient estimators can be approximated, from which analytic-formula-based prediction intervals are constructed.
 
 \emph{Nonparametric method:}
 
@@ -55,8 +54,7 @@ The next step is to generate \eqn{B} bootstrap samples \eqn{o_s^b(y_i)} by rando
 from \eqn{[o_1(y_i),...,o_n(y_i)]}. Adding bootstrapped residuals to the original
 response variables in order to generate new bootstrap responses,
 \deqn{g_s^b(y_i)=g_s(y_i)+o_s^b(y_i).}\cr
-Then, the PLSR models are constructed using the centered and discretized predictors and bootstrapped responses
-to obtain the boostrapped regression coefficients and point forecasts, from which the empirical prediction intervals and kernel density plots are constructed.
+Then, the PLSR models are constructed using the centered and discretized predictors and bootstrapped responses to obtain the bootstrapped regression coefficients and point forecasts, from which the empirical prediction intervals and kernel density plots are constructed.
 }
 \value{
 A list containing the following components is returned.
@@ -73,11 +71,11 @@ A list containing the following components is returned.
   \item{Ypred}{An object of class \code{fts} containing the 1-step-ahead predicted values of the responses.}
   \item{fitted}{An object of class \code{fts} containing the fitted values.}
   \item{residuals}{An object of class \code{fts} containing the regression residuals.}
-  \item{Xvar}{A vector with the amount of predictor variance explained by each number of component.}
+  \item{Xvar}{A vector with the amount of predictor variance explained by each component.}
   \item{Xtotvar}{Total variance in predictors.}
-  \item{weight}{When \code{weight = TRUE}, a set of geometrically decaying weights is given. When \code{weight = FALSE}, weights are all equal 1.}
-  \item{x1}{Time period of a \code{fts} object, which can be obtained from \code{colnames(data$y)}.}
-  \item{y1}{Variables of a \code{fts} object, which can be obtained from \code{data$x}.}
+  \item{weight}{When \code{weight = TRUE}, a set of geometrically decaying weights is given. When \code{weight = FALSE}, weights are all equal to 1.}
+  \item{x1}{Time period of an \code{fts} object, which can be obtained from \code{colnames(data$y)}.}
+  \item{y1}{Variables of an \code{fts} object, which can be obtained from \code{data$x}.}
   \item{ypred}{Returns the original functional predictors.}
   \item{y}{Returns the original functional responses.}
   \item{bootsamp}{Bootstrapped point forecasts.}
@@ -91,9 +89,9 @@ A list containing the following components is returned.
 \references{
 S. Wold and A. Ruhe and H. Wold and W. J. Dunn (1984) "The collinearity problem in linear regression. The partial least squares (PLS) approach to generalized inverses", \emph{SIAM Journal of Scientific and Statistical Computing}, \bold{5}(3), 735-743.
 
-S. de Jong (1993) "SIMPLS: an alternative approach to partial least square regression", \emph{Chemometrics and Intelligent Laboratory Systems}, \bold{18}(3), 251-263.
+S. de Jong (1993) "SIMPLS: an alternative approach to partial least squares regression", \emph{Chemometrics and Intelligent Laboratory Systems}, \bold{18}(3), 251-263.
 
-C J. F. Ter Braak and S. de Jong (1993) "The objective function of partial least squares regression", \emph{Journal of Chemometrics}, \bold{12}(1), 41-54.
+C. J. F. ter Braak and S. de Jong (1998) "The objective function of partial least squares regression", \emph{Journal of Chemometrics}, \bold{12}(1), 41-54.
 
 B. Dayal and J. MacGregor (1997) "Recursive exponentially weighted PLS and its applications to adaptive	control and prediction", \emph{Journal of Process Control}, \bold{7}(3), 169-179.
 

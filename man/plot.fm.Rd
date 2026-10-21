@@ -24,8 +24,8 @@ When \code{class(x)[1] = fm}, plot showing the predictor scores in the top row o
 \item{level.lab}{Label for level component.}
 \item{main.title}{Title for main effects.}
 \item{interaction.title}{Title for interaction terms.}
-\item{basiscol}{Colors for principal components if \code{plot.type = "components"}.}
-\item{coeffcol}{Colors for time series coefficients if \code{plot.type = "components"}.}
+\item{basiscol}{Color for the principal components.}
+\item{coeffcol}{Color for the coefficient time series.}
 \item{outlier.col}{Colors for outlying years.}
 \item{outlier.pch}{Plotting character for outlying years.}
 \item{outlier.cex}{Size of plotting character for outlying years.}

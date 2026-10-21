@@ -1,6 +1,6 @@
 \name{ftsmiterativeforecasts}
 \alias{ftsmiterativeforecasts}
-\title{Forecast functional time series}
+\title{Forecast functional time series via iterative functional principal component analysis}
 \description{The coefficients from the fitted object are forecasted
 using either an ARIMA model (\code{method = "arima"}), an AR model (\code{method = "ar"}), 
 an exponential smoothing method (\code{method = "ets"}), a linear exponential smoothing 

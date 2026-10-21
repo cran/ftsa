@@ -20,4 +20,10 @@ package.}
 \author{Han Lin Shang}
 
 \seealso{\code{\link[ftsa]{sd.fts}}}
+\examples{
+# the generic dispatches to sd.default for a numeric vector
+sd(1:10)
+# and to sd.fts for a functional time series
+sd(x = ElNino_ERSST_region_1and2, method = "coordinate")
+}
 \keyword{models}
